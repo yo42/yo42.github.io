@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yo42.github.io/"/>
-  <updated>2018-05-27T02:20:51.108Z</updated>
+  <updated>2018-05-27T02:50:22.220Z</updated>
   <id>https://yo42.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Docker Build 目录与GIT库共存的一些技巧</title>
+    <link href="https://yo42.github.io/2018/05/27/%E5%85%B3%E4%BA%8EDocker-Build-%E7%9B%AE%E5%BD%95%E4%B8%8EGIT%E5%BA%93%E5%85%B1%E5%AD%98%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
+    <id>https://yo42.github.io/2018/05/27/关于Docker-Build-目录与GIT库共存的一些技巧/</id>
+    <published>2018-05-27T02:48:18.000Z</published>
+    <updated>2018-05-27T02:50:22.220Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h2><pre>echo .git/ > .dockerignore这样操作后，能加快docker build的速度</pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;如下&quot;&gt;&lt;a href=&quot;#如下&quot; class=&quot;headerlink&quot; title=&quot;如下&quot;&gt;&lt;/a&gt;如下&lt;/h2&gt;&lt;pre&gt;
+echo .git/ &gt; .dockerignore
+这样操作后，能加快docker build的速度
+&lt;/pre&gt;
+
+
+
+
+&lt;h2 
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>First Step</title>
