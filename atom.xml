@@ -45,19 +45,9 @@
     <link href="https://yo42.github.io/2018/05/28/Material-io/"/>
     <id>https://yo42.github.io/2018/05/28/Material-io/</id>
     <published>2018-05-28T06:17:56.000Z</published>
-    <updated>2018-05-28T06:17:56.827Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
+    <updated>2018-06-09T05:24:12.386Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/l
-      
     
     </summary>
     
@@ -69,9 +59,9 @@
     <link href="https://yo42.github.io/2018/05/27/%E5%85%B3%E4%BA%8EDocker-Build-%E7%9B%AE%E5%BD%95%E4%B8%8EGIT%E5%BA%93%E5%85%B1%E5%AD%98%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
     <id>https://yo42.github.io/2018/05/27/关于Docker-Build-目录与GIT库共存的一些技巧/</id>
     <published>2018-05-27T02:48:18.000Z</published>
-    <updated>2018-05-27T02:50:22.220Z</updated>
+    <updated>2018-06-09T05:23:58.165Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h2><pre>echo .git/ > .dockerignore这样操作后，能加快docker build的速度</pre><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h2><pre>echo .git/ > .dockerignore这样操作后，能加快docker build的速度</pre>]]></content>
     
     <summary type="html">
     
@@ -83,9 +73,6 @@ echo .git/ &gt; .dockerignore
 &lt;/pre&gt;
 
 
-
-
-&lt;h2 
       
     
     </summary>
@@ -98,19 +85,9 @@ echo .git/ &gt; .dockerignore
     <link href="https://yo42.github.io/2018/05/27/First-Step/"/>
     <id>https://yo42.github.io/2018/05/27/First-Step/</id>
     <published>2018-05-27T02:20:51.000Z</published>
-    <updated>2018-05-27T02:20:51.108Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
+    <updated>2018-06-09T05:24:01.364Z</updated>
     
     <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/l
-      
     
     </summary>
     
