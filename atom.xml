@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yo42.github.io/"/>
-  <updated>2018-05-28T06:19:21.871Z</updated>
+  <updated>2018-06-09T08:16:31.981Z</updated>
   <id>https://yo42.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《恶意》</title>
+    <link href="https://yo42.github.io/2018/06/09/%E6%81%B6%E6%84%8F/"/>
+    <id>https://yo42.github.io/2018/06/09/恶意/</id>
+    <published>2018-06-09T08:14:20.000Z</published>
+    <updated>2018-06-09T08:16:31.981Z</updated>
+    
+    <content type="html"><![CDATA[<pre>恶意</pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;pre&gt;
+恶意
+&lt;/pre&gt;
+
+
+
+
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>DevOps And AIOps</title>
