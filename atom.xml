@@ -152,16 +152,16 @@ echo .git/ &gt; .dockerignore
     <link href="https://yo42.github.io/2018/05/13/hello-world/"/>
     <id>https://yo42.github.io/2018/05/13/hello-world/</id>
     <published>2018-05-13T06:24:27.852Z</published>
-    <updated>2018-06-10T07:19:21.745Z</updated>
+    <updated>2018-06-10T07:19:50.307Z</updated>
     
-    <content type="html"><![CDATA[<pre><code>为何博客？你问我？我也不知。很久之前便有此念头，写博客，但迟迟却不见行动。由于自己时常会有些天马行空的想法，为此也是找个地方记录下吧。博客大概会记录些关于学习上以及技术上的文档，以及些杂谈吧。   </code></pre>]]></content>
+    <content type="html"><![CDATA[<pre><code>为何博客？你问我？我也不知。很久之前便有此念头，但迟迟却不见行动。由于自己时常会有些天马行空的想法，为此也是找个地方记录下吧。博客大概会记录些关于学习上以及技术上的文档，以及些杂谈吧。   </code></pre>]]></content>
     
     <summary type="html">
     
       
       
         &lt;pre&gt;&lt;code&gt;为何博客？你问我？我也不知。
-很久之前便有此念头，写博客，但迟迟却不见行动。
+很久之前便有此念头，但迟迟却不见行动。
 由于自己时常会有些天马行空的想法，为此也是找个地方记录下吧。
 博客大概会记录些关于学习上以及技术上的文档，以及些杂谈吧。   
 &lt;/code&gt;&lt;/pre&gt;
