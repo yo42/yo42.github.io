@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yo42.github.io/"/>
-  <updated>2018-06-14T05:08:18.106Z</updated>
+  <updated>2018-06-20T09:17:59.250Z</updated>
   <id>https://yo42.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM性能调优监控工具</title>
+    <link href="https://yo42.github.io/2018/06/20/JVM%E6%80%A7%E8%83%BD%E8%B0%83%E4%BC%98%E7%9B%91%E6%8E%A7%E5%B7%A5%E5%85%B7/"/>
+    <id>https://yo42.github.io/2018/06/20/JVM性能调优监控工具/</id>
+    <published>2018-06-20T09:03:09.800Z</published>
+    <updated>2018-06-20T09:17:59.250Z</updated>
+    
+    <content type="html"><![CDATA[<h5 id="以下是一些JVM性能调优监控工具"><a href="#以下是一些JVM性能调优监控工具" class="headerlink" title="以下是一些JVM性能调优监控工具"></a>以下是一些JVM性能调优监控工具</h5><p><pre><br>jps、jstack、jmap、jhat、jstat、hprof….<br></pre></p><h6 id="对于java程序-有时可能会碰到以下问题"><a href="#对于java程序-有时可能会碰到以下问题" class="headerlink" title="对于java程序,有时可能会碰到以下问题"></a>对于java程序,有时可能会碰到以下问题</h6><ul><li>OutOfMemoryError，内存不足</li><li>内存泄露</li><li>线程死锁</li><li>锁争用（Lock Contention）</li><li>Java进程消耗CPU过高</li><li>….</li></ul><p>通过一些监控工具去对java程序进行调优以及监控,在发生问题时使用工具去进行定位问题为后续的排障、修复问题提到了很好的辅助作用。</p><p>jps主要用来输出JVM中运行的进程状态信息。语法格式如下：<br><code><br>jps [options] [hostid]<br></code><br>    如果不指定hostid就默认为当前主机或服务器。</p><pre><code>命令行参数选项说明如下：</code></pre><p><code><br>-q 不输出类名、Jar名和传入main方法的参数<br>-m 输出传入main方法的参数<br>-l 输出main类或Jar的全限名<br>-v 输出传入JVM的参数<br></code></p><p>example:</p><p><pre><br>root@ubuntu:/# jps -m -l<br>2458 org.artifactory.standalone.main.Main /usr/local/artifactory-2.2.5/etc/jetty.xml<br>29920 com.sun.tools.hat.Main -port 9998 /tmp/dump.dat<br>3149 org.apache.catalina.startup.Bootstrap start<br>30972 sun.tools.jps.Jps -m -l<br>8247 org.apache.catalina.startup.Bootstrap start<br>25687 com.sun.tools.hat.Main -port 9999 dump.dat<br>21711 mrf-center.jar<br></pre><br>jstack</p><pre><code>jstack主要用来查看某个Java进程内的线程堆栈信息。语法格式如下：</code></pre><p><pre><br>jstack [option] pid<br>jstack [option] executable core<br>jstack [option] [server-id@]remote-hostname-or-ip<br>    命令行参数选项说明如下：</pre></p><p>-l long listings，会打印出额外的锁信息，在发生死锁时可以用jstack -l pid来观察锁持有情况<br>-m mixed mode，不仅会输出Java堆栈信息，还会输出C/C++堆栈信息（比如Native方法）<br><br>    jstack可以定位到线程堆栈，根据堆栈信息我们可以定位到具体代码，所以它在JVM性能调优中使用得非常多。下面我们来一个实例找出某个Java进程中最耗费CPU的Java线程并定位堆栈信息，用到的命令有ps、top、printf、jstack、grep。</p><h6 id="系统查看top命令，定位CPU异常进程。"><a href="#系统查看top命令，定位CPU异常进程。" class="headerlink" title="系统查看top命令，定位CPU异常进程。"></a>系统查看top命令，定位CPU异常进程。</h6><h6 id="进入对应容器内，查看异常线程："><a href="#进入对应容器内，查看异常线程：" class="headerlink" title="进入对应容器内，查看异常线程："></a>进入对应容器内，查看异常线程：</h6><h6 id="进入容器："><a href="#进入容器：" class="headerlink" title="进入容器："></a>进入容器：</h6><p><pre><br>sudo docker exec -ti space_space_1 /bin/bash -l<br></pre></p><h6 id="查看线程情况（在容器内执行）："><a href="#查看线程情况（在容器内执行）：" class="headerlink" title="查看线程情况（在容器内执行）："></a>查看线程情况（在容器内执行）：</h6><p><pre><br>export TERM=xterm<br>ps auxf     # 定位进程在容器内的PID，对空间来说数字1。<br>top -H -p 1 # -H 查看线程ID，记录下占用CPU最多的线程ID数，比如是：43，转为16进制：0x2B，再转成小写模式：0x2b<br></pre></p><h6 id="对java进行jstack（退出容器，在系统中执行和查看）："><a href="#对java进行jstack（退出容器，在系统中执行和查看）：" class="headerlink" title="对java进行jstack（退出容器，在系统中执行和查看）："></a>对java进行jstack（退出容器，在系统中执行和查看）：</h6><p><pre><br>sudo docker exec -u docker -ti space_space_1 /home/jdk/bin/jstack 1 &gt; jstack.log</pre></p><h1 id="有时java会没有响应，可加-F-参数："><a href="#有时java会没有响应，可加-F-参数：" class="headerlink" title="有时java会没有响应，可加 -F 参数："></a>有时java会没有响应，可加 -F 参数：</h1><p>sudo docker exec -u docker -ti space_space_1 /home/jdk/bin/jstack -F 1 &gt; jstack.log</p><h1 id="还有时-F-参数也没有效果，就只能多试几次了。"><a href="#还有时-F-参数也没有效果，就只能多试几次了。" class="headerlink" title="还有时 -F 参数也没有效果，就只能多试几次了。"></a>还有时 -F 参数也没有效果，就只能多试几次了。</h1><p></p><h6 id="查看jstack-log文件，并搜索上面记录的小写16进制的线程ID：nid-0x2b"><a href="#查看jstack-log文件，并搜索上面记录的小写16进制的线程ID：nid-0x2b" class="headerlink" title="查看jstack.log文件，并搜索上面记录的小写16进制的线程ID：nid=0x2b"></a>查看jstack.log文件，并搜索上面记录的小写16进制的线程ID：nid=0x2b</h6><p><pre><br>“GC task thread#0 (ParallelGC)” os_prio=0 tid=0x00007fb9e401f800 nid=0x2b runnable<br></pre></p><h6 id="根据jstack-log中的线程ID，判断："><a href="#根据jstack-log中的线程ID，判断：" class="headerlink" title="根据jstack.log中的线程ID，判断："></a>根据jstack.log中的线程ID，判断：</h6><h6 id="如果是GC线程问题，那还需进行内存信息抓取。"><a href="#如果是GC线程问题，那还需进行内存信息抓取。" class="headerlink" title="如果是GC线程问题，那还需进行内存信息抓取。"></a>如果是GC线程问题，那还需进行内存信息抓取。</h6><h6 id="如果是其他线程问题，将整个线程信息提交给开发人员。"><a href="#如果是其他线程问题，将整个线程信息提交给开发人员。" class="headerlink" title="如果是其他线程问题，将整个线程信息提交给开发人员。"></a>如果是其他线程问题，将整个线程信息提交给开发人员。</h6><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h5 id=&quot;以下是一些JVM性能调优监控工具&quot;&gt;&lt;a href=&quot;#以下是一些JVM性能调优监控工具&quot; class=&quot;headerlink&quot; title=&quot;以下是一些JVM性能调优监控工具&quot;&gt;&lt;/a&gt;以下是一些JVM性能调优监控工具&lt;/h5&gt;&lt;p&gt;&lt;pre&gt;&lt;br&gt;jps、j
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>人间失格</title>
