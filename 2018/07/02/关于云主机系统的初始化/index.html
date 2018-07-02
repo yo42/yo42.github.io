@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="在许多IaaS平台中新购买的机器资源并不是开箱即用，一般需经过业务进行一般定制，又或者你作为一个强迫症患者想让自己的机器变得更加完美，所以在购买玩机器后进行初始化流程是很有必要滴。 机器初始化完成可以打包为云平台的镜像，方便后续的集成。 云供应商：Ucloud系统版本号：Ubuntu 16.04 LTS。关于设置机器的数据盘视情况而操作禁用系统自动更新： sed -i &apos;/Unattended-U">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-02T07:41:19.583Z">
+<meta property="og:updated_time" content="2018-07-02T07:48:05.799Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于云主机系统的初始化">
 <meta name="twitter:description" content="在许多IaaS平台中新购买的机器资源并不是开箱即用，一般需经过业务进行一般定制，又或者你作为一个强迫症患者想让自己的机器变得更加完美，所以在购买玩机器后进行初始化流程是很有必要滴。 机器初始化完成可以打包为云平台的镜像，方便后续的集成。 云供应商：Ucloud系统版本号：Ubuntu 16.04 LTS。关于设置机器的数据盘视情况而操作禁用系统自动更新： sed -i &apos;/Unattended-U">
@@ -153,7 +153,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#云供应商：Ucloud"><span class="post-toc-number">1.</span> <span class="post-toc-text">云供应商：Ucloud</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统版本号：Ubuntu-16-04-LTS。"><span class="post-toc-number">2.</span> <span class="post-toc-text">系统版本号：Ubuntu 16.04 LTS。</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于设置机器的数据盘视情况而操作"><span class="post-toc-number">3.</span> <span class="post-toc-text">关于设置机器的数据盘视情况而操作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#禁用系统自动更新："><span class="post-toc-number">4.</span> <span class="post-toc-text">禁用系统自动更新：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置别名："><span class="post-toc-number">5.</span> <span class="post-toc-text">设置别名：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#让su-登录到root时也可以使用别名设置："><span class="post-toc-number">6.</span> <span class="post-toc-text">让su 登录到root时也可以使用别名设置：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改PS1等参数（和centos保持一致）："><span class="post-toc-number">7.</span> <span class="post-toc-text">修改PS1等参数（和centos保持一致）：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置内核参数："><span class="post-toc-number">8.</span> <span class="post-toc-text">配置内核参数：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除废弃的设置："><span class="post-toc-number">9.</span> <span class="post-toc-text">删除废弃的设置：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加网络参数："><span class="post-toc-number">9.1.</span> <span class="post-toc-text">添加网络参数：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加用户："><span class="post-toc-number">9.2.</span> <span class="post-toc-text">添加用户：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置sudo："><span class="post-toc-number">9.3.</span> <span class="post-toc-text">配置sudo：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础软件："><span class="post-toc-number">9.4.</span> <span class="post-toc-text">基础软件：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#防火墙（具体规则还需根据实际情况进行修改）："><span class="post-toc-number">9.5.</span> <span class="post-toc-text">防火墙（具体规则还需根据实际情况进行修改）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#禁用ufw："><span class="post-toc-number">9.5.1.</span> <span class="post-toc-text">禁用ufw：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#禁用无用的服务："><span class="post-toc-number">9.6.</span> <span class="post-toc-text">禁用无用的服务：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重启系统：确保配置正常。"><span class="post-toc-number">9.7.</span> <span class="post-toc-text">重启系统：确保配置正常。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">9.8.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#云供应商：Ucloud"><span class="post-toc-number">1.</span> <span class="post-toc-text">云供应商：Ucloud</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#系统版本号：Ubuntu-16-04-LTS。"><span class="post-toc-number">2.</span> <span class="post-toc-text">系统版本号：Ubuntu 16.04 LTS。</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#关于设置机器的数据盘视情况而操作"><span class="post-toc-number">3.</span> <span class="post-toc-text">关于设置机器的数据盘视情况而操作</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#禁用系统自动更新："><span class="post-toc-number">4.</span> <span class="post-toc-text">禁用系统自动更新：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#设置别名："><span class="post-toc-number">5.</span> <span class="post-toc-text">设置别名：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#让su-登录到root时也可以使用别名设置："><span class="post-toc-number">6.</span> <span class="post-toc-text">让su 登录到root时也可以使用别名设置：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#修改PS1等参数（和centos保持一致）："><span class="post-toc-number">7.</span> <span class="post-toc-text">修改PS1等参数（和centos保持一致）：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#配置内核参数："><span class="post-toc-number">8.</span> <span class="post-toc-text">配置内核参数：</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#删除废弃的设置："><span class="post-toc-number">9.</span> <span class="post-toc-text">删除废弃的设置：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加网络参数："><span class="post-toc-number">9.1.</span> <span class="post-toc-text">添加网络参数：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加用户："><span class="post-toc-number">9.2.</span> <span class="post-toc-text">添加用户：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置sudo："><span class="post-toc-number">9.3.</span> <span class="post-toc-text">配置sudo：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#基础软件："><span class="post-toc-number">9.4.</span> <span class="post-toc-text">基础软件：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#时间同步："><span class="post-toc-number">9.5.</span> <span class="post-toc-text">时间同步：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#切换ntp到chrony："><span class="post-toc-number">9.5.1.</span> <span class="post-toc-text">切换ntp到chrony：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置chrony（根据-etc-ntp-conf中的内网IP来修改下方的2个内网IP地址）："><span class="post-toc-number">9.5.2.</span> <span class="post-toc-text">配置chrony（根据/etc/ntp.conf中的内网IP来修改下方的2个内网IP地址）：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设置开机启动："><span class="post-toc-number">9.5.3.</span> <span class="post-toc-text">设置开机启动：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装zabbix：待操作。"><span class="post-toc-number">9.6.</span> <span class="post-toc-text">安装zabbix：待操作。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#添加docker支持："><span class="post-toc-number">9.7.</span> <span class="post-toc-text">添加docker支持：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#先禁用docker随机启动："><span class="post-toc-number">9.8.</span> <span class="post-toc-text">先禁用docker随机启动：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#清理安装包："><span class="post-toc-number">9.9.</span> <span class="post-toc-text">清理安装包：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选择vim-tiny作为默认编辑器："><span class="post-toc-number">9.10.</span> <span class="post-toc-text">选择vim.tiny作为默认编辑器：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置SSHD："><span class="post-toc-number">9.11.</span> <span class="post-toc-text">配置SSHD：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#防火墙（具体规则还需根据实际情况进行修改）："><span class="post-toc-number">9.12.</span> <span class="post-toc-text">防火墙（具体规则还需根据实际情况进行修改）：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#禁用ufw："><span class="post-toc-number">9.12.1.</span> <span class="post-toc-text">禁用ufw：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装（默认是交互式，保存IPv4的规则就可以了）："><span class="post-toc-number">9.12.2.</span> <span class="post-toc-text">安装（默认是交互式，保存IPv4的规则就可以了）：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#iptables配置文件："><span class="post-toc-number">9.12.3.</span> <span class="post-toc-text">iptables配置文件：</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#禁用无用的服务："><span class="post-toc-number">9.13.</span> <span class="post-toc-text">禁用无用的服务：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重启系统：确保配置正常。"><span class="post-toc-number">9.14.</span> <span class="post-toc-text">重启系统：确保配置正常。</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">9.15.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -257,9 +257,8 @@ EOF
 </eof></pre>
 
 <h2 id="添加用户："><a href="#添加用户：" class="headerlink" title="添加用户："></a>添加用户：</h2><pre>
-if ! grep -q usertest /etc/passwd ;then
-    [ $retvar -eq 0 ] && /usr/sbin/useradd -m -s /bin/bash usertest \
-        && chpasswd --encrypted <<\eof usertest:$6$aaua0arg$9cgxre="" ap3mxk.tsroljfir06drc5qom.ygurhjdhjo4ndb92qdcvl5elcziuciff8z8y7fileycvjd9vn6kc="" eof="" retvar="$?" fi="" <="" pre="">
+/usr/sbin/useradd -m -s /bin/bash usertest
+</pre>
 
 <h2 id="配置sudo："><a href="#配置sudo：" class="headerlink" title="配置sudo："></a>配置sudo：</h2><pre>
 # 允许普通用户使用sudo docker 的部分命令
@@ -272,18 +271,14 @@ retvar=$?
 </\eof></pre>
 
 <h2 id="基础软件："><a href="#基础软件：" class="headerlink" title="基础软件："></a>基础软件：</h2><pre>
-apt-get update
-apt-get install -y aptitude
+apt-get update && apt-get install -y aptitude
 </pre>
-## 时间同步：
-### 切换ntp到chrony：
-<pre>
-aptitude remove  -y ntp
-aptitude install -y chrony
-</pre>
-### 配置chrony（根据/etc/ntp.conf中的内网IP来修改下方的2个内网IP地址）：
 
-<pre>
+<h2 id="时间同步："><a href="#时间同步：" class="headerlink" title="时间同步："></a>时间同步：</h2><h3 id="切换ntp到chrony："><a href="#切换ntp到chrony：" class="headerlink" title="切换ntp到chrony："></a>切换ntp到chrony：</h3><pre>
+aptitude remove  -y ntp && aptitude install -y chrony
+</pre>
+
+<h3 id="配置chrony（根据-etc-ntp-conf中的内网IP来修改下方的2个内网IP地址）："><a href="#配置chrony（根据-etc-ntp-conf中的内网IP来修改下方的2个内网IP地址）：" class="headerlink" title="配置chrony（根据/etc/ntp.conf中的内网IP来修改下方的2个内网IP地址）："></a>配置chrony（根据/etc/ntp.conf中的内网IP来修改下方的2个内网IP地址）：</h3><pre>
 cat<<eof> /etc/chrony/chrony.conf
 server 10.13.255.1    iburst minpoll 3 maxpoll 4 prefer
 server 10.13.255.2    iburst minpoll 3 maxpoll 4 prefer
@@ -309,31 +304,29 @@ logchange 0.1
 noclientlog
 EOF
 </eof></pre>
-### 设置开机启动：
-<pre>
+
+<h3 id="设置开机启动："><a href="#设置开机启动：" class="headerlink" title="设置开机启动："></a>设置开机启动：</h3><pre>
 /lib/systemd/systemd-sysv-install enable chrony
 </pre>
-## 安装zabbix：待操作。
-## 添加docker支持：
-<pre>
+
+<h2 id="安装zabbix：待操作。"><a href="#安装zabbix：待操作。" class="headerlink" title="安装zabbix：待操作。"></a>安装zabbix：待操作。</h2><h2 id="添加docker支持："><a href="#添加docker支持：" class="headerlink" title="添加docker支持："></a>添加docker支持：</h2><pre>
 aptitude install -y docker.io docker-compose
 </pre>
-## 先禁用docker随机启动：
-<pre>
+
+<h2 id="先禁用docker随机启动："><a href="#先禁用docker随机启动：" class="headerlink" title="先禁用docker随机启动："></a>先禁用docker随机启动：</h2><pre>
 systemctl disable docker
 systemctl stop docker
 </pre>
-## 清理安装包：
-<pre>
+
+<h2 id="清理安装包："><a href="#清理安装包：" class="headerlink" title="清理安装包："></a>清理安装包：</h2><pre>
 aptitude clean
 </pre>
-## 选择vim.tiny作为默认编辑器：
-<pre>
+
+<h2 id="选择vim-tiny作为默认编辑器："><a href="#选择vim-tiny作为默认编辑器：" class="headerlink" title="选择vim.tiny作为默认编辑器："></a>选择vim.tiny作为默认编辑器：</h2><pre>
 sudo update-alternatives --config editor
 </pre>
-## 配置SSHD：
 
-<pre>
+<h2 id="配置SSHD："><a href="#配置SSHD：" class="headerlink" title="配置SSHD："></a>配置SSHD：</h2><pre>
 retvar=0
 if ! grep -q X_FLAG_X /etc/ssh/ssh_config ;then
     [ $retvar -eq 0 ] \
@@ -384,13 +377,12 @@ systemctl stop ufw
 systemctl disable ufw
 systemctl mask ufw
 </pre>
-### 安装（默认是交互式，保存IPv4的规则就可以了）：
-<pre>
+
+<h3 id="安装（默认是交互式，保存IPv4的规则就可以了）："><a href="#安装（默认是交互式，保存IPv4的规则就可以了）：" class="headerlink" title="安装（默认是交互式，保存IPv4的规则就可以了）："></a>安装（默认是交互式，保存IPv4的规则就可以了）：</h3><pre>
 aptitude install iptables-persistent
 </pre>
-### iptables配置文件：
 
-<pre>
+<h3 id="iptables配置文件："><a href="#iptables配置文件：" class="headerlink" title="iptables配置文件："></a>iptables配置文件：</h3><pre>
 cat<<\eof> /etc/iptables/rules.v4
 *filter
 :INPUT   ACCEPT [0:0]
@@ -443,7 +435,7 @@ EOF
 <li><a href=""></a></li>
 </ul>
 </blockquote>
-</\eof></pre>
+
         </div>
 
         <blockquote class="post-copyright">
@@ -451,7 +443,7 @@ EOF
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-02T07:41:19.583Z" itemprop="dateUpdated">2018-07-02 15:41:19</time>
+    Last updated: <time datetime="2018-07-02T07:48:05.799Z" itemprop="dateUpdated">2018-07-02 15:48:05</time>
 </span><br>
 
 
