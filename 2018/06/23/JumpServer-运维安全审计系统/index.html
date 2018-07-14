@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms.png">
 <meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms2.png">
-<meta property="og:updated_time" content="2018-07-14T07:14:39.699Z">
+<meta property="og:updated_time" content="2018-07-14T07:16:26.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JumpServer 运维安全审计系统">
 <meta name="twitter:description" content="目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;amp;运维人员的公钥，以及云主机的登录。 现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。 综合上述缺点，需要一个审计系统。 目前业界比较良心的开源审计系统http://ww">
@@ -156,7 +156,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#梳理权限与规则"><span class="post-toc-number">1.</span> <span class="post-toc-text">梳理权限与规则:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JumpServer资产管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">JumpServer资产管理:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试环境的部署"><span class="post-toc-number">3.</span> <span class="post-toc-text">测试环境的部署:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#梳理权限与规则"><span class="post-toc-number">1.</span> <span class="post-toc-text">梳理权限与规则:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JumpServer资产管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">JumpServer资产管理:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试环境的部署"><span class="post-toc-number">3.</span> <span class="post-toc-text">测试环境的部署:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#逻辑图"><span class="post-toc-number">4.</span> <span class="post-toc-text">逻辑图:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -195,24 +195,27 @@
 <li>角色为用户的人员禁止授权su权限,不提供root密码就没有su权限，需要时再申请，sudo su。</li>
 <li>创建系统用户如Dev和oc时需保存密钥。</li>
 </ol>
-<h1 id="JumpServer资产管理"><a href="#JumpServer资产管理" class="headerlink" title="JumpServer资产管理:"></a>JumpServer资产管理:</h1><p>1.区分不同云供应商，每个节点对应每个云供应商，节点下再区分正式服、辅助支撑服</p>
+<h1 id="JumpServer资产管理"><a href="#JumpServer资产管理" class="headerlink" title="JumpServer资产管理:"></a>JumpServer资产管理:</h1><ol>
+<li>区分不同云供应商，每个节点对应每个云供应商、项目，节点下再区分正式服、辅助支撑服。</li>
+</ol>
 <h1 id="测试环境的部署"><a href="#测试环境的部署" class="headerlink" title="测试环境的部署:"></a>测试环境的部署:</h1><ol>
 <li>选择一个云供应商和地区进行部署一台JumpServer服务器，以及一些测试服。</li>
 <li>购买新资产进行自动添加还需参考JumpServer提供的API实现自动化。</li>
 </ol>
-<p>逻辑图:<br><figure class="image-bubble">
+<h1 id="逻辑图"><a href="#逻辑图" class="headerlink" title="逻辑图:"></a>逻辑图:</h1><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="jms.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure><br><figure class="image-bubble">
+            </figure>
+<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
                     <img src="jms2.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
-            </figure></p>
+            </figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href="">https://www.zhihu.com/question/21036511</a></li>
@@ -228,7 +231,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-14T07:14:39.699Z" itemprop="dateUpdated">2018-07-14 15:14:39</time>
+    Last updated: <time datetime="2018-07-14T07:16:26.677Z" itemprop="dateUpdated">2018-07-14 15:16:26</time>
 </span><br>
 
 
