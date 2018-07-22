@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>从容器到容器云 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="2013年初，一个名字从云计算领域横空出世，并在整个IT行业激起千层浪。这就是Docker——一个孕育着新思想的“容器”。Docker选择容器作为核心和基础，依靠容器技术支撑的Docker迅速成为国内外各大云计算厂商以及开发者手中的至宝。在一片热火朝天之后，新的革命已经悄然来临。 云计算平台回首历史，云计算时代蕴育出了众多的云计算平台，虽然在服务类型或平台功能上有所差异，但它们的本质上如出一辙，都">
+<meta name="keywords" content="DevOps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从容器到容器云">
+<meta property="og:url" content="https://yo42.github.io/2018/07/22/从容器到容器云/index.html">
+<meta property="og:site_name" content="Yo42">
+<meta property="og:description" content="2013年初，一个名字从云计算领域横空出世，并在整个IT行业激起千层浪。这就是Docker——一个孕育着新思想的“容器”。Docker选择容器作为核心和基础，依靠容器技术支撑的Docker迅速成为国内外各大云计算厂商以及开发者手中的至宝。在一片热火朝天之后，新的革命已经悄然来临。 云计算平台回首历史，云计算时代蕴育出了众多的云计算平台，虽然在服务类型或平台功能上有所差异，但它们的本质上如出一辙，都">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://yo42.github.io/2018/07/22/从容器到容器云/云平台_simple.png">
+<meta property="og:image" content="https://yo42.github.io/2018/07/22/从容器到容器云/Docker.png">
+<meta property="og:updated_time" content="2018-07-22T13:19:42.899Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="从容器到容器云">
+<meta name="twitter:description" content="2013年初，一个名字从云计算领域横空出世，并在整个IT行业激起千层浪。这就是Docker——一个孕育着新思想的“容器”。Docker选择容器作为核心和基础，依靠容器技术支撑的Docker迅速成为国内外各大云计算厂商以及开发者手中的至宝。在一片热火朝天之后，新的革命已经悄然来临。 云计算平台回首历史，云计算时代蕴育出了众多的云计算平台，虽然在服务类型或平台功能上有所差异，但它们的本质上如出一辙，都">
+<meta name="twitter:image" content="https://yo42.github.io/2018/07/22/从容器到容器云/云平台_simple.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Yo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">从容器到容器云</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">从容器到容器云</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-07-22T13:09:46.079Z" itemprop="datePublished" class="page-time">
+  2018-07-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#云计算平台"><span class="post-toc-number">1.</span> <span class="post-toc-text">云计算平台</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#容器，新的革命"><span class="post-toc-number">2.</span> <span class="post-toc-text">容器，新的革命</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#进化：从容器到容器云"><span class="post-toc-number">3.</span> <span class="post-toc-text">进化：从容器到容器云</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-从容器到容器云"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">从容器到容器云</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-07-22 21:09:46" datetime="2018-07-22T13:09:46.079Z"  itemprop="datePublished">2018-07-22</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>2013年初，一个名字从云计算领域横空出世，并在整个IT行业激起千层浪。这就是Docker——一个孕育着新思想的“容器”。Docker选择容器作为核心和基础，依靠容器技术支撑的Docker迅速成为国内外各大云计算厂商以及开发者手中的至宝。在一片热火朝天之后，新的革命已经悄然来临。</p>
+<h1 id="云计算平台"><a href="#云计算平台" class="headerlink" title="云计算平台"></a>云计算平台</h1><p>回首历史，云计算时代蕴育出了众多的云计算平台，虽然在服务类型或平台功能上有所差异，但它们的本质上如出一辙，都与NIST1对于云计算平台的定义有着密切的关系。</p>
+<p>云计算是一种按使用量付费的模式，该模式提供可用的、便捷的、按需的网络访问， 纳入可配置的计算资源共享池（资源包括网络、服务器、存储、应用软件、服务），统一管理的资源能够被快速提供，大大减少了资源管理工作开销，你甚至可以再也不用理会那些令人头痛的传统服务供应商了。</p>
+<p>经典云计算架构包括了IaaS（Infrastructure as a Service，基础设施即服务）、PaaS（Platform as a Service，平台即服务）、SaaS（Software as a Service，软件即服务）三层服务，如图1-1所示。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="云平台_simple.png" alt="图1-1 云平台经典架构" title="">
+                </div>
+                <div class="image-caption">图1-1 云平台经典架构</div>
+            </figure>
+<ul>
+<li>IaaS层为基础设施运维人员服务，提供计算、存储、网络及其他基础资源，云平台使用者可以在上面部署和运行包括操作系统和应用程序在内的任意软件，无需再为基础设施的管理而分心。</li>
+<li>PaaS层为应用开发人员服务，提供支撑应用运行所需的软件运行时环境、相关工具与服务，如数据库服务、日志服务、监控服务等，让应用开发者可以专注于核心业务的开发。</li>
+<li>SaaS层为一般为用户服务，提供了一套完整可用的软件系统，让一般用户无需关注技术细节，只需通过浏览器、应用客户端等方式就能使用部署在云上的应用服务。</li>
+</ul>
+<p>同时，随着计算机技术推陈出新，应用的规模愈发庞大，逻辑愈发复杂，迭代更新愈发频繁，应用开发所需的统一规范和原有开发模式杂乱无章成了追求进步的主要障碍。在尖锐的矛盾中，云时代应用生命周期管理机制（Application Lifecycle Management，ALM）和十二要素应用规范（The Twelve-Factor App）2应运而生。</p>
+<p>所有理论设计和预想一定是美好的，只是对于一个新的理论而言，如何经受住实践的考验，并将美好的愿景转化为生产力才是重中之重。IaaS的发展主要以虚拟机为最小粒度的资源调度单位，出现了资源利用率低、调度分发缓慢、软件栈环境不统一等一堆问题。PaaS在IaaS基础上发展而来，众多PaaS已经意识到可以利用容器技术解决资源利用率问题，但是PaaS通常在应用架构选择、支持的软件环境服务方面有较大的限制，这带来了应用与平台无法解耦、应用运行时环境局限性强、运维人员控制力下降的问题。</p>
+<p>可见，不论IaaS还是PaaS都有各自适用的场景，但依旧存在诸多缺陷，人们亟需一个真正可用的解决方案。</p>
+<h1 id="容器，新的革命"><a href="#容器，新的革命" class="headerlink" title="容器，新的革命"></a>容器，新的革命</h1><p>每一场革命背后都有着深刻的历史背景和矛盾冲突，新陈代谢是历史的必然结果，新生取代陈旧得益于理念的飞跃和对时代发展需求的契合，很显然Docker抓住了这个契机。</p>
+<p>Docker是什么？</p>
+<p>基于官方的定义，Docker是以Docker容器为资源分割和调度的基本单位，封装整个软件运行时环境，为开发者和系统管理员设计的，用于构建、发布和运行分布式应用的平台。它是一个跨平台、可移植并且简单易用的容器解决方案。Docker的源代码托管在GitHub上，基于Go语言开发并遵从Apache 2.0协议。Docker可在容器内部快速自动化地部署应用，并通过内核技术（namespaces、cgroups等）为容器提供资源隔离与安全保障。</p>
+<p>我们应该看看Docker的发展历程。</p>
+<p>每一个传奇都需要一个这样的开头，很久很久以前：Docker项目由Solomon Hykes所带领的团队发起，在Docker公司的前身dotCloud内部启动孕育，代码托管于GitHub。</p>
+<p>2013年11月：REHL 6.5正式版发布，集成了对Docker的支持，拉开了业界各大厂商竞相支持Docker的序幕。</p>
+<p>2014年4月到6月：云技术市场上的三大巨头Amazon、Google及MicroSoft Azure相继宣布支持Docker，并着手开发基于容器的全新产品。</p>
+<p>2014年6月：DockerCon 2014大会召开，会上来自Google、IBM、Amazon、Red Hat、Facebook及Twitter等全球领先企业的演讲嘉宾组成了豪华的阵容。此时， Docker自开源版本后又经历了15个月左右的飞速发展，Docker 1.0版本正式发布。</p>
+<p>2014年8月：VMware宣布与Docker建立合作关系，标志了虚拟化市场形成了新的格局。</p>
+<p>2014年10月：微软宣布将整合Docker进入下一代的Windows Server中。</p>
+<p>2014年10月15日：Azure和Docker共同举办了Docker全球开发者大会，并宣布双方建立战略合作伙伴关系。</p>
+<p>2014年底：Google率先发布容器引擎Google Container Engine（GCE），整合了Docker、Google自有容器技术和在DockerCon 2014大会上发布的Kubernetes，致力于为用户提供完善的基于Docker应用打造的云计算平台；Amazon发布EC2 Container Service（ECS），它是一项高度可扩展、高性能、免费的容器管理服务，并能够在托管的Amazon EC2实例集群上轻松地发布、管理和扩展Docker容器，使得Amazon Web Services（AWS）用户能够使用AWS上的容器轻松地运行和管理分布式应用。</p>
+<p>2015年4月：Docker公司宣布完成了9500万美元的D轮融资。此前，他们已完成三轮融资，包括1500万美元的B轮融资及4000万美元的C轮融资。</p>
+<p>2015年6月：Linux基金会携手AWS、思科、Docker、EMC、富士通、高盛、Google、惠普、华为、IBM、Intel等公司在DockerCon上共同宣布成立容器标准化组织OCP（Open Container Project），旨在实现容器标准化，为Docker生态圈内成员的协作互通打下良好的基础。该组织后更名为OCI（Open Container Initiative）。</p>
+<p>2016年2月：Docker公司发布商业版容器及服务平台DDC（Docker Datacenter），迈出了Docker商业化的重要一步。</p>
+<p>截至2016年6月：GitHub中Docker的贡献者超过千人，被关注和喜爱（star）多达三万两千余次（相比之下，此时Linux源码多年来积累的被关注次数仅为两万两千余次），并有九千多个开发分支（fork），Docker成为了GitHub上排名前20的明星项目。</p>
+<p>Docker官方存储应用镜像的容器仓库也获得了大量开发者支持，其镜像仓库里已有超过12万个不同应用功能的公共镜像。最受欢迎的Ubuntu、MySQL、Nginx、WordPress镜像，下载量已超过千万次。这些数字还在不断地增长！</p>
+<p>在国内一线城市，几乎每一两周就有一场关于Docker的讨论大会，Docker永远不会让你孤独。</p>
+<p>在从此以后的未来，以Docker为代表的容器技术已经给云计算乃至整个IT界带来了深远的影响，这是一次真正的计算机技术革命，来吧，拥抱变化！</p>
+<p>一个软件项目成功与否的标志是看其是否能够带动一个生态系统的发展，以Docker为代表的容器技术显然做到了这一点。容器技术的快速普及促进了围绕容器技术的相关项目日臻丰富和完善，容器本身的功能和易用性也随之增加。反过来，容器技术的迅猛发展也与其强大的生态系统息息相关。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="Docker.png" alt="图1-3 容器技术生态系统（不完全统计" title="">
+                </div>
+                <div class="image-caption">图1-3 容器技术生态系统（不完全统计</div>
+            </figure>
+<p>从图1-3可以看出，容器技术的生态系统自下而上分别覆盖了IaaS层和PaaS层所涉及的各类问题，包括资源调度、编排、部署、监控、配置管理、存储网络管理、安全、容器化应用支撑平台等。除了基于容器技术解决构建分布式平台无法回避的经典问题，容器技术主要带来了以下几点好处。</p>
+<ul>
+<li>持续部署与测试。容器消除了线上线下的环境差异，保证了应用生命周期的环境一致性和标准化。开发人员使用镜像实现标准开发环境的构建，开发完成后通过封装着完整环境和应用的镜像进行迁移，由此，测试和运维人员可以直接部署软件镜像来进行测试和发布，大大简化了持续集成、测试和发布的过程。</li>
+<li>跨云平台支持。容器带来的最大好处之一就是其适配性，越来越多的云平台都支持容器，用户再也无需担心受到云平台的捆绑，同时也让应用多平台混合部署成为可能。目前支持容器的IaaS云平台包括但不限于亚马逊云平台（AWS）、Google云平台（GCP）、微软云平台（Azure）、OpenStack等，还包括如Chef、Puppet、Ansible等配置管理工具。</li>
+<li>环境标准化和版本控制。基于容器提供的环境一致性和标准化，你可以使用Git等工具对容器镜像进行版本控制，相比基于代码的版本控制来说，你还能够对整个应用运行环境实现版本控制，一旦出现故障可以快速回滚。相比以前的虚拟机镜像，容器压缩和备份速度更快，镜像启动也像启动一个普通进程一样快速。</li>
+<li>高资源利用率与隔离。容器没有管理程序的额外开销，与底层共享操作系统，性能更加优良，系统负载更低，在同等条件下可以运行更多的应用实例，可以更充分地利用系统资源。同时，容器拥有不错的资源隔离与限制能力，可以精确地对应用分配CPU、内存等资源，保证了应用间不会相互影响。</li>
+<li>容器便携性与镜像。Linux容器虽然早在Linux 2.6版本内核已经存在，但是缺少容器的便携性，难以推广。容器在原有Linux容器的基础上进行大胆革新，为容器设定了一整套标准化的配置方法，将应用及其依赖的运行环境打包成镜像，真正实现了“构建一次，到处运行”的理念，大大提高了容器的便携性。</li>
+<li>易于理解且易用。Docker的英文原意是处理集装箱的码头工人，标志是鲸鱼运送一大堆集装箱，集装箱就是容器，生动好记，易于理解。一个开发者可以在15分钟之内入门Docker并进行安装和部署，这是容器使用史上的一次飞跃。因为它的易用性，有更多的人开始关注容器技术，加速了容器标准化的步伐。</li>
+<li>应用镜像仓库。Docker官方构建了一个镜像仓库，组织和管理形式类似于GitHub，其上已累积了成千上万的镜像。因为Docker的跨平台适配性，相当于为用户提供了一个非常有用的应用商店，所有人都可以自由地下载微服务组件，这为开发者提供了巨大便利。</li>
+</ul>
+<h1 id="进化：从容器到容器云"><a href="#进化：从容器到容器云" class="headerlink" title="进化：从容器到容器云"></a>进化：从容器到容器云</h1><p>容器为用户打开了一扇通往新世界的大门，真正进入这个容器的世界后，却发现新的生态系统如此庞大。在生产使用中，不论是个人还是企业，都会提出更复杂的需求。这时，我们需要众多跨主机的容器协同工作，需要支持各种类型的工作负载，企业级应用开发更是需要基于容器技术，实现支持多人协作的持续集成、持续交付平台。即使Docker只需一条命令便可启动一个容器，一旦试图将其推广到软件开发和生产环境中，麻烦便层出不穷，容器相关的网络、存储、集群、高可用等就是不得不面对的问题。从容器到容器云的进化应运而生。</p>
+<p>什么是容器云？</p>
+<p>容器云以容器为资源分割和调度的基本单位，封装整个软件运行时环境，为开发者和系统管理员提供用于构建、发布和运行分布式应用的平台。当容器云专注于资源共享与隔离、容器编排与部署时，它是一种IaaS；当容器云渗透到应用支撑与运行时环境时，它是一种PaaS。</p>
+<p>容器云并不仅限于Docker，基于rkt容器的CoreOS项目也是容器云。Docker的出现让人们意识到了容器的价值，使得一直以来长期存在但并未被重视的轻量级虚拟化技术得到快速的发展和应用。鉴于Docker的里程碑意义，本书在讨论容器云时，都以分析Docker为支撑技术的容器云为主。</p>
+<p>Docker公司本身的技术发展，亦是从一个容器管理工具一步步向容器云发展的历史过程。Docker最初发布时只是一个单机下的容器管理工具，随后Docker公司发布了Compose、Machine、Swarm等编排部署工具，并收购了Socketplane解决集群化后的网络问题。本书提及Docker时，一般指Docker容器核心，并不包含它向容器云迈进的一系列扩展工具，这些工具则将在本书第二部分进行分析。</p>
+<p>除了Docker公司之外，业界许多云计算厂商也对基于Docker的容器云做了巨大的投入，以Docker容器为核心的第三方Docker容器云正在迎来春天。第6章将要介绍的Fleet、第7章将要介绍的Flynn和Deis以及第8章的Kubernetes，都是基于Docker技术构建的广为人知的容器云。</p>
+<p>从容器到容器云是一种伟大的进化，并依旧在日积月累中不断前行，现在让我们一起进入Docker的世界，感受容器与容器云的魅力。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="">http://www.ituring.com.cn/book/tupubarticle/8929 Docker——容器与容器云（第2版）</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-07-22T13:19:42.899Z" itemprop="dateUpdated">2018-07-22 21:19:42</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Yo">
+            Yo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/07/22/从容器到容器云/&title=《从容器到容器云》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/07/22/从容器到容器云/&title=《从容器到容器云》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/07/22/从容器到容器云/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《从容器到容器云》 — Yo42&url=https://yo42.github.io/2018/07/22/从容器到容器云/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/07/22/从容器到容器云/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/07/22/DevOps-And-AIOps/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">DevOps And AIOps</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Yo &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/07/22/从容器到容器云/&title=《从容器到容器云》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/07/22/从容器到容器云/&title=《从容器到容器云》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/07/22/从容器到容器云/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《从容器到容器云》 — Yo42&url=https://yo42.github.io/2018/07/22/从容器到容器云/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/07/22/从容器到容器云/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/07/22/从容器到容器云/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
