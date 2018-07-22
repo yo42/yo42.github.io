@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms.png">
 <meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms2.png">
-<meta property="og:updated_time" content="2018-07-22T08:13:15.384Z">
+<meta property="og:updated_time" content="2018-07-22T08:13:43.167Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JumpServer 运维安全审计系统">
 <meta name="twitter:description" content="目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;amp;运维人员的公钥，以及云主机的登录。 现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。 综合上述缺点，需要一个审计系统。 目前业界比较良心的开源审计系统http://ww">
@@ -203,7 +203,7 @@
 <li>购买新资产进行自动添加还需参考JumpServer提供的API实现自动化。</li>
 </ol>
 <h1 id="测试使用REST-API-进行资产的自动添加资产以及权限管理"><a href="#测试使用REST-API-进行资产的自动添加资产以及权限管理" class="headerlink" title="测试使用REST API 进行资产的自动添加资产以及权限管理"></a>测试使用REST API 进行资产的自动添加资产以及权限管理</h1><h1 id="jumpserver-有集成的sdk可以研究下"><a href="#jumpserver-有集成的sdk可以研究下" class="headerlink" title="jumpserver 有集成的sdk可以研究下"></a>jumpserver 有集成的sdk可以研究下</h1><h2 id="获取token"><a href="#获取token" class="headerlink" title="获取token"></a>获取token</h2><pre>
-curl -XPOST -d  "username=admin;password=baoyu0933" http://192.168.9.250/api/users/v1/token/
+curl -XPOST -d  "username=admin;password=xxxxx" http://192.168.9.250/api/users/v1/token/
 </pre>
 ## 查询用户可见资产
 <pre>
@@ -264,7 +264,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-22T08:13:15.384Z" itemprop="dateUpdated">2018-07-22 16:13:15</time>
+    Last updated: <time datetime="2018-07-22T08:13:43.167Z" itemprop="dateUpdated">2018-07-22 16:13:43</time>
 </span><br>
 
 
