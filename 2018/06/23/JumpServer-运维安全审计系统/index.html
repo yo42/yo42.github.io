@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms.png">
 <meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms2.png">
-<meta property="og:updated_time" content="2018-07-22T08:16:54.622Z">
+<meta property="og:updated_time" content="2018-08-06T07:43:32.045Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JumpServer 运维安全审计系统">
 <meta name="twitter:description" content="目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;amp;运维人员的公钥，以及云主机的登录。 现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。 综合上述缺点，需要一个审计系统。 目前业界比较良心的开源审计系统http://ww">
@@ -156,7 +156,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#梳理权限与规则"><span class="post-toc-number">1.</span> <span class="post-toc-text">梳理权限与规则:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JumpServer资产管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">JumpServer资产管理:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试环境的部署"><span class="post-toc-number">3.</span> <span class="post-toc-text">测试环境的部署:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试使用REST-API-进行资产的自动添加资产以及权限管理"><span class="post-toc-number">4.</span> <span class="post-toc-text">测试使用REST API 进行资产的自动添加资产以及权限管理</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#jumpserver-有集成的sdk可以研究下"><span class="post-toc-number">5.</span> <span class="post-toc-text">jumpserver 有集成的sdk可以研究下</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#获取token"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">获取token</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查询用户可见资产"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">查询用户可见资产</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#示例"><span class="post-toc-number">6.</span> <span class="post-toc-text">示例:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#逻辑图"><span class="post-toc-number">7.</span> <span class="post-toc-text">逻辑图:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#梳理权限与规则"><span class="post-toc-number">1.</span> <span class="post-toc-text">梳理权限与规则:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JumpServer用户管理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JumpServer用户管理:</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JumpServer资产管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">JumpServer资产管理:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试环境的部署"><span class="post-toc-number">3.</span> <span class="post-toc-text">测试环境的部署:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#获取token"><span class="post-toc-number">4.</span> <span class="post-toc-text">获取token</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查询用户可见资产"><span class="post-toc-number">5.</span> <span class="post-toc-text">查询用户可见资产</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#示例"><span class="post-toc-number">6.</span> <span class="post-toc-text">示例:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#逻辑图"><span class="post-toc-number">7.</span> <span class="post-toc-text">逻辑图:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -186,11 +186,10 @@
 <p>堡垒机不仅集中管理和分配全部账号，更重要的是能对运维/开发人员的运维操作进行严格审计和权限控制，确保运维的安全合规和运维/开发人员的最小化权限管理。</p>
 <p>从实际应用来看，堡垒机主要管控企业的服务器资源。</p>
 <p>1、JumpServer的安装:略(参考官方文档),后续可能会进行Docker化的定制(coco-ssh server,jumpserver,luna web terminal插件)。</p>
-<h1 id="梳理权限与规则"><a href="#梳理权限与规则" class="headerlink" title="梳理权限与规则:"></a>梳理权限与规则:</h1><p>JumpServer用户管理:</p>
-<ol>
+<h1 id="梳理权限与规则"><a href="#梳理权限与规则" class="headerlink" title="梳理权限与规则:"></a>梳理权限与规则:</h1><h2 id="JumpServer用户管理"><a href="#JumpServer用户管理" class="headerlink" title="JumpServer用户管理:"></a>JumpServer用户管理:</h2><ol>
 <li>梳理各项目组的开发与运维人员的列表，以项目名创建组，通过手工的方式进行开发人员与运维人员的编制。</li>
-<li>用户是授权和登陆的主体，将来为每个员工建立一个账户，用来登录跳板机，将资产授权给该用户，查看用户登陆记录命令历史等。创建用户，例如:以开发者张三的名称创建用户，后续张三将以dev的身份进行资产的登录如 web, sa, dba,dev,oc(<code>ssh web@some-host</code>)</li>
-<li>管理用户是服务器的root，或拥有 NOPASSWD: ALL sudo权限的用户，Jumpserver使用该用户来 <code>推送系统用户</code>、<code>获取资产硬件信息</code>等，大概会使用root进行管理，采用密码管理的方式。</li>
+<li>用户是授权和登陆的主体，将来为每个员工建立一个账户，用来登录跳板机，将资产授权给该用户，查看用户登陆记录命令历史等。创建用户，例如:以开发者张三的名称创建用户，后续张三将以dev的身份进行资产的登录如 web, sa, dba,dev,oc(ssh web@some-host)</li>
+<li>管理用户是服务器的root，或拥有 NOPASSWD: ALL sudo权限的用户，Jumpserver使用该用户来 推送系统用户、获取资产硬件信息等，大概会使用root进行管理，采用密码管理的方式。</li>
 <li>系统用户是服务器上建立的一些真实存在的可以ssh登陆的用户,如 dev,sa, dba等，系统用户可使用jumpserver推送到服务器上，也可以利用自己公司的工具进行推送，授权时将用户、资产、系统用户关联起来，则表明用户有权限登陆该资产的这个系统用户 如：用户 小明 以 dev 系统用户登录 172.16.1.1资产,简单理解就是 将某个资产上的某个系统用户映射给这个用户登录。</li>
 <li>角色为用户的人员禁止授权su权限,不提供root密码就没有su权限，需要时再申请，sudo su。</li>
 <li>创建系统用户如Dev和oc时需保存密钥。</li>
@@ -201,12 +200,14 @@
 <h1 id="测试环境的部署"><a href="#测试环境的部署" class="headerlink" title="测试环境的部署:"></a>测试环境的部署:</h1><ol>
 <li>选择一个云供应商和地区进行部署一台JumpServer服务器，以及一些测试服。</li>
 <li>购买新资产进行自动添加还需参考JumpServer提供的API实现自动化。</li>
+<li>测试使用REST API 进行资产的自动添加资产以及权限管理</li>
+<li>jumpserver集成sdk</li>
 </ol>
-<h1 id="测试使用REST-API-进行资产的自动添加资产以及权限管理"><a href="#测试使用REST-API-进行资产的自动添加资产以及权限管理" class="headerlink" title="测试使用REST API 进行资产的自动添加资产以及权限管理"></a>测试使用REST API 进行资产的自动添加资产以及权限管理</h1><h1 id="jumpserver-有集成的sdk可以研究下"><a href="#jumpserver-有集成的sdk可以研究下" class="headerlink" title="jumpserver 有集成的sdk可以研究下"></a>jumpserver 有集成的sdk可以研究下</h1><h2 id="获取token"><a href="#获取token" class="headerlink" title="获取token"></a>获取token</h2><pre>
+<h1 id="获取token"><a href="#获取token" class="headerlink" title="获取token"></a>获取token</h1><pre>
 curl -XPOST -d  "username=admin;password=xxxxx" http://192.168.9.250/api/users/v1/token/
 </pre>
 
-<h2 id="查询用户可见资产"><a href="#查询用户可见资产" class="headerlink" title="查询用户可见资产"></a>查询用户可见资产</h2><pre>
+<h1 id="查询用户可见资产"><a href="#查询用户可见资产" class="headerlink" title="查询用户可见资产"></a>查询用户可见资产</h1><pre>
 curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' -H 'Authorization: Bearer b5abc7c5b5cf4be780370d607181c5fa' 'http://192.168.9.250/api/assets/v1/assets/'
 </pre>
 
@@ -264,7 +265,7 @@ curl -X POST --header 'Content-Type: application/json' --header 'Accept: applica
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-07-22T08:16:54.622Z" itemprop="dateUpdated">2018-07-22 16:16:54</time>
+    Last updated: <time datetime="2018-08-06T07:43:32.045Z" itemprop="dateUpdated">2018-08-06 15:43:32</time>
 </span><br>
 
 
