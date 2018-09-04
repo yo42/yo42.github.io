@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="Python Data Structures  数据结构:  列表、字典、元组、集合。    数据结构（Data Structures）基本上人如其名——它们只是一种结构，能够将一些数据聚合在一起。换句话说，它们是用来存储一系列相关数据的集合。 Python 中有四种内置的数据结构——列表（List）、元组（Tuple）、字典（Dictionary）和集合（Set） 列表(List):List 数">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-04T12:01:04.976Z">
+<meta property="og:updated_time" content="2018-09-04T12:03:08.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python CookBook(Data Structures)">
 <meta name="twitter:description" content="Python Data Structures  数据结构:  列表、字典、元组、集合。    数据结构（Data Structures）基本上人如其名——它们只是一种结构，能够将一些数据聚合在一起。换句话说，它们是用来存储一系列相关数据的集合。 Python 中有四种内置的数据结构——列表（List）、元组（Tuple）、字典（Dictionary）和集合（Set） 列表(List):List 数">
@@ -251,8 +251,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>&#123;x: x**<span class="number">2</span> <span class="keyword">for</span> x <span class="keyword">in</span> (<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>)&#125;</span><br><span class="line">&#123;<span class="number">2</span>: <span class="number">4</span>, <span class="number">4</span>: <span class="number">16</span>, <span class="number">6</span>: <span class="number">36</span>&#125;</span><br></pre></td></tr></table></figure>
 <p>当键是字符串的时候，使用参数赋值的方式来指定键值对更方便：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dict(sape=<span class="number">4139</span>, guido=<span class="number">4127</span>, jack=<span class="number">4098</span>)</span><br><span class="line">&#123;<span class="string">'sape'</span>: <span class="number">4139</span>, <span class="string">'guido'</span>: <span class="number">4127</span>, <span class="string">'jack'</span>: <span class="number">4098</span>&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="遍历的技巧"><a href="#遍历的技巧" class="headerlink" title="遍历的技巧:"></a>遍历的技巧:</h4><pre><code>鉴于字典可能包含大量的数据，Python支持对字典的遍历。字典可用于以各种方式存储信息，因此有多种遍历字典的方式:可遍历字典的所有键-值对、键或值(key-value)。
-</code></pre><p>遍历字典时，键和对应的值可以用 <code>items()</code> 方法一次性全部得到。</p>
+<h4 id="遍历的技巧"><a href="#遍历的技巧" class="headerlink" title="遍历的技巧:"></a>遍历的技巧:</h4><p>​    鉴于字典可能包含大量的数据，Python支持对字典的遍历。字典可用于以各种方式存储信息，因此有多种遍历字典的方式:可遍历字典的所有键-值对、键或值(key-value)。</p>
+<p>遍历字典时，键和对应的值可以用 <code>items()</code> 方法一次性全部得到。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>knights = &#123;<span class="string">'gallahad'</span>: <span class="string">'the pure'</span>, <span class="string">'robin'</span>: <span class="string">'the brave'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> k, v <span class="keyword">in</span> knights.items():</span><br><span class="line"><span class="meta">... </span>    print(k, v)</span><br><span class="line">...</span><br><span class="line">gallahad the pure</span><br><span class="line">robin the brave</span><br></pre></td></tr></table></figure>
 <p>使用keys()方法可以遍历字典中的所有键</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">favorite_languages= &#123;</span><br><span class="line">	<span class="string">'jen'</span>: <span class="string">'python'</span>,</span><br><span class="line">	<span class="string">'sarah'</span>: <span class="string">'c'</span>,</span><br><span class="line">	<span class="string">'edward'</span>: <span class="string">'ruby'</span>,</span><br><span class="line">	<span class="string">'phil'</span>: <span class="string">'python'</span></span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> favorite_languages.keys():</span><br><span class="line">	print(name.title())</span><br></pre></td></tr></table></figure>
@@ -310,7 +310,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-04T12:01:04.976Z" itemprop="dateUpdated">2018-09-04 20:01:04</time>
+    Last updated: <time datetime="2018-09-04T12:03:08.630Z" itemprop="dateUpdated">2018-09-04 20:03:08</time>
 </span><br>
 
 
