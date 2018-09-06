@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="如果你从 Python 解释器退出然后再进入它，你所做的定义（函数和变量）都会消失。因此，如果你想写某些更长的程序，你最好使用一个文本编辑器来为解释器准备输入，然后以这个文件作为输入来运行程序。这也被称为创建一个 脚本。当你的程序变得更长，你也许会想将它分成几个文件方便管理。你也许还想在几个程序中直接使用函数而不用在每个程序中拷贝函数定义。 为了支持这种特性，Python 可以把定义放入一个文件中">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-06T11:58:50.049Z">
+<meta property="og:updated_time" content="2018-09-06T12:01:08.229Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python模块">
 <meta name="twitter:description" content="如果你从 Python 解释器退出然后再进入它，你所做的定义（函数和变量）都会消失。因此，如果你想写某些更长的程序，你最好使用一个文本编辑器来为解释器准备输入，然后以这个文件作为输入来运行程序。这也被称为创建一个 脚本。当你的程序变得更长，你也许会想将它分成几个文件方便管理。你也许还想在几个程序中直接使用函数而不用在每个程序中拷贝函数定义。 为了支持这种特性，Python 可以把定义放入一个文件中">
@@ -153,7 +153,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模块进阶"><span class="post-toc-number">1.</span> <span class="post-toc-text">模块进阶</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">2.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将可执行模块当做脚本"><span class="post-toc-number">3.</span> <span class="post-toc-text">将可执行模块当做脚本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模块搜索路径"><span class="post-toc-number">4.</span> <span class="post-toc-text">模块搜索路径</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意-1"><span class="post-toc-number">5.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#“编译的”-Python-文件"><span class="post-toc-number"></span> <span class="post-toc-text">“编译的” Python 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标准模块"><span class="post-toc-number"></span> <span class="post-toc-text">标准模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#dir-函数"><span class="post-toc-number"></span> <span class="post-toc-text">dir() 函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包"><span class="post-toc-number"></span> <span class="post-toc-text">包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用-导入包"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用 * 导入包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#包内引用"><span class="post-toc-number">2.</span> <span class="post-toc-text">包内引用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重目录中的包"><span class="post-toc-number">3.</span> <span class="post-toc-text">多重目录中的包</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number"></span> <span class="post-toc-text">参考资料</span></a>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模块进阶"><span class="post-toc-number">1.</span> <span class="post-toc-text">模块进阶</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">2.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#将可执行模块当做脚本"><span class="post-toc-number">3.</span> <span class="post-toc-text">将可执行模块当做脚本</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模块搜索路径"><span class="post-toc-number">4.</span> <span class="post-toc-text">模块搜索路径</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意-1"><span class="post-toc-number">5.</span> <span class="post-toc-text">注意</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#“编译的”-Python-文件"><span class="post-toc-number"></span> <span class="post-toc-text">“编译的” Python 文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#标准模块"><span class="post-toc-number"></span> <span class="post-toc-text">标准模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#dir-函数"><span class="post-toc-number"></span> <span class="post-toc-text">dir() 函数</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#包"><span class="post-toc-number"></span> <span class="post-toc-text">包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#核心风格：import语句的模块顺序"><span class="post-toc-number">1.</span> <span class="post-toc-text">核心风格：import语句的模块顺序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用-导入包"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用 * 导入包</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#包内引用"><span class="post-toc-number">3.</span> <span class="post-toc-text">包内引用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#多重目录中的包"><span class="post-toc-number">4.</span> <span class="post-toc-text">多重目录中的包</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number"></span> <span class="post-toc-text">参考资料</span></a>
         </nav>
     </aside>
 
@@ -264,6 +264,15 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echofilter(input, output, delay=<span class="number">0.7</span>, atten=<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
 <p>需要注意的是使用 <code>from package import item</code> 方式导入包时，这个子项（item）既可以是包中的一个子模块（或一个子包），也可以是包中定义的其它命名，像函数、类或变量。<code>import</code> 语句首先核对是否包中有这个子项，如果没有，它假定这是一个模块，并尝试加载它。如果没有找到它，会引发一个 <a href="https://docs.python.org/3/library/exceptions.html#ImportError" target="_blank" rel="noopener">ImportError</a> 异常。</p>
 <p>相反，使用类似 <code>import item.subitem.subsubitem</code> 这样的语法时，这些子项必须是包，最后的子项可以是包或模块，但不能是前面子项中定义的类、函数或变量。</p>
+<h4 id="核心风格：import语句的模块顺序"><a href="#核心风格：import语句的模块顺序" class="headerlink" title="核心风格：import语句的模块顺序"></a>核心风格：import语句的模块顺序</h4><p>我们推荐所有的模块在Python模块的开头部分导入。而且最好按照这样的顺序：</p>
+<ul>
+<li>Python标准库模块</li>
+<li>Python第三方模块</li>
+<li>应用程序自定义模块</li>
+</ul>
+<p>然后使用一个空行分割这三类模块的导入语句。这将确保模块使用固定的习惯导入，有助于减少每个模块需要的import语句数目。其他的提示请参考“Python’s Style Guide”, PEP8。</p>
+<p>解释器执行到这条语句，如果在搜索路径中找到了指定的模块，就会加载它。该过程遵循作用域原则，如果在一个模块的顶层导入，那么它的作用域就是全局的；如果在函数中导入，那么它的作用域是局部的。</p>
+<p>如果模块是被第一次导入，它将被加载并执行。</p>
 <h4 id="使用-导入包"><a href="#使用-导入包" class="headerlink" title="使用 * 导入包"></a>使用 * 导入包</h4><p>那么当用户写下 <code>from sound.effects import *</code> 时会发生什么事？理想中，总是希望在文件系统中找出包中所有的子模块，然后导入它们。这可能会花掉很长时间，并且出现期待之外的边界效应，导出了希望只能显式导入的包。</p>
 <p>对于包的作者来说唯一的解决方案就是给提供一个明确的包索引。<a href="https://docs.python.org/3/reference/simple_stmts.html#import" target="_blank" rel="noopener">import</a> 语句按如下条件进行转换：执行 <code>from package import *</code> 时，如果包中的 <code>__init__.py</code> 代码定义了一个名为 <code>__all__</code> 的列表，就会按照列表中给出的模块名进行导入。新版本的包发布时作者可以任意更新这个列表。如果包作者不想 <code>import *</code>的时候导入他们的包中所有模块，那么也可能会决定不支持它（ <code>import *</code> ）。例如， <code>sound/effects/__init__.py</code> 这个文件可能包括如下代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__all__ = [<span class="string">"echo"</span>, <span class="string">"surround"</span>, <span class="string">"reverse"</span>]</span><br></pre></td></tr></table></figure>
@@ -293,7 +302,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-06T11:58:50.049Z" itemprop="dateUpdated">2018-09-06 19:58:50</time>
+    Last updated: <time datetime="2018-09-06T12:01:08.229Z" itemprop="dateUpdated">2018-09-06 20:01:08</time>
 </span><br>
 
 
