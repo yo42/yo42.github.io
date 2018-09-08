@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>python错误和异常 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Technology">
+    <meta name="description" content="Python使用名为”异常”的特殊对象来管理程序执行期间发生的错误。 语法错误语法错误，也叫作解析错误，这可能是你在学习Python的过程中，最容易碰到的错误： 12345&amp;gt;&amp;gt;&amp;gt; while True print(&apos;Hello world&apos;)  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1    while True print(&apos;Hello world&apos;)">
+<meta name="keywords" content="Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python错误和异常">
+<meta property="og:url" content="https://yo42.github.io/2018/09/08/python错误和异常/index.html">
+<meta property="og:site_name" content="Yo42">
+<meta property="og:description" content="Python使用名为”异常”的特殊对象来管理程序执行期间发生的错误。 语法错误语法错误，也叫作解析错误，这可能是你在学习Python的过程中，最容易碰到的错误： 12345&amp;gt;&amp;gt;&amp;gt; while True print(&apos;Hello world&apos;)  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1    while True print(&apos;Hello world&apos;)">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-08T14:34:20.694Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python错误和异常">
+<meta name="twitter:description" content="Python使用名为”异常”的特殊对象来管理程序执行期间发生的错误。 语法错误语法错误，也叫作解析错误，这可能是你在学习Python的过程中，最容易碰到的错误： 12345&amp;gt;&amp;gt;&amp;gt; while True print(&apos;Hello world&apos;)  File &quot;&amp;lt;stdin&amp;gt;&quot;, line 1    while True print(&apos;Hello world&apos;)">
+    
+        <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Yo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">python错误和异常</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">python错误和异常</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-08T13:51:01.289Z" itemprop="datePublished" class="page-time">
+  2018-09-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法错误"><span class="post-toc-number">1.</span> <span class="post-toc-text">语法错误</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#异常"><span class="post-toc-number">2.</span> <span class="post-toc-text">异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#捕捉异常"><span class="post-toc-number">3.</span> <span class="post-toc-text">捕捉异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#抛出异常"><span class="post-toc-number">4.</span> <span class="post-toc-text">抛出异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#用户定义的异常"><span class="post-toc-number">5.</span> <span class="post-toc-text">用户定义的异常</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#定义清理操作"><span class="post-toc-number">6.</span> <span class="post-toc-text">定义清理操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#预定义的清理操作"><span class="post-toc-number">7.</span> <span class="post-toc-text">预定义的清理操作</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number"></span> <span class="post-toc-text">参考资料</span></a>
+        </nav>
+    </aside>
+
+
+<article id="post-python错误和异常"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">python错误和异常</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-08 21:51:01" datetime="2018-09-08T13:51:01.289Z"  itemprop="datePublished">2018-09-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Python使用名为”异常”的特殊对象来管理程序执行期间发生的错误。</p>
+<h3 id="语法错误"><a href="#语法错误" class="headerlink" title="语法错误"></a>语法错误</h3><p>语法错误，也叫作解析错误，这可能是你在学习Python的过程中，最容易碰到的错误：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span> print(<span class="string">'Hello world'</span>)</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span> print(<span class="string">'Hello world'</span>)</span><br><span class="line">                   ^</span><br><span class="line">SyntaxError: invalid syntax</span><br></pre></td></tr></table></figure>
+<p>解析结果显示出错的行代码，并用小箭头指明解析到错误的具体位置。<br>这个错误是在箭头所指向的位置：在本例中，错误是在这个函数中检测到的 <a href="https://docs.python.org/3/library/functions.html#print" target="_blank" rel="noopener"><code>print()</code></a>，因为print函数之前应该存在的冒号缺失。文件名称和行号都被打印出来，这样你就可以知道这行有错误的代码是在哪个位置了。</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>一条语句或表达式即便是语法正确也有可能在运行的时候报错。程序执行过程中遇到的错误被称为<em>异常</em>。这种错误并不一定是致命错误，我们一会儿来看如何在程序中处理异常。大多数的异常并非由程序自身处理，而是会显示类似下面列举的错误信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">10</span> * (<span class="number">1</span>/<span class="number">0</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ZeroDivisionError: division by zero</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">4</span> + spam*<span class="number">3</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: name <span class="string">'spam'</span> <span class="keyword">is</span> <span class="keyword">not</span> defined</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">TypeError: Can<span class="string">'t convert '</span>int<span class="string">' object to str implicitly</span></span><br></pre></td></tr></table></figure>
+<p>错误信息的最后一行告诉我们程序遇到了什么类型的错误。异常有不同的类型，而其类型名称将会在错误信息中输出出来。上述样例中的异常类型依次是： <a href="https://docs.python.org/3/library/exceptions.html#ZeroDivisionError" target="_blank" rel="noopener"><code>ZeroDivisionError</code></a> 、 <a href="https://docs.python.org/3/library/exceptions.html#NameError" target="_blank" rel="noopener"><code>NameError</code></a> 以及 <a href="https://docs.python.org/3/library/exceptions.html#TypeError" target="_blank" rel="noopener"><code>TypeError</code></a> 。错误信息中的异常类型是执行时抛出的内建异常类型。所有的内建类型都会如此，而虽然这是一个有用的惯例，但是用户自定义的异常并非一定如此。标准的异常类型是内建的标识符而非预留关键词。</p>
+<p>这一行剩下的部分能告诉我们此处抛出异常的具体信息及触发的原因。</p>
+<p>错误信息的前面部分能够通过栈调用信息告诉我们抛出异常时的上下文。一般情况下栈调用信息会包含函数调用所在的源代码行，但是不会包含从标准输入读入的信息。</p>
+<p><a href="https://docs.python.org/3/library/exceptions.html#bltin-exceptions" target="_blank" rel="noopener">Built-in Exceptions</a> 列举了内建异常类型以及各自的含义。</p>
+<h3 id="捕捉异常"><a href="#捕捉异常" class="headerlink" title="捕捉异常"></a>捕捉异常</h3><p>Python 允许编程处理特定的异常。在下面这个例子中，程序要求用户进行输入，直到接收到一个合法的整数，同时也允许用户中断程序 （使用 <code>Control-C</code> 或操作系统支持的其他方式）；注意，由用户引起的中断通过抛出 <a href="https://docs.python.org/3/library/exceptions.html#KeyboardInterrupt" target="_blank" rel="noopener"><code>KeyboardInterrupt</code></a> 异常来实现。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>        x = int(input(<span class="string">"Please enter a number: "</span>))</span><br><span class="line"><span class="meta">... </span>        <span class="keyword">break</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">except</span> ValueError:</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">"Oops!  That was no valid number.  Try again..."</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p> <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a>声明的工作原理如下：</p>
+<ul>
+<li>程序首先执行 <em>try</em> 子句 （位于 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 和 <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 关键字之间的内容)。</li>
+<li>如果没有异常产生，则 <em>except</em> 子句被跳过，并且 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 声明的部分运行结束</li>
+<li>如果在执行 <em>try</em> 子句的过程中产生了一个异常，那么这个子句范围内产生异常位置之后的代码不会被执行，如果产生的异常位于 <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 关键字后提到的若干异常之中，那么<em>except</em> 子句的内容将会接着 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 中刚被中止的位置继续执行。</li>
+<li>如果产生的异常并不在 <em>exception</em> 后面包含的若干异常中，该异常将会被抛给上一层的 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 语句；如果一个异常没有被任何一层 <em>try-exception</em> 语句捕捉，它就成为一个 <em>未处理异常</em> ，程序执行将因此停止并显示如上所示的消息。<br>一个 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 声明可以包含多个 <em>except</em> 子句来针对不同的异常做出不同的处理，但最多只有一个 <em>except</em> 子句（即错误处理器）会被执行。错误处理器只处理出现在对应 <em>try</em> 子句中产生的异常，而不会处理同一  <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a>  语句中其他错误处理器中的异常。一个 <em>except</em> 子句可以指定多个异常，这些异常用一个元组包含起来，例如：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">... </span><span class="keyword">except</span> (RuntimeError, TypeError, NameError):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>如果两个异常是同一类或者具有同一个父类，那它们可以在一个 <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 子句中同时存在（但是另一种情况并不成立——如果一个类是另一个类的派生类，那么这两个类不能在一个 <em>except</em> 子句中同时存在）。例如，下面的这段代码中，将按照顺序输出 <code>B, C, D</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(B)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(C)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cls <span class="keyword">in</span> [B, C, D]:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">raise</span> cls()</span><br><span class="line">    <span class="keyword">except</span> D:</span><br><span class="line">        print(<span class="string">"D"</span>)</span><br><span class="line">    <span class="keyword">except</span> C:</span><br><span class="line">        print(<span class="string">"C"</span>)</span><br><span class="line">    <span class="keyword">except</span> B:</span><br><span class="line">        print(<span class="string">"B"</span>)</span><br></pre></td></tr></table></figure>
+<p>注意：如果这些 <em>except</em> 子句按照相反的顺序排列（<code>except B</code>在最前面），则输出会变成 B，B，B。——和异常匹配的第一个 <em>except</em> 子句会被触发。</p>
+<p>最后一个 except 子句可以省略异常名用作通配符。使用这个方法要特别谨慎，因为这个方法可能掩盖一个真正的编程错误！它还可以用于打印错误后，重新引发异常（也允许调用者处理异常）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = open(<span class="string">'myfile.txt'</span>)</span><br><span class="line">    s = f.readline()</span><br><span class="line">    i = int(s.strip())</span><br><span class="line"><span class="keyword">except</span> OSError <span class="keyword">as</span> err:</span><br><span class="line">    print(<span class="string">"OS error: &#123;0&#125;"</span>.format(err))</span><br><span class="line"><span class="keyword">except</span> ValueError:</span><br><span class="line">    print(<span class="string">"Could not convert data to an integer."</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">"Unexpected error:"</span>, sys.exc_info()[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">raise</span></span><br></pre></td></tr></table></figure>
+<p> <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> … <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 语句有一个可选的 <em>else 子句</em>， 当它出现时，必须在所有l except 子句之后。在执行 try 子句之后没有引发异常因此时，它可以用于必须执行的代码。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> arg <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        f = open(arg, <span class="string">'r'</span>)</span><br><span class="line">    <span class="keyword">except</span> OSError:</span><br><span class="line">        print(<span class="string">'cannot open'</span>, arg)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(arg, <span class="string">'has'</span>, len(f.readlines()), <span class="string">'lines'</span>)</span><br><span class="line">        f.close()</span><br></pre></td></tr></table></figure>
+<p> <a href="https://docs.python.org/3/reference/compound_stmts.html#else" target="_blank" rel="noopener"><code>else</code></a> 子句的使用比在 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 子句中增加而外的代码更好，因为他可以避免意外地捕获不被 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> …<a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 语句包含的异常。</p>
+<p>当一个异常发生时，它可能有相关的值，或者是异常的 <em>参数</em>。尝试的有无和参数的类型取决于异常的类型。</p>
+<p>except 子句可以在异常名之后指定变量。这些变量被绑定到一个异常实例中，实例中的参数储存在 <code>instance.args</code> 中。为了方便，异常实例定义了 <a href="https://docs.python.org/3/reference/datamodel.html#object.__str__" target="_blank" rel="noopener"><code>__str__()</code></a> ，所以参数可以被直接打印出来，而不需要引用 <code>.args</code> 。还可以在引发异常之前先实例化异常并根据需要添加任何属性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">raise</span> Exception(<span class="string">'spam'</span>, <span class="string">'eggs'</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> Exception <span class="keyword">as</span> inst:</span><br><span class="line"><span class="meta">... </span>    print(type(inst))    <span class="comment"># 异常实例</span></span><br><span class="line"><span class="meta">... </span>    print(inst.args)     <span class="comment"># 储存在 .args 中的参数</span></span><br><span class="line"><span class="meta">... </span>    print(inst)          <span class="comment"># __str__ 允许参数被直接打印，</span></span><br><span class="line"><span class="meta">... </span>                         <span class="comment"># 但是方法可能会被异常子类复写</span></span><br><span class="line"><span class="meta">... </span>    x, y = inst.args     <span class="comment"># 提取参数</span></span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'x ='</span>, x)</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'y ='</span>, y)</span><br><span class="line">...</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">Exception</span>'&gt;</span></span><br><span class="line"><span class="class"><span class="params">(<span class="string">'spam'</span>, <span class="string">'eggs'</span>)</span></span></span><br><span class="line"><span class="class"><span class="params">(<span class="string">'spam'</span>, <span class="string">'eggs'</span>)</span></span></span><br><span class="line">x = spam</span><br><span class="line">y = eggs</span><br></pre></td></tr></table></figure>
+<p>如果异常带有参数，他们会作为未处理异常的信息中的最后一部分（’detail’）被打印出来。</p>
+<p>异常处理程序不仅仅立刻处理 try 子句中的产生的异常，同时也包括 try 子句中调用函数（即使是间接地）中产生的异常。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">this_fails</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    x = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    this_fails()</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> ZeroDivisionError <span class="keyword">as</span> err:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'Handling run-time error:'</span>, err)</span><br><span class="line">...</span><br><span class="line">Handling run-time error: division by zero</span><br></pre></td></tr></table></figure>
+<h3 id="抛出异常"><a href="#抛出异常" class="headerlink" title="抛出异常"></a>抛出异常</h3><p><a href="https://docs.python.org/3/reference/simple_stmts.html#raise" target="_blank" rel="noopener"><code>raise</code></a> 语句允许开发者显式地引发异常。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">raise</span> NameError(<span class="string">'HiThere'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: HiThere</span><br></pre></td></tr></table></figure>
+<p><a href="https://docs.python.org/3/reference/simple_stmts.html#raise" target="_blank" rel="noopener"><code>raise</code></a> 关键字后跟随表示被抛出异常的单一变量，该变量可以是一个异常实例，或者一个异常类（继承自 <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank" rel="noopener"><code>Exception</code></a>）。如果被传递的变量是一个异常类，它会隐式地无参数调用其构造方法进行实例化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> ValueError  <span class="comment"># 'raise ValueError()' 的简写</span></span><br></pre></td></tr></table></figure>
+<p>如果你只需要知道一个异常被抛出了，但并需要处理它，可以通过一个简单的 <a href="https://docs.python.org/3/reference/simple_stmts.html#raise" target="_blank" rel="noopener"><code>raise</code></a> 语句重新抛出这个异常：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">raise</span> NameError(<span class="string">'HiThere'</span>)</span><br><span class="line"><span class="meta">... </span><span class="keyword">except</span> NameError:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'An exception flew by!'</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">raise</span></span><br><span class="line">...</span><br><span class="line">An exception flew by!</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">NameError: HiThere</span><br></pre></td></tr></table></figure>
+<h3 id="用户定义的异常"><a href="#用户定义的异常" class="headerlink" title="用户定义的异常"></a>用户定义的异常</h3><p>程序可以通过创建一个新的异常类来命名其专属的异常 (参考 <a href="https://docs.python.org/3/tutorial/classes.html#tut-classes" target="_blank" rel="noopener">Classes</a> 以获得更多有关Python类的信息)。 异常通常应该派生自 <a href="https://docs.python.org/3/library/exceptions.html#Exception" target="_blank" rel="noopener"><code>Exception</code></a> 类，无论是直接地还是间接地。</p>
+<p>异常类可以以如通常类一样进行定义，但是通常会保持简洁，一般仅仅提供数个用于异常处理时可以解析异常信息的属性。在创建一个可以能引起多个不同异常的模块时，通常的做法是创建一个由模块定义的异常基类，并为不同的异常条件创建特定的异常子类：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Error</span><span class="params">(Exception)</span>:</span></span><br><span class="line">    <span class="string">"""本模块的异常基类"""</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">InputError</span><span class="params">(Error)</span>:</span></span><br><span class="line">    <span class="string">"""输入中错误引发的异常</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    属性：</span></span><br><span class="line"><span class="string">        expression -- 产生错误输入表达</span></span><br><span class="line"><span class="string">        message -- 错误解释</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, expression, message)</span>:</span></span><br><span class="line">        self.expression = expression</span><br><span class="line">        self.message = message</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TransitionError</span><span class="params">(Error)</span>:</span></span><br><span class="line">    <span class="string">"""尝试不允许状态转换的操作时引发的异常</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    属性：</span></span><br><span class="line"><span class="string">        previous -- 转换前的状态</span></span><br><span class="line"><span class="string">        next -- 尝试转换的状态</span></span><br><span class="line"><span class="string">        message -- 解释为什么特定的转换操作不允许</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, previous, next, message)</span>:</span></span><br><span class="line">        self.previous = previous</span><br><span class="line">        self.next = next</span><br><span class="line">        self.message = message</span><br></pre></td></tr></table></figure>
+<p>大多数的异常定义都以「错误（Error）」结尾，和标准异常的命名类似。</p>
+<p>很多标准模块定义了它们自己的异常，用于报告它们定义的函数中可能产生的错误。有关类的更多信息在章节 <a href="https://docs.python.org/3/tutorial/classes.html#tut-classes" target="_blank" rel="noopener">Classes</a> 中有介绍.</p>
+<h3 id="定义清理操作"><a href="#定义清理操作" class="headerlink" title="定义清理操作"></a>定义清理操作</h3><p> <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 语句有另一个可选的子语句，用于定义必须在所有情况下都执行的清理操作。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">raise</span> KeyboardInterrupt</span><br><span class="line"><span class="meta">... </span><span class="keyword">finally</span>:</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'Goodbye, world!'</span>)</span><br><span class="line">...</span><br><span class="line">Goodbye, world!</span><br><span class="line">KeyboardInterrupt</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">2</span>, <span class="keyword">in</span> &lt;module&gt;</span><br></pre></td></tr></table></figure>
+<p><em>finally 子句</em> 总是在结束 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 语句之前执行，无论是否有异常产生。当异常产生在When an exception  <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 子句中产生并未被 <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 子句捕获（或异常在 <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 或 <a href="https://docs.python.org/3/reference/compound_stmts.html#else" target="_blank" rel="noopener"><code>else</code></a> 子句中产生）时，异常将在 <a href="https://docs.python.org/3/reference/compound_stmts.html#finally" target="_blank" rel="noopener"><code>finally</code></a>子句被执行后再引发。 <a href="https://docs.python.org/3/reference/compound_stmts.html#finally" target="_blank" rel="noopener"><code>finally</code></a> 子句也在「离开的路上」被执行，即当其他子句通过 <a href="https://docs.python.org/3/reference/simple_stmts.html#break" target="_blank" rel="noopener"><code>break</code></a>, <a href="https://docs.python.org/3/reference/simple_stmts.html#continue" target="_blank" rel="noopener"><code>continue</code></a> or <a href="https://docs.python.org/3/reference/simple_stmts.html#return" target="_blank" rel="noopener"><code>return</code></a> 等语句离开 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a> 语句时。以下为一个更加复杂的例子：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(x, y)</span>:</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">try</span>:</span><br><span class="line"><span class="meta">... </span>        result = x / y</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">"division by zero!"</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">else</span>:</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">"result is"</span>, result)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">finally</span>:</span><br><span class="line"><span class="meta">... </span>        print(<span class="string">"executing finally clause"</span>)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>divide(<span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">result <span class="keyword">is</span> <span class="number">2.0</span></span><br><span class="line">executing <span class="keyword">finally</span> clause</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>divide(<span class="number">2</span>, <span class="number">0</span>)</span><br><span class="line">division by zero!</span><br><span class="line">executing <span class="keyword">finally</span> clause</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>divide(<span class="string">"2"</span>, <span class="string">"1"</span>)</span><br><span class="line">executing <span class="keyword">finally</span> clause</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">3</span>, <span class="keyword">in</span> divide</span><br><span class="line">TypeError: unsupported operand type(s) <span class="keyword">for</span> /: <span class="string">'str'</span> <span class="keyword">and</span> <span class="string">'str'</span></span><br></pre></td></tr></table></figure>
+<p>如你所见， <a href="https://docs.python.org/3/reference/compound_stmts.html#finally" target="_blank" rel="noopener"><code>finally</code></a> 子句在任一事件中都被执行。 <a href="https://docs.python.org/3/library/exceptions.html#TypeError" target="_blank" rel="noopener"><code>TypeError</code></a> 异常因进行字符串除法引发，而且未被 <a href="https://docs.python.org/3/reference/compound_stmts.html#except" target="_blank" rel="noopener"><code>except</code></a> 子句捕获，并因此在 <a href="https://docs.python.org/3/reference/compound_stmts.html#finally" target="_blank" rel="noopener"><code>finally</code></a> 子句被执行后之后才产生。</p>
+<p>在实际的应用中， <a href="https://docs.python.org/3/reference/compound_stmts.html#finally" target="_blank" rel="noopener"><code>finally</code></a> 子句在释放外部资源（如文件或者网络连接）时非常非常有用，无论资源是否被成功使用。</p>
+<h3 id="预定义的清理操作"><a href="#预定义的清理操作" class="headerlink" title="预定义的清理操作"></a>预定义的清理操作</h3><p>某些对象定义了在不再需要该对象时需要执行的标准清理操作，无论在该对象上进行的操作是成功还是失败。 查看以下示例，该示例尝试打开文件并将其内容打印到屏幕上。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> open(<span class="string">"myfile.txt"</span>):</span><br><span class="line">    print(line, end=<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+<p>此代码的问题在于，在部分代码执行完毕后，它会使文件保持打开一段不确定的时间。 这在简单脚本中不是问题，但对于较大的应用可能是一个问题。 <a href="https://docs.python.org/3/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> 语句使用允许文件之类的对象是，以保证始终及时正确的清理的方式进行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"myfile.txt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line, end=<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+<p>在语句执行后，文件 <em>f</em> 总是被关闭，即使在处理每行时遇到错误。 与文件相同，提供预定义清理操作的对象将在其文档中指出这一点。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/errors.html" target="_blank" rel="noopener">https://docs.python.org/3/tutorial/errors.html</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-08T14:34:20.694Z" itemprop="dateUpdated">2018-09-08 22:34:20</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Yo">
+            Yo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/08/python错误和异常/&title=《python错误和异常》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/08/python错误和异常/&title=《python错误和异常》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/08/python错误和异常/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python错误和异常》 — Yo42&url=https://yo42.github.io/2018/09/08/python错误和异常/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/08/python错误和异常/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/08/python输入和输出/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">python输入和输出</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Yo &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/08/python错误和异常/&title=《python错误和异常》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/08/python错误和异常/&title=《python错误和异常》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/08/python错误和异常/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python错误和异常》 — Yo42&url=https://yo42.github.io/2018/09/08/python错误和异常/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/08/python错误和异常/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/09/08/python错误和异常/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
