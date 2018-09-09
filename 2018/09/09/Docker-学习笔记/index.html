@@ -20,16 +20,16 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Technology">
     <meta name="description" content="Docker有两个概念需要搞清楚,镜像与容器。 12镜像是从网上docker pub上拉取下来的镜像，拉取下来后可以使用docker run命令进行运行。# dockerhub 是官方构建的一个镜像仓库,类似github一样,上面累积了许多人上传制作的镜像,有官方,有的是用户上传的,任何人都可自由下载。 1容器是将镜像运行在一个容器中 Registry 123用户可以在自己的数据中心搭建私有的re">
-<meta name="keywords" content="DevOps">
+<meta name="keywords" content="Technology">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 学习笔记">
 <meta property="og:url" content="https://yo42.github.io/2018/09/09/Docker-学习笔记/index.html">
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="Docker有两个概念需要搞清楚,镜像与容器。 12镜像是从网上docker pub上拉取下来的镜像，拉取下来后可以使用docker run命令进行运行。# dockerhub 是官方构建的一个镜像仓库,类似github一样,上面累积了许多人上传制作的镜像,有官方,有的是用户上传的,任何人都可自由下载。 1容器是将镜像运行在一个容器中 Registry 123用户可以在自己的数据中心搭建私有的re">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-09T09:59:34.547Z">
+<meta property="og:updated_time" content="2018-09-09T10:03:45.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 学习笔记">
 <meta name="twitter:description" content="Docker有两个概念需要搞清楚,镜像与容器。 12镜像是从网上docker pub上拉取下来的镜像，拉取下来后可以使用docker run命令进行运行。# dockerhub 是官方构建的一个镜像仓库,类似github一样,上面累积了许多人上传制作的镜像,有官方,有的是用户上传的,任何人都可自由下载。 1容器是将镜像运行在一个容器中 Registry 123用户可以在自己的数据中心搭建私有的re">
@@ -136,6 +136,8 @@
 </time>
 
 
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
             
         </h5>
     </div>
@@ -165,6 +167,8 @@
             <time class="post-time" title="2018-09-09 17:52:13" datetime="2018-09-09T09:52:13.149Z"  itemprop="datePublished">2018-09-09</time>
 
             
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
 
 
             
@@ -197,8 +201,8 @@
 <p>查看容器内应用监听的端口：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -ti global_nginx_1 ss -lntp</span><br></pre></td></tr></table></figure>
 <p>制作镜像</p>
-<p>​        两种办法:1.使用Dockerfile,使用docker commit 将容器提交保存为镜像.##最好使用Dockerfile来构建镜像,不推荐docker commit方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">首先编辑一个空白的文本文件命名为DockerfIle，每一个指令的前缀都必须是大写的。</span><br><span class="line">FROM centos    #从centos 这个镜像文件中构建,from字段必须是第一个，可以有多个from</span><br><span class="line">在文件中可以写入运行命令使其在docker容器中运行</span><br><span class="line">RUN echo ’hello world‘ ##在容器中运行的指令</span><br><span class="line">CMD ##</span><br><span class="line">ENV ##后续的指令可以调用变量 $&#123;variable_name&#125;</span><br><span class="line">WORKDIR ##</span><br><span class="line">MAINTAINER ## dockerfile会根据上下文执行的命令，使用缓存，如果修改了使用者名称，将刷新缓存</span><br><span class="line">EXPOSE ## 端口宣告</span><br><span class="line">ADD ##</span><br><span class="line">COPY ##</span><br><span class="line">docker build -t 给镜像一个名称 . #注意，最后有个点，这条命令会读取当前目录下的所有文件以及目录和Dockerfile文件，建议创建新目录来build</span><br><span class="line"></span><br><span class="line">之后使用 docker images 就可以看到自己建立的镜像了，使用docker history 镜像id 就可以查看到刚刚容器的输出结果了。注意这个创建的镜像是不可以开启新的容器的 官方的解释 &quot;Notice the new changed-ubuntu image does not have its own copies of every layer. As can be seen in the diagram below, the new image is sharing its four underlying layers with the ubuntu:15.04 image.&quot;</span><br><span class="line">并且使用 docker history 可以看到刚刚通过文件输出镜像的大小只有11b，这种只是个共享图像层。</span><br><span class="line">一旦你构建或创建了一个新的镜像，你可以使用 docker push 命令将镜像推送到 Docker Hub 。这样你就可以分享你的镜像了，镜像可以是公开的，或者你可以把镜像添加到你的私有仓库中。</span><br></pre></td></tr></table></figure>
+<pre><code>两种办法:1.使用Dockerfile,使用docker commit 将容器提交保存为镜像.##最好使用Dockerfile来构建镜像,不推荐docker commit方法。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">首先编辑一个空白的文本文件命名为DockerfIle，每一个指令的前缀都必须是大写的。</span><br><span class="line">FROM centos    #从centos 这个镜像文件中构建,from字段必须是第一个，可以有多个from</span><br><span class="line">在文件中可以写入运行命令使其在docker容器中运行</span><br><span class="line">RUN echo ’hello world‘ ##在容器中运行的指令</span><br><span class="line">CMD ##</span><br><span class="line">ENV ##后续的指令可以调用变量 $&#123;variable_name&#125;</span><br><span class="line">WORKDIR ##</span><br><span class="line">MAINTAINER ## dockerfile会根据上下文执行的命令，使用缓存，如果修改了使用者名称，将刷新缓存</span><br><span class="line">EXPOSE ## 端口宣告</span><br><span class="line">ADD ##</span><br><span class="line">COPY ##</span><br><span class="line">docker build -t 给镜像一个名称 . #注意，最后有个点，这条命令会读取当前目录下的所有文件以及目录和Dockerfile文件，建议创建新目录来build</span><br><span class="line"></span><br><span class="line">之后使用 docker images 就可以看到自己建立的镜像了，使用docker history 镜像id 就可以查看到刚刚容器的输出结果了。注意这个创建的镜像是不可以开启新的容器的 官方的解释 &quot;Notice the new changed-ubuntu image does not have its own copies of every layer. As can be seen in the diagram below, the new image is sharing its four underlying layers with the ubuntu:15.04 image.&quot;</span><br><span class="line">并且使用 docker history 可以看到刚刚通过文件输出镜像的大小只有11b，这种只是个共享图像层。</span><br><span class="line">一旦你构建或创建了一个新的镜像，你可以使用 docker push 命令将镜像推送到 Docker Hub 。这样你就可以分享你的镜像了，镜像可以是公开的，或者你可以把镜像添加到你的私有仓库中。</span><br></pre></td></tr></table></figure>
 <p>Docker Volumes</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">docker volumes 是一个存储卷,它可以使宿主机与容器里面共享数据,这个数据卷可以是系统文件上的任何一个目录,你可以挂在任意个Volumes 到容器里,多个容器也可以共享一个或多个数据量。</span><br><span class="line">docker run --volumes-from </span><br><span class="line">如果你有一些持久化的数据， 并且想在不同的container之间共享这些数据， 或者想在一些没有持久化的container中使用， </span><br><span class="line">最好的方法就是使用 Data Volumn Container, </span><br><span class="line">在把数据mount到你的container里.(译者：如开篇译者提到的docker的container是无状态的， </span><br><span class="line">也就是说标记状态的数据，例如：数据库数据， 应用程序的log 等等， 是不应该放到container里的， 而是放到 Data Volume </span><br><span class="line">Container里, 这点和funcational programming很像， 所以我喜欢把一般的docker container 叫做 </span><br><span class="line">functional container用来区分 data volume container ）</span><br><span class="line">这里的意思相当于有个最简洁的容器来专门跑存储容器，之后的启动的容器都可以使用 docker run --volumes-from 从存储数据容器中来实现数据的共享。</span><br><span class="line">$ docker run -d -v /dbdata --name dbdata training/postgres</span><br><span class="line"> </span><br><span class="line">这样做之后就可以通过 --volumes-from 把 /dbdata mount到其他的container里了</span><br><span class="line"></span><br><span class="line">$ docker run -d --volumes-from dbdata --name db1 training/postgres</span><br><span class="line"> </span><br><span class="line">还可以继续共享到另外一个container里</span><br><span class="line"></span><br><span class="line">$ docker run -d --volumes-from dbdata --name db2 training/postgres</span><br><span class="line"> </span><br><span class="line">-volumes-from 可以多次使用来 mount 多个conatainer里的多个volumes。</span><br><span class="line"></span><br><span class="line">这个操作是链式的， 我们在db1 中通过 --volumes-from mount进来的 volume可以继续被其他container使用</span><br><span class="line"></span><br><span class="line">$ docker run -d --name db3 --volumes-from db1 training/postgres</span><br><span class="line"> </span><br><span class="line">(译者:</span><br><span class="line"> 这里我们不是直接使用 volume container， 而是使用db1 这个functional container 把volume </span><br><span class="line">挂载到另外一个 funcational container上的，所谓的链式就是 dbdata -&gt; db1 -&gt; db3)</span><br><span class="line"></span><br><span class="line">如果你把所有mount volumes的container都移除掉， 包括初始化的那个 dbdata container， volume才会被移除掉。通过这个属性可以方便的升级升级数据或者在不同container间migrate数据.</span><br><span class="line"></span><br><span class="line">备份、恢复和移植数据卷</span><br><span class="line"></span><br><span class="line">Volume的另外一个用处就是备份、恢复和migrate数据。 具体的做法如下，使用 --volumes-from 来创建一个新的container mount这个volume</span><br><span class="line"></span><br><span class="line">$ sudo docker run --volumes-from dbdata -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata</span><br><span class="line"> </span><br><span class="line">&gt;</span><br><span class="line">    这里我们启动了一个新的container， </span><br><span class="line">从 dbdata 挂载了一个volume。同时挂载了一个本地目录到这个container里。最后我们通过一个 tar命令把 dbdata 里的数据备份到了 /backup 里。命令结束并且停止这个container后我们就在本地得到了一个备份的数据.</span><br><span class="line"></span><br><span class="line">(译者: 这里使用的 ubuntu container， 就是为了把volume中的数据打包备份到host的某一个目录里。)</span><br><span class="line"></span><br><span class="line">备份的数据可以恢复到这个container， 或者其他使用这个volume的container。首先创建一个container</span><br><span class="line"></span><br><span class="line">$ sudo docker run -v /dbdata --name dbdata2 ubuntu</span><br><span class="line"> </span><br><span class="line">&gt;    之后un-tar备份文件到 data volume 里</span><br><span class="line"></span><br><span class="line">$ sudo docker run --volumes-from dbdata2 -v $(pwd):/backup busybox tar xvf /backup/backup.tar</span><br><span class="line"> </span><br><span class="line">你可以使用你喜欢的工具加上上面的技术来自动备份，迁移和恢复数据</span><br></pre></td></tr></table></figure>
 <p>实践:在Docker容器中运行web应用</p>
@@ -226,7 +230,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-09T09:59:34.547Z" itemprop="dateUpdated">2018-09-09 17:59:34</time>
+    Last updated: <time datetime="2018-09-09T10:03:45.823Z" itemprop="dateUpdated">2018-09-09 18:03:45</time>
 </span><br>
 
 
@@ -246,6 +250,8 @@
 
         <div class="post-footer">
             
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
 
             
 <div class="page-share-wrap">
