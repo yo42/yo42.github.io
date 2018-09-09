@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="类就是一组数据和函数的集合。创建了一个新的类意味着创建了一个全新的对象 类型，也就允许我们创建新的此类型的 实例。每个类实例都带有属性以维护其状态。同样也有方法（在它自己的类中定义）来修改这些状态。 相比其他编程语言，使用 Python 的类机制创建类是最方便简洁的。Python 的类机制结合了 C++ 和 Modua-3 的机制，同时也符合所有面向对象编程的标准：类继承机制允许有多个基类，一个派">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-09T09:19:34.549Z">
+<meta property="og:updated_time" content="2018-09-09T09:25:09.570Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python面向对象编程 ">
 <meta name="twitter:description" content="类就是一组数据和函数的集合。创建了一个新的类意味着创建了一个全新的对象 类型，也就允许我们创建新的此类型的 实例。每个类实例都带有属性以维护其状态。同样也有方法（在它自己的类中定义）来修改这些状态。 相比其他编程语言，使用 Python 的类机制创建类是最方便简洁的。Python 的类机制结合了 C++ 和 Modua-3 的机制，同时也符合所有面向对象编程的标准：类继承机制允许有多个基类，一个派">
@@ -388,8 +388,9 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>sum(i*i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>))                 <span class="comment"># 平方之和</span></span><br><span class="line"><span class="number">285</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>xvec = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>yvec = [<span class="number">7</span>, <span class="number">5</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sum(x*y <span class="keyword">for</span> x,y <span class="keyword">in</span> zip(xvec, yvec))         <span class="comment"># 乘积</span></span><br><span class="line"><span class="number">260</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> math <span class="keyword">import</span> pi, sin</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sine_table = &#123;x: sin(x*pi/<span class="number">180</span>) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">91</span>)&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>unique_words = set(word  <span class="keyword">for</span> line <span class="keyword">in</span> page  <span class="keyword">for</span> word <span class="keyword">in</span> line.split())</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>valedictorian = max((student.gpa, student.name) <span class="keyword">for</span> student <span class="keyword">in</span> graduates)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>data = <span class="string">'golf'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(data[i] <span class="keyword">for</span> i <span class="keyword">in</span> range(len(data)<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>))</span><br><span class="line">[<span class="string">'f'</span>, <span class="string">'l'</span>, <span class="string">'o'</span>, <span class="string">'g'</span>]</span><br></pre></td></tr></table></figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
-<li><a href="https://docs.python.org/3/tutorial/classes.html" target="_blank" rel="noopener">https://docs.python.org/3/tutorial/classes.html</a></li>
-<li><a href="http://funhacks.net/explore-python/Class/class_and_object.html" target="_blank" rel="noopener">http://funhacks.net/explore-python/Class/class_and_object.html</a></li>
+<li><a href="https://docs.python.org/3/tutorial/classes.html" target="_blank" rel="noopener">python官方文档</a></li>
+<li><a href="http://funhacks.net/explore-python/Class/class_and_object.html" target="_blank" rel="noopener">python之旅</a></li>
+<li><a href="https://bop.mol.uno/14.oop.html" target="_blank" rel="noopener">简明python</a></li>
 <li><a href="https://wizardforcel.gitbooks.io/w3school-python/content/24.html" target="_blank" rel="noopener">https://wizardforcel.gitbooks.io/w3school-python/content/24.html</a></li>
 <li><a href="http://yangcongchufang.com/%E9%AB%98%E7%BA%A7python%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/python-object-class.html" target="_blank" rel="noopener">http://yangcongchufang.com/%E9%AB%98%E7%BA%A7python%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80/python-object-class.html</a></li>
 <li><a href="https://mrlongx.com/index.php/2017/09/27/core-python-ch13/" target="_blank" rel="noopener">https://mrlongx.com/index.php/2017/09/27/core-python-ch13/</a></li>
@@ -403,7 +404,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-09T09:19:34.549Z" itemprop="dateUpdated">2018-09-09 17:19:34</time>
+    Last updated: <time datetime="2018-09-09T09:25:09.570Z" itemprop="dateUpdated">2018-09-09 17:25:09</time>
 </span><br>
 
 
