@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="关于游戏服内外网穿透大致一个场景:公司网络区分了内外网，游戏服务器架设在内网，而手机连接wifi是属于外网，需要满足个需求，外网环境(公司wifi、或个人办工电脑机器)实现正常访问内网游戏服。 涉及HTTP七层的转发以及TCP四层的转发 大致原理:部署转发代理服(包含外网网卡)，通过NGinx代理转发请求，内外网DNS劫持，实现。因为Nginx从1.9版本开始支持了TCP四层的转发，故使用Ngin">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/游戏服内外网穿透/内外网穿透.png">
-<meta property="og:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/游戏服内外网穿透/内外网穿透2.png">
-<meta property="og:updated_time" content="2018-09-11T06:38:12.156Z">
+<meta property="og:image" content="https://yo42.github.io/2018/09/11/游戏服内外网穿透/内外网穿透.png">
+<meta property="og:image" content="https://yo42.github.io/2018/09/11/游戏服内外网穿透/内外网穿透2.png">
+<meta property="og:updated_time" content="2018-09-11T06:41:09.550Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="游戏服内外网穿透">
 <meta name="twitter:description" content="关于游戏服内外网穿透大致一个场景:公司网络区分了内外网，游戏服务器架设在内网，而手机连接wifi是属于外网，需要满足个需求，外网环境(公司wifi、或个人办工电脑机器)实现正常访问内网游戏服。 涉及HTTP七层的转发以及TCP四层的转发 大致原理:部署转发代理服(包含外网网卡)，通过NGinx代理转发请求，内外网DNS劫持，实现。因为Nginx从1.9版本开始支持了TCP四层的转发，故使用Ngin">
-<meta name="twitter:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/游戏服内外网穿透/内外网穿透.png">
+<meta name="twitter:image" content="https://yo42.github.io/2018/09/11/游戏服内外网穿透/内外网穿透.png">
     
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
@@ -185,16 +185,16 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/Users/yo42/yo-home/yo-home/source/_posts/游戏服内外网穿透/内外网穿透.png" alt="内外网穿透" title="">
+                    <img src="内外网穿透.png" alt="内外网穿透" title="">
                 </div>
                 <div class="image-caption">内外网穿透</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/Users/yo42/yo-home/yo-home/source/_posts/游戏服内外网穿透/内外网穿透2.png" alt="内外网穿透2" title="">
+                    <img src="内外网穿透2.png" alt="内外网穿透" title="">
                 </div>
-                <div class="image-caption">内外网穿透2</div>
+                <div class="image-caption">内外网穿透</div>
             </figure>
 <p>Nginx配置nginx.conf:</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stream &#123;</span><br><span class="line"></span><br><span class="line"> include /etc/nginx/vhost.d/01-proxy.conf;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -218,7 +218,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-11T06:38:12.156Z" itemprop="dateUpdated">2018-09-11 14:38:12</time>
+    Last updated: <time datetime="2018-09-11T06:41:09.550Z" itemprop="dateUpdated">2018-09-11 14:41:09</time>
 </span><br>
 
 
