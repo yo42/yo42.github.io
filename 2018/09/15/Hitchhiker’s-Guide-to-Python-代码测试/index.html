@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
     
 
     
@@ -14,7 +12,7 @@
     
     
     
-    <title>Hitchhiker’s Guide to Python-代码测试 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
+    <title>Hitchhiker’s Guide to Python-代码测试 | Yo42 | Dont't Panic,Do not go gentle into that good night~</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -37,18 +35,18 @@
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-</head>
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide" >
+    <aside id="menu" class="hide">
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -68,28 +66,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/"  >
+              <a href="/">
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives"  >
+              <a href="/archives">
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags"  >
+              <a href="/tags">
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://yo42.github.io/Aobut-Me/"  >
+              <a href="https://yo42.github.io/Aobut-Me/">
                 <i class="icon icon-lg icon-user"></i>
                 About Me
               </a>
@@ -158,13 +156,12 @@
     </aside>
 
 
-<article id="post-Hitchhiker’s-Guide-to-Python-代码测试"
-  class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-Hitchhiker’s-Guide-to-Python-代码测试" class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Hitchhiker’s Guide to Python-代码测试</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-15 12:39:30" datetime="2018-09-15T04:39:30.430Z"  itemprop="datePublished">2018-09-15</time>
+            <time class="post-time" title="2018-09-15 12:39:30" datetime="2018-09-15T04:39:30.430Z" itemprop="datePublished">2018-09-15</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
@@ -197,7 +194,7 @@
 </ul>
 <h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="Unittest-单元测试"><a href="#Unittest-单元测试" class="headerlink" title="Unittest 单元测试"></a>Unittest 单元测试</h3><p><a href="http://docs.python.org/library/unittest.html#module-unittest" target="_blank" rel="noopener"><code>unittest</code></a> 是 Python 标准库中自带的测试模块。任何一个使用过 Junit，nUnit, 或 CppUnit 工具的人对它的 API 都会比较熟悉。</p>
 <p>我们可以通过继承 <a href="http://docs.python.org/library/unittest.html#unittest.TestCase" target="_blank" rel="noopener"><code>unittest.TestCase</code></a> 来创建测试用例：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line"></span><br><span class="line">def fun(x):</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">class MyTest(unittest.TestCase):</span><br><span class="line">    def test(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.assertEqual(fun(<span class="number">3</span>), <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line"></span><br><span class="line">def fun(x):</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">class MyTest(unittest.TestCase):</span><br><span class="line">    def test(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">self</span>.assertEqual(fun(<span class="number">3</span>), <span class="number">4</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>Python 2.7 以后，<code>unittest</code> 已支持测试自动发现机制。</p>
 <blockquote>
 <p><a href="http://docs.python.org/library/unittest.html" target="_blank" rel="noopener">关于 unittest 的标准库文档</a></p>
@@ -205,49 +202,49 @@
 <h3 id="Doctest"><a href="#Doctest" class="headerlink" title="Doctest"></a>Doctest</h3><p><a href="http://docs.python.org/library/doctest.html#module-doctest" target="_blank" rel="noopener"><code>doctest</code></a> 模块会在代码的 Docstrings 中寻找类似于 Python 交互会话的字串（译者注：<code>&gt;&gt;&gt;</code>），并会将其执行，以证实工作正常。</p>
 <p>Doctest 模块的使用场景与单元测试有所不同：它们通常不是很详细，并且不会用特别的用例或者处理复杂的 Bug。Doctest 主要是作为模块和其部件主要用例的表述性文档，因此，Doctest 需在每一次完整测试 套件运行时自动运行。</p>
 <p>函数中的一个简单 Doctest 例子：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def square(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"Return the square of x.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; square(2)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; square(-2)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x * x</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    import doctest</span><br><span class="line">    doctest.testmod()</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">def square(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"Return the square of x.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; square(2)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; square(-2)</span></span><br><span class="line"><span class="string">    4</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x * x</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    import doctest</span><br><span class="line">    doctest.testmod()</span><br></pre></td></tr></tbody></table></figure>
 <p>当使用 <code>python module.py</code> 这样的命令行运行这个模块时，Doctest 将会运行，并会在结果与文档字符串的描述不一致时报错。</p>
 <h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><h3 id="py-test"><a href="#py-test" class="headerlink" title="py.test"></a>py.test</h3><p>相比于 Python 标准库里的 unittest 模块，py.test 也是一个没有模板（no-boilerplate）的备选方案：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pytest</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install pytest</span><br></pre></td></tr></tbody></table></figure>
 <p>尽管这个测试工具功能完备，并且可扩展，它仍然能保持语法很简单。创建一个测试组件和写一个带有诸多函数的模块一样容易：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># content of test_sample.py</span></span><br><span class="line">def func(x):</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">def test_answer():</span><br><span class="line">    assert func(<span class="number">3</span>) == <span class="number">5</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># content of test_sample.py</span></span><br><span class="line">def func(x):</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">def test_answer():</span><br><span class="line">    assert func(<span class="number">3</span>) == <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure>
 <p>运行命令 py.test ：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ py.test</span><br><span class="line">=========================== test session starts ============================</span><br><span class="line">platform darwin -- Python <span class="number">2.7</span><span class="number">.1</span> -- pytest<span class="number">-2.2</span><span class="number">.1</span></span><br><span class="line">collecting ... collected <span class="number">1</span> items</span><br><span class="line"></span><br><span class="line">test_sample.py F</span><br><span class="line"></span><br><span class="line">================================= FAILURES =================================</span><br><span class="line">_______________________________ test_answer ________________________________</span><br><span class="line"></span><br><span class="line">    def test_answer():</span><br><span class="line">&gt;       assert func(<span class="number">3</span>) == <span class="number">5</span></span><br><span class="line">E       assert <span class="number">4</span> == <span class="number">5</span></span><br><span class="line">E        +  where <span class="number">4</span> = func(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">test_sample.py:<span class="number">5</span>: AssertionError</span><br><span class="line">========================= <span class="number">1</span> failed in <span class="number">0.02</span> seconds =========================</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ py.test</span><br><span class="line">=========================== test session starts ============================</span><br><span class="line">platform darwin -- Python <span class="number">2.7</span><span class="number">.1</span> -- pytest<span class="number">-2.2</span><span class="number">.1</span></span><br><span class="line">collecting ... collected <span class="number">1</span> items</span><br><span class="line"></span><br><span class="line">test_sample.py F</span><br><span class="line"></span><br><span class="line">================================= FAILURES =================================</span><br><span class="line">_______________________________ test_answer ________________________________</span><br><span class="line"></span><br><span class="line">    def test_answer():</span><br><span class="line">&gt;       assert func(<span class="number">3</span>) == <span class="number">5</span></span><br><span class="line">E       assert <span class="number">4</span> == <span class="number">5</span></span><br><span class="line">E        +  where <span class="number">4</span> = func(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">test_sample.py:<span class="number">5</span>: AssertionError</span><br><span class="line">========================= <span class="number">1</span> failed in <span class="number">0.02</span> seconds =========================</span><br></pre></td></tr></tbody></table></figure>
 <p>可以看出，这要比 unittest 模块中实现相同功能所要求的工作量少得多。</p>
 <blockquote>
 <p><a href="https://docs.pytest.org/en/latest/" target="_blank" rel="noopener">py.test</a></p>
 </blockquote>
 <h3 id="Hypothesis"><a href="#Hypothesis" class="headerlink" title="Hypothesis"></a>Hypothesis</h3><p>Hypothesis 让你编写被示例源码参数化的测试库。它会生成简单易懂的例子，使你的测试失败， 让你花更少的力气找到更多的错误。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install hypothesis</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install hypothesis</span><br></pre></td></tr></tbody></table></figure>
 <p>例如，测试浮动列表要尝试很多例子，但是会报告每个错误的最小例子（区分异常类型和位置）：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@given(lists(floats(allow_nan=<span class="keyword">False</span>, allow_infinity=<span class="keyword">False</span>), min_size=<span class="number">1</span>))</span><br><span class="line">def test_mean(xs):</span><br><span class="line">    mean = sum(xs) / len(xs)</span><br><span class="line">    assert min(xs) &lt;= mean(xs) &lt;= max(xs)</span><br><span class="line">Falsifying example: test_mean(</span><br><span class="line">    xs=[<span class="number">1.7976321109618856e+308</span>, <span class="number">6.102390043022755e+303</span>]</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@given(lists(floats(allow_nan=<span class="keyword">False</span>, allow_infinity=<span class="keyword">False</span>), min_size=<span class="number">1</span>))</span><br><span class="line">def test_mean(xs):</span><br><span class="line">    mean = sum(xs) / len(xs)</span><br><span class="line">    assert min(xs) &lt;= mean(xs) &lt;= max(xs)</span><br><span class="line">Falsifying example: test_mean(</span><br><span class="line">    xs=[<span class="number">1.7976321109618856e+308</span>, <span class="number">6.102390043022755e+303</span>]</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure>
 <p>Hypothesis 是实用且强大的工具，很多时候它都会找出被其他测试工具所遗漏的错误。 它能与 py.test 很好地集成，无论是简单亦或者是高级场景中，你都会觉得它很趁手。</p>
 <blockquote>
 <p><a href="https://hypothesis.readthedocs.io/en/latest/" target="_blank" rel="noopener">hypothesis</a></p>
 </blockquote>
 <h3 id="tox"><a href="#tox" class="headerlink" title="tox"></a>tox</h3><p>tox 是一个自动化测试环境管理，并能针对多版本解释器配置进行测试的工具。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install tox</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install tox</span><br></pre></td></tr></tbody></table></figure>
 <p>tox 允许你通过简单的配置文件，来设置复杂的多参数测试矩阵。</p>
 <blockquote>
 <p><a href="https://tox.readthedocs.io/en/latest/" target="_blank" rel="noopener">tox</a></p>
 </blockquote>
 <h3 id="Unittest2"><a href="#Unittest2" class="headerlink" title="Unittest2"></a>Unittest2</h3><p>Unittest2 是 Python 2.7 中 unittest 模块的向后兼容补丁，对比 Python 2.7 之前的版本提供了更好的 API 和断言语法。</p>
 <p>如果使用 Python 2.6 版本或者以下，你可以使用 pip 安装 unittest2：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install unittest2</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install unittest2</span><br></pre></td></tr></tbody></table></figure>
 <p>推荐你使用 unittest 之名导入模块，目的是更容易地把代码移植到新的版本中：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import unittest2 <span class="keyword">as</span> unittest</span><br><span class="line"></span><br><span class="line">class MyTest(unittest.TestCase):</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import unittest2 <span class="keyword">as</span> unittest</span><br><span class="line"></span><br><span class="line">class MyTest(unittest.TestCase):</span><br><span class="line">    ...</span><br></pre></td></tr></tbody></table></figure>
 <p>如果切换到新的 Python 版本，并且不再需要 unittest2 模块，你只需要在测试模块中改变 import 内容，而不必改变其它代码。</p>
 <blockquote>
 <p><a href="http://pypi.python.org/pypi/unittest2" target="_blank" rel="noopener">unittest2</a></p>
 </blockquote>
 <h3 id="mock"><a href="#mock" class="headerlink" title="mock"></a>mock</h3><p><a href="http://docs.python.org/library/unittest.mock.html#module-unittest.mock" target="_blank" rel="noopener"><code>unittest.mock</code></a> 是 Python 中用于测试的一个库。 Python 3.3 版本中，将存在于自带的标准库中 —— <a href="https://docs.python.org/dev/library/unittest.mock" target="_blank" rel="noopener">标准库中的 unittest.mock</a>。</p>
 <p>对于 Python 相对早的版本，如下操作：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install mock</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install mock</span><br></pre></td></tr></tbody></table></figure>
 <p>在测试环境下，使用 mock 对象能够替换部分系统，并且对它们的使用进行断言。</p>
 <p>例如，你可以对一个方法打猴子补丁：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from mock import MagicMock</span><br><span class="line">thing = ProductionClass()</span><br><span class="line">thing.method = MagicMock(return_value=<span class="number">3</span>)</span><br><span class="line">thing.method(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, key=<span class="string">'value'</span>)</span><br><span class="line"></span><br><span class="line">thing.method.assert_called_with(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, key=<span class="string">'value'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from mock import MagicMock</span><br><span class="line">thing = ProductionClass()</span><br><span class="line">thing.method = MagicMock(return_value=<span class="number">3</span>)</span><br><span class="line">thing.method(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, key=<span class="string">'value'</span>)</span><br><span class="line"></span><br><span class="line">thing.method.assert_called_with(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, key=<span class="string">'value'</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>在测试环境下，你可以使用 <code>patch</code> 修饰器来 mock 某个模块中的类或对象。在下面这个例子中，一直返回相同结果的外部查询系统使用 mock 替换（但仅用在测试期间）。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def mock_search(<span class="keyword">self</span>):</span><br><span class="line">    class MockSearchQuerySet(SearchQuerySet):</span><br><span class="line">        def __iter__(<span class="keyword">self</span>):</span><br><span class="line">            <span class="keyword">return</span> iter([<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>])</span><br><span class="line">    <span class="keyword">return</span> MockSearchQuerySet()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里的 SearchForm 指的是 myapp 引入的类,</span></span><br><span class="line"><span class="comment"># 而不是类 SearchForm 本身自己</span></span><br><span class="line">@mock.patch(<span class="string">'myapp.SearchForm.search'</span>, mock_search)</span><br><span class="line">def test_new_watchlist_activities(<span class="keyword">self</span>):</span><br><span class="line">    <span class="comment"># get_search_results 运行一次搜索并对结果进行迭代</span></span><br><span class="line">    <span class="keyword">self</span>.assertEqual(len(myapp.get_search_results(q=<span class="string">"fish"</span>)), <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">def mock_search(<span class="keyword">self</span>):</span><br><span class="line">    class MockSearchQuerySet(SearchQuerySet):</span><br><span class="line">        def __iter__(<span class="keyword">self</span>):</span><br><span class="line">            <span class="keyword">return</span> iter([<span class="string">"foo"</span>, <span class="string">"bar"</span>, <span class="string">"baz"</span>])</span><br><span class="line">    <span class="keyword">return</span> MockSearchQuerySet()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里的 SearchForm 指的是 myapp 引入的类,</span></span><br><span class="line"><span class="comment"># 而不是类 SearchForm 本身自己</span></span><br><span class="line">@mock.patch(<span class="string">'myapp.SearchForm.search'</span>, mock_search)</span><br><span class="line">def test_new_watchlist_activities(<span class="keyword">self</span>):</span><br><span class="line">    <span class="comment"># get_search_results 运行一次搜索并对结果进行迭代</span></span><br><span class="line">    <span class="keyword">self</span>.assertEqual(len(myapp.get_search_results(q=<span class="string">"fish"</span>)), <span class="number">3</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p>Mock 还提供许多其它方法，你可以很轻松地配置和控制它的行为。</p>
 <blockquote>
 <p><a href="http://www.voidspace.org.uk/python/mock/" target="_blank" rel="noopener">Mock 的文档</a></p>
@@ -295,7 +292,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&amp;title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -305,7 +302,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&amp;title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&amp;source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -315,7 +312,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&amp;url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&amp;via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -398,7 +395,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Yo &copy; 2018</span>
+        <p><span>Yo © 2018</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -416,7 +413,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&amp;title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -426,7 +423,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&amp;title=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&amp;source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -436,7 +433,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码测试》 — Yo42&amp;url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/&amp;via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -465,7 +462,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-<script src="/js/main.min.js?v=1.7.2"></script>
+
 
 
 <div class="search-panel" id="search-panel">
@@ -485,7 +482,6 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
-<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
@@ -496,5 +492,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-</body>
-</html>
+
+
+
+<script type="text/javascript" src="/bundle.js"></script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
