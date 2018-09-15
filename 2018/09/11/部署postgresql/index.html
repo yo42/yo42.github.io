@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>部署postgresql | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="部署postgres数据库(Docker)使用sameersbn/postgresql工作目录:/home/postgres1234567891011121314postgresql:  restart: always  image: sameersbn/postgresql:9.6-2  volumes:    - $PWD:/var/lib/postgresql    - /var/run/p">
+<meta name="keywords" content="DevOps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="部署postgresql">
+<meta property="og:url" content="https://yo42.github.io/2018/09/11/部署postgresql/index.html">
+<meta property="og:site_name" content="Yo42">
+<meta property="og:description" content="部署postgres数据库(Docker)使用sameersbn/postgresql工作目录:/home/postgres1234567891011121314postgresql:  restart: always  image: sameersbn/postgresql:9.6-2  volumes:    - $PWD:/var/lib/postgresql    - /var/run/p">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-15T03:22:00.637Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="部署postgresql">
+<meta name="twitter:description" content="部署postgres数据库(Docker)使用sameersbn/postgresql工作目录:/home/postgres1234567891011121314postgresql:  restart: always  image: sameersbn/postgresql:9.6-2  volumes:    - $PWD:/var/lib/postgresql    - /var/run/p">
+    
+        <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Yo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">部署postgresql</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">部署postgresql</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-11T06:55:29.804Z" itemprop="datePublished" class="page-time">
+  2018-09-11
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署postgres数据库-Docker"><span class="post-toc-number">1.</span> <span class="post-toc-text">部署postgres数据库(Docker)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用sameersbn-postgresql"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">使用sameersbn/postgresql</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#工作目录-home-postgres"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">工作目录:/home/postgres</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#9-6-main-pg-hba-conf-权限配置"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">9.6/main/pg_hba.conf # 权限配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#centos-安装postgresql-client"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">centos 安装postgresql-client</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#修改默认密码"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">修改默认密码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置java应用连接pgsql数据库"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">配置java应用连接pgsql数据库</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-部署postgresql"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">部署postgresql</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-11 14:55:29" datetime="2018-09-11T06:55:29.804Z"  itemprop="datePublished">2018-09-11</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="部署postgres数据库-Docker"><a href="#部署postgres数据库-Docker" class="headerlink" title="部署postgres数据库(Docker)"></a>部署postgres数据库(Docker)</h3><h4 id="使用sameersbn-postgresql"><a href="#使用sameersbn-postgresql" class="headerlink" title="使用sameersbn/postgresql"></a>使用sameersbn/postgresql</h4><h4 id="工作目录-home-postgres"><a href="#工作目录-home-postgres" class="headerlink" title="工作目录:/home/postgres"></a>工作目录:/home/postgres</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">postgresql:</span><br><span class="line">  restart: always</span><br><span class="line">  image: sameersbn/postgresql:9.6-2</span><br><span class="line">  volumes:</span><br><span class="line">    - $PWD:/var/lib/postgresql</span><br><span class="line">    - /var/run/postgresql/:/var/run/postgresql/</span><br><span class="line">    - /home/nucleus-d1/rsyncd/data/:/home/nucleus-d1/rsyncd/data/</span><br><span class="line">    - /home/postgres/zhangxiaohao/:/home/postgres/zhangxiaohao/</span><br><span class="line">  environment:</span><br><span class="line">    - DB_USER=postgres</span><br><span class="line">    - DB_PASS=xxxxx</span><br><span class="line">    - DB_EXTENSION=</span><br><span class="line">  ports:</span><br><span class="line">    - &quot;0.0.0.0:5432:5432&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="9-6-main-pg-hba-conf-权限配置"><a href="#9-6-main-pg-hba-conf-权限配置" class="headerlink" title="9.6/main/pg_hba.conf # 权限配置"></a>9.6/main/pg_hba.conf # 权限配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># &quot;local&quot; is for Unix domain socket connections only</span><br><span class="line">local   all             all                                  trust</span><br><span class="line">host    all             all             112.94.5.240/28      md5</span><br><span class="line">host    all             all             192.168.0.0/16       md5</span><br><span class="line">host    all             all             0.0.0.0/0            md5</span><br><span class="line"># IPv4 local connections:</span><br><span class="line">host    all             all             127.0.0.1/32         trust</span><br><span class="line">host    all             all             112.94.5.240/28      md5</span><br><span class="line">host    all             all             192.168.0.0/16       md5</span><br><span class="line">host    all             all             0.0.0.0/0            md5</span><br></pre></td></tr></table></figure>
+<p>开放办公室ssh通道连接pgsql数据库</p>
+<h4 id="centos-安装postgresql-client"><a href="#centos-安装postgresql-client" class="headerlink" title="centos 安装postgresql-client"></a>centos 安装postgresql-client</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install postgresql</span><br></pre></td></tr></table></figure>
+<h4 id="修改默认密码"><a href="#修改默认密码" class="headerlink" title="修改默认密码"></a>修改默认密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user postgres  with password xxx</span><br></pre></td></tr></table></figure>
+<h4 id="配置java应用连接pgsql数据库"><a href="#配置java应用连接pgsql数据库" class="headerlink" title="配置java应用连接pgsql数据库"></a>配置java应用连接pgsql数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- data_center_jdbc_url=jdbc:postgresql://192.168.8.143:5432/d1_statistics?autoReconnect=true&amp;useUnicode=true&amp;rewriteBatchedStatements=true&amp;useSSL=false</span><br><span class="line">- data_center_jdbc_username=postgres</span><br><span class="line">- data_center_jdbc_password=xxx</span><br></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-15T03:22:00.637Z" itemprop="dateUpdated">2018-09-15 11:22:00</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Yo">
+            Yo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/11/部署postgresql/&title=《部署postgresql》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/11/部署postgresql/&title=《部署postgresql》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/11/部署postgresql/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《部署postgresql》 — Yo42&url=https://yo42.github.io/2018/09/11/部署postgresql/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/11/部署postgresql/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/11/游戏服内外网穿透/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">游戏服内外网穿透</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Yo &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/11/部署postgresql/&title=《部署postgresql》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/11/部署postgresql/&title=《部署postgresql》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/11/部署postgresql/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《部署postgresql》 — Yo42&url=https://yo42.github.io/2018/09/11/部署postgresql/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/11/部署postgresql/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/09/11/部署postgresql/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
