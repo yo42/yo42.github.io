@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yo42.github.io/2018/09/15/Hitchhiker%E2%80%99s-Guide-to-Python-%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84/</loc>
+    
+    <lastmod>2018-09-15T04:33:11.818Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yo42.github.io/2018/09/09/python-%E5%BA%95%E5%B1%82%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-virtualenv/</loc>
+    
+    <lastmod>2018-09-15T04:31:25.340Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yo42.github.io/2018/09/11/%E9%83%A8%E7%BD%B2postgresql/</loc>
     
     <lastmod>2018-09-15T03:22:00.637Z</lastmod>
@@ -26,13 +40,6 @@
     <loc>https://yo42.github.io/2018/09/09/Docker-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2018-09-09T10:03:45.823Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yo42.github.io/2018/09/09/python-%E5%BA%95%E5%B1%82%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83-virtualenv/</loc>
-    
-    <lastmod>2018-09-09T09:49:38.446Z</lastmod>
     
   </url>
   
