@@ -145,6 +145,352 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Docker-远程API调用启用TLS加密"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-11 13:06:02" datetime="2018-09-11T05:06:02.930Z"  itemprop="datePublished">2018-09-11</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/11/Docker-远程API调用启用TLS加密/">Docker 远程API调用启用TLS加密</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        普通的HTTP模式（非常不安全）：服务端（CentOS 7，IP地址192.168.9.7）：
+sed -i 's/\(OPTIONS="\)/\1-H 0.0.0.0:1699 /' /etc/sysconfig/docker
+# 也就是加入 -H 0.0.0.0:1699参数
+
+## 重启docker。
+## 客户端配置：
+
+echo 'export DOCKER_HOST="tcp:/...
+    
+
+        <a href="/2018/09/11/Docker-远程API调用启用TLS加密/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Docker-学习笔记"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-09 17:52:13" datetime="2018-09-09T09:52:13.149Z"  itemprop="datePublished">2018-09-09</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/09/Docker-学习笔记/">Docker 学习笔记</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Docker有两个概念需要搞清楚,镜像与容器。
+12镜像是从网上docker pub上拉取下来的镜像，拉取下来后可以使用docker run命令进行运行。# dockerhub 是官方构建的一个镜像仓库,类似github一样,上面累积了许多人上传制作的镜像,有官方,有的是用户上传的,任何人都可自由下载。
+1容器是将镜像运行在一个容器中
+Registry
+123用户可以在自己的数据中心搭建私有...
+    
+
+        <a href="/2018/09/09/Docker-学习笔记/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-你的-Python-开发者环境"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-09 17:45:16" datetime="2018-09-09T09:45:16.827Z"  itemprop="datePublished">2018-09-09</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/09/你的-Python-开发者环境/">我的 Python 开发环境</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        文本编辑器任何可以做纯文本编辑的工具都可以用来写Python代码，但是用功能更加强大的文本编辑器可以使你的编程工作更加轻松。
+VimVim 是一个用键盘快捷键代替菜单和图标来操作的文本编辑器。对于 Vim 编辑器，有几个插件和设置可以用来辅助 Python 开发。如果你只用 Python 开发，一个好的开始就是把缩进和换行的默认设置设置成兼容 PEP 8 的值。 在你的主目录里，打开一个叫作...
+    
+
+        <a href="/2018/09/09/你的-Python-开发者环境/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-python-底层虚拟环境-virtualenv"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-09 17:41:57" datetime="2018-09-09T09:41:57.899Z"  itemprop="datePublished">2018-09-09</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/09/python-底层虚拟环境-virtualenv/">python 底层虚拟环境 virtualenv</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        virtualenv 是一个创建独立的 Python 环境。 virtualenv 会创建一个文件夹，其中包含使用 Python 项目所有所需的可执行文件。
+它可以单独使用，用于代替 Pipenv 。
+通过 pip 安装 virtualenv ：
+1$ pip install virtualenv
+测试下是否安装完成
+1$ virtualenv --version
+
+为项目创建一个虚拟环境：...
+    
+
+        <a href="/2018/09/09/python-底层虚拟环境-virtualenv/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-python-next-step"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-09 17:34:05" datetime="2018-09-09T09:34:05.479Z"  itemprop="datePublished">2018-09-09</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/09/python-next-step/">python next step</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        迈出下一步如果到现在你已经阅读过本书并且编写了许多程序，那么你一定已经开始熟悉并且习惯 Python 了。或许你已经创建了一些 Python 程序来尝试完成一些工作，同时锻炼你自己的 Python 技能。如果你尚未至此，你也应该作出努力。现在我们面临的问题是“下一步该做什么？”。
+我会建议你试图解决这个问题：
+
+编写一款你自己的命令行地址簿程序，你可以用它浏览、添加、编辑、删除或搜索你的联系...
+    
+
+        <a href="/2018/09/09/python-next-step/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-python面向对象编程"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-09 14:09:14" datetime="2018-09-09T06:09:14.543Z"  itemprop="datePublished">2018-09-09</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/09/python面向对象编程/">python面向对象编程 </a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        类就是一组数据和函数的集合。创建了一个新的类意味着创建了一个全新的对象 类型，也就允许我们创建新的此类型的 实例。每个类实例都带有属性以维护其状态。同样也有方法（在它自己的类中定义）来修改这些状态。
+相比其他编程语言，使用 Python 的类机制创建类是最方便简洁的。Python 的类机制结合了 C++ 和 Modua-3 的机制，同时也符合所有面向对象编程的标准：类继承机制允许有多个基类，...
+    
+
+        <a href="/2018/09/09/python面向对象编程/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-python错误和异常"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-08 21:51:01" datetime="2018-09-08T13:51:01.289Z"  itemprop="datePublished">2018-09-08</time>
+
+        
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/08/python错误和异常/">python错误和异常</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        Python使用名为”异常”的特殊对象来管理程序执行期间发生的错误。
+语法错误语法错误，也叫作解析错误，这可能是你在学习Python的过程中，最容易碰到的错误：
+12345&gt;&gt;&gt; while True print('Hello world')  File "&lt;stdin&gt;", line 1    while True print('Hello world')  ...
+    
+
+        <a href="/2018/09/08/python错误和异常/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-python输入和输出"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -289,349 +635,12 @@
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-Python-NoteBook"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-09-02 20:27:45" datetime="2018-09-02T12:27:45.272Z"  itemprop="datePublished">2018-09-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/02/Python-NoteBook/">Python CookBook(Data Structures)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Python Data Structures
- 数据结构:
- 列表、字典、元组、集合。
-
-
-
-数据结构（Data Structures）基本上人如其名——它们只是一种结构，能够将一些数据聚合在一起。换句话说，它们是用来存储一系列相关数据的集合。
-Python 中有四种内置的数据结构——列表（List）、元组（Tuple）、字典（Dictionary）和集合（Set）
-列表(List):Lis...
-    
-
-        <a href="/2018/09/02/Python-NoteBook/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-从容器到容器云"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-22 21:09:46" datetime="2018-07-22T13:09:46.079Z"  itemprop="datePublished">2018-07-22</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/22/从容器到容器云/">从容器到容器云</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        2013年初，一个名字从云计算领域横空出世，并在整个IT行业激起千层浪。这就是Docker——一个孕育着新思想的“容器”。Docker选择容器作为核心和基础，依靠容器技术支撑的Docker迅速成为国内外各大云计算厂商以及开发者手中的至宝。在一片热火朝天之后，新的革命已经悄然来临。
-云计算平台回首历史，云计算时代蕴育出了众多的云计算平台，虽然在服务类型或平台功能上有所差异，但它们的本质上如出一...
-    
-
-        <a href="/2018/07/22/从容器到容器云/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-DevOps-And-AIOps"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-22 16:38:48" datetime="2018-07-22T08:38:48.627Z"  itemprop="datePublished">2018-07-22</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/22/DevOps-And-AIOps/">DevOps And AIOps</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        先论DevOpsDevOps 是一天实践方法，在保证高质量的前提下缩短系统变更从提交到部署。
-DevOps 模式定义DevOps 集文化理念、实践和工具于一身，可以提高组织高速交付应用程序和服务的能力，与使用传统软件开发和基础设施管理流程相比，能够帮助组织更快地发展和改进产品。这种速度使组织能够更好地服务其客户，并在市场上更高效地参与竞争。
-DevOps 的工作原理在 DevOps 模式下，...
-    
-
-        <a href="/2018/07/22/DevOps-And-AIOps/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-深夜的口琴声"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-22 16:08:24" datetime="2018-07-22T08:08:24.355Z"  itemprop="datePublished">2018-07-22</time>
-
-        
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/22/深夜的口琴声/">深夜的口琴声</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        深夜的口琴声
-                
-                    
-                    
-                
-                
-            
-
-                
-                    
-                    
-                
-       ...
-    
-
-        <a href="/2018/07/22/深夜的口琴声/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-关于云主机系统的初始化"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-07-02 15:21:19" datetime="2018-07-02T07:21:19.688Z"  itemprop="datePublished">2018-07-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/07/02/关于云主机系统的初始化/">关于云主机系统的初始化</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        在许多IaaS平台中新购买的机器资源并不是开箱即用，一般需根业务进行定制，又或者你作为一个强迫症患者想让自己的机器变得更加完美，所以在购买完机器后进行初始化流程是很有必要滴。
-机器初始化完成可以打包为云平台的镜像，方便后续的集成。
-云供应商：Ucloud系统版本号：Ubuntu 16.04 LTS。关于设置机器的数据盘视情况而操作禁用系统自动更新：
-sed -i '/Unattended-U...
-    
-
-        <a href="/2018/07/02/关于云主机系统的初始化/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-许三观卖血记"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-06-25 22:32:47" datetime="2018-06-25T14:32:47.833Z"  itemprop="datePublished">2018-06-25</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Books/">Books</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/06/25/许三观卖血记/">许三观卖血记</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        《许三观卖血记》是余华1995年创作的一部长篇小说。小说讲述了一个名叫许三观的屁民通过卖血而活着的故事。
-许三观是一名在城里丝厂的送蚕工，他从四叔的口中得知“没卖过血的人身子骨都不结实，娶不到女人”的规矩。
-跟着根龙与啊方，许三观开始了他的卖血之路。他得知卖血前需要喝大量的水
- 阿方在下面说：“我们早晨什么都没吃，就喝了几碗水，现在又喝了几碗，到了城里还得再喝几碗，一直要喝到肚子又胀又疼，牙...
-    
-
-        <a href="/2018/06/25/许三观卖血记/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Books/">Books</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
-        <li class="post-list-item fade">
-            <article id="post-JumpServer-运维安全审计系统"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-06-23 18:31:43" datetime="2018-06-23T10:31:43.211Z"  itemprop="datePublished">2018-06-23</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/06/23/JumpServer-运维安全审计系统/">JumpServer 运维安全审计系统</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;运维人员的公钥，以及云主机的登录。
-现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。
-综合上述缺点，需要一个审计系统。
-目前业界比较良心的开源审计系统http:/...
-    
-
-        <a href="/2018/06/23/JumpServer-运维安全审计系统/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
 <nav id="page-nav">
     <div class="inner">
-    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
+    <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
     </div>
 </nav>
 

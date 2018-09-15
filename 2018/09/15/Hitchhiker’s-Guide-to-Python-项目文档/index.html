@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hitchhiker’s Guide to Python-项目文档 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Technology">
+    <meta name="description" content="可读性是 Python 开发人员在项目和代码文档中的主要关注点。遵循一些简单的最佳实践可以为您和其他人节省大量时间。 项目文档在根目录下 README 文件应该对用户和项目维护者提供概述信息。它应该是原始文本或非常容易阅读的标记写成，如 reStructuredText 或 Markdown。 它应该包含几行对项目或库的作用的解释（假设用户不知道项目的任何内容），软件源站点的 URL 和一些基本的">
+<meta name="keywords" content="Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hitchhiker’s Guide to Python-项目文档">
+<meta property="og:url" content="https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/index.html">
+<meta property="og:site_name" content="Yo42">
+<meta property="og:description" content="可读性是 Python 开发人员在项目和代码文档中的主要关注点。遵循一些简单的最佳实践可以为您和其他人节省大量时间。 项目文档在根目录下 README 文件应该对用户和项目维护者提供概述信息。它应该是原始文本或非常容易阅读的标记写成，如 reStructuredText 或 Markdown。 它应该包含几行对项目或库的作用的解释（假设用户不知道项目的任何内容），软件源站点的 URL 和一些基本的">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-15T04:46:44.388Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hitchhiker’s Guide to Python-项目文档">
+<meta name="twitter:description" content="可读性是 Python 开发人员在项目和代码文档中的主要关注点。遵循一些简单的最佳实践可以为您和其他人节省大量时间。 项目文档在根目录下 README 文件应该对用户和项目维护者提供概述信息。它应该是原始文本或非常容易阅读的标记写成，如 reStructuredText 或 Markdown。 它应该包含几行对项目或库的作用的解释（假设用户不知道项目的任何内容），软件源站点的 URL 和一些基本的">
+    
+        <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Yo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hitchhiker’s Guide to Python-项目文档</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hitchhiker’s Guide to Python-项目文档</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-15T04:39:18.634Z" itemprop="datePublished" class="page-time">
+  2018-09-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#项目文档"><span class="post-toc-number">1.</span> <span class="post-toc-text">项目文档</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他文档"><span class="post-toc-number">2.</span> <span class="post-toc-text">其他文档</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Sphinx"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">Sphinx</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#reStructuredText"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">reStructuredText</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#源码文档建议"><span class="post-toc-number">3.</span> <span class="post-toc-text">源码文档建议</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注释代码块"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">注释代码块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Docstrings-的魔法"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">Docstrings 的魔法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Docstrings-与块注释的比较"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Docstrings 与块注释的比较</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编写-Docstrings"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">编写 Docstrings</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其他工具"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他工具</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">5.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hitchhiker’s-Guide-to-Python-项目文档"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hitchhiker’s Guide to Python-项目文档</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-15 12:39:18" datetime="2018-09-15T04:39:18.634Z"  itemprop="datePublished">2018-09-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>可读性是 Python 开发人员在项目和代码文档中的主要关注点。遵循一些简单的最佳实践可以为您和其他人节省大量时间。</p>
+<h2 id="项目文档"><a href="#项目文档" class="headerlink" title="项目文档"></a>项目文档</h2><p>在根目录下 <code>README</code> 文件应该对用户和项目维护者提供概述信息。它应该是原始文本或非常容易阅读的标记写成，如 <a href="http://docs.python-guide.org/en/latest/writing/documentation/#restructuredtext-ref" target="_blank" rel="noopener">reStructuredText</a> 或 Markdown。 它应该包含几行对项目或库的作用的解释（假设用户不知道项目的任何内容），软件源站点的 URL 和一些基本的信用信息。这个文件应该是代码阅读者的主要入口点。</p>
+<p><code>INSTALL</code> 文件对 Python 来说不是必需的。安装指令通常被简化为一个命令，如 <code>pip install module</code> 或 <code>python setup.py install</code> 并且添加到 <code>README</code> 文件中。</p>
+<p><code>LICENSE</code> 文件应该 <em>始终</em> 存在并且详细说明软件在什么许可证下对公众可用。</p>
+<p><code>TODO</code> 文件或 <code>README</code> 文件中的 <code>TODO</code> 部分应该列出代码的开发计划。</p>
+<p><code>CHANGELOG</code> 文件或在 <code>README</code> 对应的部分应该基于最新版本编写一个代码变更概述。</p>
+<h2 id="其他文档"><a href="#其他文档" class="headerlink" title="其他文档"></a>其他文档</h2><p>根据项目的不同，文档中最好能包含下列部分或所有的内容：</p>
+<ul>
+<li>一份 <strong>简短介绍</strong> ，应该包含几个简化的用例，简要概述该产品能够用来做什么。</li>
+<li>一份 <strong>教程</strong> ，应该展示一些主要的用例以及更多的使用细节。读者能够跟着一步步成功搭建工作原型。</li>
+<li>一份 <strong>API 文档</strong>，通常从代码中产生（参见 <a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/documentation.html#docstring-ref" target="_blank" rel="noopener">docstrings</a>）。它会列出所有的可供公共访问的接口、参数和返回值。</li>
+<li>一份 <strong>贡献文档</strong> 适用于潜在贡献者。这可以包括项目的代码规范和通用设计的策略讲解。</li>
+</ul>
+<h3 id="Sphinx"><a href="#Sphinx" class="headerlink" title="Sphinx"></a>Sphinx</h3><p><a href="http://sphinx.pocoo.org/" target="_blank" rel="noopener">Sphinx</a> 无疑是最流行的 Python 文档工具。<strong>我们推荐在项目中使用 Sphinx。</strong> 它能把 <a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/documentation.html#restructuredtext-ref" target="_blank" rel="noopener">reStructuredText</a> 标记语言转换为流行的输出格式，包括 HTML、LaTeX (可打印 PDF 版本)、手册和纯文本。</p>
+<p><a href="http://readthedocs.org/" target="_blank" rel="noopener">Read The Docs</a> 是一个 <em>超棒的</em> 并且 <em>免费的</em> 文档托管平台，可以托管您的 <a href="http://sphinx.pocoo.org/" target="_blank" rel="noopener">Sphinx</a> 文档。您可以为它配置提交钩子到您的代码库中，这样文档的重新构建即可自动进行。</p>
+<p>运行 <a href="http://sphinx.pocoo.org/" target="_blank" rel="noopener">Sphinx</a> 时首先导入你的代码，它会使用 Python 的内省功能来提取所有函数，方法和类签名，同时提取附带的文档字符串，并将其全部编译成结构良好且易于阅读的文档。</p>
+<blockquote>
+<p>Sphinx 因生成 API 文档而著名，但它也适用于普通的文档。本指南（译者注：原始文档）使用 <a href="http://sphinx.pocoo.org/" target="_blank" rel="noopener">Sphinx</a> 进行构建， 并托管在 <a href="http://readthedocs.org/" target="_blank" rel="noopener">Read The Docs</a> 上。</p>
+</blockquote>
+<h3 id="reStructuredText"><a href="#reStructuredText" class="headerlink" title="reStructuredText"></a>reStructuredText</h3><p>大多数 Python 文档是用 <a href="http://docutils.sourceforge.net/rst.html" target="_blank" rel="noopener">reStructuredText</a> 编写的。它是一个内建了所有可选扩展的 Markdown 解析器。</p>
+<p><a href="http://sphinx.pocoo.org/rest.html" target="_blank" rel="noopener">reStructuredText Primer</a> 和 <a href="http://docutils.sourceforge.net/docs/user/rst/quickref.html" target="_blank" rel="noopener">reStructuredText Quick Reference</a> 这两个文档应该能帮助你快速熟悉它的语法。</p>
+<h2 id="源码文档建议"><a href="#源码文档建议" class="headerlink" title="源码文档建议"></a>源码文档建议</h2><p>注释能使代码清晰，将其加入到代码中是为了理解代码起来更容易。注释在 Python 中以一个 hash 开始（数字符号）（”#”）。</p>
+<p>在 Python 中我们使用 <em>文档字符串（docstrings）</em> 用来描述模块、类和函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def square_and_rooter(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"Return the square root of self times self."</span><span class="string">""</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>一般来说，我们要遵循 <a href="https://www.python.org/dev/peps/pep-0008#comments" target="_blank" rel="noopener"><strong>PEP 8#comments</strong></a> （” Python 风格指南”）的注释部分。 更多关于 docstrings 的内容可以在 <a href="https://www.python.org/dev/peps/pep-0257#specification" target="_blank" rel="noopener"><strong>PEP 0257#specification</strong></a> （docstrings 约定指南） 上找到。</p>
+<h3 id="注释代码块"><a href="#注释代码块" class="headerlink" title="注释代码块"></a>注释代码块</h3><p><em>请不要使用三引号去注释代码</em>。 这不是好的实践，因为面向行的命令行处理工具， 比如说 <code>grep</code>，将会很难判断注释掉的代码是否是激活的。对每一个注释行，最好使用带有合适缩进的井号。您的编辑器可能很容易做到这一点，并能使用快捷键就切换 注释 / 取消注释。</p>
+<h3 id="Docstrings-的魔法"><a href="#Docstrings-的魔法" class="headerlink" title="Docstrings 的魔法"></a>Docstrings 的魔法</h3><p>一些工具使用 Docstrings 来嵌入不止是文档的行为， 比如说单元测试逻辑等。接下来会给你讲解 Docstrings 的一些奇特的用法，不过话说回来，如果你只是使用 Docstrings 来做函数文档也是完全合理的。</p>
+<p>像 <a href="http://sphinx.pocoo.org/" target="_blank" rel="noopener">Sphinx</a> 这样的工具会将 Docstrings 解析为 reStructuredText，并以 HTML 格式正确呈现。 这使得将示例代码片段嵌入到项目文档成为可能。</p>
+<p>此外， <a href="https://docs.python.org/3/library/doctest.html" target="_blank" rel="noopener">Doctest</a> 能够读取所有内嵌的看起来像 Python 命令行输入（以 <code>&gt;&gt;&gt;</code> 为前缀）的 Docstrings 并对其进行运行，以检查命令输出是否匹配其下行内容。这允许开发人员在源码中嵌入真实的示例和函数的用法。 此外，它还能确保代码运行过测试并且正常工作。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def my_function(a, b):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_function(2, 3)</span></span><br><span class="line"><span class="string">    6</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_function('a', 3)</span></span><br><span class="line"><span class="string">    'aaa'</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> a * b</span><br></pre></td></tr></table></figure>
+<h3 id="Docstrings-与块注释的比较"><a href="#Docstrings-与块注释的比较" class="headerlink" title="Docstrings 与块注释的比较"></a>Docstrings 与块注释的比较</h3><p>他们俩是不可互换。对于函数或类，开头的注释区是程序员的注解。而Docstrings 描述了函数或类的 <em>操作性文档</em> ：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 出于某种原因此函数用来减慢程序执行的</span></span><br><span class="line">def square_and_rooter(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"返回自己乘以自己的平方根。"</span><span class="string">""</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<p>块注释会在脚本执行时被优化掉，与块注释不同，Docstrings 内置于 Python 语言本身。这意味着你可以使用 Python 强大的内省功能以在运行时获得 Docstrings 。对于几乎每个 Python 对象，我们都可以通过其 <strong>*doc*</strong> 属性或使用内置的 <code>help()</code> 函数来访问 Docstrings。</p>
+<p>块注释通常用于解释一段代码是 <em>做什么</em> ，或是算法的细节。而 Docstrings 更适合于向其他用户（或是写完代码 6 个月以后的你）解释代码中的特定功能是 <em>如何</em> 使用， 或是方法、类和模块的作用。</p>
+<h3 id="编写-Docstrings"><a href="#编写-Docstrings" class="headerlink" title="编写 Docstrings"></a>编写 Docstrings</h3><p>取决于函数、方法或类的复杂度，使用单行的 Docstrings 可能十分合适。 以下通常用于非常明显的情况，例如:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">    <span class="string">""</span><span class="string">"两个数字相加，并返回结果。"</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
+<p>Docstrings 应该以易于理解的方式来描述函数。另一方面，对于简单的函数和类， 将函数的签名（即 <code>add(a, b) -&gt; result</code> ）嵌入到 Docstrings 中是没有必要的。这是因为使用 Python 的 “inspect” 模块可以很容易地找到这些信息。 此外，这些信息也可以简单地通过阅读源代码来获得。</p>
+<p>在更大或更复杂的项目中，我们建议提供相关函数的更多信息，包括它是做什么的， 所抛的任何异常，返回的内容或参数的相关细节。</p>
+<p>对于更详细的代码文档，用于 Numpy 项目上的 Docstrings 风格会更为流行，通常称为 <a href="http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html" target="_blank" rel="noopener">Numpy style</a> Docstrings。因为可以占用更多的行，所以它允许开发人员写入更多的信息。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def random_number_generator(arg1, arg2):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    摘要行。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    扩展功能描述。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    参数</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    arg1：int</span></span><br><span class="line"><span class="string">        arg1的描述</span></span><br><span class="line"><span class="string">    arg2：str</span></span><br><span class="line"><span class="string">        arg2的描述</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    返回</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">    int</span></span><br><span class="line"><span class="string">        返回值说明</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">42</span></span><br></pre></td></tr></table></figure>
+<p>Sphinx 下使用 <a href="https://sphinxcontrib-napoleon.readthedocs.io/" target="_blank" rel="noopener">sphinx.ext.napoleon</a> 插件即可解析这种风格的 Docstrings， 使您可以轻松地将 NumPy 风格文档植入到你的项目中。</p>
+<p>最后，编写 Docstrings 的风格并没那么重要，它们的目的是为任何可能需要阅读或更改代码的人提供文档。 只要它是正确的，可以理解的，切中相关点，那么它就很完美地完成了它的使命。</p>
+<p>要进一步阅读 Docstrings，请随时参见 <a href="https://www.python.org/dev/peps/pep-0257" target="_blank" rel="noopener"><strong>PEP 257</strong></a></p>
+<h2 id="其他工具"><a href="#其他工具" class="headerlink" title="其他工具"></a>其他工具</h2><p>你可能在其他场景看到过这些，不过没有特殊情况的话，请尽量使用 <a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/documentation.html#sphinx-ref" target="_blank" rel="noopener">Sphinx</a>。</p>
+<p><a href="https://pycco-docs.github.io/pycco/" target="_blank" rel="noopener">Pycco</a></p>
+<p>Pycco是一个 “文学编程风格的文档生成器”，它是 node.js <a href="http://jashkenas.github.com/docco" target="_blank" rel="noopener">Docco</a> 的移植版本。它将代码生成为一个并排的 HTML 代码区块和对应的文档。</p>
+<p><a href="https://github.com/rtomayko/ronn" target="_blank" rel="noopener">Ronn</a></p>
+<p>Ronn 用来构建 Unix 手册。它将人可读的文本文件转换成用于终端显示的 roff 文件, 以及用于 web 的 HTML 文件。</p>
+<p><a href="http://epydoc.sourceforge.net/" target="_blank" rel="noopener">Epydoc</a></p>
+<p>Epydoc 已经停止维护。请使用 <a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/documentation.html#sphinx-ref" target="_blank" rel="noopener">Sphinx</a> 来替代。</p>
+<p><a href="http://www.mkdocs.org/" target="_blank" rel="noopener">MkDocs</a></p>
+<p>MkDocs 是一个快速简单的静态网站生成器，它适合于构建使用 Markdown 编写的项目文档。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://docs.python-guide.org/" target="_blank" rel="noopener">Python漫游指南</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-15T04:46:44.388Z" itemprop="dateUpdated">2018-09-15 12:46:44</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Yo">
+            Yo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hitchhiker’s Guide to Python-代码测试</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-Reading-Great-Code/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hitchhiker’s Guide to Python-Reading Great Code</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Yo &copy; 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
