@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
     
 
     
@@ -12,7 +14,7 @@
     
     
     
-    <title>我的 Python 开发环境 | Yo42 | Dont't Panic,Do not go gentle into that good night~</title>
+    <title>我的 Python 开发环境 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -35,18 +37,18 @@
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
+</head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -66,28 +68,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://yo42.github.io/Aobut-Me/">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
                 <i class="icon icon-lg icon-user"></i>
                 About Me
               </a>
@@ -156,12 +158,13 @@
     </aside>
 
 
-<article id="post-你的-Python-开发者环境" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-你的-Python-开发者环境"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">我的 Python 开发环境</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-09 17:45:16" datetime="2018-09-09T09:45:16.827Z" itemprop="datePublished">2018-09-09</time>
+            <time class="post-time" title="2018-09-09 17:45:16" datetime="2018-09-09T09:45:16.827Z"  itemprop="datePublished">2018-09-09</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
@@ -174,14 +177,14 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="文本编辑器"><a href="#文本编辑器" class="headerlink" title="文本编辑器"></a>文本编辑器</h2><p>任何可以做纯文本编辑的工具都可以用来写Python代码，但是用功能更加强大的文本编辑器可以使你的编程工作更加轻松。</p>
 <h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><p>Vim 是一个用键盘快捷键代替菜单和图标来操作的文本编辑器。对于 Vim 编辑器，有几个插件和设置可以用来辅助 Python 开发。如果你只用 Python 开发，一个好的开始就是把缩进和换行的默认设置设置成兼容 <a href="https://www.python.org/dev/peps/pep-0008" target="_blank" rel="noopener"><strong>PEP 8</strong></a> 的值。 在你的主目录里，打开一个叫作 <code>.vimrc</code> 的文件并且把下面这些代码添加进去：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set textwidth=<span class="number">79</span>  <span class="string">" 行宽超过 79 会被截断</span></span><br><span class="line"><span class="string">set shiftwidth=4  "</span> 操作符 &gt;&gt; 缩进 <span class="number">4</span> 列；&lt;&lt; 减少缩进 <span class="number">4</span> 列</span><br><span class="line">set tabstop=<span class="number">4</span>     <span class="string">" 一个 TAB 显示为 4 列</span></span><br><span class="line"><span class="string">set expandtab     "</span> 用空格代替 TAB</span><br><span class="line">set softtabstop=<span class="number">4</span> <span class="string">" 敲击 TAB/BACKSPACE 插入 / 删除 4 个空格 </span></span><br><span class="line"><span class="string">set shiftround    "</span> 缩进为 <span class="string">'shiftwidth'</span> 的倍数</span><br><span class="line">set autoindent    <span class="string">" 新行缩进与上一行对齐</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">set textwidth=<span class="number">79</span>  <span class="string">" 行宽超过 79 会被截断</span></span><br><span class="line"><span class="string">set shiftwidth=4  "</span> 操作符 &gt;&gt; 缩进 <span class="number">4</span> 列；&lt;&lt; 减少缩进 <span class="number">4</span> 列</span><br><span class="line">set tabstop=<span class="number">4</span>     <span class="string">" 一个 TAB 显示为 4 列</span></span><br><span class="line"><span class="string">set expandtab     "</span> 用空格代替 TAB</span><br><span class="line">set softtabstop=<span class="number">4</span> <span class="string">" 敲击 TAB/BACKSPACE 插入 / 删除 4 个空格 </span></span><br><span class="line"><span class="string">set shiftround    "</span> 缩进为 <span class="string">'shiftwidth'</span> 的倍数</span><br><span class="line">set autoindent    <span class="string">" 新行缩进与上一行对齐</span></span><br></pre></td></tr></table></figure>
 <p>使用这些设置，行宽超过 79 个字符会自动换行，并且缩进设置为用 4 个空格代替一个制表符。如果你还用 Vim 写其它的语言，有一个很方便的插件 <a href="http://www.vim.org/scripts/script.php?script_id=974" target="_blank" rel="noopener">indent</a> ，用来处理 Python 源文件的缩进设置。</p>
 <p>还有一个很方便的语法插件 <a href="http://www.vim.org/scripts/script.php?script_id=790" target="_blank" rel="noopener">syntax</a>，对 Vim 6.1 里自带的语法文件做了一些增强。</p>
 <p>这些插件为你用 Python 开发提供了一个基本环境。你应该充分利用 Vim 去持续检查你的代码是否有语法错误并且是否符合 PEP8 规范。幸运的是有 <a href="https://pypi.python.org/pypi/pycodestyle/" target="_blank" rel="noopener">pycodestyle</a> 和 <a href="http://pypi.python.org/pypi/pyflakes/" target="_blank" rel="noopener">Pyflakes</a> 来帮你做这些事。如果你的 Vim 编译时附带了 <code>+python</code> ，你也可以使用一些自带的插件非常方便的来做这些检查。</p>
 <p>对于 PEP8 和 Pyflakes ，你可以安装 <a href="https://github.com/nvie/vim-flake8" target="_blank" rel="noopener">vim-flake8</a>。然后你就可以在 Vim 里把 <code>Flake8</code> 功能映射到任何快捷键或操作上了。这个插件会在屏幕下方显示错误信息，并且提供一个简单的方式来跳转到对应的行。设置成每当你保存文件的时候就调用这个功能会很方便。如果想这样做，添加这行代码到你的 <code>.vimrc</code> ：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autocmd BufWritePost *.py call Flake8()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autocmd BufWritePost *.py call Flake8()</span><br></pre></td></tr></table></figure>
 <p>如果你已经使用了 <a href="https://github.com/scrooloose/syntastic" target="_blank" rel="noopener">syntastic</a> ，你可以把它设置成在写入的时候自动运行 Pyflakes 并且在 quickfix 窗口里显示错误和警告信息。下面是一个在状态栏里显示检查状态和警告信息的示例配置：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set statusline+=%<span class="comment">#warningmsg#</span></span><br><span class="line">set statusline+=%{SyntasticStatuslineFlag()}</span><br><span class="line">set statusline+=%*</span><br><span class="line">let g:syntastic_auto_loc_list=<span class="number">1</span></span><br><span class="line">let g:syntastic_loc_list_height=<span class="number">5</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set statusline+=%<span class="comment">#warningmsg#</span></span><br><span class="line">set statusline+=%&#123;SyntasticStatuslineFlag()&#125;</span><br><span class="line">set statusline+=%*</span><br><span class="line">let g:syntastic_auto_loc_list=<span class="number">1</span></span><br><span class="line">let g:syntastic_loc_list_height=<span class="number">5</span></span><br></pre></td></tr></table></figure>
 <h4 id="Python-mode"><a href="#Python-mode" class="headerlink" title="Python-mode"></a>Python-mode</h4><p><a href="https://github.com/klen/python-mode" target="_blank" rel="noopener">Python-mode</a> 是 Vim 编辑器中一个复杂的编写 Python 代码的解决方案。有以下功能：</p>
 <ul>
 <li>让任意的 Python 代码检查工具(<code>pylint</code>, <code>pyflakes</code>, <code>pycodestyle</code>, <code>mccabe</code>) 都能协同工作</li>
@@ -240,9 +243,9 @@
 <li>灵活、嵌入的解释器载入到您的工程工程中。</li>
 <li>支持高级可交互的并行计算的工具。</li>
 </ul>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install ipython</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install ipython</span><br></pre></td></tr></table></figure>
 <p>使用以下命令下载和安装带有所有可选依赖（notebook、qtconsol、tests 和其他功能）的 IPython：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install ipython[all]</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install ipython[all]</span><br></pre></td></tr></table></figure>
 <h3 id="BPython"><a href="#BPython" class="headerlink" title="BPython"></a>BPython</h3><p><a href="http://bpython-interpreter.org/" target="_blank" rel="noopener">bpython</a> 在类 Unix 操作系统中可替代 Python 解释器的接口。 它有以下特性：</p>
 <ul>
 <li>内建的语法高亮。</li>
@@ -254,7 +257,7 @@
 <li>自动缩进。</li>
 <li>支持 Python 3。</li>
 </ul>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install bpython</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install bpython</span><br></pre></td></tr></table></figure>
 <h3 id="ptpython"><a href="#ptpython" class="headerlink" title="ptpython"></a>ptpython</h3><p><a href="https://github.com/jonathanslenders/ptpython/" target="_blank" rel="noopener">ptpython</a> 是一个构建在 <a href="http://github.com/jonathanslenders/python-prompt-toolkit" target="_blank" rel="noopener">prompt_toolkit</a> 库之上的 REPL。它被视作是 <a href="http://bpython-interpreter.org/" target="_blank" rel="noopener">BPython</a> 的替代。特性包括：</p>
 <ul>
 <li>语法高亮</li>
@@ -266,7 +269,7 @@
 <li>支持 Tab 页</li>
 <li>通过 <code>pip install ipython</code> 安装后运行 <code>ptipython</code>，即可支持集成 <a href="http://ipython.org/" target="_blank" rel="noopener">IPython</a> 的 shell：</li>
 </ul>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install ptpython</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install ptpython</span><br></pre></td></tr></table></figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href="https://docs.python-guide.org/" target="_blank" rel="noopener">python漫游指南</a></li>
@@ -310,7 +313,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&amp;title=《我的 Python 开发环境》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&title=《我的 Python 开发环境》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -320,7 +323,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&amp;title=《我的 Python 开发环境》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&title=《我的 Python 开发环境》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -330,7 +333,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《我的 Python 开发环境》 — Yo42&amp;url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《我的 Python 开发环境》 — Yo42&url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -413,7 +416,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Yo © 2018</span>
+        <p><span>Yo &copy; 2018</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -431,7 +434,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&amp;title=《我的 Python 开发环境》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&title=《我的 Python 开发环境》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -441,7 +444,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&amp;title=《我的 Python 开发环境》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&title=《我的 Python 开发环境》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -451,7 +454,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《我的 Python 开发环境》 — Yo42&amp;url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《我的 Python 开发环境》 — Yo42&url=https://yo42.github.io/2018/09/09/你的-Python-开发者环境/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -480,7 +483,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-
+<script src="/js/main.min.js?v=1.7.2"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -500,6 +503,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
@@ -510,7 +514,4 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-
-
-
-<script type="text/javascript" src="/bundle.js"></script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

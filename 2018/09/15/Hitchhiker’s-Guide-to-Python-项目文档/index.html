@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
     
 
     
@@ -12,7 +14,7 @@
     
     
     
-    <title>Hitchhiker’s Guide to Python-项目文档 | Yo42 | Dont't Panic,Do not go gentle into that good night~</title>
+    <title>Hitchhiker’s Guide to Python-项目文档 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -35,18 +37,18 @@
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
+</head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -66,28 +68,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://yo42.github.io/Aobut-Me/">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
                 <i class="icon icon-lg icon-user"></i>
                 About Me
               </a>
@@ -156,12 +158,13 @@
     </aside>
 
 
-<article id="post-Hitchhiker’s-Guide-to-Python-项目文档" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-Hitchhiker’s-Guide-to-Python-项目文档"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Hitchhiker’s Guide to Python-项目文档</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-15 12:39:18" datetime="2018-09-15T04:39:18.634Z" itemprop="datePublished">2018-09-15</time>
+            <time class="post-time" title="2018-09-15 12:39:18" datetime="2018-09-15T04:39:18.634Z"  itemprop="datePublished">2018-09-15</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
@@ -195,23 +198,23 @@
 <p><a href="http://sphinx.pocoo.org/rest.html" target="_blank" rel="noopener">reStructuredText Primer</a> 和 <a href="http://docutils.sourceforge.net/docs/user/rst/quickref.html" target="_blank" rel="noopener">reStructuredText Quick Reference</a> 这两个文档应该能帮助你快速熟悉它的语法。</p>
 <h2 id="源码文档建议"><a href="#源码文档建议" class="headerlink" title="源码文档建议"></a>源码文档建议</h2><p>注释能使代码清晰，将其加入到代码中是为了理解代码起来更容易。注释在 Python 中以一个 hash 开始（数字符号）（”#”）。</p>
 <p>在 Python 中我们使用 <em>文档字符串（docstrings）</em> 用来描述模块、类和函数：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def square_and_rooter(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"Return the square root of self times self."</span><span class="string">""</span></span><br><span class="line">    ...</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def square_and_rooter(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"Return the square root of self times self."</span><span class="string">""</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
 <p>一般来说，我们要遵循 <a href="https://www.python.org/dev/peps/pep-0008#comments" target="_blank" rel="noopener"><strong>PEP 8#comments</strong></a> （” Python 风格指南”）的注释部分。 更多关于 docstrings 的内容可以在 <a href="https://www.python.org/dev/peps/pep-0257#specification" target="_blank" rel="noopener"><strong>PEP 0257#specification</strong></a> （docstrings 约定指南） 上找到。</p>
 <h3 id="注释代码块"><a href="#注释代码块" class="headerlink" title="注释代码块"></a>注释代码块</h3><p><em>请不要使用三引号去注释代码</em>。 这不是好的实践，因为面向行的命令行处理工具， 比如说 <code>grep</code>，将会很难判断注释掉的代码是否是激活的。对每一个注释行，最好使用带有合适缩进的井号。您的编辑器可能很容易做到这一点，并能使用快捷键就切换 注释 / 取消注释。</p>
 <h3 id="Docstrings-的魔法"><a href="#Docstrings-的魔法" class="headerlink" title="Docstrings 的魔法"></a>Docstrings 的魔法</h3><p>一些工具使用 Docstrings 来嵌入不止是文档的行为， 比如说单元测试逻辑等。接下来会给你讲解 Docstrings 的一些奇特的用法，不过话说回来，如果你只是使用 Docstrings 来做函数文档也是完全合理的。</p>
 <p>像 <a href="http://sphinx.pocoo.org/" target="_blank" rel="noopener">Sphinx</a> 这样的工具会将 Docstrings 解析为 reStructuredText，并以 HTML 格式正确呈现。 这使得将示例代码片段嵌入到项目文档成为可能。</p>
 <p>此外， <a href="https://docs.python.org/3/library/doctest.html" target="_blank" rel="noopener">Doctest</a> 能够读取所有内嵌的看起来像 Python 命令行输入（以 <code>&gt;&gt;&gt;</code> 为前缀）的 Docstrings 并对其进行运行，以检查命令输出是否匹配其下行内容。这允许开发人员在源码中嵌入真实的示例和函数的用法。 此外，它还能确保代码运行过测试并且正常工作。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def my_function(a, b):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_function(2, 3)</span></span><br><span class="line"><span class="string">    6</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_function('a', 3)</span></span><br><span class="line"><span class="string">    'aaa'</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> a * b</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def my_function(a, b):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_function(2, 3)</span></span><br><span class="line"><span class="string">    6</span></span><br><span class="line"><span class="string">    &gt;&gt;&gt; my_function('a', 3)</span></span><br><span class="line"><span class="string">    'aaa'</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> a * b</span><br></pre></td></tr></table></figure>
 <h3 id="Docstrings-与块注释的比较"><a href="#Docstrings-与块注释的比较" class="headerlink" title="Docstrings 与块注释的比较"></a>Docstrings 与块注释的比较</h3><p>他们俩是不可互换。对于函数或类，开头的注释区是程序员的注解。而Docstrings 描述了函数或类的 <em>操作性文档</em> ：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 出于某种原因此函数用来减慢程序执行的</span></span><br><span class="line">def square_and_rooter(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"返回自己乘以自己的平方根。"</span><span class="string">""</span></span><br><span class="line">    ...</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 出于某种原因此函数用来减慢程序执行的</span></span><br><span class="line">def square_and_rooter(x):</span><br><span class="line">    <span class="string">""</span><span class="string">"返回自己乘以自己的平方根。"</span><span class="string">""</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
 <p>块注释会在脚本执行时被优化掉，与块注释不同，Docstrings 内置于 Python 语言本身。这意味着你可以使用 Python 强大的内省功能以在运行时获得 Docstrings 。对于几乎每个 Python 对象，我们都可以通过其 <strong>*doc*</strong> 属性或使用内置的 <code>help()</code> 函数来访问 Docstrings。</p>
 <p>块注释通常用于解释一段代码是 <em>做什么</em> ，或是算法的细节。而 Docstrings 更适合于向其他用户（或是写完代码 6 个月以后的你）解释代码中的特定功能是 <em>如何</em> 使用， 或是方法、类和模块的作用。</p>
 <h3 id="编写-Docstrings"><a href="#编写-Docstrings" class="headerlink" title="编写 Docstrings"></a>编写 Docstrings</h3><p>取决于函数、方法或类的复杂度，使用单行的 Docstrings 可能十分合适。 以下通常用于非常明显的情况，例如:</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">    <span class="string">""</span><span class="string">"两个数字相加，并返回结果。"</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">    <span class="string">""</span><span class="string">"两个数字相加，并返回结果。"</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br></pre></td></tr></table></figure>
 <p>Docstrings 应该以易于理解的方式来描述函数。另一方面，对于简单的函数和类， 将函数的签名（即 <code>add(a, b) -&gt; result</code> ）嵌入到 Docstrings 中是没有必要的。这是因为使用 Python 的 “inspect” 模块可以很容易地找到这些信息。 此外，这些信息也可以简单地通过阅读源代码来获得。</p>
 <p>在更大或更复杂的项目中，我们建议提供相关函数的更多信息，包括它是做什么的， 所抛的任何异常，返回的内容或参数的相关细节。</p>
 <p>对于更详细的代码文档，用于 Numpy 项目上的 Docstrings 风格会更为流行，通常称为 <a href="http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html" target="_blank" rel="noopener">Numpy style</a> Docstrings。因为可以占用更多的行，所以它允许开发人员写入更多的信息。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def random_number_generator(arg1, arg2):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    摘要行。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    扩展功能描述。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    参数</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    arg1：int</span></span><br><span class="line"><span class="string">        arg1的描述</span></span><br><span class="line"><span class="string">    arg2：str</span></span><br><span class="line"><span class="string">        arg2的描述</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    返回</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">    int</span></span><br><span class="line"><span class="string">        返回值说明</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">42</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def random_number_generator(arg1, arg2):</span><br><span class="line">    <span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">    摘要行。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    扩展功能描述。</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    参数</span></span><br><span class="line"><span class="string">    ----------</span></span><br><span class="line"><span class="string">    arg1：int</span></span><br><span class="line"><span class="string">        arg1的描述</span></span><br><span class="line"><span class="string">    arg2：str</span></span><br><span class="line"><span class="string">        arg2的描述</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    返回</span></span><br><span class="line"><span class="string">    -------</span></span><br><span class="line"><span class="string">    int</span></span><br><span class="line"><span class="string">        返回值说明</span></span><br><span class="line"><span class="string">    "</span><span class="string">""</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">42</span></span><br></pre></td></tr></table></figure>
 <p>Sphinx 下使用 <a href="https://sphinxcontrib-napoleon.readthedocs.io/" target="_blank" rel="noopener">sphinx.ext.napoleon</a> 插件即可解析这种风格的 Docstrings， 使您可以轻松地将 NumPy 风格文档植入到你的项目中。</p>
 <p>最后，编写 Docstrings 的风格并没那么重要，它们的目的是为任何可能需要阅读或更改代码的人提供文档。 只要它是正确的，可以理解的，切中相关点，那么它就很完美地完成了它的使命。</p>
 <p>要进一步阅读 Docstrings，请随时参见 <a href="https://www.python.org/dev/peps/pep-0257" target="_blank" rel="noopener"><strong>PEP 257</strong></a></p>
@@ -267,7 +270,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&amp;title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -277,7 +280,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&amp;title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -287,7 +290,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&amp;url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -370,7 +373,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Yo © 2018</span>
+        <p><span>Yo &copy; 2018</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -388,7 +391,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&amp;title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -398,7 +401,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&amp;title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&title=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -408,7 +411,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&amp;url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-项目文档》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -437,7 +440,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-
+<script src="/js/main.min.js?v=1.7.2"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -457,6 +460,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
@@ -467,7 +471,4 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-
-
-
-<script type="text/javascript" src="/bundle.js"></script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

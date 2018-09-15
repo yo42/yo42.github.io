@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
     
 
     
@@ -12,7 +14,7 @@
     
     
     
-    <title>python 底层虚拟环境 virtualenv | Yo42 | Dont't Panic,Do not go gentle into that good night~</title>
+    <title>python 底层虚拟环境 virtualenv | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -35,18 +37,18 @@
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
+</head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -66,28 +68,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://yo42.github.io/Aobut-Me/">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
                 <i class="icon icon-lg icon-user"></i>
                 About Me
               </a>
@@ -156,12 +158,13 @@
     </aside>
 
 
-<article id="post-python-底层虚拟环境-virtualenv" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-python-底层虚拟环境-virtualenv"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">python 底层虚拟环境 virtualenv</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-09 17:41:57" datetime="2018-09-09T09:41:57.899Z" itemprop="datePublished">2018-09-09</time>
+            <time class="post-time" title="2018-09-09 17:41:57" datetime="2018-09-09T09:41:57.899Z"  itemprop="datePublished">2018-09-09</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
@@ -175,84 +178,84 @@
             <p><a href="http://pypi.python.org/pypi/virtualenv" target="_blank" rel="noopener">virtualenv</a> 是一个创建独立的 Python 环境。 virtualenv 会创建一个文件夹，其中包含使用 Python 项目所有所需的可执行文件。</p>
 <p>它可以单独使用，用于代替 Pipenv 。</p>
 <p>通过 pip 安装 virtualenv ：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenv</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenv</span><br></pre></td></tr></table></figure>
 <p>测试下是否安装完成</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv --version</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv --version</span><br></pre></td></tr></table></figure>
 <ol>
 <li>为项目创建一个虚拟环境：</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd my_project_folder</span><br><span class="line">$ virtualenv my_project</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd my_project_folder</span><br><span class="line">$ virtualenv my_project</span><br></pre></td></tr></table></figure>
 <p><code>virtualenv my_project</code> 将会在当前目录创建一个文件夹来存放 Python 的可执行文件以及拷贝一份 <code>pip</code>库，这样就能安装其他包了。虚拟环境名字（ 这里是 <code>myproject</code> ）可以随意，若省略名字将会把文件均放在当前目录。</p>
 <p>这将在你运行此命令的文件目录下创建一个 Python 的副本，并将其放入名为 <code>my_project</code> 的文件夹中</p>
 <p>你也可以选择 Python 解释器（如 <code>python2.7</code> ） 。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv -p /usr/bin/python2<span class="number">.7</span> my_project</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ virtualenv -p /usr/bin/python2<span class="number">.7</span> my_project</span><br></pre></td></tr></table></figure>
 <p>或者改变 <code>~/.bashrc</code> 中的解释器的全局环境变量：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2<span class="number">.7</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2<span class="number">.7</span></span><br></pre></td></tr></table></figure>
 <ol>
 <li>开始使用虚拟环境前，需要先激活：</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source my_project/bin/activate</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ source my_project/bin/activate</span><br></pre></td></tr></table></figure>
 <p>当前虚拟环境的名称将出现在提示符的左侧 (e.g. <code>(my_project)Your-Computer:your_project UserName$)</code>  ，这样你就能了解当前激活的虚拟环境是什么。 自此，你使用 pip 安装的任何包都会放在 <code>my_project</code> 文件夹，与全局 Python 安装的包相互独立。</p>
 <p>安装包的话就与往常一样，如：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install requests</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install requests</span><br></pre></td></tr></table></figure>
 <ol>
 <li>如果你在虚拟环境中暂时完成了工作，可以这样停用它：</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></table></figure>
 <p>这样你就回到了系统默认的 Python 解释器，包括安装的库页会回到默认的。</p>
 <p>要删除一个虚拟环境，只需要删除对应文件夹。( 以当前示例来说，执行 <code>rm -rfmy_project</code>) 。</p>
 <p>然而 virtualenv 也有些不便之处，因为一段时间后你的系统中可能会有很多虚拟环境散落在各处，这样会让你忘记它们的名字或位置</p>
 <p>运行  <code>virtualenv</code> 带上选项  <code>--no-site-packages</code>  将不会包含已经全局安装的包。这样有助于保持包列表的整洁以防万一之后需要访问它。<br>[ 这在 <code>virtualenv</code> 1.7 是默认的哦。 ]</p>
 <p>为了保持环境的一致性，“冻结”当前环境包的状态是正确的选择。冻结环境可以运行下面的命令：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze &gt; requirements.txt</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip freeze &gt; requirements.txt</span><br></pre></td></tr></table></figure>
 <p>该命令将创建一个 <code>requirements.txt</code> 文件，里面包含有当前环境所有包的简单列表及对应的版本。你可以使用 “pip list” 查看没有安装格式的已安装包列表。之后，对于开发人员（或你需要重新安装环境）来说就可以很容易的安装相同的版本一致的包，这样就能完全搭建出与之前一致的环境了：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install -r requirements.txt</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
 <p>这样有助于在跨设备，跨部署，跨人员的情况下保证环境的一致性。</p>
 <p>最后，记得将虚拟环境文件夹从源代码控制中排除，也就是将其添加到 ignore 列表中 ( 详见 <a href="http://docs.python-guide.org/en/latest/writing/gotchas/#version-control-ignores" target="_blank" rel="noopener">Version Control Ignores</a>).</p>
 <h2 id="virtualenvwrapper"><a href="#virtualenvwrapper" class="headerlink" title="virtualenvwrapper"></a>virtualenvwrapper</h2><p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">virtualenvwrapper</a> 提供一系列命令让你更加愉快地操作虚拟环境。它还将所有虚拟环境放在一块。</p>
 <p>安装方法如下 ( 请确保 <strong>virtualenv</strong> 已安装 ) ：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenvwrapper</span><br><span class="line">$ export WORKON_HOME=~/Envs</span><br><span class="line">$ source /usr/local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenvwrapper</span><br><span class="line">$ export WORKON_HOME=~/Envs</span><br><span class="line">$ source /usr/local/bin/virtualenvwrapper.sh</span><br></pre></td></tr></table></figure>
 <p>(<a href="https://virtualenvwrapper.readthedocs.io/en/latest/install.html" target="_blank" rel="noopener">virtualenvwrapper 安装说明 </a>.)</p>
 <p>对于 Windows 用户，你可以使用 <a href="https://github.com/davidmarble/virtualenvwrapper-win/" target="_blank" rel="noopener">virtualenvwrapper-win</a>.</p>
 <p>安装方式如下 ( 请确保 <strong>virtualenv</strong> 已安装 ) ：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenvwrapper-win</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip install virtualenvwrapper-win</span><br></pre></td></tr></table></figure>
 <p>在 Windows 中，设置环境变量 WORKON_HOME ，内容为 %USERPROFILE%Envs</p>
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ol>
 <li>创建虚拟环境</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkvirtualenv my_project</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkvirtualenv my_project</span><br></pre></td></tr></table></figure>
 <p>该指令将在 <code>~/Envs</code> 创建 <code>my_project</code> 文件夹。</p>
 <ol>
 <li>在虚拟环境下工作：</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ workon my_project</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ workon my_project</span><br></pre></td></tr></table></figure>
 <p>或者，你可以通过创建项目来创建虚拟环境，该项目目录要在 <code>$WORKON_HOME</code> 下，当你在 <code>workon myproject</code> 时可以 <code>cd</code> 进入。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkproject myproject</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkproject myproject</span><br></pre></td></tr></table></figure>
 <p><strong>virtualenvwrapper</strong> 为环境名称提供 tab 键补全功能。当你有很多环境又很难记住它们的名字时，该功能很有帮助。</p>
 <p><code>workon</code> 也会使你当前所在的环境失效，这样你就可以在不同地环境间快速切换。</p>
 <ol>
 <li>停止虚拟环境：</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ deactivate</span><br></pre></td></tr></table></figure>
 <ol>
 <li>删除虚拟环境：</li>
 </ol>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rmvirtualenv venv</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="其他有用的命令"><a href="#其他有用的命令" class="headerlink" title="其他有用的命令"></a>其他有用的命令</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsvirtualenv</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rmvirtualenv venv</span><br></pre></td></tr></table></figure>
+<h3 id="其他有用的命令"><a href="#其他有用的命令" class="headerlink" title="其他有用的命令"></a>其他有用的命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lsvirtualenv</span><br></pre></td></tr></table></figure>
 <p>列出所有虚拟环境</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdvirtualenv</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdvirtualenv</span><br></pre></td></tr></table></figure>
 <p>进入当前的虚拟环境目录，这样你就可以浏览它的 <code>site-packages</code> ，如：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdsitepackages</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cdsitepackages</span><br></pre></td></tr></table></figure>
 <p>上述命令将进入虚拟环境的 <code>site-packages</code> 目录.</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lssitepackages</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lssitepackages</span><br></pre></td></tr></table></figure>
 <p>列出 <code>site-packages</code> 目录下所有软件包.</p>
 <p><a href="https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html" target="_blank" rel="noopener">virtualenvwrapper 的全部命令列表 </a>.</p>
 <h2 id="virtualenv-burrito"><a href="#virtualenv-burrito" class="headerlink" title="virtualenv-burrito"></a>virtualenv-burrito</h2><p>使用 <a href="https://github.com/brainsik/virtualenv-burrito" target="_blank" rel="noopener">virtualenv-burrito</a> ，你可以只要使用一条命令就将 virtualenv + virtualenvwrapper 环境搭建起来。</p>
 <h2 id="autoenv"><a href="#autoenv" class="headerlink" title="autoenv"></a>autoenv</h2><p>当你 <code>cd</code> 进一个含有 <code>.env</code> 的目录， <a href="https://github.com/kennethreitz/autoenv" target="_blank" rel="noopener">autoenv</a> 将自动激活虚拟环境。</p>
 <p>Mac OS X 使用 <code>brew</code> 安装 autoenv 的方式如下：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install autoenv</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install autoenv</span><br></pre></td></tr></table></figure>
 <p>Linux 安装方式如下：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> git:<span class="comment">//github.com/kennethreitz/autoenv.git ~/.autoenv</span></span><br><span class="line">$ <span class="keyword">echo</span> <span class="string">'source ~/.autoenv/activate.sh'</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> git:<span class="comment">//github.com/kennethreitz/autoenv.git ~/.autoenv</span></span><br><span class="line">$ <span class="keyword">echo</span> <span class="string">'source ~/.autoenv/activate.sh'</span> &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href="https://docs.python-guide.org/" target="_blank" rel="noopener">python漫游指南</a></li>
@@ -296,7 +299,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&amp;title=《python 底层虚拟环境 virtualenv》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&title=《python 底层虚拟环境 virtualenv》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -306,7 +309,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&amp;title=《python 底层虚拟环境 virtualenv》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&title=《python 底层虚拟环境 virtualenv》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -316,7 +319,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python 底层虚拟环境 virtualenv》 — Yo42&amp;url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python 底层虚拟环境 virtualenv》 — Yo42&url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -399,7 +402,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Yo © 2018</span>
+        <p><span>Yo &copy; 2018</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -417,7 +420,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&amp;title=《python 底层虚拟环境 virtualenv》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&title=《python 底层虚拟环境 virtualenv》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -427,7 +430,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&amp;title=《python 底层虚拟环境 virtualenv》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&title=《python 底层虚拟环境 virtualenv》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -437,7 +440,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python 底层虚拟环境 virtualenv》 — Yo42&amp;url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python 底层虚拟环境 virtualenv》 — Yo42&url=https://yo42.github.io/2018/09/09/python-底层虚拟环境-virtualenv/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -466,7 +469,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-
+<script src="/js/main.min.js?v=1.7.2"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -486,6 +489,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
@@ -496,7 +500,4 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-
-
-
-<script type="text/javascript" src="/bundle.js"></script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

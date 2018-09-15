@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html>
+<head>
     
 
     
@@ -12,7 +14,7 @@
     
     
     
-    <title>Hitchhiker’s Guide to Python-代码结构 | Yo42 | Dont't Panic,Do not go gentle into that good night~</title>
+    <title>Hitchhiker’s Guide to Python-代码结构 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -35,18 +37,18 @@
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
     <link rel="shortcut icon" href="/favicon.ico">
-    
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
     
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
+</head>
 
 <body>
     <div id="loading" class="active"></div>
 
-    <aside id="menu" class="hide">
+    <aside id="menu" class="hide" >
   <div class="inner flex-row-vertical">
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
@@ -66,28 +68,28 @@
       <ul class="nav">
         
             <li class="waves-block waves-effect">
-              <a href="/">
+              <a href="/"  >
                 <i class="icon icon-lg icon-home"></i>
                 Home
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/archives">
+              <a href="/archives"  >
                 <i class="icon icon-lg icon-archives"></i>
                 Archives
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="/tags">
+              <a href="/tags"  >
                 <i class="icon icon-lg icon-tags"></i>
                 Tags
               </a>
             </li>
         
             <li class="waves-block waves-effect">
-              <a href="https://yo42.github.io/Aobut-Me/">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
                 <i class="icon icon-lg icon-user"></i>
                 About Me
               </a>
@@ -151,17 +153,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#仓库结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">仓库结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#That-is-important"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">That is important!</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的仓库"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">简单的仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体模块"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">具体模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#授权"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">授权</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Setup-py"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Setup.py</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖文件"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">依赖文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文档"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试套件"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">测试套件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Makefile"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">Makefile</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-Django-应用程序"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">关于 Django 应用程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码结构是关键"><span class="post-toc-number">2.</span> <span class="post-toc-text">代码结构是关键</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模块"><span class="post-toc-number">3.</span> <span class="post-toc-text">模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#包系统"><span class="post-toc-number">4.</span> <span class="post-toc-text">包系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#面向对象编程"><span class="post-toc-number">5.</span> <span class="post-toc-text">面向对象编程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#装饰器"><span class="post-toc-number">6.</span> <span class="post-toc-text">装饰器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上下文管理器"><span class="post-toc-number">7.</span> <span class="post-toc-text">上下文管理器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态类型"><span class="post-toc-number">8.</span> <span class="post-toc-text">动态类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可变和不可变类型"><span class="post-toc-number">9.</span> <span class="post-toc-text">可变和不可变类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">9.0.1.</span> <span class="post-toc-text">注意</span></a></li></ol></li></ol><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">10.</span> <span class="post-toc-text">参考资料</span></a></li>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#仓库结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">仓库结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#That-is-important"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">That is important!</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#简单的仓库"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">简单的仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体模块"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">具体模块</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#授权"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">授权</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Setup-py"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Setup.py</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#依赖文件"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">依赖文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#文档"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">文档</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试套件"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">测试套件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Makefile"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">Makefile</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#关于-Django-应用程序"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">关于 Django 应用程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#代码结构是关键"><span class="post-toc-number">2.</span> <span class="post-toc-text">代码结构是关键</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模块"><span class="post-toc-number">3.</span> <span class="post-toc-text">模块</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#包系统"><span class="post-toc-number">4.</span> <span class="post-toc-text">包系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#面向对象编程"><span class="post-toc-number">5.</span> <span class="post-toc-text">面向对象编程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#装饰器"><span class="post-toc-number">6.</span> <span class="post-toc-text">装饰器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#上下文管理器"><span class="post-toc-number">7.</span> <span class="post-toc-text">上下文管理器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#动态类型"><span class="post-toc-number">8.</span> <span class="post-toc-text">动态类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可变和不可变类型"><span class="post-toc-number">9.</span> <span class="post-toc-text">可变和不可变类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">9.0.1.</span> <span class="post-toc-text">注意</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">10.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-Hitchhiker’s-Guide-to-Python-代码结构" class="post-article article-type-post fade" itemprop="blogPost">
+<article id="post-Hitchhiker’s-Guide-to-Python-代码结构"
+  class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
         <h1 class="post-card-title">Hitchhiker’s Guide to Python-代码结构</h1>
         <div class="post-meta">
-            <time class="post-time" title="2018-09-15 12:28:12" datetime="2018-09-15T04:28:12.303Z" itemprop="datePublished">2018-09-15</time>
+            <time class="post-time" title="2018-09-15 12:28:12" datetime="2018-09-15T04:28:12.303Z"  itemprop="datePublished">2018-09-15</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
@@ -190,7 +193,7 @@
 <p>当然，第一印象并不代表全部。你和你的同事可能花费数个小时在这个仓库中，最终对每个细节都非常熟悉。它的布局很重要。</p>
 <h3 id="简单的仓库"><a href="#简单的仓库" class="headerlink" title="简单的仓库"></a>简单的仓库</h3><p><strong>简述</strong>: 这个仓库是  <a href="http://kennethreitz.org/" target="_blank" rel="noopener">Kenneth Reitz</a>  的建议。</p>
 <p>可以在 <a href="https://github.com/kennethreitz/samplemod" target="_blank" rel="noopener">GitHub</a> 上看到。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">README.rst</span><br><span class="line">LICENSE</span><br><span class="line">setup.py</span><br><span class="line">requirements.txt</span><br><span class="line">sample/__init__.py</span><br><span class="line">sample/core.py</span><br><span class="line">sample/helpers.py</span><br><span class="line">docs/conf.py</span><br><span class="line">docs/index.rst</span><br><span class="line">tests/test_basic.py</span><br><span class="line">tests/test_advanced.py</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">README.rst</span><br><span class="line">LICENSE</span><br><span class="line">setup.py</span><br><span class="line">requirements.txt</span><br><span class="line">sample/__init__.py</span><br><span class="line">sample/core.py</span><br><span class="line">sample/helpers.py</span><br><span class="line">docs/conf.py</span><br><span class="line">docs/index.rst</span><br><span class="line">tests/test_basic.py</span><br><span class="line">tests/test_advanced.py</span><br></pre></td></tr></table></figure>
 <p>让我们深入了解一些细节。</p>
 <h3 id="具体模块"><a href="#具体模块" class="headerlink" title="具体模块"></a>具体模块</h3><table>
 <thead>
@@ -207,9 +210,9 @@
 </tbody>
 </table>
 <p>模块包是仓库的核心。它不应该被藏起来：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./sample/</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./sample/</span><br></pre></td></tr></table></figure>
 <p>如果你的模块内只有一个文件，你可以直接把这个文件放在仓库的根目录下：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./sample.py</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./sample.py</span><br></pre></td></tr></table></figure>
 <p>你的模块不应属于一个模糊的 src 目录或 python 的子目录。</p>
 <h3 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h3><table>
 <thead>
@@ -290,9 +293,9 @@
 </tbody>
 </table>
 <p>开始时，一个小的测试套件经常在一个文件中：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./test_sample.py</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./test_sample.py</span><br></pre></td></tr></table></figure>
 <p>一旦测试套件多起来时，可以像这样把各套件放在一个文件夹中：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tests/test_basic.py</span><br><span class="line">tests/test_advanced.py</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tests/test_basic.py</span><br><span class="line">tests/test_advanced.py</span><br></pre></td></tr></table></figure>
 <p>显然，这些测试套件需要你导入包模块才能运行测试。你可以通过这些方法来做：</p>
 <ul>
 <li>将包安装在 site-packages 中。</li>
@@ -300,9 +303,9 @@
 </ul>
 <p>我强烈推荐后者。需要开发者在修改代码后主动运行 <code>setup.py develop</code> 去测试，也需要为每个代码库实例设置独立的运行环境。</p>
 <p>要给单个测试导入上下文，请创建一个 tests/context.py 文件：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, os.path.abspath(os.path.join(os.path.dirname(<span class="keyword">__file__</span>), <span class="string">'..'</span>)))</span><br><span class="line"></span><br><span class="line">import sample</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, os.path.abspath(os.path.join(os.path.dirname(<span class="keyword">__file__</span>), <span class="string">'..'</span>)))</span><br><span class="line"></span><br><span class="line">import sample</span><br></pre></td></tr></table></figure>
 <p>然后，在各个测试模块中导入这个上下文模块：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from .context import sample</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from .context import sample</span><br></pre></td></tr></table></figure>
 <p>无论安装方式如何，这通常都会像预期那样工作。</p>
 <p>有的人会建议你应该把测试放在你自己的代码模块内，我不同意这个观点。这通常会增加用户的复杂性，而且许多的测试套件往往需要额外的依赖和运行时上下文。</p>
 <h3 id="Makefile"><a href="#Makefile" class="headerlink" title="Makefile"></a>Makefile</h3><table>
@@ -321,20 +324,20 @@
 </table>
 <p>如果你看过我的大部分项目或任何 Pocoo 项目，你都会注意到有一个 Makefile 文件。 为什么？ 这些项目不是用 C 语言编写的… 简而言之， make 是一个定义项目通用任务的非常有用的工具。</p>
 <p><strong>一个简单的 Makefile：</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">init:</span><br><span class="line">    pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line">test:</span><br><span class="line">    py.test tests</span><br><span class="line"></span><br><span class="line">.PHONY: init test</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">init:</span><br><span class="line">    pip install -r requirements.txt</span><br><span class="line"></span><br><span class="line">test:</span><br><span class="line">    py.test tests</span><br><span class="line"></span><br><span class="line">.PHONY: init test</span><br></pre></td></tr></table></figure>
 <p>其他通用的管理脚本（例如 <code>manage.py</code> 或 <code>fabfile.py</code> ）也应放在仓库的根目录。</p>
 <h3 id="关于-Django-应用程序"><a href="#关于-Django-应用程序" class="headerlink" title="关于 Django 应用程序"></a>关于 Django 应用程序</h3><p>自从 Django 1.4发布以来，我注意到了 Django 应用程序的一个新趋势。 由于新的捆绑应用程序模板，许多开发人员构建其仓库的效果很差。</p>
 <p>怎样做的呢？他们总是在一个新的仓库中运行以下内容：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin.py startproject samplesite</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin.py startproject samplesite</span><br></pre></td></tr></table></figure>
 <p>这样生成的仓库结构如下：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">README.rst</span><br><span class="line">samplesite/manage.py</span><br><span class="line">samplesite/samplesite/settings.py</span><br><span class="line">samplesite/samplesite/wsgi.py</span><br><span class="line">samplesite/samplesite/sampleapp/models.py</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">README.rst</span><br><span class="line">samplesite/manage.py</span><br><span class="line">samplesite/samplesite/settings.py</span><br><span class="line">samplesite/samplesite/wsgi.py</span><br><span class="line">samplesite/samplesite/sampleapp/models.py</span><br></pre></td></tr></table></figure>
 <p>不要这样做。</p>
 <p>重复的路径会让你的工具和开发人员感到困惑。不必要的嵌套对任何人都没有帮助（除非他们怀念单一的 SVN 仓库）。</p>
 <p>让我们正确的做到这一点：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin.py startproject samplesite .</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ django-admin.py startproject samplesite .</span><br></pre></td></tr></table></figure>
 <p>注意那个 <code>.</code> 。</p>
 <p>由此生成的仓库结构如下：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">README.rst</span><br><span class="line">manage.py</span><br><span class="line">samplesite/settings.py</span><br><span class="line">samplesite/wsgi.py</span><br><span class="line">samplesite/sampleapp/models.py</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">README.rst</span><br><span class="line">manage.py</span><br><span class="line">samplesite/settings.py</span><br><span class="line">samplesite/wsgi.py</span><br><span class="line">samplesite/sampleapp/models.py</span><br></pre></td></tr></table></figure>
 <h2 id="代码结构是关键"><a href="#代码结构是关键" class="headerlink" title="代码结构是关键"></a>代码结构是关键</h2><p>Python 处理了导入和模块，因此构建 Python 项目相对容易。容易是指没有太多的约束，并且模块导入模型很容易掌握。因此，您所剩的是纯架构方面的任务，比如设计项目的不同点及其交互。</p>
 <p>一个项目的结构简单意味着它也很容易做得不好。结构不佳的项目包括以下一些特征：</p>
 <ul>
@@ -350,7 +353,7 @@
 <p>要与样式指南保持一致，需保持模块名称简短、小写，并确保避免使用特殊符号，如点（.）或问号（？）。所以应该避免像 <code>my.spam.py</code> 这样的文件名！以这种方式命名会影响 Python 查找模块的方式。</p>
 <p>在这个 <em>my.spam.py</em> 情况下， Python 希望在名为 <code>my</code> 的文件夹中找到一个 <code>spam.py</code> 文件，但不应该这样命名。在 Python 文档中有一个应该如何使用点表示法的 <a href="http://docs.python.org/tutorial/modules.html#packages" target="_blank" rel="noopener">例子</a> 。</p>
 <p>如果你希望将模块命名为 <code>my_spam.py</code> ，但其实下划线也不应该在模块名称中经常出现。在模块名称中使用其他字符（空格或连字符）将会阻止导入（- 是减操作符），因此请尽量保持模块名称的简短，这样就不需要将单词分开了。而且，最重要的是，不要使用带下划线的名称空间，应该使用子模块。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以</span></span><br><span class="line">import library.plugin.foo</span><br><span class="line"><span class="comment"># 不行</span></span><br><span class="line">import library.foo_plugin</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以</span></span><br><span class="line">import library.plugin.foo</span><br><span class="line"><span class="comment"># 不行</span></span><br><span class="line">import library.foo_plugin</span><br></pre></td></tr></table></figure>
 <p>除了一些命名限制之外， Python 文件并不是一个特殊的模块，但你需要了解导入机制才能正确使用这个概念并避免一些问题。</p>
 <p>具体地说， <code>import modu</code> 语句会去查找正确的文件，首先会在调用者所在的目录中查找 <code>modu.py</code> 。如果找不到，Python 解释器将递归搜索 “path” 中的 <code>modu.py</code> 。如果未找到，则引发 ImportError 异常。</p>
 <p>一旦找到 <code>modu.py</code> ，Python 解释器将在一个隔离的空间内执行该模块。 <code>modu.py</code> 中的任何顶级语句都将被执行，包括其他导入（如果有的话）。 函数和类的定义存储在模块的字典中。</p>
@@ -359,11 +362,11 @@
 <p>通过使用 import 语句的特殊语法可以模拟更标准的行为：<code>from modu import *</code>。 这通常被认为是不好的做法。 <strong>使用</strong> <code>import *</code> <strong>会使代码更难阅读，并使得依赖更少的分块</strong>。</p>
 <p>使用 <code>from modu import func</code> 是一种精确定位您想要导入的函数并将其放入全局命名空间的方法。 它比 <code>import *</code> 危害更小，因为它显式地显示了在全局命名空间中要导入的内容，它比简单的 <code>import modu</code> 的唯一优点是它可以节省一些输入。</p>
 <p><strong>非常槽糕</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line">from modu import *</span><br><span class="line">[...]</span><br><span class="line">x = sqrt(<span class="number">4</span>)  <span class="comment">#  sqrt是modu的一部分吗? 内置的? 上面定义了?</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line">from modu import *</span><br><span class="line">[...]</span><br><span class="line">x = sqrt(<span class="number">4</span>)  <span class="comment">#  sqrt是modu的一部分吗? 内置的? 上面定义了?</span></span><br></pre></td></tr></table></figure>
 <p><strong>好一点的</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from modu import sqrt</span><br><span class="line">[...]</span><br><span class="line">x = sqrt(<span class="number">4</span>)  <span class="comment"># sqrt 可能是modu的一部分, 如果不在之间重新定义的话</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from modu import sqrt</span><br><span class="line">[...]</span><br><span class="line">x = sqrt(<span class="number">4</span>)  <span class="comment"># sqrt 可能是modu的一部分, 如果不在之间重新定义的话</span></span><br></pre></td></tr></table></figure>
 <p><strong>最佳</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import modu</span><br><span class="line">[...]</span><br><span class="line">x = modu.sqrt(<span class="number">4</span>)  <span class="comment"># sqrt显然是modu的命名空间的一部分</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import modu</span><br><span class="line">[...]</span><br><span class="line">x = modu.sqrt(<span class="number">4</span>)  <span class="comment"># sqrt显然是modu的命名空间的一部分</span></span><br></pre></td></tr></table></figure>
 <p>如 <a href="http://docs.python-guide.org/en/latest/writing/style/#code-style" target="_blank" rel="noopener">Code Style</a> 部分所述, 可读性是 Python 的主要特性之一。可读性意味着避免无用的样板文字和混乱，因此有必要花费一些努力来达到一定程度的简洁性上。但简洁不是简短和晦涩难懂。如 <code>modu.func</code> 的习惯用法，就能够立即判断类或函数来自何处。 除了最简单的单个文件项目之外，这样写可以大大提高了代码的可读性和可理解性。</p>
 <h2 id="包系统"><a href="#包系统" class="headerlink" title="包系统"></a>包系统</h2><p>Python 提供了一个非常简单的封装系统，它只是模块机制到目录的扩展。</p>
 <p>任何一个带有 <code>__init__.py</code> 文件的目录都被认为是 Python 包。包中的不同模块以类似于普通模块的方式导入，但 <code>__init__.py</code> 文件具有特殊的行为，该文件用于收集所有包范围的定义。</p>
@@ -389,16 +392,16 @@
 <p>总之，针对某些体系结构，由于没有上下文或副作用，纯函数是比类和对象更有效的构建块。</p>
 <p>显然，面向对象编程在许多情况下是有用的，甚至是必要的，例如在开发图形化桌面应用程序或游戏时，被操作的东西（窗口、按钮、化身、车辆）在计算机内存中具有相对较长的寿命。</p>
 <h2 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h2><p>Python 语言提供了一种简单而强大的语法，称为“装饰器”。装饰器是一个函数或类，它包装（或装饰）了函数或方法。装饰器函数或方法将替换原来“未装饰”的函数或方法。因为函数是 Python 中的一级对象，所以可以“手动”完成（参见下述示例），但是使用 @decorator 语法则更清晰，也更受青睐。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def foo():</span><br><span class="line">    <span class="comment"># 一些操作</span></span><br><span class="line"></span><br><span class="line">def decorator(func):</span><br><span class="line">    <span class="comment"># 处理 func</span></span><br><span class="line">    <span class="keyword">return</span> func</span><br><span class="line"></span><br><span class="line">foo = decorator(foo)  <span class="comment"># 手动装饰</span></span><br><span class="line"></span><br><span class="line">@decorator</span><br><span class="line">def bar():</span><br><span class="line">    <span class="comment"># 一些操作</span></span><br><span class="line"><span class="comment"># bar() 被装饰了</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def foo():</span><br><span class="line">    <span class="comment"># 一些操作</span></span><br><span class="line"></span><br><span class="line">def decorator(func):</span><br><span class="line">    <span class="comment"># 处理 func</span></span><br><span class="line">    <span class="keyword">return</span> func</span><br><span class="line"></span><br><span class="line">foo = decorator(foo)  <span class="comment"># 手动装饰</span></span><br><span class="line"></span><br><span class="line">@decorator</span><br><span class="line">def bar():</span><br><span class="line">    <span class="comment"># 一些操作</span></span><br><span class="line"><span class="comment"># bar() 被装饰了</span></span><br></pre></td></tr></table></figure>
 <p>此机制对于分离关注点和避免外部非相关逻辑“污染”函数或方法的核心逻辑很有用。最好采用装饰器来处理的一个功能示例是 <a href="https://en.wikipedia.org/wiki/Memoization#Overview" target="_blank" rel="noopener">备注</a> 或缓存：你希望将计算非常耗时/耗空间的函数的结果存储在表中，并直接使用这些结果，而不是在已经计算过以后重新调用并计算。这显然不是函数逻辑的一部分。</p>
 <h2 id="上下文管理器"><a href="#上下文管理器" class="headerlink" title="上下文管理器"></a>上下文管理器</h2><p>上下文管理器是一个 Python 对象，为操作提供了额外的上下文信息。 这种额外的信息， 在使用 <code>with</code> 语句初始化上下文，以及完成 <code>with</code> 块中的所有代码时，采用可调用的形式。 这里展示了使用上下文管理器的为人熟知的示例，打开文件：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(<span class="string">'file.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    contents = f.read()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">with open(<span class="string">'file.txt'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    contents = f.read()</span><br></pre></td></tr></table></figure>
 <p>任何熟悉这种模式的人都知道以这种形式调用 <code>open</code> 能确保 <code>f</code> 的 <code>close</code> 方法会在某个时候被调用。 这样可以减少开发人员的认知负担，并使代码更容易阅读。</p>
 <p>实现这个功能有两种简单的方法：使用类或使用生成器。 让我们自己实现上面的功能，以使用类方式开始：</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class CustomOpen(object):</span><br><span class="line">    def __init__(<span class="keyword">self</span>, filename):</span><br><span class="line">        <span class="keyword">self</span>.file = open(filename)</span><br><span class="line"></span><br><span class="line">    def __enter__(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.file</span><br><span class="line"></span><br><span class="line">    def __exit__(<span class="keyword">self</span>, ctx_type, ctx_value, ctx_traceback):</span><br><span class="line">        <span class="keyword">self</span>.file.close()</span><br><span class="line"></span><br><span class="line">with CustomOpen(<span class="string">'file'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    contents = f.read()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class CustomOpen(object):</span><br><span class="line">    def __init__(<span class="keyword">self</span>, filename):</span><br><span class="line">        <span class="keyword">self</span>.file = open(filename)</span><br><span class="line"></span><br><span class="line">    def __enter__(<span class="keyword">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">self</span>.file</span><br><span class="line"></span><br><span class="line">    def __exit__(<span class="keyword">self</span>, ctx_type, ctx_value, ctx_traceback):</span><br><span class="line">        <span class="keyword">self</span>.file.close()</span><br><span class="line"></span><br><span class="line">with CustomOpen(<span class="string">'file'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    contents = f.read()</span><br></pre></td></tr></table></figure>
 <p>这只是一个常规的 Python 对象，它有两个由 <code>with</code> 语句使用的额外方法。 CustomOpen 首先被实例化，然后调用它的 <code>__enter__</code> 方法，而且 <code>__enter__</code> 的返回值在 <code>as f</code> 语句中被赋给 <code>f</code> 。 当 <code>with</code> 块中的内容执行完后，会调用 <code>__exit__</code> 方法。</p>
 <p>现在我们演示生成器方式，我们将使用了 Python 自带的 <a href="https://docs.python.org/2/library/contextlib.html" target="_blank" rel="noopener">contextlib</a>:</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from contextlib import contextmanager</span><br><span class="line"></span><br><span class="line">@contextmanager</span><br><span class="line">def custom_open(filename):</span><br><span class="line">    f = open(filename)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">yield</span> f</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        f.close()</span><br><span class="line"></span><br><span class="line">with custom_open(<span class="string">'file'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    contents = f.read()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">from contextlib import contextmanager</span><br><span class="line"></span><br><span class="line">@contextmanager</span><br><span class="line">def custom_open(filename):</span><br><span class="line">    f = open(filename)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">yield</span> f</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        f.close()</span><br><span class="line"></span><br><span class="line">with custom_open(<span class="string">'file'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    contents = f.read()</span><br></pre></td></tr></table></figure>
 <p>这与上面的类示例道理相通，尽管它更简洁。<code>custom_open</code> 函数一直运行到 <code>yield</code> 语句。 然后它将控制权返回给 <code>with</code> 语句，然后在 <code>as f</code> 部分将 yield 的 <code>f</code> 赋值给 <code>f</code>。 <code>finally</code> 确保不论 <code>with</code> 中是否发生异常， <code>close()</code> 都会被调用。</p>
 <p>由于这两种方法都是一样的，所以我们应该遵循 Python 之禅来决定何时使用哪种。 如果封装的逻辑量很大，则类的方法可能会更好。 而对于处理简单操作的情况，函数方法可能会更好。</p>
 <h2 id="动态类型"><a href="#动态类型" class="headerlink" title="动态类型"></a>动态类型</h2><p>Python 是动态类型语言，这意味着变量并没有固定的类型。实际上，Python 中的变量和其他语言有很大的不同，特别是静态类型语言。变量并不是计算机内存中被写入的某个值，它们只是指向内存的『标签』或『名称』。因此可能存在这样的情况，变量 <code>a</code> 先代表值 1，然后变成 字符串 <code>a string</code> , 然后又变为指向一个函数。</p>
@@ -408,38 +411,38 @@
 <li>避免对不同类型的对象使用同一个变量名</li>
 </ul>
 <p><strong>不推荐</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">a = <span class="string">'a string'</span></span><br><span class="line">def a():</span><br><span class="line">    pass  <span class="comment"># Do something</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line">a = <span class="string">'a string'</span></span><br><span class="line">def a():</span><br><span class="line">    pass  <span class="comment"># Do something</span></span><br></pre></td></tr></table></figure>
 <p><strong>推荐</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">1</span></span><br><span class="line">msg = <span class="string">'a string'</span></span><br><span class="line">def func():</span><br><span class="line">    pass  <span class="comment"># Do something</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">count = <span class="number">1</span></span><br><span class="line">msg = <span class="string">'a string'</span></span><br><span class="line">def func():</span><br><span class="line">    pass  <span class="comment"># Do something</span></span><br></pre></td></tr></table></figure>
 <p>使用简短的函数或方法能降低对不相关对象使用同一个名称的风险。</p>
 <p>即使是相关的不同 类型的对象，也更建议使用不同命名：</p>
 <p><strong>不推荐</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = <span class="string">'a b c d'</span>  <span class="comment"># This is a string...</span></span><br><span class="line">items = items.split(<span class="string">' '</span>)  <span class="comment"># ...becoming a list</span></span><br><span class="line">items = set(items)  <span class="comment"># ...and then a set</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">items = <span class="string">'a b c d'</span>  <span class="comment"># This is a string...</span></span><br><span class="line">items = items.split(<span class="string">' '</span>)  <span class="comment"># ...becoming a list</span></span><br><span class="line">items = set(items)  <span class="comment"># ...and then a set</span></span><br></pre></td></tr></table></figure>
 <p>重复使用命名对效率并没有提升：赋值时无论如何都要创建新的对象。然而随着复杂度的提升，赋值语句被其他代码包括 <code>if</code> 分支和循环分开，使得更难查明指定变量的类型。</p>
 <p>在某些代码的做法中，例如函数编程，推荐的是从不重复对同一个变量命名赋值。Java 内的实现方式是使用 <code>final</code> 关键字。Python 并没有 <code>final</code> 关键字而且这与它的哲学 相悖。尽管如此，避免给同一个变量命名重复赋值仍是是个好的做法，并且有助于掌握 可变与不可变类型的概念。</p>
 <h2 id="可变和不可变类型"><a href="#可变和不可变类型" class="headerlink" title="可变和不可变类型"></a>可变和不可变类型</h2><p>Python提供两种内置或用户定义的类型。</p>
 <p>可变类型允许内容的内部修改。典型的动态类型 包括列表与字典：列表都有可变方法，如 <code>list.append()</code> 和 <code>list.pop()</code>， 并且能就地修改。字典也是一样。</p>
 <p>不可变类型没有修改自身内容的方法。比如，赋值为整数 6 的变量 x 并没有 “自增” 方法，如果需要计算 x + 1，必须创建另一个整数变量并给其命名。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">my_list[<span class="number">0</span>] = <span class="number">4</span></span><br><span class="line"><span class="keyword">print</span> my_list  <span class="comment"># [4, 2, 3] &lt;- The same list has changed</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">6</span></span><br><span class="line">x = x + <span class="number">1</span>  <span class="comment"># The new x is another object</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">my_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">my_list[<span class="number">0</span>] = <span class="number">4</span></span><br><span class="line"><span class="keyword">print</span> my_list  <span class="comment"># [4, 2, 3] &lt;- The same list has changed</span></span><br><span class="line"></span><br><span class="line">x = <span class="number">6</span></span><br><span class="line">x = x + <span class="number">1</span>  <span class="comment"># The new x is another object</span></span><br></pre></td></tr></table></figure>
 <p>这种差异导致的一个后果就是，可变类型是不 ‘稳定 ‘的，因而不能作为字典的键使用。</p>
 <p>合理地使用可变类型与不可变类型有助于阐明代码的意图。</p>
 <p>例如与列表相似的不可变类型是元组， 创建方式为 <code>(1, 2)</code>。元组是不可修改的，并能作为字典的键使用。</p>
 <p>Python 中一个可能会让初学者惊讶的特性是：字符串是不可变类型。这意味着当需要组合一个 字符串时，将每一部分放到一个可变列表里，使用字符串时再组合 (<code>join</code>) 起来的做法更高效。 值得注意的是，使用列表推导的构造方式比在循环中调用 <code>append()</code> 来构造列表更好也更快。</p>
 <p>还有一个选项是使用 <code>map</code> 函数，它可以 <code>map</code> 一个函数 <code>str</code> 到可序列化对象上 ( 例如 <code>range(20)</code>)。 结果会产生一个集合，你可以对结果进行 <code>join</code> 在一起，就如其他的例子一样。<code>map</code> 函数在一些场景下速度会更快。</p>
 <p><strong>差</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n in range(<span class="number">20</span>):</span><br><span class="line">    nums += str(n)   <span class="comment"># slow and inefficient</span></span><br><span class="line"><span class="keyword">print</span> nums</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> n in range(<span class="number">20</span>):</span><br><span class="line">    nums += str(n)   <span class="comment"># slow and inefficient</span></span><br><span class="line"><span class="keyword">print</span> nums</span><br></pre></td></tr></table></figure>
 <p><strong>好</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = []</span><br><span class="line"><span class="keyword">for</span> n in range(<span class="number">20</span>):</span><br><span class="line">    nums.append(str(n))</span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span>.join(nums)  <span class="comment"># much more efficient</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = []</span><br><span class="line"><span class="keyword">for</span> n in range(<span class="number">20</span>):</span><br><span class="line">    nums.append(str(n))</span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span>.join(nums)  <span class="comment"># much more efficient</span></span><br></pre></td></tr></table></figure>
 <p><strong>较好</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = [str(n) <span class="keyword">for</span> n in range(<span class="number">20</span>)]</span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span>.join(nums)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = [str(n) <span class="keyword">for</span> n in range(<span class="number">20</span>)]</span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span>.join(nums)</span><br></pre></td></tr></table></figure>
 <p><strong>最好</strong></p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = map(str, range(<span class="number">20</span>))</span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span>.join(nums)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从 0 到 19 创建一个连续的字符串（例如「012..1819」）</span></span><br><span class="line">nums = map(str, range(<span class="number">20</span>))</span><br><span class="line"><span class="keyword">print</span> <span class="string">""</span>.join(nums)</span><br></pre></td></tr></table></figure>
 <p>最后关于字符串的说明的一点是，使用 <code>join()</code> 并不总是最好的选择。比如当用预先确定数量的字符串创建一个新的字符串时，使用加法操作符确实更快，但在上文提到的情况 下或添加到已存在字符串的情况下，使用 <code>join()</code> 是更好的选择。</p>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="string">'foo'</span></span><br><span class="line">bar = <span class="string">'bar'</span></span><br><span class="line"></span><br><span class="line">foobar = foo + bar  <span class="comment"># This is good</span></span><br><span class="line">foo += <span class="string">'ooo'</span>  <span class="comment"># This is bad, instead you should do:</span></span><br><span class="line">foo = <span class="string">''</span>.join([foo, <span class="string">'ooo'</span>])</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="string">'foo'</span></span><br><span class="line">bar = <span class="string">'bar'</span></span><br><span class="line"></span><br><span class="line">foobar = foo + bar  <span class="comment"># This is good</span></span><br><span class="line">foo += <span class="string">'ooo'</span>  <span class="comment"># This is bad, instead you should do:</span></span><br><span class="line">foo = <span class="string">''</span>.join([foo, <span class="string">'ooo'</span>])</span><br></pre></td></tr></table></figure>
 <blockquote>
 <h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>除了 <a href="http://docs.python.org/library/stdtypes.html#str.join" target="_blank" rel="noopener"><code>str.join()</code></a> 和 <code>+</code>，您也可以使用 <a href="http://docs.python.org/library/string.html#string-formatting" target="_blank" rel="noopener">%</a> 格式运算符来连接确定数量的字符串，但 <a href="https://www.python.org/dev/peps/pep-3101" target="_blank" rel="noopener">PEP 3101</a> 建议使用 <a href="http://docs.python.org/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> 替代 <code>%</code> 操作符。</p>
 </blockquote>
-<figure class="highlight php"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="string">'foo'</span></span><br><span class="line">bar = <span class="string">'bar'</span></span><br><span class="line"></span><br><span class="line">foobar = <span class="string">'%s%s'</span> % (foo, bar) <span class="comment"># It is OK</span></span><br><span class="line">foobar = <span class="string">'{0}{1}'</span>.format(foo, bar) <span class="comment"># It is better</span></span><br><span class="line">foobar = <span class="string">'{foo}{bar}'</span>.format(foo=foo, bar=bar) <span class="comment"># It is best</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">foo = <span class="string">'foo'</span></span><br><span class="line">bar = <span class="string">'bar'</span></span><br><span class="line"></span><br><span class="line">foobar = <span class="string">'%s%s'</span> % (foo, bar) <span class="comment"># It is OK</span></span><br><span class="line">foobar = <span class="string">'&#123;0&#125;&#123;1&#125;'</span>.format(foo, bar) <span class="comment"># It is better</span></span><br><span class="line">foobar = <span class="string">'&#123;foo&#125;&#123;bar&#125;'</span>.format(foo=foo, bar=bar) <span class="comment"># It is best</span></span><br></pre></td></tr></table></figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
 <li><a href="https://docs.python-guide.org/writing/structure/#structure-of-the-repository" target="_blank" rel="noopener">Python漫游指南</a></li>
@@ -484,7 +487,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&amp;title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -494,7 +497,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&amp;title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -504,7 +507,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&amp;url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -587,7 +590,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>Yo © 2018</span>
+        <p><span>Yo &copy; 2018</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -605,7 +608,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&amp;title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&amp;pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -615,7 +618,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&amp;title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&amp;source=aaa" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&title=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&source=aaa" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -625,7 +628,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&amp;url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&amp;via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker’s Guide to Python-代码结构》 — Yo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -654,7 +657,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 </script>
 
-
+<script src="/js/main.min.js?v=1.7.2"></script>
 
 
 <div class="search-panel" id="search-panel">
@@ -674,6 +677,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 </li>
 </template>
 
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 
@@ -684,7 +688,4 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
-
-
-
-<script type="text/javascript" src="/bundle.js"></script><script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
