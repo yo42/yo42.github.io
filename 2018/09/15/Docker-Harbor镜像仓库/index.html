@@ -21,18 +21,18 @@
     
     
     <meta name="keywords" content="Technology">
-    <meta name="description" content="部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucleus-oc/2231/    # 控制目录 SSL证书12/home/nucleus-oc/harbor/ssl-key/chained.pem #证书/home/nucleus-o">
+    <meta name="description" content="场景架构:属于分布式集群的方式部署Dokcer镜像仓库，每个项目部署一个从仓库，所有从仓库共用连接一个主仓库，每次对镜像构建集成时将PUSH至主仓库，主仓库再分发至各项目的从仓库。 部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucle">
 <meta name="keywords" content="Technology">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker Harbor镜像仓库">
 <meta property="og:url" content="https://yo42.github.io/2018/09/15/Docker-Harbor镜像仓库/index.html">
 <meta property="og:site_name" content="Yo42">
-<meta property="og:description" content="部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucleus-oc/2231/    # 控制目录 SSL证书12/home/nucleus-oc/harbor/ssl-key/chained.pem #证书/home/nucleus-o">
+<meta property="og:description" content="场景架构:属于分布式集群的方式部署Dokcer镜像仓库，每个项目部署一个从仓库，所有从仓库共用连接一个主仓库，每次对镜像构建集成时将PUSH至主仓库，主仓库再分发至各项目的从仓库。 部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucle">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-15T10:19:50.231Z">
+<meta property="og:updated_time" content="2018-09-16T07:07:51.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker Harbor镜像仓库">
-<meta name="twitter:description" content="部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucleus-oc/2231/    # 控制目录 SSL证书12/home/nucleus-oc/harbor/ssl-key/chained.pem #证书/home/nucleus-o">
+<meta name="twitter:description" content="场景架构:属于分布式集群的方式部署Dokcer镜像仓库，每个项目部署一个从仓库，所有从仓库共用连接一个主仓库，每次对镜像构建集成时将PUSH至主仓库，主仓库再分发至各项目的从仓库。 部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucle">
     
         <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
     
@@ -175,7 +175,8 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="部署Harbor"><a href="#部署Harbor" class="headerlink" title="部署Harbor"></a>部署Harbor</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构:"></a>目录结构:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /home/nucleus-oc/</span><br><span class="line">sudo mkdir /home/nucleus-oc/harbor/  # 数据目录</span><br><span class="line">sudo mkdir /home/nucleus-oc/2231/    # 控制目录</span><br></pre></td></tr></table></figure>
+            <p>场景架构:属于分布式集群的方式部署Dokcer镜像仓库，每个项目部署一个从仓库，所有从仓库共用连接一个主仓库，每次对镜像构建集成时将PUSH至主仓库，主仓库再分发至各项目的从仓库。</p>
+<h2 id="部署Harbor"><a href="#部署Harbor" class="headerlink" title="部署Harbor"></a>部署Harbor</h2><h3 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构:"></a>目录结构:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /home/nucleus-oc/</span><br><span class="line">sudo mkdir /home/nucleus-oc/harbor/  # 数据目录</span><br><span class="line">sudo mkdir /home/nucleus-oc/2231/    # 控制目录</span><br></pre></td></tr></table></figure>
 <h3 id="SSL证书"><a href="#SSL证书" class="headerlink" title="SSL证书"></a>SSL证书</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/home/nucleus-oc/harbor/ssl-key/chained.pem #证书</span><br><span class="line">/home/nucleus-oc/harbor/ssl-key/server.key     # 密钥</span><br></pre></td></tr></table></figure>
 <h3 id="下载并解压缩离线安装包："><a href="#下载并解压缩离线安装包：" class="headerlink" title="下载并解压缩离线安装包："></a>下载并解压缩离线安装包：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/nucleus-oc/2231/</span><br><span class="line">wget https://github.com/vmware/harbor/releases/download/v1.1.2/harbor-offline-installer-v1.1.2.tgz</span><br><span class="line">tar xf harbor-offline-installer-v1.1.2.tgz</span><br></pre></td></tr></table></figure>
 <h3 id="修改配置文件docker-compose-yml"><a href="#修改配置文件docker-compose-yml" class="headerlink" title="修改配置文件docker-compose.yml"></a>修改配置文件docker-compose.yml</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /home/nucleus-oc/2231/harbor/</span><br><span class="line">sed -e &apos;s@ /data/@ /home/nucleus-oc/harbor/@&apos; \</span><br><span class="line">    -e &apos;s@ /var/log/harbor/@ /home/nucleus-oc/harbor/logs/@&apos; \</span><br><span class="line">    -i docker-compose.yml</span><br></pre></td></tr></table></figure>
@@ -196,7 +197,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-15T10:19:50.231Z" itemprop="dateUpdated">2018-09-15 18:19:50</time>
+    Last updated: <time datetime="2018-09-16T07:07:51.713Z" itemprop="dateUpdated">2018-09-16 15:07:51</time>
 </span><br>
 
 

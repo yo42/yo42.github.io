@@ -326,8 +326,8 @@ Python for Beginnersthepythonguru.com 是一个专注于新手程序员的教程
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nucleus-oc/2231/    # 控制目录
-SSL证书12/home/nucleus-oc/harbor/ssl-key/chained.pem #证书/home/nucleu...
+        场景架构:属于分布式集群的方式部署Dokcer镜像仓库，每个项目部署一个从仓库，所有从仓库共用连接一个主仓库，每次对镜像构建集成时将PUSH至主仓库，主仓库再分发至各项目的从仓库。
+部署Harbor目录结构:123sudo mkdir /home/nucleus-oc/sudo mkdir /home/nucleus-oc/harbor/  # 数据目录sudo mkdir /home/nu...
     
 
         <a href="/2018/09/15/Docker-Harbor镜像仓库/" class="post-more waves-effect waves-button">
