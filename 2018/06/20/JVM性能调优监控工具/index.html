@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="以下是一些JVM性能调优监控工具1jps、jstack、jmap、jhat、jstat、hprof.... 对于java程序,有时可能会碰到以下问题 OutOfMemoryError，内存不足 内存泄露 线程死锁 锁争用（Lock Contention） Java进程消耗CPU过高 ….  简单的脚本12345678910111213141516#!/bin/bash# vim:set et ts">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-09-16T07:12:04.990Z">
+<meta property="og:updated_time" content="2018-09-16T07:13:54.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM性能调优监控工具">
 <meta name="twitter:description" content="以下是一些JVM性能调优监控工具1jps、jstack、jmap、jhat、jstat、hprof.... 对于java程序,有时可能会碰到以下问题 OutOfMemoryError，内存不足 内存泄露 线程死锁 锁争用（Lock Contention） Java进程消耗CPU过高 ….  简单的脚本12345678910111213141516#!/bin/bash# vim:set et ts">
@@ -185,7 +185,7 @@
 <li>….</li>
 </ul>
 <h3 id="简单的脚本"><a href="#简单的脚本" class="headerlink" title="简单的脚本"></a>简单的脚本</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># vim:set et ts=4 sw=4:</span></span><br><span class="line"><span class="comment">#set -x</span></span><br><span class="line"></span><br><span class="line">app_list=<span class="string">'inner core scene outer'</span></span><br><span class="line">current_unix=$(date +<span class="string">"%s"</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">true</span></span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    current_date=$(date -d @<span class="variable">$current_unix</span> +<span class="string">"%H%M%S"</span>)</span><br><span class="line">    <span class="comment"># 举例core的pid</span></span><br><span class="line">    /home/app/jdk/bin/jmap -heap PID  | gzip &gt; /home/changyou/jmap-heap/core-heap-<span class="variable">$&#123;current_date&#125;</span>.log.gz</span><br><span class="line">    /home/app/jdk/bin/jmap -histo PID   | gzip &gt; /home/changyou/jmap-histo/core-histo-<span class="variable">$&#123;current_date&#125;</span>.log.gz</span><br><span class="line">	</span><br><span class="line">    sleep 10</span><br><span class="line">    current_unix=$(date +<span class="string">"%s"</span>)</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<p>通过一些监控工具去对java程序进行调优以及监控,在发生问题时使用工具去进行定位问题为后续的排障、修复问题提到了很好的辅助作用。</p>
+<p>通过一些监控工具去对java程序进行调优以及监控,在发生问题时使用工具去进行定位问题为后续的排障、修复问题起到了很好的辅助作用。</p>
 
         </div>
 
@@ -194,7 +194,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-16T07:12:04.990Z" itemprop="dateUpdated">2018-09-16 15:12:04</time>
+    Last updated: <time datetime="2018-09-16T07:13:54.378Z" itemprop="dateUpdated">2018-09-16 15:13:54</time>
 </span><br>
 
 
