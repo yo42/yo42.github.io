@@ -30,7 +30,7 @@
 <meta property="og:description" content="Gitolite是一款Perl语言开发的Git服务管理工具，通过公钥对用户进行认证，并能够通过配置文件对写操作进行基于分支和路径的精细授权。仓库地址 SSH-Config:OpenSSH SSH Client config files;SSH config是SSH客户端的一个参数配置方案，可以将一些关于SSH命令的参数放到配置文件中去，执行ssh命令的时候从文件中读取，简化命令行的操作。 应用场景">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yo42.github.io/2018/09/16/关于Gitolite-SSH-Config联动/ssh.png">
-<meta property="og:updated_time" content="2018-09-16T07:00:17.534Z">
+<meta property="og:updated_time" content="2018-09-16T07:01:05.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Gitolite &amp; SSH-Config联动">
 <meta name="twitter:description" content="Gitolite是一款Perl语言开发的Git服务管理工具，通过公钥对用户进行认证，并能够通过配置文件对写操作进行基于分支和路径的精细授权。仓库地址 SSH-Config:OpenSSH SSH Client config files;SSH config是SSH客户端的一个参数配置方案，可以将一些关于SSH命令的参数放到配置文件中去，执行ssh命令的时候从文件中读取，简化命令行的操作。 应用场景">
@@ -213,7 +213,7 @@
 <h3 id="配置GIT钩子，实现自动触发，更新配置文件"><a href="#配置GIT钩子，实现自动触发，更新配置文件" class="headerlink" title="配置GIT钩子，实现自动触发，更新配置文件"></a>配置GIT钩子，实现自动触发，更新配置文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ssh-config/</span><br><span class="line"><span class="keyword">for</span> dir <span class="keyword">in</span> *</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">  <span class="keyword">if</span> [ -d <span class="variable">$dir</span> ] ;<span class="keyword">then</span> </span><br><span class="line">    <span class="built_in">pushd</span> <span class="variable">$dir</span> &gt; /dev/null</span><br><span class="line">    [ -d <span class="string">"./.git/hooks"</span> ] || <span class="built_in">continue</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'#!/bin/sh'</span>                        &gt; .git/hooks/post-merge</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">'[ -x ./merge.sh ] &amp;&amp; ./merge.sh'</span> &gt;&gt; .git/hooks/post-merge</span><br><span class="line"></span><br><span class="line">    chmod +x .git/hooks/post-merge</span><br><span class="line">    <span class="built_in">popd</span> &gt; /dev/null</span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>后续有更新时（成功后会自动调用勾子进行合并操作）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/ssh-config/cilu-h5/</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<p>通过使用Gitolite可以大大提高团队的协助效率，有时如果是需要提供第三方技术支持，就可以使用Gitolite进行一些简单的配置文件更新、及交付。</p>
+<p>通过使用Gitolite可以大大提高团队的协助效率，有时如果是需要提供第三方技术支持，也可以使用Gitolite进行一些简单的配置文件更新、及交付。</p>
 
         </div>
 
@@ -222,7 +222,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-09-16T07:00:17.534Z" itemprop="dateUpdated">2018-09-16 15:00:17</time>
+    Last updated: <time datetime="2018-09-16T07:01:05.903Z" itemprop="dateUpdated">2018-09-16 15:01:05</time>
 </span><br>
 
 
