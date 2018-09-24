@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yo42.github.io/2018/09/24/DevOps%E6%9C%80%E5%85%A8%E6%9C%AF%E8%AF%AD%E6%B1%87%E6%80%BB/</loc>
+    
+    <lastmod>2018-09-24T06:51:59.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yo42.github.io/2018/09/24/%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90CI-CD/</loc>
+    
+    <lastmod>2018-09-24T06:50:17.099Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yo42.github.io/2018/07/22/DevOps-And-AIOps/</loc>
     
-    <lastmod>2018-09-24T03:47:29.914Z</lastmod>
+    <lastmod>2018-09-24T06:39:05.107Z</lastmod>
     
   </url>
   
@@ -233,14 +247,14 @@
   </url>
   
   <url>
-    <loc>https://yo42.github.io/2018/06/11/%E7%88%B1%E4%BD%A0%E5%B0%B1%E5%83%8F%E7%88%B1%E7%94%9F%E5%91%BD/</loc>
+    <loc>https://yo42.github.io/2018/06/09/%E6%81%B6%E6%84%8F/</loc>
     
     <lastmod>2018-08-03T05:08:42.448Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yo42.github.io/2018/06/09/%E6%81%B6%E6%84%8F/</loc>
+    <loc>https://yo42.github.io/2018/06/11/%E7%88%B1%E4%BD%A0%E5%B0%B1%E5%83%8F%E7%88%B1%E7%94%9F%E5%91%BD/</loc>
     
     <lastmod>2018-08-03T05:08:42.448Z</lastmod>
     
