@@ -29,7 +29,7 @@
 <meta property="og:site_name" content="Yo42">
 <meta property="og:description" content="Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时。 Node.js是一个能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript 运行环境。 Node.js采用了事件驱动、非阻塞和 异步输入输出模型等技术来提高性能，可优化应用程序的传输量和规模。这些技术通常用于数据密集的实时应用程序。 Node.js以单线程运行，使用非阻塞I/O调用，">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-10-01T13:07:46.137Z">
+<meta property="og:updated_time" content="2018-10-01T13:11:08.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="初尝Node.js">
 <meta name="twitter:description" content="Node.js® 是一个基于 Chrome V8 引擎 的 JavaScript 运行时。 Node.js是一个能够在服务器端运行JavaScript的开放源代码、跨平台JavaScript 运行环境。 Node.js采用了事件驱动、非阻塞和 异步输入输出模型等技术来提高性能，可优化应用程序的传输量和规模。这些技术通常用于数据密集的实时应用程序。 Node.js以单线程运行，使用非阻塞I/O调用，">
@@ -225,6 +225,7 @@
 <h4 id="Run-Docker"><a href="#Run-Docker" class="headerlink" title="Run Docker"></a>Run Docker</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -p 8080:8080 -d Neo:42/node-web-app</span><br></pre></td></tr></table></figure>
 <h4 id="运行输出"><a href="#运行输出" class="headerlink" title="运行输出"></a>运行输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Connected correctly to server Neo42 # 连接数据库</span><br><span class="line">Inserted 3 documents into the collection Neo # 插入doc</span><br><span class="line">Found the following records # 查询</span><br><span class="line">[ &#123; _id: 5bb1e06dc2bf97000f0e1886, Neo: 42 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e06dc2bf97000f0e1887, a: 2 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e06dc2bf97000f0e1888, a: 3 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e2bb0c25dc000fa94345, Neo: 42 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e2bb0c25dc000fa94346, a: 2 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e2bb0c25dc000fa94347, a: 3 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e30bb78d09000f1ff341, Neo: 42 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e30bb78d09000f1ff342, a: 2 &#125;,</span><br><span class="line">  &#123; _id: 5bb1e30bb78d09000f1ff343, a: 3 &#125; ]</span><br></pre></td></tr></table></figure>
 <h2 id="Node-js-PM2-Runtime"><a href="#Node-js-PM2-Runtime" class="headerlink" title="Node.js PM2 Runtime"></a>Node.js PM2 Runtime</h2><p>PM2 is a Production Runtime and Process Manager for Node.js applications with a built-in Load Balancer. It allows you to keep applications alive forever, to reload them without downtime and facilitate common Devops tasks.</p>
+<p><strong>Advanced, production process manager for Node.js</strong></p>
 <p><strong>PM2 Features:高效管理多进程、日志分析记录简单的监控、集群扩展、部署方便等…..</strong></p>
 <p><strong>PM2群集模式和重新加载操作可以避免停机时间。</strong></p>
 <h3 id="Using-PM2-with-Docker"><a href="#Using-PM2-with-Docker" class="headerlink" title="Using PM2 with Docker"></a>Using PM2 with Docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">neo_42</span><br><span class="line">├── Dockerfile</span><br><span class="line">├── ecosystem.config.js</span><br><span class="line">├── package.json</span><br><span class="line">└── src</span><br><span class="line"></span><br><span class="line">1 directory, 3 files</span><br></pre></td></tr></table></figure>
@@ -258,7 +259,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2018-10-01T13:07:46.137Z" itemprop="dateUpdated">2018-10-01 21:07:46</time>
+    Last updated: <time datetime="2018-10-01T13:11:08.969Z" itemprop="dateUpdated">2018-10-01 21:11:08</time>
 </span><br>
 
 
