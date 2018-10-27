@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yo42.github.io/Aobut-Me/index.html</loc>
+    
+    <lastmod>2018-10-27T16:53:33.350Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://yo42.github.io/Aobut-Me/index/about_me.html</loc>
     
     <lastmod>2018-10-27T16:50:00.603Z</lastmod>
@@ -282,13 +289,6 @@
   </url>
   
   <url>
-    <loc>https://yo42.github.io/Aobut-Me/index.html</loc>
-    
-    <lastmod>2018-07-22T08:15:22.834Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yo42.github.io/2018/07/22/%E6%B7%B1%E5%A4%9C%E7%9A%84%E5%8F%A3%E7%90%B4%E5%A3%B0/</loc>
     
     <lastmod>2018-07-22T08:09:44.277Z</lastmod>
@@ -355,13 +355,6 @@
     <loc>https://yo42.github.io/categories/index-1.html</loc>
     
     <lastmod>2018-05-20T06:12:44.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yo42.github.io/about/index.html</loc>
-    
-    <lastmod>2018-05-13T06:30:03.131Z</lastmod>
     
   </url>
   
