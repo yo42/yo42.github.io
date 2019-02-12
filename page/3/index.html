@@ -145,6 +145,52 @@
     <ul class="post-list">
     
         <li class="post-list-item fade">
+            <article id="post-Docker-远程API调用启用TLS加密"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2018-09-11 13:06:02" datetime="2018-09-11T05:06:02.930Z"  itemprop="datePublished">2018-09-11</time>
+
+        
+
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2018/09/11/Docker-远程API调用启用TLS加密/">Docker 远程API调用启用TLS加密</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        普通的HTTP模式（非常不安全）：服务端（CentOS 7，IP地址192.168.9.7）：
+sed -i 's/\(OPTIONS="\)/\1-H 0.0.0.0:1699 /' /etc/sysconfig/docker
+# 也就是加入 -H 0.0.0.0:1699参数
+
+## 重启docker。
+## 客户端配置：
+
+echo 'export DOCKER_HOST="tcp:/...
+    
+
+        <a href="/2018/09/11/Docker-远程API调用启用TLS加密/" class="post-more waves-effect waves-button">
+            Continue reading...
+        </a>
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
             <article id="post-Docker-学习笔记"
   class="article-card article-type-post" itemprop="blogPost">
 
@@ -589,61 +635,6 @@ VimVim 是一个用键盘快捷键代替菜单和图标来操作的文本编辑�
 
         </li>
     
-        <li class="post-list-item fade">
-            <article id="post-Python-NoteBook"
-  class="article-card article-type-post" itemprop="blogPost">
-
-    <div class="post-meta">
-        <time class="post-time" title="2018-09-02 20:27:45" datetime="2018-09-02T12:27:45.272Z"  itemprop="datePublished">2018-09-02</time>
-
-        
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
-
-
-
-    </div>
-
-    
-
-
-  
-    <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="/2018/09/02/Python-NoteBook/">Python CookBook(Data Structures)</a>
-    </h3>
-  
-
-
-
-
-    <div class="post-content" id="post-content" itemprop="postContent">
-
-    
-        Python Data Structures
- 数据结构:
- 列表、字典、元组、集合。
-
-
-
-数据结构（Data Structures）基本上人如其名——它们只是一种结构，能够将一些数据聚合在一起。换句话说，它们是用来存储一系列相关数据的集合。
-Python 中有四种内置的数据结构——列表（List）、元组（Tuple）、字典（Dictionary）和集合（Set）
-列表(List):Lis...
-    
-
-        <a href="/2018/09/02/Python-NoteBook/" class="post-more waves-effect waves-button">
-            Continue reading...
-        </a>
-    </div>
-    
-    <div class="post-footer">
-        
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
-
-    </div>
-    
-</article>
-
-        </li>
-    
     </ul>
 
     
@@ -668,7 +659,7 @@ Python 中有四种内置的数据结构——列表（List）、元组（Tuple�
         </p>
     </div>
     <div class="bottom">
-        <p><span>Yo &copy; 2018</span>
+        <p><span>Yo &copy; 2019</span>
             <span>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
