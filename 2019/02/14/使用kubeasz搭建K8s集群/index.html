@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>使用kubeasz搭建K8s集群 | Yo42 | Dont&#39;t Panic,Do not go gentle into that good night~</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="离线本地测试环境资源计划说明：   hostname IP 配置 系统版本 角色     aly8-hn1-k8s-master-001   Centos7.4 master节点&amp;amp;etcd集群   aly8-hn1-k8s-master-002   Centos7.4 master节点&amp;amp;etcd集群   aly8-hn1-k8s-master-003   Centos7.4 mas">
+<meta name="keywords" content="DevOps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用kubeasz搭建K8s集群">
+<meta property="og:url" content="https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/index.html">
+<meta property="og:site_name" content="Yo42">
+<meta property="og:description" content="离线本地测试环境资源计划说明：   hostname IP 配置 系统版本 角色     aly8-hn1-k8s-master-001   Centos7.4 master节点&amp;amp;etcd集群   aly8-hn1-k8s-master-002   Centos7.4 master节点&amp;amp;etcd集群   aly8-hn1-k8s-master-003   Centos7.4 mas">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-02-17T14:53:16.569Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用kubeasz搭建K8s集群">
+<meta name="twitter:description" content="离线本地测试环境资源计划说明：   hostname IP 配置 系统版本 角色     aly8-hn1-k8s-master-001   Centos7.4 master节点&amp;amp;etcd集群   aly8-hn1-k8s-master-002   Centos7.4 master节点&amp;amp;etcd集群   aly8-hn1-k8s-master-003   Centos7.4 mas">
+    
+        <link rel="alternate" type="application/atom+xml" title="Yo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Yo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用kubeasz搭建K8s集群</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">使用kubeasz搭建K8s集群</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-02-14T02:41:01.167Z" itemprop="datePublished" class="page-time">
+  2019-02-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#离线本地测试环境资源计划说明："><span class="post-toc-number">1.</span> <span class="post-toc-text">离线本地测试环境资源计划说明：</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#各节点安装python"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">各节点安装python</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在deploy节点安装及准备ansible"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">在deploy节点安装及准备ansible</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#在deploy节点配置免密码登陆"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">在deploy节点配置免密码登陆</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#kubeasz配置"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">kubeasz配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#下载源码解压到同样目录"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">下载源码解压到同样目录</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置集群参数"><span class="post-toc-number">1.4.2.</span> <span class="post-toc-text">配置集群参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#测试节点主机可达"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">测试节点主机可达</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Deploy</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#验证集群功能"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">验证集群功能</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#查看集群状态"><span class="post-toc-number">1.7.1.</span> <span class="post-toc-text">查看集群状态</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建测试文件"><span class="post-toc-number">1.7.2.</span> <span class="post-toc-text">创建测试文件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#验证coredns"><span class="post-toc-number">1.7.3.</span> <span class="post-toc-text">验证coredns</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#验证dashboard"><span class="post-toc-number">1.7.4.</span> <span class="post-toc-text">验证dashboard</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#自定义修改"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">自定义修改</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#公有云部署k8s集群hosts模板"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">公有云部署k8s集群hosts模板</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#公有云deploy文件"><span class="post-toc-number">1.9.1.</span> <span class="post-toc-text">公有云deploy文件</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-使用kubeasz搭建K8s集群"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用kubeasz搭建K8s集群</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-02-14 10:41:01" datetime="2019-02-14T02:41:01.167Z"  itemprop="datePublished">2019-02-14</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="离线本地测试环境资源计划说明："><a href="#离线本地测试环境资源计划说明：" class="headerlink" title="离线本地测试环境资源计划说明："></a>离线本地测试环境资源计划说明：</h2><table>
+<thead>
+<tr>
+<th>hostname</th>
+<th>IP</th>
+<th>配置</th>
+<th>系统版本</th>
+<th>角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aly8-hn1-k8s-master-001</td>
+<td></td>
+<td></td>
+<td>Centos7.4</td>
+<td>master节点&amp;etcd集群</td>
+</tr>
+<tr>
+<td>aly8-hn1-k8s-master-002</td>
+<td></td>
+<td></td>
+<td>Centos7.4</td>
+<td>master节点&amp;etcd集群</td>
+</tr>
+<tr>
+<td>aly8-hn1-k8s-master-003</td>
+<td></td>
+<td></td>
+<td>Centos7.4</td>
+<td>master节点&amp;etcd集群</td>
+</tr>
+<tr>
+<td>aly8-hn1-ops-001</td>
+<td></td>
+<td></td>
+<td>Centos7.4</td>
+<td>ansible部署节点</td>
+</tr>
+<tr>
+<td>Aly8-hn1-k8s-node-001</td>
+<td></td>
+<td></td>
+<td>Centos7.4</td>
+<td>node节点</td>
+</tr>
+</tbody>
+</table>
+<h3 id="各节点安装python"><a href="#各节点安装python" class="headerlink" title="各节点安装python"></a>各节点安装python</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 文档中脚本默认均以root用户执行</span><br><span class="line"># 安装 epel 源并更新</span><br><span class="line">yum install epel-release -y</span><br><span class="line">yum update</span><br><span class="line"># 安装python</span><br><span class="line">yum install python -y</span><br></pre></td></tr></table></figure>
+<h3 id="在deploy节点安装及准备ansible"><a href="#在deploy节点安装及准备ansible" class="headerlink" title="在deploy节点安装及准备ansible"></a>在deploy节点安装及准备ansible</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yum install git python-pip -y</span><br><span class="line"># pip安装ansible(国内如果安装太慢可以直接用pip阿里云加速)</span><br><span class="line">pip install pip --upgrade -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com</span><br><span class="line">pip install --no-cache-dir ansible -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com</span><br><span class="line"># pip install pip --upgrade</span><br><span class="line"># pip install ansible</span><br></pre></td></tr></table></figure>
+<h3 id="在deploy节点配置免密码登陆"><a href="#在deploy节点配置免密码登陆" class="headerlink" title="在deploy节点配置免密码登陆"></a>在deploy节点配置免密码登陆</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -b 2048 # 回车 回车 回车</span><br><span class="line">ssh-copy-id $IPs # $IPs为所有节点地址包括自身，按照提示输入yes 和root密码</span><br></pre></td></tr></table></figure>
+<h3 id="kubeasz配置"><a href="#kubeasz配置" class="headerlink" title="kubeasz配置"></a>kubeasz配置</h3><h4 id="下载源码解压到同样目录"><a href="#下载源码解压到同样目录" class="headerlink" title="下载源码解压到同样目录"></a>下载源码解压到同样目录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/gjmzj/kubeasz.git</span><br><span class="line">mkdir -p /etc/ansible</span><br><span class="line">mv kubeasz/* /etc/ansible</span><br><span class="line">tar xf /root/k8sfile/k8s.1-13-2.tar.gz -C /etc/ansible/</span><br></pre></td></tr></table></figure>
+<h4 id="配置集群参数"><a href="#配置集群参数" class="headerlink" title="配置集群参数"></a>配置集群参数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/ansible</span><br><span class="line">cp example/hosts.m-masters.example hosts</span><br><span class="line">vim hosts                       # 根据实际情况修改此hosts文件</span><br></pre></td></tr></table></figure>
+<p>Hosts配置文件:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"># 集群部署节点：一般为运行ansible 脚本的节点</span><br><span class="line"># 变量 NTP_ENABLED (=yes/no) 设置集群是否安装 chrony 时间同步</span><br><span class="line">[deploy]</span><br><span class="line">10.1.2.66 NTP_ENABLED=no</span><br><span class="line"></span><br><span class="line"># etcd集群请提供如下NODE_NAME，注意etcd集群必须是1,3,5,7...奇数个节点</span><br><span class="line">[etcd]</span><br><span class="line">10.1.2.30 NODE_NAME=etcd1</span><br><span class="line">10.1.2.1 NODE_NAME=etcd2</span><br><span class="line">10.1.2.2 NODE_NAME=etcd3</span><br><span class="line"></span><br><span class="line">[kube-master]</span><br><span class="line">10.1.2.30</span><br><span class="line">10.1.2.1</span><br><span class="line">10.1.2.2</span><br><span class="line"></span><br><span class="line"># 负载均衡(目前已支持多于2节点，一般2节点就够了) 安装 haproxy+keepalived</span><br><span class="line">[lb]</span><br><span class="line">10.1.2.30 LB_ROLE=master</span><br><span class="line">10.1.2.1 LB_ROLE=backup</span><br><span class="line"></span><br><span class="line">[kube-node]</span><br><span class="line">10.1.2.67</span><br><span class="line"></span><br><span class="line"># 参数 NEW_INSTALL：yes表示新建，no表示使用已有harbor服务器</span><br><span class="line"># 如果不使用域名，可以设置 HARBOR_DOMAIN=&quot;&quot;</span><br><span class="line">[harbor]</span><br><span class="line">#192.168.1.8 HARBOR_DOMAIN=&quot;harbor.yourdomain.com&quot; NEW_INSTALL=no</span><br><span class="line"></span><br><span class="line"># 预留组，后续添加master节点使用</span><br><span class="line">[new-master]</span><br><span class="line">#192.168.1.5</span><br><span class="line"></span><br><span class="line"># 预留组，后续添加node节点使用</span><br><span class="line">[new-node]</span><br><span class="line">#192.168.1.xx</span><br><span class="line"></span><br><span class="line">#【可选】外部负载均衡，用于自有环境负载转发 NodePort 暴露的服务等</span><br><span class="line">[ex-lb]</span><br><span class="line">#192.168.1.6 LB_ROLE=backup EX_VIP=10.1.2.150</span><br><span class="line">#192.168.1.7 LB_ROLE=master EX_VIP=10.1.2.150</span><br><span class="line"></span><br><span class="line">[all:vars]</span><br><span class="line"># ---------集群主要参数---------------</span><br><span class="line">#集群部署模式：allinone, single-master, multi-master</span><br><span class="line">DEPLOY_MODE=multi-master</span><br><span class="line"></span><br><span class="line">#集群主版本号，目前支持: v1.8, v1.9, v1.10，v1.11, v1.12, v1.13</span><br><span class="line">K8S_VER=&quot;v1.13&quot;</span><br><span class="line"></span><br><span class="line"># 集群 MASTER IP即 LB节点VIP地址，为区别与默认apiserver端口，设置VIP监听的服务端口8443</span><br><span class="line"># 公有云上请使用云负载均衡内网地址和监听端口</span><br><span class="line">MASTER_IP=&quot;10.1.2.166&quot;</span><br><span class="line">KUBE_APISERVER=&quot;https://&#123;&#123; MASTER_IP &#125;&#125;:8443&quot;</span><br><span class="line"></span><br><span class="line"># 集群网络插件，目前支持calico, flannel, kube-router, cilium</span><br><span class="line">CLUSTER_NETWORK=&quot;flannel&quot;</span><br><span class="line"></span><br><span class="line"># 服务网段 (Service CIDR），注意不要与内网已有网段冲突</span><br><span class="line">SERVICE_CIDR=&quot;10.68.0.0/16&quot;</span><br><span class="line"></span><br><span class="line"># POD 网段 (Cluster CIDR），注意不要与内网已有网段冲突</span><br><span class="line">CLUSTER_CIDR=&quot;172.20.0.0/16&quot;</span><br><span class="line"></span><br><span class="line"># 服务端口范围 (NodePort Range)</span><br><span class="line">NODE_PORT_RANGE=&quot;20000-40000&quot;</span><br><span class="line"></span><br><span class="line"># kubernetes 服务 IP (预分配，一般是 SERVICE_CIDR 中第一个IP)</span><br><span class="line">CLUSTER_KUBERNETES_SVC_IP=&quot;10.68.0.1&quot;</span><br><span class="line"></span><br><span class="line"># 集群 DNS 服务 IP (从 SERVICE_CIDR 中预分配)</span><br><span class="line">CLUSTER_DNS_SVC_IP=&quot;10.68.0.2&quot;</span><br><span class="line"></span><br><span class="line"># 集群 DNS 域名</span><br><span class="line">CLUSTER_DNS_DOMAIN=&quot;eduskscluster.local.&quot;</span><br><span class="line"></span><br><span class="line"># 集群basic auth 使用的用户名和密码</span><br><span class="line">BASIC_AUTH_USER=&quot;admin&quot;</span><br><span class="line">BASIC_AUTH_PASS=&quot;test1234&quot;</span><br><span class="line"></span><br><span class="line"># ---------附加参数--------------------</span><br><span class="line">#默认二进制文件目录</span><br><span class="line">bin_dir=&quot;/opt/kube/bin&quot;</span><br><span class="line"></span><br><span class="line">#证书目录</span><br><span class="line">ca_dir=&quot;/etc/kubernetes/ssl&quot;</span><br><span class="line"></span><br><span class="line">#部署目录，即 ansible 工作目录，建议不要修改</span><br><span class="line">base_dir=&quot;/etc/ansible&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="测试节点主机可达"><a href="#测试节点主机可达" class="headerlink" title="测试节点主机可达"></a>测试节点主机可达</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ansible all -m ping</span><br></pre></td></tr></table></figure>
+<h3 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># 分步安装</span><br><span class="line">ansible-playbook 01.prepare.yml</span><br><span class="line">ansible-playbook 02.etcd.yml</span><br><span class="line">ansible-playbook 03.docker.yml</span><br><span class="line">ansible-playbook 04.kube-master.yml</span><br><span class="line">ansible-playbook 05.kube-node.yml</span><br><span class="line">ansible-playbook 06.network.yml</span><br><span class="line">ansible-playbook 07.cluster-addon.yml</span><br><span class="line"># 一步安装</span><br><span class="line">#ansible-playbook 90.setup.yml</span><br></pre></td></tr></table></figure>
+<h3 id="验证集群功能"><a href="#验证集群功能" class="headerlink" title="验证集群功能"></a>验证集群功能</h3><h4 id="查看集群状态"><a href="#查看集群状态" class="headerlink" title="查看集群状态"></a>查看集群状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl get node</span><br><span class="line">kubectl cluster-info</span><br><span class="line">kubectl  top node</span><br><span class="line">kubectl get ep --all-namespaces -o yaml</span><br></pre></td></tr></table></figure>
+<h4 id="创建测试文件"><a href="#创建测试文件" class="headerlink" title="创建测试文件"></a>创建测试文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; nginx-ds.yml &lt;&lt;EOF</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Service</span><br><span class="line">metadata:</span><br><span class="line">  name: nginx-ds</span><br><span class="line">  labels:</span><br><span class="line">    app: nginx-ds</span><br><span class="line">spec:</span><br><span class="line">  type: NodePort</span><br><span class="line">  selector:</span><br><span class="line">    app: nginx-ds</span><br><span class="line">  ports:</span><br><span class="line">  - name: http</span><br><span class="line">    port: 80</span><br><span class="line">    targetPort: 80</span><br><span class="line">---</span><br><span class="line">apiVersion: extensions/v1beta1</span><br><span class="line">kind: DaemonSet</span><br><span class="line">metadata:</span><br><span class="line">  name: nginx-ds</span><br><span class="line">  labels:</span><br><span class="line">    addonmanager.kubernetes.io/mode: Reconcile</span><br><span class="line">spec:</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: nginx-ds</span><br><span class="line">    spec:</span><br><span class="line">      containers:</span><br><span class="line">      - name: my-nginx</span><br><span class="line">        image: nginx:1.7.9</span><br><span class="line">        ports:</span><br><span class="line">        - containerPort: 80</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">kubectl create -f nginx-ds.yml</span><br><span class="line"></span><br><span class="line">kubectl get pods  -o wide|grep nginx-ds</span><br><span class="line">kubectl get svc  -o wide|grep nginx-ds</span><br><span class="line"></span><br><span class="line"># 检查nodeport可用性</span><br><span class="line">curl node节点ip:svc端口</span><br><span class="line"># 出现nginx欢迎页</span><br></pre></td></tr></table></figure>
+<h4 id="验证coredns"><a href="#验证coredns" class="headerlink" title="验证coredns"></a>验证coredns</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kubectl exec  -it nginx-ds-8sd6z /bin/bash</span><br><span class="line">cat /etc/resolv.conf</span><br><span class="line">ping nginx-ds</span><br><span class="line"># 能成功解析服务到ip证明dns正常</span><br></pre></td></tr></table></figure>
+<h4 id="验证dashboard"><a href="#验证dashboard" class="headerlink" title="验证dashboard"></a>验证dashboard</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"># kube-apiserver 访问 dashboard</span><br><span class="line">kubectl cluster-info</span><br><span class="line"># 也可以通过nodeport 访问</span><br><span class="line">kubectl get svc -n kube-system</span><br><span class="line"></span><br><span class="line"># 创建登录 Dashboard 的 token 和 kubeconfig 配置文件</span><br><span class="line"># 上面提到，Dashboard 默认只支持 token 认证，所以如果使用 KubeConfig 文件，需要在该文件中指定 token，不支持使用 client 证书认证。</span><br><span class="line"></span><br><span class="line"># 创建登录 token</span><br><span class="line">kubectl create sa dashboard-admin -n kube-system</span><br><span class="line">kubectl create clusterrolebinding dashboard-admin --clusterrole=cluster-admin --serviceaccount=kube-system:dashboard-admin</span><br><span class="line">ADMIN_SECRET=$(kubectl get secrets -n kube-system | grep dashboard-admin | awk &apos;&#123;print $1&#125;&apos;)</span><br><span class="line">DASHBOARD_LOGIN_TOKEN=$(kubectl describe secret -n kube-system $&#123;ADMIN_SECRET&#125; | grep -E &apos;^token&apos; | awk &apos;&#123;print $2&#125;&apos;)</span><br><span class="line">echo $&#123;DASHBOARD_LOGIN_TOKEN&#125;</span><br><span class="line"></span><br><span class="line"># 创建使用 token 的 KubeConfig 文件</span><br><span class="line"># 设置集群参数</span><br><span class="line">kubectl config set-cluster kubernetes \</span><br><span class="line">  --certificate-authority=/etc/kubernetes/ssl/ca.pem \</span><br><span class="line">  --embed-certs=true \</span><br><span class="line">  --server=https://172.16.68.14:8443 \</span><br><span class="line">  --kubeconfig=dashboard.kubeconfig</span><br><span class="line"></span><br><span class="line"># 设置客户端认证参数，使用上面创建的 Token</span><br><span class="line">kubectl config set-credentials dashboard_user \</span><br><span class="line">  --token=$&#123;DASHBOARD_LOGIN_TOKEN&#125; \</span><br><span class="line">  --kubeconfig=dashboard.kubeconfig</span><br><span class="line"></span><br><span class="line"># 设置上下文参数</span><br><span class="line">kubectl config set-context default \</span><br><span class="line">  --cluster=kubernetes \</span><br><span class="line">  --user=dashboard_user \</span><br><span class="line">  --kubeconfig=dashboard.kubeconfig</span><br><span class="line"></span><br><span class="line"># 设置默认上下文</span><br><span class="line">kubectl config use-context default --kubeconfig=dashboard.kubeconfig</span><br></pre></td></tr></table></figure>
+<h3 id="自定义修改"><a href="#自定义修改" class="headerlink" title="自定义修改"></a>自定义修改</h3><p>04.kube-master.yml # 去除了roles kube-node</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># to set up &apos;kube-master&apos; nodes</span><br><span class="line">- hosts: kube-master</span><br><span class="line">  roles:</span><br><span class="line">  - kube-master</span><br><span class="line">  tasks:</span><br><span class="line">  - name: Making master nodes SchedulingDisabled</span><br><span class="line">    shell: &quot;&#123;&#123; bin_dir &#125;&#125;/kubectl cordon &#123;&#123; inventory_hostname &#125;&#125; &quot;</span><br><span class="line">    delegate_to: &quot;&#123;&#123; groups.deploy[0] &#125;&#125;&quot;</span><br><span class="line">    when: DEPLOY_MODE != &quot;allinone&quot;</span><br><span class="line">    ignore_errors: true</span><br><span class="line"></span><br><span class="line">  - name: Setting master role name</span><br><span class="line">    shell: &quot;&#123;&#123; bin_dir &#125;&#125;/kubectl label node &#123;&#123; inventory_hostname &#125;&#125; kubernetes.io/role=master --overwrite&quot;</span><br><span class="line">    ignore_errors: true</span><br><span class="line">    delegate_to: &quot;&#123;&#123; groups.deploy[0] &#125;&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="公有云部署k8s集群hosts模板"><a href="#公有云部署k8s集群hosts模板" class="headerlink" title="公有云部署k8s集群hosts模板"></a>公有云部署k8s集群hosts模板</h3><p><strong>hosts.m-masters.example</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line"># 部署节点：运行这份 ansible 脚本的节点</span><br><span class="line">[deploy]</span><br><span class="line">192.168.1.1</span><br><span class="line"></span><br><span class="line"># etcd集群请提供如下NODE_NAME、NODE_IP变量</span><br><span class="line"># 请注意etcd集群必须是1,3,5,7...奇数个节点</span><br><span class="line">[etcd]</span><br><span class="line">192.168.1.1 NODE_NAME=etcd1 NODE_IP=&quot;192.168.1.1&quot;</span><br><span class="line">192.168.1.2 NODE_NAME=etcd2 NODE_IP=&quot;192.168.1.2&quot;</span><br><span class="line">192.168.1.3 NODE_NAME=etcd3 NODE_IP=&quot;192.168.1.3&quot;</span><br><span class="line"></span><br><span class="line">[kube-master]</span><br><span class="line">192.168.1.1 NODE_IP=&quot;192.168.1.1&quot;</span><br><span class="line">192.168.1.2 NODE_IP=&quot;192.168.1.2&quot;</span><br><span class="line"></span><br><span class="line"># 负载均衡至少两个节点，安装 haproxy+keepalived</span><br><span class="line"># 根据master节点数量同步修改roles/lb/templates/haproxy.cfg.j2 </span><br><span class="line">[lb]</span><br><span class="line">192.168.1.1 LB_IF=&quot;eth0&quot; LB_ROLE=backup</span><br><span class="line">192.168.1.2 LB_IF=&quot;eth0&quot; LB_ROLE=master</span><br><span class="line">[lb:vars]</span><br><span class="line">LB_EP1=&quot;192.168.1.1:6443&quot;	# api-server 实际成员地址端口</span><br><span class="line">LB_EP2=&quot;192.168.1.2:6443&quot;	# api-server 实际成员地址端口</span><br><span class="line">MASTER_IP=&quot;192.168.1.10&quot;  	# api-server 虚地址</span><br><span class="line">MASTER_PORT=&quot;8443&quot;		# api-server 服务端口</span><br><span class="line"></span><br><span class="line">#确保node节点有变量NODE_ID=node1</span><br><span class="line">[kube-node]</span><br><span class="line">192.168.1.2 NODE_ID=node1 NODE_IP=&quot;192.168.1.2&quot;</span><br><span class="line">192.168.1.3 NODE_ID=node2 NODE_IP=&quot;192.168.1.3&quot;</span><br><span class="line">192.168.1.4 NODE_ID=node3 NODE_IP=&quot;192.168.1.4&quot;</span><br><span class="line"></span><br><span class="line">[kube-cluster:children]</span><br><span class="line">kube-node</span><br><span class="line">kube-master</span><br><span class="line"></span><br><span class="line"># 如果启用harbor，请配置后面harbor相关参数</span><br><span class="line">[harbor]</span><br><span class="line">#192.168.1.8 NODE_IP=&quot;192.168.1.8&quot;</span><br><span class="line"></span><br><span class="line"># 预留组，后续添加node节点使用</span><br><span class="line">[new-node]</span><br><span class="line">#192.168.1.xx NODE_ID=node6 NODE_IP=&quot;192.168.1.xx&quot;</span><br><span class="line">#192.168.1.xx NODE_ID=node7 NODE_IP=&quot;192.168.1.xx&quot;</span><br><span class="line"></span><br><span class="line">[all:vars]</span><br><span class="line"># ---------集群主要参数---------------</span><br><span class="line">#集群 MASTER IP, 需要负载均衡，一般为VIP地址</span><br><span class="line">MASTER_IP=&quot;192.168.1.10&quot;</span><br><span class="line">KUBE_APISERVER=&quot;https://192.168.1.10:8443&quot;</span><br><span class="line"></span><br><span class="line">#pause镜像地址</span><br><span class="line">POD_INFRA_CONTAINER_IMAGE=mirrorgooglecontainers/pause-amd64:3.0</span><br><span class="line"></span><br><span class="line">#TLS Bootstrapping 使用的 Token，使用 head -c 16 /dev/urandom | od -An -t x | tr -d &apos; &apos; 生成</span><br><span class="line">BOOTSTRAP_TOKEN=&quot;c30302226d4b810e08731702d3890f50&quot;</span><br><span class="line"></span><br><span class="line"># 集群网络插件，目前支持calico和flannel</span><br><span class="line">CLUSTER_NETWORK=&quot;calico&quot;</span><br><span class="line"></span><br><span class="line"># 部分calico相关配置，更全配置可以去roles/calico/templates/calico.yaml.j2自定义</span><br><span class="line"># 设置 CALICO_IPV4POOL_IPIP=“off”,可以提高网络性能，条件限制详见 05.安装calico网络组件.md</span><br><span class="line">CALICO_IPV4POOL_IPIP=&quot;always&quot;</span><br><span class="line"># 设置 calico-node使用的host IP，bgp邻居通过该地址建立，可手动指定端口&quot;interface=eth0&quot;或使用如下自动发现</span><br><span class="line">IP_AUTODETECTION_METHOD=&quot;can-reach=223.5.5.5&quot;</span><br><span class="line"></span><br><span class="line"># 部分flannel配置，详见roles/flannel/templates/kube-flannel.yaml.j2</span><br><span class="line">FLANNEL_BACKEND=&quot;vxlan&quot;</span><br><span class="line"></span><br><span class="line"># 服务网段 (Service CIDR），部署前路由不可达，部署后集群内使用 IP:Port 可达</span><br><span class="line">SERVICE_CIDR=&quot;10.68.0.0/16&quot;</span><br><span class="line"></span><br><span class="line"># POD 网段 (Cluster CIDR），部署前路由不可达，**部署后**路由可达</span><br><span class="line">CLUSTER_CIDR=&quot;172.20.0.0/16&quot;</span><br><span class="line"></span><br><span class="line"># 服务端口范围 (NodePort Range)</span><br><span class="line">NODE_PORT_RANGE=&quot;20000-40000&quot;</span><br><span class="line"></span><br><span class="line"># kubernetes 服务 IP (预分配，一般是 SERVICE_CIDR 中第一个IP)</span><br><span class="line">CLUSTER_KUBERNETES_SVC_IP=&quot;10.68.0.1&quot;</span><br><span class="line"></span><br><span class="line"># 集群 DNS 服务 IP (从 SERVICE_CIDR 中预分配)</span><br><span class="line">CLUSTER_DNS_SVC_IP=&quot;10.68.0.2&quot;</span><br><span class="line"></span><br><span class="line"># 集群 DNS 域名</span><br><span class="line">CLUSTER_DNS_DOMAIN=&quot;cluster.local.&quot;</span><br><span class="line"></span><br><span class="line"># etcd 集群间通信的IP和端口, **根据实际 etcd 集群成员设置**</span><br><span class="line">ETCD_NODES=&quot;etcd1=https://192.168.1.1:2380,etcd2=https://192.168.1.2:2380,etcd3=https://192.168.1.3:2380&quot;</span><br><span class="line"></span><br><span class="line"># etcd 集群服务地址列表, **根据实际 etcd 集群成员设置**</span><br><span class="line">ETCD_ENDPOINTS=&quot;https://192.168.1.1:2379,https://192.168.1.2:2379,https://192.168.1.3:2379&quot;</span><br><span class="line"></span><br><span class="line"># 集群basic auth 使用的用户名和密码</span><br><span class="line">BASIC_AUTH_USER=&quot;admin&quot;</span><br><span class="line">BASIC_AUTH_PASS=&quot;test1234&quot;</span><br><span class="line"></span><br><span class="line"># ---------附加参数--------------------</span><br><span class="line">#默认二进制文件目录</span><br><span class="line">bin_dir=&quot;/root/local/bin&quot;</span><br><span class="line"></span><br><span class="line">#证书目录</span><br><span class="line">ca_dir=&quot;/etc/kubernetes/ssl&quot;</span><br><span class="line"></span><br><span class="line">#部署目录，即 ansible 工作目录，建议不要修改</span><br><span class="line">base_dir=&quot;/etc/ansible&quot;</span><br><span class="line"></span><br><span class="line">#私有仓库 harbor服务器 (域名或者IP)</span><br><span class="line">#HARBOR_IP=&quot;192.168.1.8&quot;</span><br><span class="line">#HARBOR_DOMAIN=&quot;harbor.yourdomain.com&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="公有云deploy文件"><a href="#公有云deploy文件" class="headerlink" title="公有云deploy文件"></a>公有云deploy文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"># 在deploy节点生成CA相关证书，以供整个集群使用</span><br><span class="line"># 以及初始化kubedns.yaml配置文件</span><br><span class="line">- hosts: deploy</span><br><span class="line">  roles:</span><br><span class="line">  - deploy</span><br><span class="line"></span><br><span class="line"># 集群节点的公共配置任务</span><br><span class="line">- hosts:</span><br><span class="line">  - kube-cluster</span><br><span class="line">  - deploy</span><br><span class="line">  - etcd</span><br><span class="line">  - lb</span><br><span class="line">  roles:</span><br><span class="line">  - prepare</span><br><span class="line"></span><br><span class="line"># [可选]多master部署时的负载均衡配置</span><br><span class="line">- hosts: lb</span><br><span class="line">  roles:</span><br><span class="line">  - lb</span><br><span class="line"></span><br><span class="line"># 创建etcd集群</span><br><span class="line">- hosts: etcd</span><br><span class="line">  roles:</span><br><span class="line">  - etcd</span><br><span class="line"></span><br><span class="line"># kubectl 客户端配置</span><br><span class="line">- hosts: </span><br><span class="line">  - kube-cluster</span><br><span class="line">  - deploy</span><br><span class="line">  roles:</span><br><span class="line">  - kubectl</span><br><span class="line"></span><br><span class="line"># docker服务安装</span><br><span class="line">- hosts: kube-cluster</span><br><span class="line">  roles:</span><br><span class="line">  - docker</span><br><span class="line"></span><br><span class="line"># master 节点部署</span><br><span class="line">- hosts: kube-master</span><br><span class="line">  roles:</span><br><span class="line">  - kube-master</span><br><span class="line"></span><br><span class="line"># node 节点部署</span><br><span class="line">- hosts: kube-node</span><br><span class="line">  roles:</span><br><span class="line">  - kube-node</span><br><span class="line"></span><br><span class="line"># 集群网络插件部署，只能选择一种安装</span><br><span class="line">- hosts: kube-cluster</span><br><span class="line">  roles:</span><br><span class="line">  - &#123; role: calico, when: &quot;CLUSTER_NETWORK == &apos;calico&apos;&quot; &#125;</span><br><span class="line">  - &#123; role: flannel, when: &quot;CLUSTER_NETWORK == &apos;flannel&apos;&quot; &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://li-sen.github.io/2018/09/27/k8s-kubeasz-%E9%98%BF%E9%87%8C%E4%BA%91vpc%E9%83%A8%E7%BD%B2%E8%AE%B0%E5%BD%95/" target="_blank" rel="noopener">https://li-sen.github.io/2018/09/27/k8s-kubeasz-%E9%98%BF%E9%87%8C%E4%BA%91vpc%E9%83%A8%E7%BD%B2%E8%AE%B0%E5%BD%95/</a></li>
+<li><a href="https://github.com/mendickxiao/kubeasz/blob/master/90.setup.yml" target="_blank" rel="noopener">https://github.com/mendickxiao/kubeasz/blob/master/90.setup.yml</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2019-02-17T14:53:16.569Z" itemprop="dateUpdated">2019-02-17 22:53:16</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Yo">
+            Yo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/&title=《使用kubeasz搭建K8s集群》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/&title=《使用kubeasz搭建K8s集群》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用kubeasz搭建K8s集群》 — Yo42&url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/01/29/搭建k8s集群/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">手动搭建k8s集群</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Yo &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/&title=《使用kubeasz搭建K8s集群》 — Yo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/&title=《使用kubeasz搭建K8s集群》 — Yo42&source=aaa" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用kubeasz搭建K8s集群》 — Yo42&url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2019/02/14/使用kubeasz搭建K8s集群/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
