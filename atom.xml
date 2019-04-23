@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yo42.github.io/"/>
-  <updated>2019-04-23T08:24:46.972Z</updated>
+  <updated>2019-04-23T12:18:12.887Z</updated>
   <id>https://yo42.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git Hook简单实用</title>
+    <link href="https://yo42.github.io/2019/04/23/%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8Git-Hook/"/>
+    <id>https://yo42.github.io/2019/04/23/简单使用Git-Hook/</id>
+    <published>2019-04-23T10:42:14.000Z</published>
+    <updated>2019-04-23T12:18:12.887Z</updated>
+    
+    <content type="html"><![CDATA[<p>需求: 使用Git Hook进行web资源的更新</p><h3 id="Git-Hook-简介"><a href="#Git-Hook-简介" class="headerlink" title="Git Hook 简介"></a>Git Hook 简介</h3><p>一般的开发流程都是<code>git add</code>、<code>git commit</code>，<code>git push</code>，钩子呢就是你完成每一步Git给你的“回调”，举个例子假如你想让服务器每次上传完新的代码后更新网站，如果你没有钩子，你只能自己<code>ssh</code>登录上服务器，自己更新软件，一次两次还好，多了的话你会骂娘的，所以钩子是给我偷懒的脚手架，我们可以很轻松的写一些脚步帮我们完成一些重复的步骤</p><p>介绍玩钩子的作用，我们来介绍一下钩子的分类</p><p>我们知道Git核心是<code>commit</code>和<code>push</code>两个命令，一个对应客户端，一个对应服务端，所以钩子主要分客户端和服务端，由于Git步骤分的很细，所以每个大分类下面还有很多小分类，比如<code>pre-commit</code>，<code>post-commit</code>这些。</p><p>钩子的全部放在<code>.git/hooks</code>下面，在新建一个项目仓库的时候，Git已经在这个文件夹下给我们生成了很多个<code>.sample</code>后缀的钩子，这些钩子只要把<code>.sample</code>去掉就可以运行了，我们可以在这些<code>sample</code>上面修改完成我们自己的钩子</p><h3 id="客户端钩子"><a href="#客户端钩子" class="headerlink" title="客户端钩子"></a>客户端钩子</h3><ul><li>pre-commit: 执行<code>git commit</code>命令时触发，常用于检查代码风格</li><li>prepare-commit-msg: <code>commit message</code>编辑器呼起前<code>default commit message</code>创建后触发，常用于生成默认的<a href="https://conventionalcommits.org/" target="_blank" rel="noopener">标准化的提交说明</a></li><li>commit-msg: 开发者编写完并确认<code>commit message</code>后触发，常用于校验提交说明是否标准</li><li>post-commit: 整个<code>git commit</code>完成后触发，常用于邮件通知、提醒</li><li>applypatch-msg: 执行<code>git am</code>命令时触发，常用于检查命令提取出来的提交信息是否符合特定格式</li><li>pre-applypatch: <code>git am</code>提取出补丁并应用于当前分支后，准备提交前触发，常用于执行测试用例或检查缓冲区代码</li><li>post-applypatch: <code>git am</code>提交后触发，常用于通知、或补丁邮件回复（此钩子不能停止<code>git am</code>过程）</li><li>pre-rebase: 执行<code>git rebase</code>命令时触发</li><li>post-rewrite: 执行会替换<code>commit</code>的命令时触发，比如<code>git rebase</code>或<code>git commit --amend</code></li><li>post-checkout: 执行<code>git checkout</code>命令成功后触发，可用于生成特定文档，处理大二进制文件等</li><li>post-merge: 成功完成一次 <code>merge</code>行为后触发</li><li>pre-push: 执行<code>git push</code>命令时触发，可用于执行测试用例</li><li>pre-auto-gc: 执行垃圾回收前触发</li></ul><h3 id="服务端钩子"><a href="#服务端钩子" class="headerlink" title="服务端钩子"></a>服务端钩子</h3><ul><li>pre-receive: 当服务端收到一个push操作请求时触发，可用于检测push的内容</li><li>update: 与pre-receive相似，但当一次push想更新多个分支时，pre-receive只执行一次，而此钩子会为每一分支都执行一次</li><li>post-receive: 当整个push操作完成时触发，常用于服务侧同步、通知</li></ul><h3 id="配置git-hook触发，本地客户端更新push触发服务端自动拉取更新资源"><a href="#配置git-hook触发，本地客户端更新push触发服务端自动拉取更新资源" class="headerlink" title="配置git hook触发，本地客户端更新push触发服务端自动拉取更新资源"></a>配置git hook触发，本地客户端更新push触发服务端自动拉取更新资源</h3> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -a  hooks/post-receive.sample hooks/post-receive</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cat hooks/post-receive <span class="comment"># vi编辑</span></span><br><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">unset</span> GIT_DIR</span><br><span class="line">/usr/bin/sudo su - apps</span><br><span class="line">ssh  apps@10.4.0.173 <span class="string">"cd /data/lt1/app/qjj &amp;&amp; git pull origin master"</span></span><br></pre></td></tr></table></figure><h3 id="本地使用"><a href="#本地使用" class="headerlink" title="本地使用"></a>本地使用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone xxxx</span><br></pre></td></tr></table></figure><h5 id="后续走git-流程进行推送-便实现自动更新。"><a href="#后续走git-流程进行推送-便实现自动更新。" class="headerlink" title="后续走git 流程进行推送,便实现自动更新。"></a>后续走git 流程进行推送,便实现自动更新。</h5><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href="[https://github.com/geeeeeeeeek/git-recipes/wiki/5.4-Git-%E9%92%A9%E5%AD%90%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81](https://github.com/geeeeeeeeek/git-recipes/wiki/5.4-Git-钩子：自定义你的工作流"><a href="https://github.com/geeeeeeeeek/git-recipes/wiki/5.4-Git-钩子：自定义你的工作流" target="_blank" rel="noopener">https://github.com/geeeeeeeeek/git-recipes/wiki/5.4-Git-%E9%92%A9%E5%AD%90%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BD%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81</a></a>)</li><li><a href="[http://blog.zhanglun.me/2017/11/25/%E5%B7%A7%E7%94%A8Git%E9%92%A9%E5%AD%90/](http://blog.zhanglun.me/2017/11/25/巧用Git钩子/"><a href="http://blog.zhanglun.me/2017/11/25/巧用Git钩子/" target="_blank" rel="noopener">http://blog.zhanglun.me/2017/11/25/%E5%B7%A7%E7%94%A8Git%E9%92%A9%E5%AD%90/</a></a>)</li><li><a href="https://imweb.io/topic/5b13aa38d4c96b9b1b4c4e9d" target="_blank" rel="noopener">https://imweb.io/topic/5b13aa38d4c96b9b1b4c4e9d</a></li><li><a href="https://www.jianshu.com/p/f9312b51e011" target="_blank" rel="noopener">https://www.jianshu.com/p/f9312b51e011</a></li></ul></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;需求: 使用Git Hook进行web资源的更新&lt;/p&gt;
+&lt;h3 id=&quot;Git-Hook-简介&quot;&gt;&lt;a href=&quot;#Git-Hook-简介&quot; class=&quot;headerlink&quot; title=&quot;Git Hook 简介&quot;&gt;&lt;/a&gt;Git Hook 简介&lt;/h3&gt;&lt;p&gt;一般
+      
+    
+    </summary>
+    
+      <category term="Technology" scheme="https://yo42.github.io/categories/Technology/"/>
+    
+    
+      <category term="Technology" scheme="https://yo42.github.io/tags/Technology/"/>
+    
+  </entry>
   
   <entry>
     <title>使用kubeasz搭建K8s集群</title>
@@ -508,27 +534,6 @@
     
     
       <category term="Technology" scheme="https://yo42.github.io/tags/Technology/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>部署postgresql</title>
-    <link href="https://yo42.github.io/2018/09/11/%E9%83%A8%E7%BD%B2postgresql/"/>
-    <id>https://yo42.github.io/2018/09/11/部署postgresql/</id>
-    <published>2018-09-11T06:55:29.804Z</published>
-    <updated>2018-09-15T03:22:00.637Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="部署postgres数据库-Docker"><a href="#部署postgres数据库-Docker" class="headerlink" title="部署postgres数据库(Docker)"></a>部署postgres数据库(Docker)</h3><h4 id="使用sameersbn-postgresql"><a href="#使用sameersbn-postgresql" class="headerlink" title="使用sameersbn/postgresql"></a>使用sameersbn/postgresql</h4><h4 id="工作目录-home-postgres"><a href="#工作目录-home-postgres" class="headerlink" title="工作目录:/home/postgres"></a>工作目录:/home/postgres</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">postgresql:</span><br><span class="line">  restart: always</span><br><span class="line">  image: sameersbn/postgresql:9.6-2</span><br><span class="line">  volumes:</span><br><span class="line">    - $PWD:/var/lib/postgresql</span><br><span class="line">    - /var/run/postgresql/:/var/run/postgresql/</span><br><span class="line">    - /home/nucleus-d1/rsyncd/data/:/home/nucleus-d1/rsyncd/data/</span><br><span class="line">    - /home/postgres/zhangxiaohao/:/home/postgres/zhangxiaohao/</span><br><span class="line">  environment:</span><br><span class="line">    - DB_USER=postgres</span><br><span class="line">    - DB_PASS=xxxxx</span><br><span class="line">    - DB_EXTENSION=</span><br><span class="line">  ports:</span><br><span class="line">    - &quot;0.0.0.0:5432:5432&quot;</span><br></pre></td></tr></table></figure><h4 id="9-6-main-pg-hba-conf-权限配置"><a href="#9-6-main-pg-hba-conf-权限配置" class="headerlink" title="9.6/main/pg_hba.conf # 权限配置"></a>9.6/main/pg_hba.conf # 权限配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># &quot;local&quot; is for Unix domain socket connections only</span><br><span class="line">local   all             all                                  trust</span><br><span class="line">host    all             all             112.94.5.240/28      md5</span><br><span class="line">host    all             all             192.168.0.0/16       md5</span><br><span class="line">host    all             all             0.0.0.0/0            md5</span><br><span class="line"># IPv4 local connections:</span><br><span class="line">host    all             all             127.0.0.1/32         trust</span><br><span class="line">host    all             all             112.94.5.240/28      md5</span><br><span class="line">host    all             all             192.168.0.0/16       md5</span><br><span class="line">host    all             all             0.0.0.0/0            md5</span><br></pre></td></tr></table></figure><p>开放办公室ssh通道连接pgsql数据库</p><h4 id="centos-安装postgresql-client"><a href="#centos-安装postgresql-client" class="headerlink" title="centos 安装postgresql-client"></a>centos 安装postgresql-client</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install postgresql</span><br></pre></td></tr></table></figure><h4 id="修改默认密码"><a href="#修改默认密码" class="headerlink" title="修改默认密码"></a>修改默认密码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user postgres  with password xxx</span><br></pre></td></tr></table></figure><h4 id="配置java应用连接pgsql数据库"><a href="#配置java应用连接pgsql数据库" class="headerlink" title="配置java应用连接pgsql数据库"></a>配置java应用连接pgsql数据库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- data_center_jdbc_url=jdbc:postgresql://192.168.8.143:5432/d1_statistics?autoReconnect=true&amp;useUnicode=true&amp;rewriteBatchedStatements=true&amp;useSSL=false</span><br><span class="line">- data_center_jdbc_username=postgres</span><br><span class="line">- data_center_jdbc_password=xxx</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;部署postgres数据库-Docker&quot;&gt;&lt;a href=&quot;#部署postgres数据库-Docker&quot; class=&quot;headerlink&quot; title=&quot;部署postgres数据库(Docker)&quot;&gt;&lt;/a&gt;部署postgres数据库(Docker)&lt;/h3
-      
-    
-    </summary>
-    
     
   </entry>
   
