@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Yo42</title>
+  <title>Neo42</title>
   
   <subtitle>Dont&#39;t Panic,Do not go gentle into that good night :)</subtitle>
   <link href="/atom.xml" rel="self"/>
@@ -10,7 +10,7 @@
   <id>https://yo42.github.io/</id>
   
   <author>
-    <name>Yo</name>
+    <name>Neo</name>
     
   </author>
   
