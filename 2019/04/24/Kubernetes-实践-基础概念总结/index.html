@@ -34,7 +34,8 @@
 <meta property="og:image" content="https://yo42.github.io/2019/04/24/Kubernetes-实践-基础概念总结/k8s-cluster.png">
 <meta property="og:image" content="https://yo42.github.io/2019/04/24/Kubernetes-实践-基础概念总结/k8s核心组件.png">
 <meta property="og:image" content="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LDAOok5ngY4pc1lEDes%2F-LM_rqip-tinVoiFZE0I%2F-LM_sEq_NuMALezRGMtG%2Fworkflow.png?generation=1537160054044113&alt=media">
-<meta property="og:updated_time" content="2019-04-25T06:47:02.817Z">
+<meta property="og:image" content="https://yo42.github.io/2019/04/24/Kubernetes-实践-基础概念总结/业务架构.png">
+<meta property="og:updated_time" content="2019-04-25T07:19:02.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes 实践&amp;基础概念总结">
 <meta name="twitter:description" content="本文档将对近期所学习到的k8s知识、概念进行简单的总结，并结合实践加以记录。 Kubernetes 是谷歌开源的容器集群管理系统，是 Google 多年大规模容器管理技术 Borg 的开源版本，主要功能包括：  基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性 ….  以上这些功能，几">
@@ -159,7 +160,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#核心组件"><span class="post-toc-number">1.</span> <span class="post-toc-text">核心组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Kubernetes-整体架构"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Kubernetes 整体架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#核心组件-1"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">核心组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件通信"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#C-S-架构"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">C/S 架构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Master"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">Master</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#核心组件"><span class="post-toc-number">1.</span> <span class="post-toc-text">核心组件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Kubernetes-整体架构"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Kubernetes 整体架构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#核心组件-1"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">核心组件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#组件通信"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">组件通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#C-S-架构"><span class="post-toc-number">1.1.2.1.</span> <span class="post-toc-text">C/S 架构</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Master"><span class="post-toc-number">1.1.2.2.</span> <span class="post-toc-text">Master</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-Cluster-state-store"><span class="post-toc-number">1.1.2.2.1.</span> <span class="post-toc-text">1. Cluster state store</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-API-Server"><span class="post-toc-number">1.1.2.2.2.</span> <span class="post-toc-text">2. API Server</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3-Controller-Manager"><span class="post-toc-number">1.1.2.2.3.</span> <span class="post-toc-text">3. Controller Manager</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#4-Scheduler"><span class="post-toc-number">1.1.2.2.4.</span> <span class="post-toc-text">4. Scheduler</span></a></li></ol></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#节点（Node）"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">节点（Node）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Pod"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Pod</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一些实际应用的经验"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">一些实际应用的经验</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实践"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">实践</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用k8s创建应用"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">使用k8s创建应用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#访问service资源映射的nodeport"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">访问service资源映射的nodeport</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#架构图"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">架构图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -257,9 +258,9 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LDAOok5ngY4pc1lEDes%2F-LM_rqip-tinVoiFZE0I%2F-LM_sEq_NuMALezRGMtG%2Fworkflow.png?generation=1537160054044113&alt=media" alt="img" title="">
+                    <img src="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LDAOok5ngY4pc1lEDes%2F-LM_rqip-tinVoiFZE0I%2F-LM_sEq_NuMALezRGMtG%2Fworkflow.png?generation=1537160054044113&alt=media" alt="" title="">
                 </div>
-                <div class="image-caption">img</div>
+                <div class="image-caption"></div>
             </figure>
 <ol>
 <li>用户通过 REST API 创建一个 Pod</li>
@@ -276,15 +277,120 @@
 <li><strong>发布</strong>：对集群整体的<strong>调度和管理</strong></li>
 <li><strong>存储</strong>：存储<strong>集群</strong>所需持久化的<strong>状态信息</strong></li>
 </ul>
+<p><code>Master</code>主要包含以下几个<strong>重要的组成部分</strong>：</p>
+<h5 id="1-Cluster-state-store"><a href="#1-Cluster-state-store" class="headerlink" title="1. Cluster state store"></a>1. Cluster state store</h5><p>用来<strong>存储集群所有需要持久化的状态</strong>，并且<strong>提供</strong><code>watch</code><strong>的功能支持</strong>，可以快速的<strong>通知各组件的变更等操作</strong>。</p>
+<p>目前 <strong>Kubernetes 的存储层选择是</strong><code>etcd</code>，所以一般情况下，我们直接<strong>以</strong><code>etcd</code><strong>来代表集群状态存储服务</strong>，即<strong>将所有状态存储到</strong><code>etcd</code><strong>实例中</strong>。</p>
+<h5 id="2-API-Server"><a href="#2-API-Server" class="headerlink" title="2. API Server"></a>2. API Server</h5><p>这是<strong>整个集群的入口</strong>，类似于人体的感官，<strong>接收外部的信号和请求</strong>，并<strong>将相应的信息写入到</strong><code>etcd</code><strong>中</strong>。</p>
+<p>为了<strong>保证安全</strong>，API Server 还<strong>提供了认证相关的功能</strong>，用于<strong>判断客户端是否有权限进行操作</strong>。API Server 支持多种认证方法，不过一般情况下，我们<strong>使用</strong><code>x509</code><strong>证书来进行认证</strong>。</p>
+<blockquote>
+<p><strong>API Server</strong> 的目标是成为一个<strong>极简的 Server</strong>，<strong>只提供</strong><code>REST</code><strong>操作</strong>，<strong>更新</strong><code>etcd</code>，并充当着<strong>集群的网关</strong>。至于<strong>其他的业务逻辑</strong>，则<strong>通过插件或者其他组件来实现</strong></p>
+</blockquote>
+<h5 id="3-Controller-Manager"><a href="#3-Controller-Manager" class="headerlink" title="3. Controller Manager"></a>3. Controller Manager</h5><p><strong>Controller Manager</strong> 大概是 K8S 集群中<strong>最繁忙的部分</strong>，它在后台<strong>运行着许多不同的控制器进程</strong>，用来<strong>调节集群的状态</strong>。</p>
+<p>当<strong>集群的配置发生改变时</strong>，控制器就会<strong>朝着预期的状态开始工作</strong>。</p>
+<h5 id="4-Scheduler"><a href="#4-Scheduler" class="headerlink" title="4. Scheduler"></a>4. Scheduler</h5><p><strong>Scheduler</strong> 是<strong>集群的调度器</strong>，它会<strong>持续关注集群中未被调度的 Pod</strong>，并根据资源可用性、节点亲和性或是其他一些限制条件，<strong>通过绑定的 API 将 Pod 调度/绑定到 Node 上</strong>。</p>
+<blockquote>
+<p>在这个过程中，<strong>调度程序</strong>一般<strong>只考虑调度开始时 Node 的状态</strong>，而<strong>不考虑在调度过程中 Node 的状态变化</strong></p>
+</blockquote>
+<h2 id="节点（Node）"><a href="#节点（Node）" class="headerlink" title="节点（Node）"></a>节点（Node）</h2><p>K8s集群中的计算能力由Node提供，最初Node称为服务节点Minion，后来改名为Node。K8s集群中的Node也就等同于Mesos集群中的Slave节点，是所有Pod运行所在的工作主机，可以是物理机也可以是虚拟机。不论是物理机还是虚拟机，工作主机的统一特征是上面要运行kubelet管理节点上运行的容器。</p>
+<h2 id="Pod"><a href="#Pod" class="headerlink" title="Pod"></a>Pod</h2><p>K8s有很多技术概念，同时对应很多API对象，最重要的也是最基础的是微服务Pod。Pod是在K8s集群中运行部署应用或服务的最小单元，它是可以支持多容器的。Pod的设计理念是支持多个容器在一个Pod中共享网络地址和文件系统，可以通过进程间通信和文件共享这种简单高效的方式组合完成服务。Pod对多容器的支持是K8s最基础的设计理念。比如你运行一个操作系统发行版的软件仓库，一个Nginx容器用来发布软件，另一个容器专门用来从源仓库做同步，这两个容器的镜像不太可能是一个团队开发的，但是他们一块儿工作才能提供一个微服务；这种情况下，不同的团队各自开发构建自己的容器镜像，在部署的时候组合成一个微服务对外提供服务。</p>
+<p>Pod是K8s集群中所有业务类型的基础，可以看作运行在K8s集群中的小机器人，不同类型的业务就需要不同类型的小机器人去执行。目前K8s中的业务主要可以分为长期伺服型（long-running）、批处理型（batch）、节点后台支撑型（node-daemon）和有状态应用型（stateful application）；分别对应的小机器人控制器为Deployment、Job、DaemonSet和StatefulSet。</p>
+<p>Pod分类：</p>
+<ul>
+<li>自主式Pod</li>
+<li>由控制器管理的Pod，管理不同类型的Pod资源<ul>
+<li>ReplicaSet(替代ReplicationController)</li>
+<li>Deployment(只能管理无状态的应用)</li>
+<li>StatefulSet(管理有状态的应用)</li>
+<li>DaemonSet(在每一个node上运行一个副本)</li>
+<li>Job(运行结束自动删除)</li>
+<li>Ctonjob(周期性job)</li>
+</ul>
+</li>
+</ul>
+<p>其中DaemonSet、Job、Ctonjob是给特殊应用使用，另外Deployment还支持二级控制器HPA(HorizontalPodAutoscaler)，HPA控制器自动监控资源，当前服务能力不能满足时，自动扩展Pod，当Pod资源空闲时，自动回收资源，这些阈值由用户设置。</p>
+<p>附上k8s各种对象详细表格:</p>
+<p>Kubernetes主要模块概念：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Cluster</td>
+<td style="text-align:left">Cluster是指由Kubernetes使用一系列的物理机、虚拟机和其他基础资源来运行你的应用程序。</td>
+</tr>
+<tr>
+<td style="text-align:left">Node</td>
+<td style="text-align:left">一个node就是一个运行着Kubernetes的物理机或虚拟机，并且pod可以在其上面被调度。</td>
+</tr>
+<tr>
+<td style="text-align:left">Pod</td>
+<td style="text-align:left">一个pod对应一个由相关容器和卷组成的容器组。</td>
+</tr>
+<tr>
+<td style="text-align:left">Label</td>
+<td style="text-align:left">一个label是一个被附加到资源上的键/值对，例如附加到一个Pod上，为它传递一个用户自定的并且可识别的属性，Label还可以被应用来组织和选择子网中的资源。</td>
+</tr>
+<tr>
+<td style="text-align:left">selector</td>
+<td style="text-align:left">selector是一个通过匹配labels来定义资源之间关系得表达式，例如为一个负载均衡的service指定所目标Pod。</td>
+</tr>
+<tr>
+<td style="text-align:left">Replication Controller</td>
+<td style="text-align:left">replication controller 是为了保证一定数量被指定的Pod的复制品在任何时间都能正常工作，它不仅允许复制的系统易于扩展，还会处理当pod在机器在重启或发生故障的时候再次创建一个。</td>
+</tr>
+<tr>
+<td style="text-align:left">Service</td>
+<td style="text-align:left">一个service定义了访问pod的方式，就像单个固定的IP地址和与其相对应的DNS名之间的关系。</td>
+</tr>
+<tr>
+<td style="text-align:left">Volume</td>
+<td style="text-align:left">一个volume是一个目录，可能会被容器作为未见系统的一部分来访问。</td>
+</tr>
+<tr>
+<td style="text-align:left">Kubernetes volume</td>
+<td style="text-align:left">构建在Docker Volumes之上,并且支持添加和配置volume目录或者其他存储设备。</td>
+</tr>
+<tr>
+<td style="text-align:left">Secret</td>
+<td style="text-align:left">Secret 存储了敏感数据，例如能允许容器接收请求的权限令牌。</td>
+</tr>
+<tr>
+<td style="text-align:left">Name</td>
+<td style="text-align:left">用户为Kubernetes中资源定义的名字。</td>
+</tr>
+<tr>
+<td style="text-align:left">Namespace</td>
+<td style="text-align:left">Namespace 好比一个资源名字的前缀。它帮助不同的项目、团队或是客户可以共享cluster，例如防止相互独立的团队间出现命名冲突。</td>
+</tr>
+<tr>
+<td style="text-align:left">Annotation</td>
+<td style="text-align:left">相对于label来说可以容纳更大的键值对，它对我们来说可能是不可读的数据，只是为了存储不可识别的辅助数据，尤其是一些被工具或系统扩展用来操作的数据。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="一些实际应用的经验"><a href="#一些实际应用的经验" class="headerlink" title="一些实际应用的经验"></a>一些实际应用的经验</h2><ul>
+<li>在引用一个yaml文件时，请使用–record选项，带了这个选项之后，每次升级的时都会保存到部署的日志里面，这样就提供了回滚一个变更的能力。</li>
+<li>部署大多数应用都需要配套一个service对象，如果需要外部访问需要映射NodePort类型</li>
+<li>使用git管理k8s yml 可以方便回滚</li>
+<li>….</li>
+</ul>
+<h2 id="实践"><a href="#实践" class="headerlink" title="实践"></a>实践</h2><h3 id="使用k8s创建应用"><a href="#使用k8s创建应用" class="headerlink" title="使用k8s创建应用"></a>使用k8s创建应用</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">cat &gt; nginx-ds.yml &lt;&lt;EOF</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Service</span><br><span class="line">metadata:</span><br><span class="line"> name: nginx-ds</span><br><span class="line"> labels:</span><br><span class="line"> app: nginx-ds</span><br><span class="line">spec:</span><br><span class="line"> <span class="built_in">type</span>: NodePort</span><br><span class="line"> selector:</span><br><span class="line"> app: nginx-ds</span><br><span class="line"> ports:</span><br><span class="line"> - name: http</span><br><span class="line"> port: 80</span><br><span class="line"> targetPort: 80</span><br><span class="line">---</span><br><span class="line">apiVersion: extensions/v1beta1</span><br><span class="line">kind: DaemonSet</span><br><span class="line">metadata:</span><br><span class="line"> name: nginx-ds</span><br><span class="line"> labels:</span><br><span class="line"> addonmanager.kubernetes.io/mode: Reconcile</span><br><span class="line">spec:</span><br><span class="line"> template:</span><br><span class="line"> metadata:</span><br><span class="line"> labels:</span><br><span class="line"> app: nginx-ds</span><br><span class="line"> spec:</span><br><span class="line"> containers:</span><br><span class="line"> - name: my-nginx</span><br><span class="line"> image: nginx:1.7.9</span><br><span class="line"> ports:</span><br><span class="line"> - containerPort: 80</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line">kubectl create -f nginx-ds.yml</span><br><span class="line">kubectl get pods -o wide|grep nginx-ds</span><br><span class="line">kubectl get svc -o wide|grep nginx-ds</span><br></pre></td></tr></table></figure>
+<h3 id="访问service资源映射的nodeport"><a href="#访问service资源映射的nodeport" class="headerlink" title="访问service资源映射的nodeport"></a>访问service资源映射的nodeport</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl k8s-node01:22462</span><br></pre></td></tr></table></figure>
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="业务架构.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
 <ul>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
-<li><a href=""></a></li>
+<li><a href="https://jimmysong.io/kubernetes-handbook/concepts/" target="_blank" rel="noopener"><a href="https://jimmysong.io/kubernetes-handbook/concepts/" target="_blank" rel="noopener">https://jimmysong.io/kubernetes-handbook/concepts/</a></a></li>
+<li><a href="https://kubernetes.feisky.xyz/he-xin-yuan-li/concepts" target="_blank" rel="noopener"><a href="https://kubernetes.feisky.xyz/he-xin-yuan-li/concepts" target="_blank" rel="noopener">https://kubernetes.feisky.xyz/he-xin-yuan-li/concepts</a></a></li>
 </ul>
 </blockquote>
 
@@ -295,7 +401,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-25T06:47:02.817Z" itemprop="dateUpdated">2019-04-25 14:47:02</time>
+    Last updated: <time datetime="2019-04-25T07:19:02.708Z" itemprop="dateUpdated">2019-04-25 15:19:02</time>
 </span><br>
 
 
