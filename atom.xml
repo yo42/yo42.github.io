@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yo42.github.io/"/>
-  <updated>2019-04-25T05:53:51.812Z</updated>
+  <updated>2019-04-25T06:01:49.898Z</updated>
   <id>https://yo42.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://yo42.github.io/2019/04/24/Kubernetes-%E5%AE%9E%E8%B7%B5-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E6%80%BB%E7%BB%93/"/>
     <id>https://yo42.github.io/2019/04/24/Kubernetes-实践-基础概念总结/</id>
     <published>2019-04-24T07:33:07.611Z</published>
-    <updated>2019-04-25T05:53:51.812Z</updated>
+    <updated>2019-04-25T06:01:49.898Z</updated>
     
     <content type="html"><![CDATA[<p>本文档将对近期所学习到的k8s知识、概念进行简单的总结，并结合实践加以记录。</p><p>Kubernetes 是谷歌开源的容器集群管理系统，是 Google 多年大规模容器管理技术 Borg 的开源版本，主要功能包括：</p><ul><li>基于容器的应用部署、维护和滚动升级</li><li>负载均衡和服务发现</li><li>跨机器和跨地区的集群调度</li><li>自动伸缩</li><li>无状态服务和有状态服务</li><li>广泛的 Volume 支持</li><li>插件机制保证扩展性</li><li>….</li></ul><p>以上这些功能，几乎完美贴合一套运维架构体系。实现了运维的部署更新，动态扩容，这都交由k8s强大调度系统进行完成。</p><p>像以前单体的运维架构，无非就是：</p><p>提交代码仓库—&gt;交由CI/CD工具进行源码的编译和打包—&gt;将需要更新的应用包解压至服务器上—&gt;逐一停止业务应用—&gt;逐一启动—&gt;完成更新</p><p>以上种种步骤，取决于运维团队的自动化、规范化完善度到达何种程度。有的通过脚本进行管控，有的可能有会有运维发布平台。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="Docker" alt="化前后应用发布流程对比.png" title="">                </div>                <div class="image-caption">化前后应用发布流程对比.png</div>            </figure><p>目前，Kubernetes 是 DevOps 应用必须掌握的一个平台。如果要构建一套比较不错的devops 体系，那k8s是必不可少的。现在，提到容器第一个联想到的就是k8s，外加微服务时代的盛行，使用和学习k8s再适合不过了。</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="cloud-native-architecutre-mindnode.jpg" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h1 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h1><p>Kubernetes 主要由以下几个核心组件组成：</p><ul><li><p>etcd 保存了整个集群的状态；</p></li><li><p>apiserver 提供了资源操作的唯一入口，并提供认证、授权、访问控制、API 注册和发现等机制；</p></li><li><p>controller manager 负责维护集群的状态，比如故障检测、自动扩展、滚动更新等；</p></li><li><p>scheduler 负责资源的调度，按照预定的调度策略将 Pod 调度到相应的机器上；</p></li><li><p>kubelet 负责维护容器的生命周期，同时也负责 Volume（CVI）和网络（CNI）的管理；</p></li><li><p>Container runtime 负责镜像管理以及 Pod 和容器的真正运行（CRI）；</p></li><li><p>kube-proxy 负责为 Service 提供 cluster 内部的服务发现和负载均衡</p></li></ul><h2 id="Kubernetes-整体架构"><a href="#Kubernetes-整体架构" class="headerlink" title="Kubernetes 整体架构"></a>Kubernetes 整体架构</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="k8s-cluster.png" alt="" title="">                </div>                <div class="image-caption"></div>            </figure><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote><ul><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li></ul></blockquote>]]></content>
     
