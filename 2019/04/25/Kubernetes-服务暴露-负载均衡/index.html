@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/HTTP-Ingress.png">
 <meta property="og:image" content="https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/kubernetes-ingress-controller-and-ingresses.png">
 <meta property="og:image" content="https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/NGINX-Ingress-Controller-4-services.png">
-<meta property="og:updated_time" content="2019-04-26T12:59:32.618Z">
+<meta property="og:updated_time" content="2019-04-26T13:10:55.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes 服务发现&amp;负载均衡">
 <meta name="twitter:description" content="本文档记录，k8s如何暴露公网服务以及负载均衡 主要涉及两个知识点：k8s service、k8s ingress controller  对比传统单体垂直的架构，可以使用k8s service、k8s ingress controller 进行替代HAproxy+Nginx">
@@ -187,6 +187,12 @@
 <p>直接通过Pod的IP地址+端口可以访问到容器应用，但是Pod的IP是动态的，当发生故障时k8s会重新调度，这时候Service服务自发现的作用就体现出来了。</p>
 <p>其实这个概念和微服务非常类似。一个<code>Serivce</code>下面包含的<code>Pod</code>集合一般是由<code>Label Selector</code>来决定的。</p>
 <p>要想外部可以访问创建的应用，就使用service吧。</p>
+<p>K8S暴露服务的方法有3种：</p>
+<ul>
+<li>ClusterIP：集群内可访问，但外部不可访问</li>
+<li>NodePort：通过NodeIP:NodePort方式可以在集群内访问，结合EIP或者云服务VPC负载均衡也可在集群外访问，但开放NodePort一方面不安全，另一方面随着应用的增多不方便管理</li>
+<li>LoadBalancer：某些云服务提供商会直接提供LoadBalancer模式，将服务对接到负载均衡，其原理是基于kubernetes的controller做二次开发，并集成到K8S集群，使得集群可以与云服务SDK交互</li>
+</ul>
 <p>我们也了解到Pod的生命是有限的，死亡过后不会复活了。我们后面学习到的RC和Deployment可以用来动态的创建和销毁Pod。尽管每个Pod都有自己的IP地址，但是如果Pod重新启动了的话那么他的IP很有可能也就变化了。这就会带来一个问题：比如我们有一些后端的Pod的集合为集群中的其他前端的Pod集合提供API服务，如果我们在前端的Pod中把所有的这些后端的Pod的地址都写死，然后去某种方式去访问其中一个Pod的服务，这样看上去是可以工作的，对吧？但是如果这个Pod挂掉了，然后重新启动起来了，是不是IP地址非常有可能就变了，这个时候前端就极大可能访问不到后端的服务了。</p>
 <p>遇到这样的问题该怎么解决呢？在没有使用Kubernetes之前，我相信可能很多同学都遇到过这样的问题，不一定是IP变化的问题，比如我们在部署一个WEB服务的时候，前端一般部署一个Nginx作为服务的入口，然后Nginx后面肯定就是挂载的这个服务的大量后端，很早以前我们可能是去手动更改Nginx配置中的upstream选项，来动态改变提供服务的数量，到后面出现了一些服务发现的工具，比如Consul、ZooKeeper还有我们熟悉的etcd等工具，有了这些工具过后我们就可以只需要把我们的服务注册到这些服务发现中心去就可以，然后让这些工具动态的去更新Nginx的配置就可以了，我们完全不用去手工的操作了。</p>
 <p>在k8s体系中”有三种IP”</p>
@@ -342,7 +348,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-26T12:59:32.618Z" itemprop="dateUpdated">2019-04-26 20:59:32</time>
+    Last updated: <time datetime="2019-04-26T13:10:55.169Z" itemprop="dateUpdated">2019-04-26 21:10:55</time>
 </span><br>
 
 
