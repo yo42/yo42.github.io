@@ -31,7 +31,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yo42.github.io/2019/04/26/Kubernetes生产架构/k8s-jiagou.png">
 <meta property="og:image" content="https://yo42.github.io/2019/04/26/Kubernetes生产架构/ingress-ha.png">
-<meta property="og:updated_time" content="2019-04-26T13:30:34.456Z">
+<meta property="og:updated_time" content="2019-04-26T13:32:12.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes生产架构">
 <meta name="twitter:description" content="Kubernetes生产架构，其设计适用于绝大多数环境, 如下图所示。                                                                                                            在该架构中，我们可以将其分为四层，如下：  Client层：即Kubernetes集群外部用户、客户端等； 服务访">
@@ -196,7 +196,7 @@
 </ul>
 <p><strong>Ceph/NFS数据存储</strong><br>Kubernetes平台的数据持久化存储，可以使用Ceph、NFS等存储方案。其中，Ceph适用于有其技术背景或大容量存储需求的公司；而NFS适用于存储容量需求相对较小，无专业存储技术背景的公司。</p>
 <h2 id="业务应用层"><a href="#业务应用层" class="headerlink" title="业务应用层"></a>业务应用层</h2><ul>
-<li>镜像管理：使用Harbor私有镜像仓库服务；</li>
+<li>镜像管理：使用Harbor私有镜像仓库服务,使用阿里云OSS组成高可用镜像仓库；</li>
 <li>日志管理：使用Elasticsearch、Filebeat 和 Kibana技术栈；</li>
 <li>监控告警管理：使用Cadvisor、Prometheus和Grafana技术栈；</li>
 <li>微服务架构：使用Service Mesh服务网格中的Istio方案；</li>
@@ -228,7 +228,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-26T13:30:34.456Z" itemprop="dateUpdated">2019-04-26 21:30:34</time>
+    Last updated: <time datetime="2019-04-26T13:32:12.373Z" itemprop="dateUpdated">2019-04-26 21:32:12</time>
 </span><br>
 
 
