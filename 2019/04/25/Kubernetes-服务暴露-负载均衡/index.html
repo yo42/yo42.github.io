@@ -14,7 +14,7 @@
     
     
     
-    <title>Kubernetes 服务暴露&amp;负载均衡 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
+    <title>Kubernetes 服务发现&amp;负载均衡 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -24,15 +24,15 @@
     <meta name="description" content="本文档记录，k8s如何暴露公网服务以及负载均衡 主要涉及两个知识点：k8s service、k8s ingress controller  对比传统单体垂直的架构，可以使用k8s service、k8s ingress controller 进行替代HAproxy+Nginx">
 <meta name="keywords" content="Technology">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kubernetes 服务暴露&amp;负载均衡">
+<meta property="og:title" content="Kubernetes 服务发现&amp;负载均衡">
 <meta property="og:url" content="https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/index.html">
 <meta property="og:site_name" content="Neo42">
 <meta property="og:description" content="本文档记录，k8s如何暴露公网服务以及负载均衡 主要涉及两个知识点：k8s service、k8s ingress controller  对比传统单体垂直的架构，可以使用k8s service、k8s ingress controller 进行替代HAproxy+Nginx">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/edu后端架构交互时序图.png">
-<meta property="og:updated_time" content="2019-04-26T08:06:56.566Z">
+<meta property="og:updated_time" content="2019-04-26T08:11:30.245Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kubernetes 服务暴露&amp;负载均衡">
+<meta name="twitter:title" content="Kubernetes 服务发现&amp;负载均衡">
 <meta name="twitter:description" content="本文档记录，k8s如何暴露公网服务以及负载均衡 主要涉及两个知识点：k8s service、k8s ingress controller  对比传统单体垂直的架构，可以使用k8s service、k8s ingress controller 进行替代HAproxy+Nginx">
 <meta name="twitter:image" content="https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/edu后端架构交互时序图.png">
     
@@ -101,7 +101,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Kubernetes 服务暴露&amp;负载均衡</div>
+        <div class="flex-col header-title ellipsis">Kubernetes 服务发现&amp;负载均衡</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -123,7 +123,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Kubernetes 服务暴露&amp;负载均衡</h1>
+        <h1 class="title">Kubernetes 服务发现&amp;负载均衡</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-04-25T10:26:16.482Z" itemprop="datePublished" class="page-time">
@@ -157,7 +157,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Kubernetes 服务暴露&负载均衡</h1>
+        <h1 class="post-card-title">Kubernetes 服务发现&负载均衡</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-04-25 18:26:16" datetime="2019-04-25T10:26:16.482Z"  itemprop="datePublished">2019-04-25</time>
 
@@ -271,7 +271,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-04-26T08:06:56.566Z" itemprop="dateUpdated">2019-04-26 16:06:56</time>
+    Last updated: <time datetime="2019-04-26T08:11:30.245Z" itemprop="dateUpdated">2019-04-26 16:11:30</time>
 </span><br>
 
 
@@ -301,7 +301,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务暴露&负载均衡》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务发现&负载均衡》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -311,7 +311,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务暴露&负载均衡》 — Neo42&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务发现&负载均衡》 — Neo42&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -321,7 +321,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kubernetes 服务暴露&负载均衡》 — Neo42&url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kubernetes 服务发现&负载均衡》 — Neo42&url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -422,7 +422,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务暴露&负载均衡》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务发现&负载均衡》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -432,7 +432,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务暴露&负载均衡》 — Neo42&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&title=《Kubernetes 服务发现&负载均衡》 — Neo42&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -442,7 +442,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kubernetes 服务暴露&负载均衡》 — Neo42&url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&via=https://yo42.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Kubernetes 服务发现&负载均衡》 — Neo42&url=https://yo42.github.io/2019/04/25/Kubernetes-服务暴露-负载均衡/&via=https://yo42.github.io" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
