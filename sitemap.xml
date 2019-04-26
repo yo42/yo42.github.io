@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yo42.github.io/2019/04/26/Kubernetes-%E9%83%A8%E7%BD%B2%E7%AD%96%E7%95%A5/</loc>
+    <loc>https://yo42.github.io/2019/04/25/Kubernetes-%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</loc>
     
-    <lastmod>2019-04-26T08:18:07.864Z</lastmod>
+    <lastmod>2019-04-26T12:58:20.275Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yo42.github.io/2019/04/25/Kubernetes-%E6%9C%8D%E5%8A%A1%E6%9A%B4%E9%9C%B2-%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</loc>
+    <loc>https://yo42.github.io/2019/04/26/%E4%BD%BF%E7%94%A8k8s-service%E5%AF%B9%E8%B1%A1-%E9%98%BF%E9%87%8C%E4%BA%91LoadBalancer-%E7%9B%91%E5%90%AC%E5%85%AC%E7%BD%91TCP%E6%9C%8D%E5%8A%A1/</loc>
     
-    <lastmod>2019-04-26T08:16:48.282Z</lastmod>
+    <lastmod>2019-04-26T08:40:00.850Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yo42.github.io/2019/04/26/Kubernetes-%E9%83%A8%E7%BD%B2%E7%AD%96%E7%95%A5/</loc>
+    
+    <lastmod>2019-04-26T08:34:36.062Z</lastmod>
     
   </url>
   
