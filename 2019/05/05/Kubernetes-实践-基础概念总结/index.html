@@ -29,15 +29,17 @@
 <meta property="og:site_name" content="Neo42">
 <meta property="og:description" content="本文档将对近期所学习到的k8s知识、概念进行简单的总结，并结合实践加以记录。 Kubernetes 是谷歌开源的容器集群管理系统，是 Google 多年大规模容器管理技术 Borg 的开源版本，主要功能包括：  基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性 ….  以上这些功能，几">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/Docker%E5%8C%96%E5%89%8D%E5%90%8E%E5%BA%94%E7%94%A8%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B%E5%AF%B9%E6%AF%94.png">
-<meta property="og:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/%20k8s%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6.png">
+<meta property="og:image" content="https://yo42.github.io/2019/05/05/Kubernetes-实践-基础概念总结/Docker化前后应用发布流程对比.png">
+<meta property="og:image" content="https://yo42.github.io/2019/05/05/Kubernetes-实践-基础概念总结/cloud-native-architecutre-mindnode.jpg">
+<meta property="og:image" content="https://yo42.github.io/2019/05/05/Kubernetes-实践-基础概念总结/k8s-cluster.png">
+<meta property="og:image" content="https://yo42.github.io/2019/05/05/Kubernetes-实践-基础概念总结/k8s核心组件.png">
 <meta property="og:image" content="https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LDAOok5ngY4pc1lEDes%2F-LM_rqip-tinVoiFZE0I%2F-LM_sEq_NuMALezRGMtG%2Fworkflow.png?generation=1537160054044113&alt=media">
-<meta property="og:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84.png">
-<meta property="og:updated_time" content="2019-05-05T09:53:53.080Z">
+<meta property="og:image" content="https://yo42.github.io/2019/05/05/Kubernetes-实践-基础概念总结/业务架构.png">
+<meta property="og:updated_time" content="2019-05-05T09:58:29.829Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes 实践&amp;基础概念总结">
 <meta name="twitter:description" content="本文档将对近期所学习到的k8s知识、概念进行简单的总结，并结合实践加以记录。 Kubernetes 是谷歌开源的容器集群管理系统，是 Google 多年大规模容器管理技术 Borg 的开源版本，主要功能包括：  基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性 ….  以上这些功能，几">
-<meta name="twitter:image" content="https://yo42.github.io/Users/yo42/yo-home/yo-home/source/_posts/Docker%E5%8C%96%E5%89%8D%E5%90%8E%E5%BA%94%E7%94%A8%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B%E5%AF%B9%E6%AF%94.png">
+<meta name="twitter:image" content="https://yo42.github.io/2019/05/05/Kubernetes-实践-基础概念总结/Docker化前后应用发布流程对比.png">
     
         <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
     
@@ -192,12 +194,18 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/Users/yo42/yo-home/yo-home/source/_posts/Docker%E5%8C%96%E5%89%8D%E5%90%8E%E5%BA%94%E7%94%A8%E5%8F%91%E5%B8%83%E6%B5%81%E7%A8%8B%E5%AF%B9%E6%AF%94.png" alt="" title="">
+                    <img src="Docker化前后应用发布流程对比.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
 <p>目前，Kubernetes 是 DevOps 应用必须掌握的一个平台。如果要构建一套比较不错的devops 体系，那k8s是必不可少的。现在，提到容器第一个联想到的就是k8s，外加微服务时代的盛行，使用和学习k8s再适合不过了。</p>
-<p><img src="" alt=""></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="cloud-native-architecutre-mindnode.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 <h1 id="核心组件"><a href="#核心组件" class="headerlink" title="核心组件"></a>核心组件</h1><p>Kubernetes 主要由以下几个核心组件组成：</p>
 <ul>
 <li><p>etcd 保存了整个集群的状态；</p>
@@ -215,11 +223,17 @@
 <li><p>kube-proxy 负责为 Service 提供 cluster 内部的服务发现和负载均衡</p>
 </li>
 </ul>
-<h2 id="Kubernetes-整体架构"><a href="#Kubernetes-整体架构" class="headerlink" title="Kubernetes 整体架构"></a>Kubernetes 整体架构</h2><p><img src="" alt=""></p>
+<h2 id="Kubernetes-整体架构"><a href="#Kubernetes-整体架构" class="headerlink" title="Kubernetes 整体架构"></a>Kubernetes 整体架构</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="k8s-cluster.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
 <h3 id="核心组件-1"><a href="#核心组件-1" class="headerlink" title="核心组件"></a>核心组件</h3><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/Users/yo42/yo-home/yo-home/source/_posts/%20k8s%E6%A0%B8%E5%BF%83%E7%BB%84%E4%BB%B6.png" alt="" title="">
+                    <img src="k8s核心组件.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -362,7 +376,7 @@
 <h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="/Users/yo42/yo-home/yo-home/source/_posts/%E4%B8%9A%E5%8A%A1%E6%9E%B6%E6%9E%84.png" alt="" title="">
+                    <img src="业务架构.png" alt="" title="">
                 </div>
                 <div class="image-caption"></div>
             </figure>
@@ -380,7 +394,7 @@
     <div class="content">
         
 <span class="post-time">
-    Last updated: <time datetime="2019-05-05T09:53:53.080Z" itemprop="dateUpdated">2019-05-05 17:53:53</time>
+    Last updated: <time datetime="2019-05-05T09:58:29.829Z" itemprop="dateUpdated">2019-05-05 17:58:29</time>
 </span><br>
 
 
