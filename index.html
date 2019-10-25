@@ -17,6 +17,8 @@
     <title>Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <meta name="theme-color" content="#3F51B5">
+    
     
     <meta name="keywords" content="DevOps">
     <meta name="keywords" content="DevOps">
@@ -30,7 +32,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -47,19 +49,40 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/yo.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Neo</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,6 +97,20 @@
         </a>
         <div class="flex-col header-title ellipsis">Neo42</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -126,7 +163,19 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        本文档将对近期所学习到的k8s知识、概念进行简单的总结...
+        本文档将对近期所学习到的k8s知识、概念进行简单的总结，并结合实践加以记录。
+Kubernetes 是谷歌开源的容器集群管理系统，是 Google 多年大规模容器管理技术 Borg 的开源版本，主要功能包括：
+
+基于容器的应用部署、维护和滚动升级
+负载均衡和服务发现
+跨机器和跨地区的集群调度
+自动伸缩
+无状态服务和有状态服务
+广泛的 Volume 支持
+插件机制保证扩展性
+….
+
+以上这些功...
     
 
         <a href="/2019/05/05/Kubernetes-实践-基础概念总结/" class="post-more waves-effect waves-button">
@@ -173,7 +222,18 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Kubernetes生产架构，其设计适用于绝大多数环境...
+        Kubernetes生产架构，其设计适用于绝大多数环境, 如下图所示。
+
+                
+                    
+                    
+                
+                
+            
+在该架构中，我们可以将其分为四层，如下：
+
+Client层：即Kubernetes集群外部用户、客户端等；
+...
     
 
         <a href="/2019/04/26/Kubernetes生产架构/" class="post-more waves-effect waves-button">
@@ -222,7 +282,9 @@
     
         LoadBalancer类型的Service资源
 
-L...
+LoadBalancer：某些云服务提供商会直接提供LoadBalancer模式，将服务对接到负载均衡，其原理是基于kubernetes的controller做二次开发，并集成到K8S集群，使得集群可以与云服务SDK交互
+
+1客户端访问流程：集群外的客户端 –&gt; LoadBalancer –&gt; NodeIP:NodePort –...
     
 
         <a href="/2019/04/26/使用k8s-service对象-阿里云LoadBalancer-监听公网TCP服务/" class="post-more waves-effect waves-button">
@@ -269,7 +331,12 @@ L...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        在Kubernetes中有几种不同的方式发布应用，所以...
+        在Kubernetes中有几种不同的方式发布应用，所以为了让应用在升级期间依然平稳提供服务，选择一个正确的发布策略就非常重要了。
+选择正确的部署策略是要依赖于我们的业务需求的，下面我们列出了一些可能会使用到的策略：
+
+重建(recreate)：停止旧版本部署新版本
+滚动更新(rolling-update)：一个接一个地以滚动更新方式发布新版本
+蓝绿(blue/green)：新版本与旧版本一起...
     
 
         <a href="/2019/04/26/Kubernetes-部署策略/" class="post-more waves-effect waves-button">
@@ -370,7 +437,12 @@ L...
 
     
         本文档记录，k8s如何暴露公网服务以及负载均衡
-主要涉...
+主要涉及两个知识点：k8s service、k8s ingress controller 
+对比传统单体垂直的架构，可以使用k8s service、k8s ingress controller 进行替代HAproxy+Nginx
+
+                
+                    
+                   ...
     
 
         <a href="/2019/04/25/Kubernetes-服务暴露-负载均衡/" class="post-more waves-effect waves-button">
@@ -418,7 +490,7 @@ L...
 
     
         需求: 使用Git Hook进行web资源的更新
-Gi...
+Git Hook 简介一般的开发流程都是git add、git commit，git push，钩子呢就是你完成每一步Git给你的“回调”，举个例子假如你想让服务器每次上传完新的代码后更新网站，如果你没有钩子，你只能自己ssh登录上服务器，自己更新软件，一次两次还好，多了的话你会骂娘的，所以钩子是给我偷懒的脚手架，我们可以很轻松的写一些脚步帮...
     
 
         <a href="/2019/04/23/简单使用Git-Hook/" class="post-more waves-effect waves-button">
@@ -469,6 +541,32 @@ Gi...
 
 
 hostname
+IP
+配置
+系统版本
+角色
+
+
+
+
+aly8-hn1-k8s-master-001
+
+
+Centos7.4
+master节点&amp;etcd集群
+
+
+aly8-hn1-k8s-master-002
+
+
+Centos7.4
+master节点&amp;etcd集群
+
+
+aly8-hn1-k8s-master-003
+
+
+Centos7.4
 ...
     
 
@@ -517,7 +615,7 @@ hostname
 
     
         集群节点 初始化1略
-集群环境变量&amp;节点分发1...
+集群环境变量&amp;节点分发12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455# TLS Bootstrapping 使用的Token，可以使用命令 head -c 16 /dev/urandom | od -An -...
     
 
         <a href="/2019/01/29/搭建k8s集群/" class="post-more waves-effect waves-button">
@@ -565,7 +663,11 @@ hostname
 
     
         导读
-这个列表并非详尽无遗，只是列举了技术基础、必须知...
+这个列表并非详尽无遗，只是列举了技术基础、必须知道的技能和一些随机的想法。可以用它们作为一个清单来评估你自己或其他人，或者为下一次面试DevOps/SRE（Site Reliability Engineers，网站可靠性工程师）工作做准备。补充下，这个清单是比较个人的想法。
+
+下一步是什么？更了解DevOps生态系统：
+
+首先，一定要了解文化要点的重要性：在这里（15点DevOps检查...
     
 
         <a href="/2018/10/28/DevOps-SRE-必备技能清单/" class="post-more waves-effect waves-button">
@@ -621,14 +723,80 @@ hostname
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/&title=Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/&title=Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Neo42&url=https://yo42.github.io/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
 <script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 

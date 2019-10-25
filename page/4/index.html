@@ -17,6 +17,8 @@
     <title>Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <meta name="theme-color" content="#3F51B5">
+    
     
     <meta name="keywords" content="DevOps">
     <meta name="keywords" content="DevOps">
@@ -30,7 +32,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -47,19 +49,40 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/yo.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Neo</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,6 +97,20 @@
         </a>
         <div class="flex-col header-title ellipsis">Neo42</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -126,7 +163,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        文本编辑器任何可以做纯文本编辑的工具都可以用来写Pyt...
+        文本编辑器任何可以做纯文本编辑的工具都可以用来写Python代码，但是用功能更加强大的文本编辑器可以使你的编程工作更加轻松。
+VimVim 是一个用键盘快捷键代替菜单和图标来操作的文本编辑器。对于 Vim 编辑器，有几个插件和设置可以用来辅助 Python 开发。如果你只用 Python 开发，一个好的开始就是把缩进和换行的默认设置设置成兼容 PEP 8 的值。 在你的主目录里，打开一个叫作...
     
 
         <a href="/2018/09/09/你的-Python-开发者环境/" class="post-more waves-effect waves-button">
@@ -173,7 +211,14 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        virtualenv 是一个创建独立的 Python ...
+        virtualenv 是一个创建独立的 Python 环境。 virtualenv 会创建一个文件夹，其中包含使用 Python 项目所有所需的可执行文件。
+它可以单独使用，用于代替 Pipenv 。
+通过 pip 安装 virtualenv ：
+1$ pip install virtualenv
+测试下是否安装完成
+1$ virtualenv --version
+
+为项目创建一个虚拟环境：...
     
 
         <a href="/2018/09/09/python-底层虚拟环境-virtualenv/" class="post-more waves-effect waves-button">
@@ -220,7 +265,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        迈出下一步如果到现在你已经阅读过本书并且编写了许多程序...
+        迈出下一步如果到现在你已经阅读过本书并且编写了许多程序，那么你一定已经开始熟悉并且习惯 Python 了。或许你已经创建了一些 Python 程序来尝试完成一些工作，同时锻炼你自己的 Python 技能。如果你尚未至此，你也应该作出努力。现在我们面临的问题是“下一步该做什么？”。
+我会建议你试图解决这个问题：
+
+编写一款你自己的命令行地址簿程序，你可以用它浏览、添加、编辑、删除或搜索你的联系...
     
 
         <a href="/2018/09/09/python-next-step/" class="post-more waves-effect waves-button">
@@ -267,7 +315,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        类就是一组数据和函数的集合。创建了一个新的类意味着创建...
+        类就是一组数据和函数的集合。创建了一个新的类意味着创建了一个全新的对象 类型，也就允许我们创建新的此类型的 实例。每个类实例都带有属性以维护其状态。同样也有方法（在它自己的类中定义）来修改这些状态。
+相比其他编程语言，使用 Python 的类机制创建类是最方便简洁的。Python 的类机制结合了 C++ 和 Modua-3 的机制，同时也符合所有面向对象编程的标准：类继承机制允许有多个基类，...
     
 
         <a href="/2018/09/09/python面向对象编程/" class="post-more waves-effect waves-button">
@@ -314,7 +363,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Python使用名为”异常”的特殊对象来管理程序执行期...
+        Python使用名为”异常”的特殊对象来管理程序执行期间发生的错误。
+语法错误语法错误，也叫作解析错误，这可能是你在学习Python的过程中，最容易碰到的错误：
+12345&gt;&gt;&gt; while True print('Hello world')  File "&lt;stdin&gt;", line 1    while True print('Hello world')  ...
     
 
         <a href="/2018/09/08/python错误和异常/" class="post-more waves-effect waves-button">
@@ -361,7 +412,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        程序的输出可以有多种形式：我们可以将数据以人类可读的形...
+        程序的输出可以有多种形式：我们可以将数据以人类可读的形式打印到屏幕上，或者将其写入到文件中以供后续使用。本章将讨论其中的几种实现方式。
+格式化输出迄今为止，在 Python 中存在两种输出值的方法：表达式语句以及 print() 函数。（第三种方法是使用文件对象的 write() 方法；标准文件输出可以参考 sys.stdout 方法，其详细内容请查阅库参考手册。）
+通常，相较于简单地打印以...
     
 
         <a href="/2018/09/08/python输入和输出/" class="post-more waves-effect waves-button">
@@ -408,7 +461,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        如果你从 Python 解释器退出然后再进入它，你所做...
+        如果你从 Python 解释器退出然后再进入它，你所做的定义（函数和变量）都会消失。因此，如果你想写某些更长的程序，你最好使用一个文本编辑器来为解释器准备输入，然后以这个文件作为输入来运行程序。这也被称为创建一个 脚本。当你的程序变得更长，你也许会想将它分成几个文件方便管理。你也许还想在几个程序中直接使用函数而不用在每个程序中拷贝函数定义。
+为了支持这种特性，Python 可以把定义放入一个...
     
 
         <a href="/2018/09/06/python模块/" class="post-more waves-effect waves-button">
@@ -456,7 +510,7 @@
 
     
         if 语句Example:
-1234567891011...
+12345678910111213&gt;&gt;&gt; x = int(input("Please enter an integer: "))Please enter an integer: 42&gt;&gt;&gt; if x &lt; 0:...     x = 0...     print('Negative changed to zero')... ...
     
 
         <a href="/2018/09/04/深入Python-流程控制/" class="post-more waves-effect waves-button">
@@ -504,7 +558,14 @@
 
     
         Python Data Structures
- 数据结...
+ 数据结构:
+ 列表、字典、元组、集合。
+
+
+
+数据结构（Data Structures）基本上人如其名——它们只是一种结构，能够将一些数据聚合在一起。换句话说，它们是用来存储一系列相关数据的集合。
+Python 中有四种内置的数据结构——列表（List）、元组（Tuple）、字典（Dictionary）和集合（Set）
+列表(List):Lis...
     
 
         <a href="/2018/09/02/Python-NoteBook/" class="post-more waves-effect waves-button">
@@ -549,7 +610,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        2013年初，一个名字从云计算领域横空出世，并在整个I...
+        2013年初，一个名字从云计算领域横空出世，并在整个IT行业激起千层浪。这就是Docker——一个孕育着新思想的“容器”。Docker选择容器作为核心和基础，依靠容器技术支撑的Docker迅速成为国内外各大云计算厂商以及开发者手中的至宝。在一片热火朝天之后，新的革命已经悄然来临。
+云计算平台回首历史，云计算时代蕴育出了众多的云计算平台，虽然在服务类型或平台功能上有所差异，但它们的本质上如出一...
     
 
         <a href="/2018/07/22/从容器到容器云/" class="post-more waves-effect waves-button">
@@ -599,14 +661,80 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/page/4/&title=Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/page/4/&title=Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/page/4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Neo42&url=https://yo42.github.io/page/4/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/page/4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/page/4/" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
 <script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 

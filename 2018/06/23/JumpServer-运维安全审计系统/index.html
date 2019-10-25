@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>JumpServer 运维安全审计系统 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Technology">
+    <meta name="description" content="目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;amp;运维人员的公钥，以及云主机的登录。 现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。 综合上述缺点，需要一个审计系统。 目前业界比较良心的开源审计系统http://ww">
+<meta name="keywords" content="Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JumpServer 运维安全审计系统">
+<meta property="og:url" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/index.html">
+<meta property="og:site_name" content="Neo42">
+<meta property="og:description" content="目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;amp;运维人员的公钥，以及云主机的登录。 现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。 综合上述缺点，需要一个审计系统。 目前业界比较良心的开源审计系统http://ww">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms.png">
+<meta property="og:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms2.png">
+<meta property="og:updated_time" content="2018-08-06T09:22:07.368Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JumpServer 运维安全审计系统">
+<meta name="twitter:description" content="目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;amp;运维人员的公钥，以及云主机的登录。 现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。 综合上述缺点，需要一个审计系统。 目前业界比较良心的开源审计系统http://ww">
+<meta name="twitter:image" content="https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/jms.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Neo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JumpServer 运维安全审计系统</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JumpServer 运维安全审计系统</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-23T10:31:43.211Z" itemprop="datePublished" class="page-time">
+  2018-06-23
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#梳理权限与规则"><span class="post-toc-number">1.</span> <span class="post-toc-text">梳理权限与规则:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#JumpServer用户管理"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">JumpServer用户管理:</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JumpServer资产管理"><span class="post-toc-number">2.</span> <span class="post-toc-text">JumpServer资产管理:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#测试环境的部署"><span class="post-toc-number">3.</span> <span class="post-toc-text">测试环境的部署:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#获取token"><span class="post-toc-number">4.</span> <span class="post-toc-text">获取token</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#查询用户可见资产"><span class="post-toc-number">5.</span> <span class="post-toc-text">查询用户可见资产</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#示例"><span class="post-toc-number">6.</span> <span class="post-toc-text">示例:</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#逻辑图"><span class="post-toc-number">7.</span> <span class="post-toc-text">逻辑图:</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">参考资料</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-JumpServer-运维安全审计系统"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JumpServer 运维安全审计系统</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-23 18:31:43" datetime="2018-06-23T10:31:43.211Z"  itemprop="datePublished">2018-06-23</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>目前，使用的是SSHConfig+ansible的模式进行管控各开发&amp;运维人员的公钥，以及云主机的登录。</p>
+<p>现阶段属于纯跳版机模式，并没有审计功能，存在安全隐患，对于人员离职权限的回收不够彻底，公钥的分发不够方便，开发&amp;运维人员都混用一个账号进行登录，没有审计功能，粗放式权限管理，外放了root密码。</p>
+<p>综合上述缺点，需要一个审计系统。</p>
+<p>目前业界比较良心的开源审计系统<br><a href="http://www.jumpserver.org/" target="_blank" rel="noopener">http://www.jumpserver.org/</a></p>
+<p>其实现在许多云供应商都在推自己的审计系统产品，有些也是基于jumpserver进行二次开发的。</p>
+<p>堡垒机不仅集中管理和分配全部账号，更重要的是能对运维/开发人员的运维操作进行严格审计和权限控制，确保运维的安全合规和运维/开发人员的最小化权限管理。</p>
+<p>从实际应用来看，堡垒机主要管控企业的服务器资源。</p>
+<p>1、JumpServer的安装:略(参考官方文档),后续可能会进行Docker化的定制(coco-ssh server,jumpserver,luna web terminal插件)。</p>
+<h1 id="梳理权限与规则"><a href="#梳理权限与规则" class="headerlink" title="梳理权限与规则:"></a>梳理权限与规则:</h1><h2 id="JumpServer用户管理"><a href="#JumpServer用户管理" class="headerlink" title="JumpServer用户管理:"></a>JumpServer用户管理:</h2><ol>
+<li>梳理各项目组的开发与运维人员的列表，以项目名创建组，通过手工的方式进行开发人员与运维人员的编制。</li>
+<li>用户是授权和登陆的主体，将来为每个员工建立一个账户，用来登录跳板机，将资产授权给该用户，查看用户登陆记录命令历史等。创建用户，例如:以开发者张三的名称创建用户，后续张三将以dev的身份进行资产的登录如 web, sa, dba,dev,oc(ssh web@some-host)</li>
+<li>管理用户是服务器的root，或拥有 NOPASSWD: ALL sudo权限的用户，Jumpserver使用该用户来 推送系统用户、获取资产硬件信息等，大概会使用root进行管理，采用密码管理的方式。</li>
+<li>系统用户是服务器上建立的一些真实存在的可以ssh登陆的用户,如 dev,sa, dba等，系统用户可使用jumpserver推送到服务器上，也可以利用自己公司的工具进行推送，授权时将用户、资产、系统用户关联起来，则表明用户有权限登陆该资产的这个系统用户 如：用户 小明 以 dev 系统用户登录 172.16.1.1资产,简单理解就是 将某个资产上的某个系统用户映射给这个用户登录。</li>
+<li>角色为用户的人员禁止授权su权限,不提供root密码就没有su权限，需要时再申请，sudo su。</li>
+<li>创建系统用户如Dev和oc时需保存密钥。</li>
+</ol>
+<h1 id="JumpServer资产管理"><a href="#JumpServer资产管理" class="headerlink" title="JumpServer资产管理:"></a>JumpServer资产管理:</h1><ol>
+<li>区分不同云供应商，每个节点对应每个云供应商、项目，节点下再区分正式服、辅助支撑服。</li>
+</ol>
+<h1 id="测试环境的部署"><a href="#测试环境的部署" class="headerlink" title="测试环境的部署:"></a>测试环境的部署:</h1><ol>
+<li>选择一个云供应商和地区进行部署一台JumpServer服务器，以及一些测试服。</li>
+<li>购买新资产进行自动添加还需参考JumpServer提供的API实现自动化。</li>
+<li>测试使用REST API 进行资产的自动添加资产以及权限管理</li>
+<li>jumpserver集成sdk</li>
+</ol>
+<h1 id="获取token"><a href="#获取token" class="headerlink" title="获取token"></a>获取token</h1><pre>
+curl -XPOST -d  "username=admin;password=xxxxx" http://192.168.9.250/api/users/v1/token/
+</pre>
+
+<h1 id="查询用户可见资产"><a href="#查询用户可见资产" class="headerlink" title="查询用户可见资产"></a>查询用户可见资产</h1><pre>
+curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' -H 'Authorization: Bearer b5abc7c5b5cf4be780370d607181c5fa' 'http://192.168.9.250/api/assets/v1/assets/'
+</pre>
+
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例:"></a>示例:</h1><pre>
+1、用户登录
+curl -XPOST -d 'username=admin;password=admin' http://192.168.188.40/api/users/v1/token/
+
+{"Token":"14a9f25397444abb8666c9fa00c294c9","Keyword":"Bearer"}
+
+2、获取所有的用户
+curl -H 'Authorization: Bearer 14a9f25397444abb8666c9fa00c294c9' -XGET http://192.168.188.84:8080/api/users/v1/users/
+
+3、创建用户组
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -H 'Authorization: Bearer 14a9f25397444abb8666c9fa00c294c9' -d '{"id":"1162e7a4-90f6-4e5e-b7cf-14581adb7621","is_discard": false,"discard_time": "","name":"epointgroup","comment":"","created_by": "administrator","date_created":"2018-06-06 06:03:03 +0000","discard_time":"2018-06-11 06:03:03 +0000"}' 'http://192.168.188.84/api/users/v1/groups/'
+
+4、创建用户并设置用户组
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -H 'Authorization: Bearer 14a9f25397444abb8666c9fa00c294c9' 'http://192.168.188.84/api/users/v1/users/' -d '{"id": "13f1432d-9a8c-4d83-aad9-c3177e3a387d","groups": ["1162e7a4-90f6-4e5e-b7cf-14581adb7620"],"last_login": "2018-05-19 06:03:03 +0000","is_active": true,"date_joined": "2018-06-06 06:03:03 +0000","username": "ijarvis","name": "ijarvis","email": "ijarvis@sina.com","role": "Admin","avatar": null,"wechat": "","phone": "","otp_level": 0,"comment": "","is_first_login": true,"date_expired": "2088-05-19 06:03:03 +0000","created_by": "2018-05-19 06:03:03 +0000"}'
+
+5、 获取所有资产列表
+
+curl -X GET --header 'Content-Type: application/json' --header 'Accept: application/json' -H 'Authorization: Bearer 14a9f25397444abb8666c9fa00c294c9' 'http://192.168.188.84/api/assets/v1/assets/'
+
+6、创建用户资产
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' -H 'Authorization: Bearer 14a9f25397444abb8666c9fa00c294c9' -d '{"id": "9f7a3cd5-b3be-4a4f-a7f6-0cbcb8529e71","ip": "192.168.186.66","hostname": "Hadoop_186_66","port": 22,"platform": "Linux","is_active": true,"public_ip": null,"created_by": null,"comment": "","admin_user": "06fe163e-aacd-48ce-a7a7-a15800587b99", "nodes": ["7c0b0eda-8555-42e4-9205-992957c46d56"]}' 'http://192.168.188.84/api/assets/v1/assets/'
+</pre>
+
+<h1 id="逻辑图"><a href="#逻辑图" class="headerlink" title="逻辑图:"></a>逻辑图:</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="jms.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="jms2.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="">https://www.zhihu.com/question/21036511</a></li>
+<li><a href="">http://www.jumpserver.org/</a></li>
+<li><a href="">https://github.com/jumpserver/jumpserver</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-08-06T09:22:07.368Z" itemprop="dateUpdated">2018-08-06 17:22:07</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Neo">
+            Neo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/&title=《JumpServer 运维安全审计系统》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/&title=《JumpServer 运维安全审计系统》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JumpServer 运维安全审计系统》 — Neo42&url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/06/25/许三观卖血记/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">许三观卖血记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/21/转载-程序员技术练级攻略/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">[转载]程序员技术练级攻略</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Neo &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/&title=《JumpServer 运维安全审计系统》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/&title=《JumpServer 运维安全审计系统》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JumpServer 运维安全审计系统》 — Neo42&url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/06/23/JumpServer-运维安全审计系统/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

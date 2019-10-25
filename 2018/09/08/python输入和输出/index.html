@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>python输入和输出 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Technology">
+    <meta name="description" content="程序的输出可以有多种形式：我们可以将数据以人类可读的形式打印到屏幕上，或者将其写入到文件中以供后续使用。本章将讨论其中的几种实现方式。 格式化输出迄今为止，在 Python 中存在两种输出值的方法：表达式语句以及 print() 函数。（第三种方法是使用文件对象的 write() 方法；标准文件输出可以参考 sys.stdout 方法，其详细内容请查阅库参考手册。） 通常，相较于简单地打印以空格为">
+<meta name="keywords" content="Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python输入和输出">
+<meta property="og:url" content="https://yo42.github.io/2018/09/08/python输入和输出/index.html">
+<meta property="og:site_name" content="Neo42">
+<meta property="og:description" content="程序的输出可以有多种形式：我们可以将数据以人类可读的形式打印到屏幕上，或者将其写入到文件中以供后续使用。本章将讨论其中的几种实现方式。 格式化输出迄今为止，在 Python 中存在两种输出值的方法：表达式语句以及 print() 函数。（第三种方法是使用文件对象的 write() 方法；标准文件输出可以参考 sys.stdout 方法，其详细内容请查阅库参考手册。） 通常，相较于简单地打印以空格为">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-08T13:50:04.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python输入和输出">
+<meta name="twitter:description" content="程序的输出可以有多种形式：我们可以将数据以人类可读的形式打印到屏幕上，或者将其写入到文件中以供后续使用。本章将讨论其中的几种实现方式。 格式化输出迄今为止，在 Python 中存在两种输出值的方法：表达式语句以及 print() 函数。（第三种方法是使用文件对象的 write() 方法；标准文件输出可以参考 sys.stdout 方法，其详细内容请查阅库参考手册。） 通常，相较于简单地打印以空格为">
+    
+        <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Neo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">python输入和输出</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">python输入和输出</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-08T13:26:51.456Z" itemprop="datePublished" class="page-time">
+  2018-09-08
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#格式化输出"><span class="post-toc-number">1.</span> <span class="post-toc-text">格式化输出</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#格式化字符串文字"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">格式化字符串文字</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#format-字符串格式化方法"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">format() 字符串格式化方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#手动格式化字符串"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">手动格式化字符串</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#传统字符串格式化方法"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">传统字符串格式化方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#读写文件"><span class="post-toc-number">2.</span> <span class="post-toc-text">读写文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件对象的方法"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">文件对象的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#利用-json结构保存数据"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">利用 json结构保存数据</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#注意"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">注意</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#也可以看"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">也可以看</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number"></span> <span class="post-toc-text">参考资料</span></a>
+        </nav>
+    </aside>
+
+
+<article id="post-python输入和输出"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">python输入和输出</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-08 21:26:51" datetime="2018-09-08T13:26:51.456Z"  itemprop="datePublished">2018-09-08</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>程序的输出可以有多种形式：我们可以将数据以人类可读的形式打印到屏幕上，或者将其写入到文件中以供后续使用。本章将讨论其中的几种实现方式。</p>
+<h3 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h3><p>迄今为止，在 Python 中存在两种输出值的方法：<em>表达式语句</em>以及 <a href="https://docs.python.org/3/library/functions.html#print" target="_blank" rel="noopener"><code>print()</code></a> 函数。（第三种方法是使用文件对象的 <code>write()</code> 方法；标准文件输出可以参考 <code>sys.stdout</code> 方法，其详细内容请查阅库参考手册。）</p>
+<p>通常，相较于简单地打印以空格为分隔符的值，你会想要对程序的输出结果进行更多的格式控制。在 Python 中，存在如下几种格式化输出的方法：</p>
+<ul>
+<li><p>使用 <a href="https://docs.python.org/3/tutorial/inputoutput.html#tut-f-strings" target="_blank" rel="noopener">f-strings</a> 字符串。这类字符串需要在引号标记之前，以 <code>f</code> 或者 <code>F</code> 作为字符串的开头。你可以使用 <code>{</code> 和 <code>}</code> 包裹想要嵌入到字符串中的 Python 表达式。该表达式可以是某个变量或字面值 。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>year = <span class="number">2016</span> ; event = <span class="string">'Referendum'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f'Results of the <span class="subst">&#123;year&#125;</span> <span class="subst">&#123;event&#125;</span>'</span></span><br><span class="line"><span class="string">'Results of the 2016 Referendum'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="https://docs.python.org/3/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> 是格式化字符串的第二种方法。相较于第一种方法，该方法需要你进行更多的操作。你仍然可以在字符串中使用 <code>{</code> 和 <code>}</code> 来内嵌变量，也可以进行详细的格式化设计。但这要求你提供与之对应的被格式化的内容。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>yes_votes = <span class="number">42</span>_572_654 ; no_votes = <span class="number">43</span>_132_495</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>percentage = yes_votes/(yes_votes+no_votes)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;:-9&#125; YES votes  &#123;:2.2%&#125;'</span>.format(yes_votes, percentage)</span><br><span class="line"><span class="string">' 42572654 YES votes  49.67%'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当然，你也可以通过字符串的切片操作和连接操作来完成字符串的格式化处理。这种方法可以创建任何你想要的格式化形式。在 string 类型中，包含了一些能够将字符串按指定列宽填充的方法。</p>
+</li>
+</ul>
+<p>如果你仅仅想要在调试时打印某些变量，而不进行格式化输出，那么你也可以使用 <a href="https://docs.python.org/3/library/functions.html#repr" target="_blank" rel="noopener"><code>repr()</code></a> 函数或者 <a href="https://docs.python.org/3/library/stdtypes.html#str" target="_blank" rel="noopener"><code>str()</code></a> 函数将任意值转化成字符串。</p>
+<p><a href="https://docs.python.org/3/library/stdtypes.html#str" target="_blank" rel="noopener"><code>str()</code></a> 函数能够将值以人类可读的形式呈现，而 <a href="https://docs.python.org/3/library/functions.html#repr" target="_blank" rel="noopener"><code>repr()</code></a> 函数则是将值以解释器可读的形式呈现（如果没有与之对应的转换语法，则会产生 <a href="https://docs.python.org/3/library/exceptions.html#SyntaxError" target="_blank" rel="noopener"><code>SyntaxError</code></a> 异常）。若某个对象没有适用于人类可读的形式，则 <a href="https://docs.python.org/3/library/stdtypes.html#str" target="_blank" rel="noopener"><code>str()</code></a> 函数的返回值与 <a href="https://docs.python.org/3/library/functions.html#repr" target="_blank" rel="noopener"><code>repr()</code></a> 函数相同。在 Python 中，诸如数值、或者是链表、字典这样的结构，上述两种函数各自有统一的呈现方式。但是对于字符串，上述两种函数各自有独特的呈现方式。</p>
+<p>如下示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">'Hello, world.'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(s)</span><br><span class="line"><span class="string">'Hello, world.'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>repr(s)</span><br><span class="line"><span class="string">"'Hello, world.'"</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>str(<span class="number">1</span>/<span class="number">7</span>)</span><br><span class="line"><span class="string">'0.14285714285714285'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>x = <span class="number">10</span> * <span class="number">3.25</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>y = <span class="number">200</span> * <span class="number">200</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">'The value of x is '</span> + repr(x) + <span class="string">', and y is '</span> + repr(y) + <span class="string">'...'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(s)</span><br><span class="line">The value of x <span class="keyword">is</span> <span class="number">32.5</span>, <span class="keyword">and</span> y <span class="keyword">is</span> <span class="number">40000.</span>..</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 对于字符串，repr() 函数会添加引号以及反斜杠：</span></span><br><span class="line"><span class="meta">... </span>hello = <span class="string">'hello, world\n'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hellos = repr(hello)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(hellos)</span><br><span class="line"><span class="string">'hello, world\n'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># repr() 函数的参数也可以是某个 Python 对象：</span></span><br><span class="line"><span class="meta">... </span>repr((x, y, (<span class="string">'spam'</span>, <span class="string">'eggs'</span>)))</span><br><span class="line"><span class="string">"(32.5, 40000, ('spam', 'eggs'))"</span></span><br></pre></td></tr></table></figure>
+<h4 id="格式化字符串文字"><a href="#格式化字符串文字" class="headerlink" title="格式化字符串文字"></a>格式化字符串文字</h4><p><a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings" target="_blank" rel="noopener">格式化字符串文字</a> （简称 f-strings ）允许你在字符串中包含Python表达式的值，方法是在字符串前面加上 <code>f</code> 或者 <code>F</code> ，并将表达式写成 <code>{expression}</code> 格式。</p>
+<p>在表达式后面可以加上格式说明符。这样能够更好地控制表达式值的输出格式。下面的例子将 PI 舍入到小数位数后三位。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">f'The value of pi is approximately <span class="subst">&#123;math.pi:<span class="number">.3</span>f&#125;</span>.'</span>)</span><br></pre></td></tr></table></figure>
+<p>在 <code>&#39;:&#39;</code> 之后加上一个整数表示该字段的最小字符数，这对于列排序很有用。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>table = &#123;<span class="string">'Sjoerd'</span>: <span class="number">4127</span>, <span class="string">'Jack'</span>: <span class="number">4098</span>, <span class="string">'Dcab'</span>: <span class="number">7678</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> name, phone <span class="keyword">in</span> table.items():</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">f'<span class="subst">&#123;name:<span class="number">10</span>&#125;</span> ==&gt; <span class="subst">&#123;phone:<span class="number">10</span>d&#125;</span>'</span>)</span><br><span class="line">...</span><br><span class="line">Sjoerd     ==&gt;       4127</span><br><span class="line">Jack       ==&gt;       4098</span><br><span class="line">Dcab       ==&gt;       7678</span><br></pre></td></tr></table></figure>
+<p>也可用其他修饰符来转换要格式化的值。 <code>&#39;!a&#39;</code> 表示应用 <a href="https://docs.python.org/3/library/functions.html#ascii" target="_blank" rel="noopener"><code>ascii()</code></a>函数 ， <code>&#39;!s&#39;</code> 表示应用 <a href="https://docs.python.org/3/library/stdtypes.html#str" target="_blank" rel="noopener"><code>str()</code></a> 函数， 另外 <code>&#39;!r&#39;</code> 表示应用 <a href="https://docs.python.org/3/library/functions.html#repr" target="_blank" rel="noopener"><code>repr()</code></a> 函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>animals = <span class="string">'eels'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">f'My hovercraft is full of <span class="subst">&#123;animals&#125;</span>.'</span>)</span><br><span class="line">My hovercraft <span class="keyword">is</span> full of eels.</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'My hovercraft is full of &#123;animals !r&#125;.'</span>)</span><br><span class="line">My hovercraft <span class="keyword">is</span> full of <span class="string">'eels'</span>.</span><br></pre></td></tr></table></figure>
+<p>有关这些格式规范的参考，请参阅参考指南 <a href="https://docs.python.org/3/library/string.html#formatspec" target="_blank" rel="noopener">最小字符串格式化</a>。</p>
+<h4 id="format-字符串格式化方法"><a href="#format-字符串格式化方法" class="headerlink" title="format() 字符串格式化方法"></a>format() 字符串格式化方法</h4><p><a href="https://docs.python.org/3/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> 的基本使用方法如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'We are the &#123;&#125; who say "&#123;&#125;!"'</span>.format(<span class="string">'knights'</span>, <span class="string">'Ni'</span>))</span><br><span class="line">We are the knights who say <span class="string">"Ni!"</span></span><br></pre></td></tr></table></figure>
+<p>其中的括号和字符（称为格式字段）将用传入 <a href="https://docs.python.org/3/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> 方法中的对象来替换。括号中的数字可用于表示传递给 <a href="https://docs.python.org/3/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> 方法的对象的位置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'&#123;0&#125; and &#123;1&#125;'</span>.format(<span class="string">'spam'</span>, <span class="string">'eggs'</span>))</span><br><span class="line">spam <span class="keyword">and</span> eggs</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'&#123;1&#125; and &#123;0&#125;'</span>.format(<span class="string">'spam'</span>, <span class="string">'eggs'</span>))</span><br><span class="line">eggs <span class="keyword">and</span> spam</span><br></pre></td></tr></table></figure>
+<p>如果在 <a href="https://docs.python.org/3/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> 方法中使用关键字参数，其值等于参数名称对应的值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'This &#123;food&#125; is &#123;adjective&#125;.'</span>.format(</span><br><span class="line"><span class="meta">... </span>      food=<span class="string">'spam'</span>, adjective=<span class="string">'absolutely horrible'</span>))</span><br><span class="line">This spam <span class="keyword">is</span> absolutely horrible.</span><br></pre></td></tr></table></figure>
+<p>位置和关键字参数可以任意组合：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'The story of &#123;0&#125;, &#123;1&#125;, and &#123;other&#125;.'</span>.format(<span class="string">'Bill'</span>, <span class="string">'Manfred'</span>,</span><br><span class="line">                                                       other=<span class="string">'Georg'</span>))</span><br><span class="line">The story of Bill, Manfred, <span class="keyword">and</span> Georg.</span><br></pre></td></tr></table></figure>
+<p>如果你有一个不想拆分的长字符，使用名称而不是位置来进行格式化将会是一个更好的方法。这可以简单的使用 <code>&#39;[]&#39;</code> 符号来获取字典中的键</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>table = &#123;<span class="string">'Sjoerd'</span>: <span class="number">4127</span>, <span class="string">'Jack'</span>: <span class="number">4098</span>, <span class="string">'Dcab'</span>: <span class="number">8637678</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'Jack: &#123;0[Jack]:d&#125;; Sjoerd: &#123;0[Sjoerd]:d&#125;; '</span></span><br><span class="line"><span class="meta">... </span>      <span class="string">'Dcab: &#123;0[Dcab]:d&#125;'</span>.format(table))</span><br><span class="line">Jack: <span class="number">4098</span>; Sjoerd: <span class="number">4127</span>; Dcab: <span class="number">8637678</span></span><br></pre></td></tr></table></figure>
+<p>上面的方法也可以使用 ‘**’ 将字典中的信息进行传递。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>table = &#123;<span class="string">'Sjoerd'</span>: <span class="number">4127</span>, <span class="string">'Jack'</span>: <span class="number">4098</span>, <span class="string">'Dcab'</span>: <span class="number">8637678</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'Jack: &#123;Jack:d&#125;; Sjoerd: &#123;Sjoerd:d&#125;; Dcab: &#123;Dcab:d&#125;'</span>.format(**table))</span><br><span class="line">Jack: <span class="number">4098</span>; Sjoerd: <span class="number">4127</span>; Dcab: <span class="number">8637678</span></span><br></pre></td></tr></table></figure>
+<p>这与内置函数 <a href="https://docs.python.org/3/library/functions.html#vars" target="_blank" rel="noopener"><code>vars()</code></a> 的结合非常有用，这个内置函数能够能够返回包含所有局部变量的字典。</p>
+<p>例如，下面的代码生成了将数字本身与其平方、立方整齐对齐的数列：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'&#123;0:2d&#125; &#123;1:3d&#125; &#123;2:4d&#125;'</span>.format(x, x*x, x*x*x))</span><br><span class="line">...</span><br><span class="line"> <span class="number">1</span>   <span class="number">1</span>    <span class="number">1</span></span><br><span class="line"> <span class="number">2</span>   <span class="number">4</span>    <span class="number">8</span></span><br><span class="line"> <span class="number">3</span>   <span class="number">9</span>   <span class="number">27</span></span><br><span class="line"> <span class="number">4</span>  <span class="number">16</span>   <span class="number">64</span></span><br><span class="line"> <span class="number">5</span>  <span class="number">25</span>  <span class="number">125</span></span><br><span class="line"> <span class="number">6</span>  <span class="number">36</span>  <span class="number">216</span></span><br><span class="line"> <span class="number">7</span>  <span class="number">49</span>  <span class="number">343</span></span><br><span class="line"> <span class="number">8</span>  <span class="number">64</span>  <span class="number">512</span></span><br><span class="line"> <span class="number">9</span>  <span class="number">81</span>  <span class="number">729</span></span><br><span class="line"><span class="number">10</span> <span class="number">100</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+<p>有关字符串格式的完整概述 <a href="https://docs.python.org/3/library/stdtypes.html#str.format" target="_blank" rel="noopener"><code>str.format()</code></a> ，请参阅 <a href="https://docs.python.org/3/library/string.html#formatstrings" target="_blank" rel="noopener">格式字符串语法</a> 。</p>
+<h4 id="手动格式化字符串"><a href="#手动格式化字符串" class="headerlink" title="手动格式化字符串"></a>手动格式化字符串</h4><p>这是一些相同的平方和立方的表，手动格式化：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>):</span><br><span class="line"><span class="meta">... </span>    print(repr(x).rjust(<span class="number">2</span>), repr(x*x).rjust(<span class="number">3</span>), end=<span class="string">' '</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="comment"># 注意在前一行中使用 'end'</span></span><br><span class="line"><span class="meta">... </span>    print(repr(x*x*x).rjust(<span class="number">4</span>))</span><br><span class="line">...</span><br><span class="line"> <span class="number">1</span>   <span class="number">1</span>    <span class="number">1</span></span><br><span class="line"> <span class="number">2</span>   <span class="number">4</span>    <span class="number">8</span></span><br><span class="line"> <span class="number">3</span>   <span class="number">9</span>   <span class="number">27</span></span><br><span class="line"> <span class="number">4</span>  <span class="number">16</span>   <span class="number">64</span></span><br><span class="line"> <span class="number">5</span>  <span class="number">25</span>  <span class="number">125</span></span><br><span class="line"> <span class="number">6</span>  <span class="number">36</span>  <span class="number">216</span></span><br><span class="line"> <span class="number">7</span>  <span class="number">49</span>  <span class="number">343</span></span><br><span class="line"> <span class="number">8</span>  <span class="number">64</span>  <span class="number">512</span></span><br><span class="line"> <span class="number">9</span>  <span class="number">81</span>  <span class="number">729</span></span><br><span class="line"><span class="number">10</span> <span class="number">100</span> <span class="number">1000</span></span><br></pre></td></tr></table></figure>
+<p>（注意 <a href="https://docs.python.org/3/library/functions.html#print" target="_blank" rel="noopener"><code>print()</code></a> 函数在每一列中添加了一个空格 <a href="https://docs.python.org/3/library/functions.html#print" target="_blank" rel="noopener"><code>print()</code></a> ：它经常在参数之间添加空格。）</p>
+<p>字符串对象的 <a href="https://docs.python.org/3/library/stdtypes.html#str.rjust" target="_blank" rel="noopener"><code>str.rjust()</code></a> 方法在某一栏以给定的宽度会在左边填充空格来对一个字符串进行右对齐。 <a href="https://docs.python.org/3/library/stdtypes.html#str.ljust" target="_blank" rel="noopener"><code>str.ljust()</code></a> 和 <a href="https://docs.python.org/3/library/stdtypes.html#str.center" target="_blank" rel="noopener"><code>str.center()</code></a> 等这些方法相似。 这些方法不写入任何东西，它们只会返回一个新的字符串。如果输入的字符串太长，它们不会截断它，但是会原样返回它。它们会搞乱你的列的排序，但这通常比替代方案更好，它们会通过值来排布。（如果你真的想截断字符串，通常你可以添加一个切片操作，像  <code>x.ljust(n)[:n]</code> 。）</p>
+<p>有另外一个方法， <a href="https://docs.python.org/3/library/stdtypes.html#str.zfill" target="_blank" rel="noopener"><code>str.zfill()</code></a>， 它会在一个数字型的字符串的左边添加0。它了解正负号：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'12'</span>.zfill(<span class="number">5</span>)</span><br><span class="line"><span class="string">'00012'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'-3.14'</span>.zfill(<span class="number">7</span>)</span><br><span class="line"><span class="string">'-003.14'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'3.14159265359'</span>.zfill(<span class="number">5</span>)</span><br><span class="line"><span class="string">'3.14159265359'</span></span><br></pre></td></tr></table></figure>
+<h4 id="传统字符串格式化方法"><a href="#传统字符串格式化方法" class="headerlink" title="传统字符串格式化方法"></a>传统字符串格式化方法</h4><p>操作符 ‘%’ 同样可以被用来格式化字符串。它将该操作符左侧参数解释为 ‘sprintf()’ 样式的字符串应用到操作符右侧参数，并且返回字符串。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> math</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'The value of pi is approximately %5.3f.'</span> % math.pi)</span><br><span class="line">The value of pi <span class="keyword">is</span> approximately <span class="number">3.142</span>.</span><br></pre></td></tr></table></figure>
+<p>更多信息请参考文档  <a href="https://docs.python.org/3/library/stdtypes.html#old-string-formatting" target="_blank" rel="noopener">printf-style String Formatting</a>。</p>
+<h3 id="读写文件"><a href="#读写文件" class="headerlink" title="读写文件"></a>读写文件</h3><p><a href="https://docs.python.org/3/library/functions.html#open" target="_blank" rel="noopener"><code>open()</code></a> 将返回一个文件对象，它使用两个参数作为输入：<code>open(filename,mode)</code>，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = open(<span class="string">'workfile'</span>, <span class="string">'w'</span>)</span><br></pre></td></tr></table></figure>
+<p>第一个参数 <em>filename</em> 是一个包含文件名的字符串。第二个参数 <em>mode</em> 是包含几个单独字母的字符串，用于解释该文件将被用何种方式处理。 <em>mode</em> 参数可以使用 <code>&#39;r&#39;</code> 表示只读模式；<code>&#39;w&#39;</code> 表示只写入模式（同时，同名文件的文件内容将会被抹掉）； <code>&#39;a&#39;</code> 表示在文件末尾追加写入，在该模式下，任何数据都会被自动追加到该文件末尾；<code>&#39;r+&#39;</code> 表示读写操作。 <em>mode</em> 是可选的，未指定的情况下将会默认为 <code>&#39;r&#39;</code> 模式进行读文件。</p>
+<p>正常情况下，文件以 <em>text mode</em> 打开， 这就意味着，我们使用字符串数据对文件进行读写操作，这些都是按照某种指定的编码格式进行读写。如果编码格式未被指定，默认编码格式是与平台相关（详情见 <a href="https://docs.python.org/3/library/functions.html#open" target="_blank" rel="noopener"><code>open()</code></a>）。 <code>&#39;b&#39;</code> 表示以 <em>二进制模式</em> 打开文件并且追加数据， 数据以字节的形式读写到文件中，但是这种模式应该被用来打开不包含文本的文件中。</p>
+<p>在 <em>text mode</em> 中，默认读操作的行尾  <code>\n</code> 同样是依据指定平台进行选择的。（Unix系统中使用<code>\n</code> ， Windows系统中使用 <code>\r\n</code>）。在 <em>text mode</em> 模式下写入文件，默认情况下会将<code>\n</code>转换成对应的平台的行尾字符。这种对文件修改的操作仅适用于文本文件，但是在操作  <code>JPEG</code> 或者  <code>EXE</code> 二进制数据文件过程中，要非常小心的使用二进制模式对他们进行读写操作。</p>
+<p>关键字  <a href="https://docs.python.org/3/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> 是非常适合用于处理文件对象。它的优势在于，即使发生了 <em>exception</em>，文件操作序列结束后也可以自动关闭。使用关键字 <a href="https://docs.python.org/3/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> 处理的代码要远少于 <a href="https://docs.python.org/3/reference/compound_stmts.html#try" target="_blank" rel="noopener"><code>try</code></a>-<a href="https://docs.python.org/3/reference/compound_stmts.html#finally" target="_blank" rel="noopener"><code>finally</code></a> 块进行处理的代码，例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">with</span> open(<span class="string">'workfile'</span>) <span class="keyword">as</span> f:</span><br><span class="line"><span class="meta">... </span>    read_data = f.read()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.closed</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<p>如果未使用关键字 <a href="https://docs.python.org/3/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> 操作文件，那么必须要调用 <code>f.close()</code> 来结束文件和释放系统资源。未结束一个文件时，Python 的垃圾回收机制将会最终关闭并销毁这个文件对象，但是这个文件将在一段时间内仍然处于打开状态。不同的 Python 实现方式将会在不同的时间对文件进行释放，这将会带来其他的风险。</p>
+<p>当文件对象被关闭后，使用 <a href="https://docs.python.org/3/reference/compound_stmts.html#with" target="_blank" rel="noopener"><code>with</code></a> 或者调用 <code>f.close()</code> 对文件对象的操作都会失效。例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.close()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: I/O operation on closed file.</span><br></pre></td></tr></table></figure>
+<h4 id="文件对象的方法"><a href="#文件对象的方法" class="headerlink" title="文件对象的方法"></a>文件对象的方法</h4><p>该例子的剩下部分将会继续使用上文所建立的文件 <code>f</code> 进行介绍。</p>
+<p>读取文件内容的方法为 <code>f.read(size)</code> ，可以读取指定大小的文件内容，可以得到一个字符串（文本模式）或者字节对象（二进制模式）。 <em>size</em> 是一个可选的数值参数，如果 <em>size</em> 省略或为负，可以读取并返回整个文件；要注意的是，文件的大小有可能超出设备内存的上限。否则，最多读取并返回 <em>size</em> 的字节内容。当读取到文件的结尾时，<code>f.read()</code> 会返回一个空字符串（<code>&#39;&#39;</code>）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">'This is the entire file.\n'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read()</span><br><span class="line"><span class="string">''</span></span><br></pre></td></tr></table></figure>
+<p><code>f.readline()</code> 可以仅仅从文件里读取一行；读取的字符串中，结尾会有一个换行符（<code>\n</code>），唯一的例外时在最后一行文件不以换行符结束。这个结果是明确的。如果 <code>f.readline()</code> 返回一个空字符串，那么已经读取到文件的结尾，因为空白行只有一个 <code>&#39;\n&#39;</code>，一个仅仅包含换行符的字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.readline()</span><br><span class="line"><span class="string">'This is the first line of the file.\n'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.readline()</span><br><span class="line"><span class="string">'Second line of the file\n'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.readline()</span><br><span class="line"><span class="string">''</span></span><br></pre></td></tr></table></figure>
+<p>要读取多行内容，你可以借助循环遍历整个文档类型。这是一种内存复杂度优先，快速而编码简单的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line"><span class="meta">... </span>    print(line, end=<span class="string">''</span>)</span><br><span class="line">...</span><br><span class="line">This <span class="keyword">is</span> the first line of the file.</span><br><span class="line">Second line of the file</span><br></pre></td></tr></table></figure>
+<p>如果你想一行行读取整个文件，你同样可以使用 <code>list(f)</code> 或<code>f.readlines()</code>，你可以得到一个各行字符串的列表。</p>
+<p><code>f.write(string)</code> 可以写入字符串 <em>string</em> 内容到文件内，返回写入的字符数量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">'This is a test\n'</span>)</span><br><span class="line"><span class="number">15</span></span><br></pre></td></tr></table></figure>
+<p>其他类型需要转换才能写入文件中，或者转成字符串（文本模式）或者字节类型（二进制模式）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>value = (<span class="string">'the answer'</span>, <span class="number">42</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = str(value)  <span class="comment"># convert the tuple to string</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(s)</span><br><span class="line"><span class="number">18</span></span><br></pre></td></tr></table></figure>
+<p><code>f.tell()</code> 返回一个整数，给出当前在文件中的位置；在二进制模式中，用字节数表示，在文本模式中，用不透明数表示。</p>
+<p>要改变当前的位置，可以使用 <code>f.seek(offset, from_what)</code> 。新位置从参考点出发，由参数 <em>offset</em> 值计算得出；参考点位置由 <em>from_what</em> 参数给出。 <em>from_what</em> 为 0 时，从文件开头出发；为 1 时，从当前位置出发；为 2 时从文件结尾出发。 <em>from_what</em> 缺省值为 0 ，采用文件开头作为参考点。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>f = open(<span class="string">'workfile'</span>, <span class="string">'rb+'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.write(<span class="string">b'0123456789abcdef'</span>)</span><br><span class="line"><span class="number">16</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.seek(<span class="number">5</span>)      <span class="comment"># Go to the 6th byte in the file</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read(<span class="number">1</span>)</span><br><span class="line"><span class="string">b'5'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.seek(<span class="number">-3</span>, <span class="number">2</span>)  <span class="comment"># Go to the 3rd byte before the end</span></span><br><span class="line"><span class="number">13</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>f.read(<span class="number">1</span>)</span><br><span class="line"><span class="string">b'd'</span></span><br></pre></td></tr></table></figure>
+<p>在文本文件（即那些没有使用 <code>b</code> 参数打开的字符串模式文件），只能从文件的开头或是 <code>f.tell()</code> 返回值出发（从文件末尾的定位 <code>seek(0, 2)</code> 为异常）。任何其他的 <em>offset</em> 将产生不可预知的表现。</p>
+<p>文件对象有一些附加的方法，比如 <code>isatty()</code> 和 <code>truncate()</code>，它们的使用频率较低；有关文件对象的完整指南，请参阅「参考文档」。</p>
+<h4 id="利用-json结构保存数据"><a href="#利用-json结构保存数据" class="headerlink" title="利用 json结构保存数据"></a>利用 <a href="https://docs.python.org/3/library/json.html#module-json" target="_blank" rel="noopener"><code>json</code></a>结构保存数据</h4><p>字符串可以轻松地从文件读写。但是数值要花费上更多的功夫，因为 <code>read()</code> 方法可以仅仅返回字符串，这将必须经过一些函数处理，例如 <a href="https://docs.python.org/3/library/functions.html#int" target="_blank" rel="noopener"><code>int()</code></a>，将 <code>&#39;123&#39;</code> 字符串转化为数值 123 。 当你希望保存更复杂的数据类型像嵌套列表或字典时，手动解析和序列化复杂程度难以接受。</p>
+<p>Python 提供了被称为 <a href="http://json.org/" target="_blank" rel="noopener">JSON (JavaScript Object Notation)</a> 的流行数据交换格式，而不希望用户不断自行编写和调试代码以储存复杂的数据类型。标准库 <a href="https://docs.python.org/3/library/json.html#module-json" target="_blank" rel="noopener"><code>json</code></a> 可以采用 Python 式的数据层级，并且转换成字符串的形式； 这个进程称为 <em>序列化</em> 。反之，从字符串转化成数据类型被称作 <em>反序列化</em> 。得到的字符串对象可以储存在文件或数据中，也可以通过网络连接发送到某个远程主机。</p>
+<blockquote>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>JSON 格式通常被现代应用程序用于数据交换，为许多程序员所熟悉，使其成为交互数据的较优选择。</p>
+</blockquote>
+<p>如果你有一个对象 <code>x</code> ，你能够通过如下的代码访问其 JSON 字符串：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> json</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>json.dumps([<span class="number">1</span>, <span class="string">'simple'</span>, <span class="string">'list'</span>])</span><br><span class="line"><span class="string">'[1, "simple", "list"]'</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://docs.python.org/3/library/json.html#json.dumps" target="_blank" rel="noopener"><code>dumps()</code></a> 另一个变体函数，叫作 <a href="https://docs.python.org/3/library/json.html#json.dump" target="_blank" rel="noopener"><code>dump()</code></a> ，只将对象序列化成一个 <a href="https://docs.python.org/3/glossary.html#term-text-file" target="_blank" rel="noopener">文本文件</a> 。 所以，如果 <code>f</code> 是一个 <a href="https://docs.python.org/3/glossary.html#term-text-file" target="_blank" rel="noopener">文本文件</a> 已打开的可写入文件对象，我们能够利用如下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">json.dump(x, f)</span><br></pre></td></tr></table></figure>
+<p>要重新解码对象，当 <code>f</code> 是一个 <a href="https://docs.python.org/3/glossary.html#term-text-file" target="_blank" rel="noopener">文本文件</a> 已打开的读取用文件对象：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x = json.load(f)</span><br></pre></td></tr></table></figure>
+<p>这种简单的序列化技术可以处理列表和字典，但是不足以在 JSON 中序列化任意类的实例。 参考文档 <a href="https://docs.python.org/3/library/json.html#module-json" target="_blank" rel="noopener"><code>json</code></a> 包含对此的解释.</p>
+<blockquote>
+<h4 id="也可以看"><a href="#也可以看" class="headerlink" title="也可以看"></a>也可以看</h4><p><a href="https://docs.python.org/3/library/pickle.html#module-pickle" target="_blank" rel="noopener"><code>pickle</code></a> - Pickle 模块</p>
+<p>与 <a href="https://docs.python.org/3/tutorial/inputoutput.html#tut-json" target="_blank" rel="noopener">JSON</a> 相反， <em>pickle</em> 是一个允许对任意复杂的 Python 对象进行序列化的协议。因此，它仅仅适配 Python ，不能用于与其他语言编写的应用程序通信。默认情况下，它也是不安全的：如果有人特地设计用于注入攻击的数据，这些不受信任的 Pickle 数据可能会在序列化中被 Python 运行。</p>
+</blockquote>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://docs.python.org/3/tutorial/inputoutput.html" target="_blank" rel="noopener">https://docs.python.org/3/tutorial/inputoutput.html</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-08T13:50:04.711Z" itemprop="dateUpdated">2018-09-08 21:50:04</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Neo">
+            Neo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/08/python输入和输出/&title=《python输入和输出》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/08/python输入和输出/&title=《python输入和输出》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/08/python输入和输出/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python输入和输出》 — Neo42&url=https://yo42.github.io/2018/09/08/python输入和输出/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/08/python输入和输出/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/08/python错误和异常/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">python错误和异常</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/06/python模块/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">python模块</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Neo &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/08/python输入和输出/&title=《python输入和输出》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/08/python输入和输出/&title=《python输入和输出》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/08/python输入和输出/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python输入和输出》 — Neo42&url=https://yo42.github.io/2018/09/08/python输入和输出/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/08/python输入和输出/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/09/08/python输入和输出/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

@@ -17,6 +17,8 @@
     <title>Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
+    <meta name="theme-color" content="#3F51B5">
+    
     
     <meta name="keywords" content="DevOps">
     <meta name="keywords" content="DevOps">
@@ -30,7 +32,7 @@
     
         <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="/css/style.css?v=1.7.2">
     <script>window.lazyScripts=[]</script>
 
@@ -47,19 +49,40 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/yo.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">Neo</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,6 +97,20 @@
         </a>
         <div class="flex-col header-title ellipsis">Neo42</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -126,7 +163,11 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        logging 模块自 2.3 版以来一直是 Pyth...
+        logging 模块自 2.3 版以来一直是 Python 标准库的一部分。在 PEP 282 中有对它的简洁描述。除了 基础日志教程之外，这些文档是非常难以阅读的。
+日志记录一般有两个目的：
+
+诊断日志 记录与应用程序操作相关的日志。例如，当用户遇到程序报错时， 可通过搜索诊断日志以获得上下文信息。
+审计日志 为商业分析而记录的日志。从审计日志中，可提取用户的交易信息， 并结合其他用户资料...
     
 
         <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-日志记录/" class="post-more waves-effect waves-button">
@@ -174,7 +215,9 @@
 
     
         测试你的代码是非常重要的。
-习惯于同时写测试用例和运行...
+习惯于同时写测试用例和运行代码，现在被视为一个好的习惯。如果使用得当，这种方式将帮助你更加明确自己代码的功能，以及拥有更加可解耦的结构。
+你应对自己编写的函数和类进行测试。这样你就能够更加确定自己所做的工作不会破坏项目的其他部分，你就能够随心所欲地改进既有的代码了。
+如果你在项目中包含了初步测试用例，其他程序猿更敬佩你，更愿意work with you toget...
     
 
         <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-代码测试/" class="post-more waves-effect waves-button">
@@ -221,7 +264,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        可读性是 Python 开发人员在项目和代码文档中的主...
+        可读性是 Python 开发人员在项目和代码文档中的主要关注点。遵循一些简单的最佳实践可以为您和其他人节省大量时间。
+项目文档在根目录下 README 文件应该对用户和项目维护者提供概述信息。它应该是原始文本或非常容易阅读的标记写成，如 reStructuredText 或 Markdown。 它应该包含几行对项目或库的作用的解释（假设用户不知道项目的任何内容），软件源站点的 URL 和一些...
     
 
         <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-项目文档/" class="post-more waves-effect waves-button">
@@ -268,7 +312,10 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Python 设计背后的核心原则之一就是创建可读的代码...
+        Python 设计背后的核心原则之一就是创建可读的代码。这个设计背后的动机很简单： Python 程序员所做的第一件事就是阅读代码。
+成为一个著名的 Python 程序猿的秘诀之一就是阅读，理解和理解优秀的代码。
+优秀的代码通常遵循 Code Style 中概述的指导方针，并想读者表达清晰简洁的意图。
+下面是一些推荐的 Python 项目供读者参阅。这些项目中每一项都是 Python 编码的...
     
 
         <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-Reading-Great-Code/" class="post-more waves-effect waves-button">
@@ -315,7 +362,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        如果有人问起 Python 程序员他们最喜欢 Pyth...
+        如果有人问起 Python 程序员他们最喜欢 Python 哪一点，他们一定会提到 Python 的高可读性。确实，对于 Python 来说，其高可读性一直是 Python 这门语言设计的核心。一个不争的事实是，相对于写代码而言，读代码才是更加平常的事情。
+Python 代码有高可读性的一个原因就是其有着相对而言更加完善的编码风格准则和 「Python化」习语。
+当 Python 老手（Py...
     
 
         <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-Code-Style/" class="post-more waves-effect waves-button">
@@ -362,7 +411,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        这里我们所说的「结构」就是关于如何让项目达到预期的目标...
+        这里我们所说的「结构」就是关于如何让项目达到预期的目标。我们需要考虑的是如何更好的利用 Python 的特性创造出干净、有效的代码。实际上，「结构」意味着代码的结构、依赖非常的清晰，像文件系统中的文件和文件夹一样。
+哪些函数应该放在哪个模块中？项目中的数据流是怎样的？哪些函数应该组织在一起或者分离开？从广义上讲，通过回答这些问题，你就可以开始规划你的项目长什么样子。
+在本节中，我们将深入研究...
     
 
         <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-代码结构/" class="post-more waves-effect waves-button">
@@ -407,7 +458,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        部署postgres数据库(Docker)使用same...
+        部署postgres数据库(Docker)使用sameersbn/postgresql工作目录:/home/postgres1234567891011121314postgresql:  restart: always  image: sameersbn/postgresql:9.6-2  volumes:    - $PWD:/var/lib/postgresql    - /var/ru...
     
 
         <a href="/2018/09/11/部署postgresql/" class="post-more waves-effect waves-button">
@@ -448,7 +499,9 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        关于游戏服内外网穿透大致一个场景:公司网络区分了内外网...
+        关于游戏服内外网穿透大致一个场景:公司网络区分了内外网，游戏服务器架设在内网，而手机连接wifi是属于外网，需要满足个需求，外网环境(公司wifi、或个人办工电脑机器)实现正常访问内网游戏服。
+涉及HTTP七层的转发以及TCP四层的转发
+大致原理:部署转发代理服(包含外网网卡)，通过NGinx代理转发请求，内外网DNS劫持，实现。因为Nginx从1.9版本开始支持了TCP四层的转发，故使用N...
     
 
         <a href="/2018/09/11/游戏服内外网穿透/" class="post-more waves-effect waves-button">
@@ -493,7 +546,14 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        普通的HTTP模式（非常不安全）：服务端（CentOS...
+        普通的HTTP模式（非常不安全）：服务端（CentOS 7，IP地址192.168.9.7）：
+sed -i 's/\(OPTIONS="\)/\1-H 0.0.0.0:1699 /' /etc/sysconfig/docker
+# 也就是加入 -H 0.0.0.0:1699参数
+
+## 重启docker。
+## 客户端配置：
+
+echo 'export DOCKER_HOST="tcp:/...
     
 
         <a href="/2018/09/11/Docker-远程API调用启用TLS加密/" class="post-more waves-effect waves-button">
@@ -535,7 +595,10 @@
 
     
         Docker有两个概念需要搞清楚,镜像与容器。
-12镜...
+12镜像是从网上docker pub上拉取下来的镜像，拉取下来后可以使用docker run命令进行运行。# dockerhub 是官方构建的一个镜像仓库,类似github一样,上面累积了许多人上传制作的镜像,有官方,有的是用户上传的,任何人都可自由下载。
+1容器是将镜像运行在一个容器中
+Registry
+123用户可以在自己的数据中心搭建私有...
     
 
         <a href="/2018/09/09/Docker-学习笔记/" class="post-more waves-effect waves-button">
@@ -591,14 +654,80 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/page/3/&title=Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/page/3/&title=Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/page/3/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=Neo42&url=https://yo42.github.io/page/3/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/page/3/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/page/3/" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
 <script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
 
 
 

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Hitchhiker&#39;s Guide to Python-常见陷阱 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Technology">
+    <meta name="description" content="通常，Python 旨在成为一门简洁一致的语言，避免发生意外。然而，有些情况可能会给新手们造成困惑。 在这些情况中，有一些虽是有意为之，但还是有潜在风险。还有一些则可以说是语言设计缺陷了。总之，下面列出的这些情况都是些乍一看很不好理解的行为，不过一旦您了解了这些奇怪行为背后的机理，也就基本上能理解了。 可变默认参数似乎每个 Python 新手都会感到惊讶的一点是 Python 在函数定义中对待可变">
+<meta name="keywords" content="Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hitchhiker&#39;s Guide to Python-常见陷阱">
+<meta property="og:url" content="https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/index.html">
+<meta property="og:site_name" content="Neo42">
+<meta property="og:description" content="通常，Python 旨在成为一门简洁一致的语言，避免发生意外。然而，有些情况可能会给新手们造成困惑。 在这些情况中，有一些虽是有意为之，但还是有潜在风险。还有一些则可以说是语言设计缺陷了。总之，下面列出的这些情况都是些乍一看很不好理解的行为，不过一旦您了解了这些奇怪行为背后的机理，也就基本上能理解了。 可变默认参数似乎每个 Python 新手都会感到惊讶的一点是 Python 在函数定义中对待可变">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-09-15T09:42:52.940Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hitchhiker&#39;s Guide to Python-常见陷阱">
+<meta name="twitter:description" content="通常，Python 旨在成为一门简洁一致的语言，避免发生意外。然而，有些情况可能会给新手们造成困惑。 在这些情况中，有一些虽是有意为之，但还是有潜在风险。还有一些则可以说是语言设计缺陷了。总之，下面列出的这些情况都是些乍一看很不好理解的行为，不过一旦您了解了这些奇怪行为背后的机理，也就基本上能理解了。 可变默认参数似乎每个 Python 新手都会感到惊讶的一点是 Python 在函数定义中对待可变">
+    
+        <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Neo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Hitchhiker&#39;s Guide to Python-常见陷阱</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Hitchhiker&#39;s Guide to Python-常见陷阱</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-09-15T04:40:16.342Z" itemprop="datePublished" class="page-time">
+  2018-09-15
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可变默认参数"><span class="post-toc-number">1.</span> <span class="post-toc-text">可变默认参数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#您所写的"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">您所写的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#您可能期待的结果"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">您可能期待的结果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实际上的结果"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">实际上的结果</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#您实际上应该做的"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">您实际上应该做的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#利用好『缺陷』"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">利用好『缺陷』</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#延迟绑定闭包"><span class="post-toc-number">2.</span> <span class="post-toc-text">延迟绑定闭包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#当你写下"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">当你写下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#你期望发生"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">你期望发生</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#而事实是："><span class="post-toc-number">2.3.</span> <span class="post-toc-text">而事实是：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#以上正确的做法应该是："><span class="post-toc-number">2.4.</span> <span class="post-toc-text">以上正确的做法应该是：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#缺陷并不可怕"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">缺陷并不可怕</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字节码（-pyc）文件无处不在！"><span class="post-toc-number">3.</span> <span class="post-toc-text">字节码（.pyc）文件无处不在！</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#禁用字节码（-pyc）文件"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">禁用字节码（.pyc）文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#删除字节码（-pyc）文件"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">删除字节码（.pyc）文件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#版本控制忽略"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">版本控制忽略</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">4.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Hitchhiker’s-Guide-to-Python-常见陷阱"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Hitchhiker's Guide to Python-常见陷阱</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-09-15 12:40:16" datetime="2018-09-15T04:40:16.342Z"  itemprop="datePublished">2018-09-15</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>通常，Python 旨在成为一门简洁一致的语言，避免发生意外。然而，有些情况可能会给新手们造成困惑。</p>
+<p>在这些情况中，有一些虽是有意为之，但还是有潜在风险。还有一些则可以说是语言设计缺陷了。总之，下面列出的这些情况都是些乍一看很不好理解的行为，不过一旦您了解了这些奇怪行为背后的机理，也就基本上能理解了。</p>
+<h2 id="可变默认参数"><a href="#可变默认参数" class="headerlink" title="可变默认参数"></a>可变默认参数</h2><p>似乎每个 Python 新手都会感到惊讶的一点是 Python 在函数定义中对待可变默认参数的方法。</p>
+<h3 id="您所写的"><a href="#您所写的" class="headerlink" title="您所写的"></a>您所写的</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def append_to(element, to=[]):</span><br><span class="line">    to.append(element)</span><br><span class="line">    <span class="keyword">return</span> to</span><br></pre></td></tr></table></figure>
+<h3 id="您可能期待的结果"><a href="#您可能期待的结果" class="headerlink" title="您可能期待的结果"></a>您可能期待的结果</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_list = append_to(<span class="number">12</span>)</span><br><span class="line"><span class="keyword">print</span> my_list</span><br><span class="line"></span><br><span class="line">my_other_list = append_to(<span class="number">42</span>)</span><br><span class="line"><span class="keyword">print</span> my_other_list</span><br></pre></td></tr></table></figure>
+<p>函数每次被调用时，如果不提供第二个参数，就创建一个新的列表。所以结果就应该是：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>]</span><br><span class="line">[<span class="number">42</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="实际上的结果"><a href="#实际上的结果" class="headerlink" title="实际上的结果"></a>实际上的结果</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">12</span>]</span><br><span class="line">[<span class="number">12</span>, <span class="number">42</span>]</span><br></pre></td></tr></table></figure>
+<p><em>一旦</em> 完成了函数定义，一个新的列表就创建出来了，而且在随后的每一次函数调用中被使用的都是这个列表。</p>
+<p><em>一旦</em> 完成了函数定义，Python 的默认参数就被赋值了，而且在随后的每一次函数调用中都不会再被默认值重复赋值（就像是在，嗯，Ruby 里那样）。这就意味着如果您使用了一个可变默认参数，并且改变了它，您也会且 <em>将会</em> 在未来的所有函数调用中改变这同一个参数对象。</p>
+<h3 id="您实际上应该做的"><a href="#您实际上应该做的" class="headerlink" title="您实际上应该做的"></a>您实际上应该做的</h3><p>使用一个默认值来表示我们并不想给这个参数赋值，从而每次在函数被调用时我们都创建一个新的对象。（<a href="http://docs.python.org/library/constants.html#None" target="_blank" rel="noopener"><code>None</code></a> 作为默认值通常是个好选择）。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def append_to(element, to=None):</span><br><span class="line">    <span class="keyword">if</span> to is None:</span><br><span class="line">        to = []</span><br><span class="line">    to.append(element)</span><br><span class="line">    <span class="keyword">return</span> to</span><br></pre></td></tr></table></figure>
+<p>可别忘了，您所传递的第二个参数仍应该是个 <em>列表</em> 对象。</p>
+<h3 id="利用好『缺陷』"><a href="#利用好『缺陷』" class="headerlink" title="利用好『缺陷』"></a>利用好『缺陷』</h3><p>有时你可以专门 <strong>利用</strong>（或者说特地使用）这种行为来维护函数调用间的状态。这通常用于编写缓存函数。</p>
+<h2 id="延迟绑定闭包"><a href="#延迟绑定闭包" class="headerlink" title="延迟绑定闭包"></a>延迟绑定闭包</h2><p>另一个常见的困惑是 Python 在闭包（或在周围全局作用域）中绑定变量的方式。</p>
+<h3 id="当你写下"><a href="#当你写下" class="headerlink" title="当你写下"></a>当你写下</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def create_multipliers():</span><br><span class="line">    <span class="keyword">return</span> [lambda x : i * x <span class="keyword">for</span> i in range(<span class="number">5</span>)]</span><br></pre></td></tr></table></figure>
+<h3 id="你期望发生"><a href="#你期望发生" class="headerlink" title="你期望发生"></a>你期望发生</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> multiplier in create_multipliers():</span><br><span class="line">    <span class="keyword">print</span> multiplier(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>一个包含五个函数的列表，每个函数有它们自己的封闭变量 <code>i</code> 乘以它们的参数，得到:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+<h3 id="而事实是："><a href="#而事实是：" class="headerlink" title="而事实是："></a>而事实是：</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">8</span></span><br><span class="line"><span class="number">8</span></span><br></pre></td></tr></table></figure>
+<p>五个函数被创建了，它们全都用 4 乘以 <code>x</code> 。</p>
+<p>Python 的闭包是 <strong>延迟绑定的</strong> 。 这意味着闭包中用到的变量的值，是在内部函数被调用时查询得到的。</p>
+<p>这里，不论 <strong>任何</strong> 返回的函数是如何被调用的， <code>i</code> 取的是调用时周围作用域里的值。 当循环完成时， <code>i</code> 的值最终变成了 4。</p>
+<p>关于这个陷阱有一个普遍严重的误解，它被认为只针对 Python 的 <a href="http://docs.python.org/reference/expressions.html#lambda" target="_blank" rel="noopener">闭包 lambda</a> 定义方式。 事实上，由 <code>lambda</code> 表达式创建的函数并没什么特别，同样的问题也出现在使用普通的 <code>def</code> 上：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def create_multipliers():</span><br><span class="line">    multipliers = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i in range(<span class="number">5</span>):</span><br><span class="line">        def multiplier(x):</span><br><span class="line">            <span class="keyword">return</span> i * x</span><br><span class="line">        multipliers.append(multiplier)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> multipliers</span><br></pre></td></tr></table></figure>
+<h3 id="以上正确的做法应该是："><a href="#以上正确的做法应该是：" class="headerlink" title="以上正确的做法应该是："></a>以上正确的做法应该是：</h3><p>最简单通用的解决方案可以说是有点取巧（hack）。由于 Python 拥有在前文提到的『为函数默认参数赋值』的行为（参见 <a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/gotchas.html#default-args" target="_blank" rel="noopener">可变默认参数</a> ），你可以创建一个立即绑定参数的闭包，像下面这样：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def create_multipliers():</span><br><span class="line">    <span class="keyword">return</span> [lambda x, i=i : i * x <span class="keyword">for</span> i in range(<span class="number">5</span>)]</span><br></pre></td></tr></table></figure>
+<p>或者，使用 <code>functools.partial</code> 函数：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from functools import partial</span><br><span class="line">from operator import mul</span><br><span class="line"></span><br><span class="line">def create_multipliers():</span><br><span class="line">    <span class="keyword">return</span> [partial(mul, i) <span class="keyword">for</span> i in range(<span class="number">5</span>)]</span><br></pre></td></tr></table></figure>
+<h3 id="缺陷并不可怕"><a href="#缺陷并不可怕" class="headerlink" title="缺陷并不可怕"></a>缺陷并不可怕</h3><p>有时你就想要闭包有如此表现，延迟绑定在很多情况下是一个很赞的特性。不幸的是，循环创建独立函数是一种会使它们出差错的情况。</p>
+<h2 id="字节码（-pyc）文件无处不在！"><a href="#字节码（-pyc）文件无处不在！" class="headerlink" title="字节码（.pyc）文件无处不在！"></a>字节码（.pyc）文件无处不在！</h2><p>默认情况下，当你直接执行 Python 脚本文件时，Python 解释器会自动将该文件的字节码版本写入同目录下。 比如， <code>module.pyc</code>。</p>
+<p>这些 <code>.pyc</code> 文件不应该被纳入源代码仓库。</p>
+<p>理论上，出于性能原因，此行为默认为开启。 没有这些字节码文件， Python 会在每次加载文件时重新生成字节码文件。</p>
+<h3 id="禁用字节码（-pyc）文件"><a href="#禁用字节码（-pyc）文件" class="headerlink" title="禁用字节码（.pyc）文件"></a>禁用字节码（.pyc）文件</h3><p>幸运的是，生成字节码的过程非常快，在开发代码时不需要担心。</p>
+<p>那些文件很讨厌，所以让我们摆脱他们吧！</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export PYTHONDONTWRITEBYTECODE=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>使用 <code>$PYTHONDONTWRITEBYTECODE</code> 环境变量来命令 Python 不将这些文件写入磁盘， 开发环境将会保持整洁和干净。</p>
+<p>我建议在你的 <code>~/.profile</code> 里设置这个环境变量。</p>
+<h3 id="删除字节码（-pyc）文件"><a href="#删除字节码（-pyc）文件" class="headerlink" title="删除字节码（.pyc）文件"></a>删除字节码（.pyc）文件</h3><p>以下是删除所有已存在字节码文件的好方法:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ find . -type f -name <span class="string">"*.py[co]"</span> -delete -<span class="keyword">or</span> -type d -name <span class="string">"__pycache__"</span> -delete</span><br></pre></td></tr></table></figure>
+<p>从项目根目录运行，所有 <code>.pyc</code> 文件会瞬间消失。</p>
+<h3 id="版本控制忽略"><a href="#版本控制忽略" class="headerlink" title="版本控制忽略"></a>版本控制忽略</h3><p>如果由于性能原因仍然需要 <code>.pyc</code> 文件，你可以随时将它们添加到版本控制存储库的忽略文件中。 流行的版本控制系统能够使用文件中定义的通配符来应用特殊规则。</p>
+<p>一份忽略文件将确保匹配的文件未被检入存储库。 <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> 使用 <code>.gitignore</code>，而 <a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener">Mercurial</a> 使用 <code>.hgignore</code>。</p>
+<p>忽略文件里至少应该具备以下内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">syntax:glob   <span class="comment"># This line is not needed for .gitignore files.</span></span><br><span class="line">*.py[cod]     <span class="comment"># Will match .pyc, .pyo and .pyd files.</span></span><br><span class="line">__pycache__/  <span class="comment"># Exclude the whole folder</span></span><br></pre></td></tr></table></figure>
+<p>可按需添加更多文件和目录。下次提交到存储库时，这些文件将不被包括。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="https://docs.python-guide.org/" target="_blank" rel="noopener">Python漫游指南</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-09-15T09:42:52.940Z" itemprop="dateUpdated">2018-09-15 17:42:52</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Neo">
+            Neo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/&title=《Hitchhiker's Guide to Python-常见陷阱》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/&title=《Hitchhiker's Guide to Python-常见陷阱》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker's Guide to Python-常见陷阱》 — Neo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-关于项目License/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Hitchhiker&#39;s Guide to Python-关于项目License</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/09/15/Hitchhiker’s-Guide-to-Python-日志记录/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Hitchhiker&#39;s Guide to Python-日志记录</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Neo &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/&title=《Hitchhiker's Guide to Python-常见陷阱》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/&title=《Hitchhiker's Guide to Python-常见陷阱》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hitchhiker's Guide to Python-常见陷阱》 — Neo42&url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/09/15/Hitchhiker’s-Guide-to-Python-常见陷阱/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

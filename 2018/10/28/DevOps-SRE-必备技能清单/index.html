@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>DevOps &amp; SRE 必备技能清单 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Technology">
+    <meta name="description" content="导读 这个列表并非详尽无遗，只是列举了技术基础、必须知道的技能和一些随机的想法。可以用它们作为一个清单来评估你自己或其他人，或者为下一次面试DevOps/SRE（Site Reliability Engineers，网站可靠性工程师）工作做准备。补充下，这个清单是比较个人的想法。  下一步是什么？更了解DevOps生态系统：  首先，一定要了解文化要点的重要性：在这里（15点DevOps检查表 ）">
+<meta name="keywords" content="Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DevOps &amp; SRE 必备技能清单">
+<meta property="og:url" content="https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/index.html">
+<meta property="og:site_name" content="Neo42">
+<meta property="og:description" content="导读 这个列表并非详尽无遗，只是列举了技术基础、必须知道的技能和一些随机的想法。可以用它们作为一个清单来评估你自己或其他人，或者为下一次面试DevOps/SRE（Site Reliability Engineers，网站可靠性工程师）工作做准备。补充下，这个清单是比较个人的想法。  下一步是什么？更了解DevOps生态系统：  首先，一定要了解文化要点的重要性：在这里（15点DevOps检查表 ）">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/4924-1539417307400.png">
+<meta property="og:image" content="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/4225-1539417307128.png">
+<meta property="og:image" content="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/3626-1539417306768.png">
+<meta property="og:updated_time" content="2018-10-28T06:52:44.621Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DevOps &amp; SRE 必备技能清单">
+<meta name="twitter:description" content="导读 这个列表并非详尽无遗，只是列举了技术基础、必须知道的技能和一些随机的想法。可以用它们作为一个清单来评估你自己或其他人，或者为下一次面试DevOps/SRE（Site Reliability Engineers，网站可靠性工程师）工作做准备。补充下，这个清单是比较个人的想法。  下一步是什么？更了解DevOps生态系统：  首先，一定要了解文化要点的重要性：在这里（15点DevOps检查表 ）">
+<meta name="twitter:image" content="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/4924-1539417307400.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Neo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">DevOps &amp; SRE 必备技能清单</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">DevOps &amp; SRE 必备技能清单</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-10-28T03:45:57.769Z" itemprop="datePublished" class="page-time">
+  2018-10-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#导读"><span class="post-toc-number">1.</span> <span class="post-toc-text">导读</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">2.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-DevOps-SRE-必备技能清单"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">DevOps & SRE 必备技能清单</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-10-28 11:45:57" datetime="2018-10-28T03:45:57.769Z"  itemprop="datePublished">2018-10-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Technology/">Technology</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><ul>
+<li>这个列表并非详尽无遗，只是列举了技术基础、必须知道的技能和一些随机的想法。可以用它们作为一个清单来评估你自己或其他人，或者为下一次面试DevOps/SRE（Site Reliability Engineers，网站可靠性工程师）工作做准备。补充下，这个清单是比较个人的想法。</li>
+</ul>
+<p><strong>下一步是什么？更了解DevOps生态系统：</strong></p>
+<ul>
+<li>首先，一定要了解文化要点的重要性：在这里（<a href="http://w.san.wccnw.top/browse.php?u=Gp/XsLMboegkekS/h/8BHXb0sTOQAoHmBSzaAaweVgZL9wvn3ZkrIAh8m848ZkDJvewBfBudLtEkKJwX5q6rCTiNJyF6QA==&amp;b=13" target="_blank" rel="noopener">15点DevOps检查表</a> ）可以读到更多信息。</li>
+<li>您应该掌握类Unix系统并且很好地理解Linux发行版的工作原理。</li>
+<li>为产品设置选择一个操作系统。不需要掌握每一个操作系统，这会让你的工作陷入困境，选择其中一个并掌握它。</li>
+<li>能轻松使用终端，可能有一些GUI来管理服务器，但是无论如何，必须热爱终端，它更快、更安全，坦白说，一旦掌握了用起来会更容易。</li>
+<li>如何获取CPU/系统信息（cat /proc/version，/proc/cpuinfo，uptime，等。）</li>
+<li>cron作业如何运作。在特定日期/时间/月设置cron作业。</li>
+<li>了解在机器上运行的操作系统是什么（cat /etc/lsb-release）</li>
+<li>了解不同的Linux操作系统之间的区别，以及了解在机器上运行的操作系统（例如cat /etc/lsb-release）</li>
+<li>shell之间的区别：sh/dash/bash/ash/zsh</li>
+<li>如何设置和取消设置ENV变量。导出的ENV变量是临时的，如何导出永久的变量？</li>
+<li>什么是shell配置文件：〜/.bashrc，.bash_profile，.environment .. 如何为程序初始化文件“添加”设置？</li>
+<li>了解Vim，其配置（.vimrc）及其一些基本提示是必须的。</li>
+<li>日志如何在*nix系统中运行，什么是日志记录级别以及如何使用日志管理工具（rsyslog，logstash，fluentd，logwatch，awslogs ..）</li>
+<li>swapping如何工作。swappiness是什么。（swapon -s，/proc/sys/vm/swappiness，sysctl vm.swappiness ..）</li>
+<li>能轻松使用脚本语言轻松自如。Bash是必须了解的（其他脚本语言也是非常有用的，如Python，Perl ..）。</li>
+<li>掌握有用的命令，例如进程监控命令（ps，top，htop，atop ..），系统性能命令（nmon，iostat，sar，vmstat..）和网络故障排除和分析（nmap，tcpdump，ping，traceroute，airmon，airodump ..）。</li>
+<li>你的备份策略是什么？如何测试备份的可靠性？</li>
+<li>你知道ext4，ntfs，fat？知道联合文件系统（Union FS）吗？</li>
+<li>如何在系统上查看/设置网络配置？</li>
+<li>如何在具有不同子网的计算机上设置静态/动态IP地址？（提示：CIDR）</li>
+<li>使用网络数据包分析来分析和了解网络的工作原理：tcpdump，Wireshark ..</li>
+<li>你熟悉OSI模型和TCP/IP模型的规范吗？TCP和UDP有什么区别？你知道vxlan吗？</li>
+<li>如何设置防火墙（iptables，至少知道ufw）：设置规则，列出规则，路由流量，阻止协议/端口 ..</li>
+<li>如何查看/设置/备份路由器设置？</li>
+<li>DNS如何工作？如何设置DNS服务器（Bind，Unbound，PowerDNS，Dnsmasq ..）？递归（recursive）和权威（authoritative）DNS有什么区别？如何排除DNS故障（nslookup，dig ..）</li>
+<li>熟悉DNS和A，AAAA，C，CNAME，TXT记录</li>
+<li>当你在浏览器中点击google.com时会发生什么？从浏览器的缓存、本地DNS缓存、本地网络配置（hosts文件）、路由、DNS、网络、Web协议中，缓存系统到Web服务器（如果深入分析，最基本的问题也很难回答）。</li>
+<li>熟悉CDN提供商（fastly，Akamai等）</li>
+<li>熟悉SSL/TLS的工作原理以及数字证书的工作原理（https）</li>
+<li>了解SSL证书（需要加密）</li>
+<li>熟悉更安全的协议和工具：TLS，STARTTLS，SCP，SSH，<br>SFTP，FTPS ..</li>
+<li>了解PPTP，OpenVPN，L2TP/IPSec之间的区别</li>
+<li>学习为域设置记录集（可以使用Route53或CloudFlare等托管云服务）</li>
+<li>SSH如何工作，如何调试它，如何生成ssh密钥以及无密码登录到其他计算机</li>
+<li>什么是init系统？你知道Systemd（自15.04以来由Ubuntu使<br>用），Upstart（由Ubuntu开发），SysV ..</li>
+<li>用任何软件的源代码编译它（gcc，make和其他相关内容）</li>
+<li>如何通过终端用不同的格式压缩/解压缩文件（主要是：tar/tar.gz）</li>
+<li>如何设置Web服务器（Apache，Nginx ..）</li>
+<li>学习使用“awk，sed，sort，uniq”操作Nginx/Apache日志文件</li>
+<li>Nginx和Apache有什么区别？什么时候使用Nginx？什么时候使用Apache？在同一个Web应用程序中，何时以及如何同时使用它们？</li>
+<li>如何设置反向代理（Nginx ..）</li>
+<li>如何设置缓存服务器（Squid，Nginx，Varnish ..）</li>
+<li>如何设置负载均衡器（HAproxy，Nginx ..）</li>
+<li>如何为您的微服务建立API网关（Ambassador，Kong，Traefik，Nginx ..）</li>
+<li>熟悉Systemd以及如何使用systemctl和journalctl等命令分析和管理服务</li>
+<li>熟悉OAuth、SAML、Auth0集成</li>
+<li>熟悉RESTful API，Webhooks，GraphQL，gRPC</li>
+<li>确保ES集群安全（XPack（商业），OpenSource：ReadOnlyREST，Search Guard）</li>
+<li>使用snapshot API或esdump进行ES备份（快照和增量）（注意：需要nodejs/npm）</li>
+<li>使用DB备份</li>
+<li>学习Python（pip + setup.py）和BASH。您是否开始使用Golang作为脚本语言？尝试一下吧。</li>
+<li>发展云计算技能。从选择云基础架构提供商开始：Amazon Web Services，Google Cloud Platform，Digitalocean，Microsoft Azure。或者使用OpenStack创建自己的私有云。</li>
+<li>staging服务器怎么样？单元测试的测试策略是什么？端到端？真的需要staging服务器吗？Google下“staging servers must die”。</li>
+<li>阅读有关PaaS/Iaas/Saas/CaaS/FaaS/DaaS和无服务器架构的信息</li>
+<li>了解如何通过CLI中的Cloud Shell，或你的程序中的Cloud SDK，来使用和配置云资源</li>
+<li>了解如何使用至少一个配置管理和远程执行工具（Ansible，Puppet，SaltStack，Chef 等）。您的选择应基于以下标准：语法，性能，模板语言，推拉模型，性能，架构，与其他工具的集成，可伸缩性，可用性等等。</li>
+<li>用于image构建的Packer</li>
+<li>将Jenkins集成到CI/CD中</li>
+<li>设置Consul（用于服务发现）</li>
+<li>开始研究“基础架构即代码”（infrastructure as code），以及基础架构配置自动化工具，如Terraform和Packer</li>
+<li>开始研究容器和Docker。容器是底层架构（cgroups和namespaces），它是如何工作的？</li>
+<li>开始熟悉基本的Docker命令（logs/inspect/top/ps/rm）。另外得研究docker hub（push/pull image）</li>
+<li>开始研究容器编排工具：Docker Swarm，Kubernetes，Mesosphere DC/OS，AWS ECS</li>
+<li>阅读有关无状态和有状态应用程序的知识</li>
+<li>学习为您的应用程序构建小型的docker image（alpine比较合适）。仅安装所需的包就够了。</li>
+<li>了解默认运行服务的最常用端口号（如：SSH（22），Web（80），HTTP/S（443）等）</li>
+<li>从分布式角度学习网络（在容器世界中建立网络）。利用分布式系统中的8个谬论，让自己轻松应对。</li>
+<li>了解L4/L7负载均衡器。</li>
+<li>了解如何确保代理服务器和反向代理服务器的安全（Nginx，Traefik，Ambassador ..），并了解它们的网络系统是如何工作的。</li>
+<li>熟悉帮助创建可分发和可移植开发环境的工具（例如：Vagrant和Docker）。</li>
+<li>部署应用程序时，管理私密信息。Hashicorp Vault会帮助你。</li>
+<li>了解AWS SQS，Google PubSub或其它替代方案。</li>
+<li>熟悉Kafka，AWS Kinesis或其它替代方案。</li>
+<li>了解AWS RDS，大多数时候Ops发现很容易将普通任务委派给服务提供商以避免额外的工作，但这会带来一些费用。</li>
+<li>如果你在使用Kubernetes，那么了解它的所有组件和工作。</li>
+<li>学习如何首先处理K8s内置功能，然后学习Helm/Istio。</li>
+<li>了解监控的方式和内容（从操作系统和应用程序的角度来看）。</li>
+<li>一旦到了合适的阶段，接着会需要追踪（Tracing）来帮助理解和挖掘，并且应用程序需要直接支持它</li>
+<li>如果您正在处理（大）数据工程相关应用程序，那么得熟悉Hadoop，HBase，Zookeeper，Spark以及如何设置相关集群</li>
+<li>学习如何根据应用需求设置和调整Redis，如何添加身份验证。</li>
+<li>了解应用程序的性质：CPU密集型，内存密集型，I/O密集型，然后了解如何相应地进行处理。</li>
+<li>学习根据需要在不同类型的数据库之间进行选择：SQL，NoSQL，TSDB，图形数据库 ..</li>
+<li>学习管理IAM角色/权限以及如何管理不同用户的密钥（AWS IAM，GCP IAM ..）。</li>
+<li>如果您喜欢分享并帮助其他人解决遇到过的问题，请将代码发布到GitHub。</li>
+<li>学习对基础架构和应用程序进行基准测试以填补空白。</li>
+<li>不要直接去执行。先可视化最终目标、画图、与开发人员详细讨论、毫不犹豫地提问、让问题彻底变得愚蠢。</li>
+<li>不时做小型演示或PoC以便更好地理解。</li>
+<li>你熟悉IDE（Sublime Text，Atom，Eclipse ..）吗？</li>
+<li>深入了解DB（MySQL或任何其它你喜欢的数据库）。</li>
+<li>了解Redis/Memcache以及类似工具。</li>
+<li>了解微服务架构的优缺点，并开始构建类似的架构。</li>
+<li>了解如何配置和使用持续集成和持续交付工具，如Jenkins，Travis CI，Buildbot，GoCd。将这些工具与其它工具（如Selenium，构建工具，配置管理软件，Docker，云供应商的SDK等）集成是非常有帮助的。</li>
+<li>学习分布式版本控制系统Git及其基本命令（pull/push/commit/clone/branch/merge/logs等）。了解git工作流程。你知道如何将Git存储库恢复到以前的提交吗？</li>
+<li>如何使用SSH密钥。尝试使用Github，Bitbucket或Gitlab .. 来配置对repo/account的无密码访问。</li>
+<li>熟悉内核版本的混乱以及如何修补它们。</li>
+<li>了解如何生成校验（md5，SHA ..）以验证任何文件的完整性。</li>
+<li>了解单体（Monolithic）和微服务（Microservices）架构之间的区别。</li>
+<li>如何实现零宕机部署？制定回滚、自修复、自动扩展的策略是什么？</li>
+<li>了解可扩展性和高度分布式系统，如何让它们一直保持运行状态？</li>
+<li>熟悉API和服务：RESTfull，RESTful-like，API网关，Lambda函数，serverless计算，SOA，SOAP，JMS，CRUD ..</li>
+<li>如何确保基础架构、网络和运行的应用程序的安全？</li>
+<li>你知道什么是ChatOps吗？是否尝试过使用一个已知框架？ Hubot，Lita，Cog？</li>
+<li>了解如何设置、配置和使用某些监控系统（Nagios，Zabix，Sensu，Prometheus ..）</li>
+<li>无论你做什么都“记录下来”，无论多么粗糙，做吧。稍后，你会感谢自己的。</li>
+<li>制作小的代码脚本以方便使用，记下命令或片段（通过StackOverflow，Github Gists或其它在线记事板），它会帮助你得到想要的东西。</li>
+<li>让Google，StackExchange，Quora和其它专业论坛成为您的朋友。</li>
+<li>读，读，读。在Twitter/StackOverflow上提问。</li>
+<li>参加会议。可以加入我们当地的聚会，如<a href="http://w.yi.wccnw.top/browse.php?u=3%2bEbCNhA3ow7CQsuY03Ew%2b9bUDOiA8frvqmO0moiy16kn9PAhr7AbzM1BBi%2bWSf0tTYVufBAGhmEHqFP&amp;b=5" target="_blank" rel="noopener">DevOpsLinks Community会议（班加罗尔）</a>，<a href="http://w.yi.wccnw.top/browse.php?u=3%2bEbCNhA3ow7CQsuY03Ew%2b9bUDOiA8frvqmO0moiy36kn9PAhr7AbzMVBBi%2bWSf0tTQ=&amp;b=5" target="_blank" rel="noopener">DevOpsLinks Community会议（伦敦）</a>和<a href="http://w.yi.wccnw.top/browse.php?u=3%2bEbCNhA3ow7CQsuY03Ew%2b9bUDOiA8frvqmO0moiy1Cul8rchrDHO04ZExS5Hw==&amp;b=5" target="_blank" rel="noopener">DevOpsLinks Community会议（巴黎）</a>。如果想组织当地的聚会，请联系我们，我们将为您提供帮助！</li>
+<li>与同一领域的研究员交谈并讨论您的问题。通过<a href="http://w.yi.wccnw.top/browse.php?u=lvQbQ8pBxtIlAAc0fU7Ew%2b9b&amp;b=5" target="_blank" rel="noopener">社区</a>学习。</li>
+<li>加入我们的<a href="http://w.yi.wccnw.top/browse.php?u=lvQbQ8pBxtIlAAc0fU7Ew%2b9b&amp;b=5" target="_blank" rel="noopener">Slack频道</a>并询问您的所有（菜鸟级）问题，都没问题！我们都是从开始起步的。</li>
+<li>不要试图解决所有问题。永远记住一件事：没有人是一座孤岛。你不能做、学习、实现一切。要了解对于手头的任务最重要的是什么。</li>
+<li>阅读DevOps词汇表（请Google它）</li>
+<li>关注开源项目（Kubernetes/Docker等）或者让您感到兴奋的东西。</li>
+<li>关注来自<a href="http://w.yi.wccnw.top/browse.php?u=lvQbQ8pBxtIlAAc0fU7Ew%2b9b&amp;b=5" target="_blank" rel="noopener">社区</a>的志同道合的人，并了解最新的科技趋势。</li>
+<li>尝试搭建良好的开发实践以及坚实的架构。</li>
+<li>了解如何在生产级别进行扩展。</li>
+<li>了解如何在生产服务器中实时调试和跟踪运行的应用程序。</li>
+<li>关注一些合适的科技公司的技术博客（我们跟随：Google/Uber/Quora/Github/Netflix）。这是您可以直接从专家那里学习的地方，并有机会看到他们解决任何问题的方法。</li>
+<li>浏览一些新闻聚合器，如Reddit，hackernews，medium等。</li>
+<li>在twitter上关注志同道合的开发人员和技术公司。 （我总是阅读文章和观看谈话/会议，事后剖析（post-mortems）是我最喜欢的内容。我也关注一些github库看看我使用的技术发生了什么。）</li>
+<li>加入<a href="http://w.yi.wccnw.top/browse.php?u=lvQbQ8pBxtIlAAc0fU7Ew%2b9b&amp;b=5" target="_blank" rel="noopener">DevOpsLinks</a>、<a href="http://w.yi.wccnw.top/browse.php?u=lvQbTM5H3cM/AkAib0c=&amp;b=5" target="_blank" rel="noopener">Kaptain</a>和<a href="http://w.yi.wccnw.top/browse.php?u=lvQbTcBex9E%2bBR4qc1nEw%2b9b&amp;b=5" target="_blank" rel="noopener">Shipped</a>！我们相信你会学到很多东西，即使你是专家，你仍然不得不更多地学习。</li>
+<li>阅读各种与技术相关的博客并订阅DevOps Newsletters。顺便说一句，我们有一份<a href="http://w.yi.wccnw.top/browse.php?u=3%2bEbCMJSzcsjAUA5eVDFxOVAEAe0GeH1ppY=&amp;b=5" target="_blank" rel="noopener">出版物</a>，您可以提交您的文章并与社区分享。</li>
+<li>了解开源以及<a href="http://w.yi.wccnw.top/browse.php?u=lvQbTdlZ2ow1DUE4elKNj7IGTkHoRLi0/9PI3Sw3g2rmg8vQm6PdeXALTByoXzzn63QnvfAKCBqeHqcF5g==&amp;b=5" target="_blank" rel="noopener">如何</a>为开源项目做出贡献。</li>
+<li>如果系统出现问题，您应该能够进行事后剖析。详细记录出现了什么问题，以及如何防止它再次发生。</li>
+<li>尝试学习StackOverflow的专家如何解决问题。永远记住，方法是不断变化的，不像基础知识总是保持不变。</li>
+<li>读书。</li>
+<li>最后这点也很重要……不要假设任何事情，永远不要把现实视为理所当然，总是去尝试并享受旅程。</li>
+</ul>
+<p>如果您拥有以上大部分技能，则可以确保您具备DevOps、SRE和系统工程知识的先决条件。</p>
+<p>你无法一次性学习所有这些，但是具备这样一个思维模式是主要的。 即使去熟悉所有这些也肯定需要时间，但俗话说旅程很有趣。 你会失败很多次，并从错误中吸取教训，不要重蹈覆辙。</p>
+<p><strong>永远记住，我们都是学生。我们通过碰撞和试验来学习。不要羞于失败，因为这就是学习的方式。</strong></p>
+<p><strong>DevOpsLinks</strong>，一个来自世界各地的DevOps专业人士和从业者的社区。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/4924-1539417307400.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure></p>
+<p><strong>Shipped</strong>，一个专注于无服务计算、FaaS和其他有趣主题的技术的社区。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/4225-1539417307128.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure></p>
+<p><strong>Kaptain</strong>：一个Kubernetes社区中心，主要包括手工策划的时事通讯、团队聊天、培训和更多（即将推出）。<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://res.infoq.com/articles/the-must-know-checklist-for-devops-and-sre/zh/resources/3626-1539417306768.png" alt="img" title="">
+                </div>
+                <div class="image-caption">img</div>
+            </figure></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="http://www.infoq.com/cn/articles/the-must-know-checklist-for-devops-and-sre" target="_blank" rel="noopener">http://www.infoq.com/cn/articles/the-must-know-checklist-for-devops-and-sre</a></li>
+<li><a href="https://hackernoon.com/the-must-know-checklist-for-devops-site-reliability-engineers-update-8ba44dbc824" target="_blank" rel="noopener">https://hackernoon.com/the-must-know-checklist-for-devops-site-reliability-engineers-update-8ba44dbc824</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-10-28T06:52:44.621Z" itemprop="dateUpdated">2018-10-28 14:52:44</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Neo">
+            Neo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Technology/">Technology</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/&title=《DevOps & SRE 必备技能清单》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/&title=《DevOps & SRE 必备技能清单》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《DevOps & SRE 必备技能清单》 — Neo42&url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/01/29/搭建k8s集群/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">手动搭建k8s集群</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/10/01/初尝Node-js/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">初尝Node.js</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Neo &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/&title=《DevOps & SRE 必备技能清单》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/&title=《DevOps & SRE 必备技能清单》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《DevOps & SRE 必备技能清单》 — Neo42&url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/10/28/DevOps-SRE-必备技能清单/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>

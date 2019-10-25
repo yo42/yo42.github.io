@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>[转载]每个程序员都该知道的事 | Neo42 | Dont&#39;t Panic,Do not go gentle into that good night :)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="在每个月月中，我会推荐一些有价值的内容，供你参考。这个月，我将为你推荐五篇阅读文章，这五篇文章我觉得都是比较不错的经验总结，是我们每一个技术人员都需要知道的东西。它们分别是： Stack Overflow 上开出来的一个经典书书单；美国某大学教授给计算机专业学生的一些建议，其中有很多的资源；LinkedIn 的高效代码复查实践，很不错的方法，值得你一读；一份关于程序语言和 bug 数相关的有趣的报">
+<meta name="keywords" content="DevOps">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载]每个程序员都该知道的事">
+<meta property="og:url" content="https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/index.html">
+<meta property="og:site_name" content="Neo42">
+<meta property="og:description" content="在每个月月中，我会推荐一些有价值的内容，供你参考。这个月，我将为你推荐五篇阅读文章，这五篇文章我觉得都是比较不错的经验总结，是我们每一个技术人员都需要知道的东西。它们分别是： Stack Overflow 上开出来的一个经典书书单；美国某大学教授给计算机专业学生的一些建议，其中有很多的资源；LinkedIn 的高效代码复查实践，很不错的方法，值得你一读；一份关于程序语言和 bug 数相关的有趣的报">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-06-21T04:59:28.974Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转载]每个程序员都该知道的事">
+<meta name="twitter:description" content="在每个月月中，我会推荐一些有价值的内容，供你参考。这个月，我将为你推荐五篇阅读文章，这五篇文章我觉得都是比较不错的经验总结，是我们每一个技术人员都需要知道的东西。它们分别是： Stack Overflow 上开出来的一个经典书书单；美国某大学教授给计算机专业学生的一些建议，其中有很多的资源；LinkedIn 的高效代码复查实践，很不错的方法，值得你一读；一份关于程序语言和 bug 数相关的有趣的报">
+    
+        <link rel="alternate" type="application/atom+xml" title="Neo42" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/yo.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Neo</h5>
+          <a href="mailto:edyo7024@gmail.com" title="edyo7024@gmail.com" class="mail">edyo7024@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                Home
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://yo42.github.io/Aobut-Me/"  >
+                <i class="icon icon-lg icon-user"></i>
+                About Me
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">[转载]每个程序员都该知道的事</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">[转载]每个程序员都该知道的事</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-21T04:50:30.000Z" itemprop="datePublished" class="page-time">
+  2018-06-21
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考资料"><span class="post-toc-number">1.</span> <span class="post-toc-text">参考资料</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-转载-每个程序员都该知道的事"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">[转载]每个程序员都该知道的事</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-21 12:50:30" datetime="2018-06-21T04:50:30.000Z"  itemprop="datePublished">2018-06-21</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>在每个月月中，我会推荐一些有价值的内容，供你参考。这个月，我将为你推荐五篇阅读文章，这五篇文章我觉得都是比较不错的经验总结，是我们每一个技术人员都需要知道的东西。它们分别是：</p>
+<p>Stack Overflow 上开出来的一个经典书书单；<br>美国某大学教授给计算机专业学生的一些建议，其中有很多的资源；<br>LinkedIn 的高效代码复查实践，很不错的方法，值得你一读；<br>一份关于程序语言和 bug 数相关的有趣的报告，可以让你对各种语言有所了解</p>
+<p>每个程序员都应该要读的书<br>在 Stack Overflow 上有一个问题 What is the single most influential book every programmer should read，网址为： <a href="https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read" target="_blank" rel="noopener">https://stackoverflow.com/questions/1711/what-is-the-single-most-influential-book-every-programmer-should-read</a></p>
+<p>虽然这个问题被关闭了，但是这是一个非常热门的问题。排在第一个的人给了一大串书的列表，看上去着实吓人，不过都是一些相当经典相当有影响力的书，在这里我重罗列一些我觉得你必需要看的。</p>
+<p>《代码大全》虽然这本书有点过时了，而且厚到可以垫显示器，但是这是一本绝对经典的书。<br>《程序员修练之道》这本书也是相当的经典，我觉得就是你的指路明灯。<br>《计算机的构造和解释》经典中的经典，必需读的书。<br>《算法导论》美国的本科生教材，这本书应该也是中国计算机学生的教材。<br>《设计模式》这本书是面向对象设计的经典书。<br>《重构》代码坏味道和相应的代码的最佳实践。<br>《人月神话》这本书可能也有点过时了。但还是经典书。<br>《代码整洁之道》细节之处的效率，完美和简单。<br>《Effective C++》/《More Effective C++》C++ 中两本经典得不能再经典的书。也许你觉得 C++ 复杂，但这两本书中带来对代码稳定性的探索方式让人非常受益，因为这种思维方式同样可以用在其它地方。以至于各种模仿者，比如《Effective Java》也是一本经典书。<br>《Unix 编程艺术》、《Unix 高级环境编程》也是相关的经典。<br>还有好多，我就不在这里一一列了。你可以看看其它的答案，我发现自己虽然读过好多书，但也有好些书没有读过，这个问答对我也很有用。</p>
+<p>每个搞计算机专业的学生应有的知识<br>What every computer science major should know，每个搞计算机专业的学生应有的知识，网址为：<a href="http://matt.might.net/articles/what-cs-majors-should-know/" target="_blank" rel="noopener">http://matt.might.net/articles/what-cs-majors-should-know/</a></p>
+<p>本文作者马修·迈特（Matthew Might）是美国犹他大学计算机学院的副教授，2007 年于佐治亚理工学院取得博士学位。计算机专业的课程繁多，而且随着时代的变化，科目的课程组成也在不断变化。如果不经过思考，直接套用现有的计算机专业课程列表，则有可能忽略一些将来可能变得重要的知识点。为此，马修力求从四个方面来总结，得出这篇文章的内容。</p>
+<p>要获得一份好工作，学生需要知道什么？<br>为了一辈子都有工作干，学生需要知道什么？<br>学生需要知道什么，才能考进研究生院？<br>学生需要知道什么，才能对社会有益？<br>这篇文章不仅仅对刚毕业的学生有用，对有工作经验的人同样有用，这里我把这篇文章的内容摘要如下。</p>
+<p>首先，对于我们每个人来说，作品集（Portfolio）会比简历（Resume）更有参考意义。所以，在自己的简历中应该放上自己的一些项目经历，或是一些开源软件的贡献，或是你完成的软件的网址等。最好有一个自己的个人网址，上面有一些你做的事，自己的技能，经历，以及你的一些文章和思考会比简历更好。</p>
+<p>其次，计算机专业工作者也要学会与人交流的技巧，包括如何写演示文稿，以及面对质疑时如何与人辩论的能力。</p>
+<p>最后，他就各个方面展开计算机专业人士所需要的硬技能：工程类数学、Unix 哲学和实践、系统管理、程序设计语言、离散数学、数据结构与算法、计算机体系结构、操作系统、网络、安全、密码学、软件测试、用户体验、可视化、并行计算、软件工程、形式化方法、图形学、机器人、人工智能、机器学习、数据库，等等。详读本文可以了解计算机专业知识的全貌。</p>
+<p>这篇文章的第三部分简直就是一个知识资源向导库，给出了各个技能的方向和关键知识点，你可以跟随着这篇文章里的相关链接学到很多东西。</p>
+<p>LinkedIn 高效的代码复查技巧<br>LinkedIn’s Tips for Highly Effective Code Review，LinkedIn 的高效代码复查技巧，网址为：<a href="https://thenewstack.io/linkedin-code-review/" target="_blank" rel="noopener">https://thenewstack.io/linkedin-code-review/</a></p>
+<p>对于 Code Review，我有一篇文章 《从 Code Review 谈如何做技术》，讲述了为什么 Code Review 是一件很重要事情。今天推荐的这篇文章是 LinkedIn 公司的相关实践。</p>
+<p>这篇文章介绍了 LinkedIn 公司内部实践的 Code Review 形式。具体来说，LinkedIn 的代码复查有以下几个特点。</p>
+<p>从 2011 年开始，强制要求在团队成员之间做代码复查。Code Review 带来的反馈意见让团队成员能够迅速提升自己的技能水平，这解决了 LinkedIn 各个团队近年来因迅速扩张带来的技能不足的问题。<br>通过建立公司范围的 Code Review 工具，这就可以做跨团队的 Code Review。既有利于消除 bug，提升质量，也有利于大家对代码的学习和技能的传播。<br>Code Review 的经验作为员工晋升的参考因素之一。<br>Code Review 的一个难点是，Reviewer 可能不了解某个修改的背景和目的。所以 LinkedIn 要求代码签入版本管理系统前，就对其做清晰的说明，以便复查者了解其目的，促进 Review 的进行。<br>我认为，这个方法实在在太赞了。因为，我看到很多时候，Reviewer 都会说不了解对方代码的背景或是代码量比较大而无法做 Code Review，然而，却没有找到相应的方法解决这个问题。</p>
+<p>LinkedIn 对提交代码写说明文档这个方法是一个非常不错的方法，因为代码提交人写文档的过程其实也是重头梳理的过程。我的个人经验是，写文档的时候通常会发现自己把事儿干复杂了，应该把代码再简化一下，于是就会回头去改代码。是的，写文档就是在写代码。</p>
+<p>有些 Code Review 工具所允许给出的反馈只是代码怎样修改以变得更好，但长此以往会让人觉得复查提出的意见都表示原先的代码不够好。为了提高员工积极性，LinkedIn 的代码复查工具允许提出“这段代码很棒”之类的话语，以便让好代码的作者得到鼓励。我认为，这个方法也很赞，正面鼓励的价值也不可小看。<br>为 Code Review 的结果写出有目的性的注释。比如“消除重复代码”，“增加了测试覆盖率”，等等。长此以往也让团队的价值观得以明确。<br>Code Review 中，不但要 Review 提交者的代码，还要 Reivew 提交者做过的测试。除了一些单元测试，还有一些可能是手动的测试。提交者最好列出所有测试过的案例。这样可以让 Reviewer 可以做出更多的测试建议，从而可以提高质量。<br>对 Code Review 有明确的期望，不过分关注细枝末节，也不要炫技，而是对要 Review 的代码有一个明确的目标。<br>编程语言和代码质量的研究报告<br>A Large-Scale Study of Programming Languages and Code Quality in GitHub，编程语言和代码质量的研究报告，网址为： <a href="https://cacm.acm.org/magazines/2017/10/221326-a-large-scale-study-of-programming-languages-and-code-quality-in-github/" target="_blank" rel="noopener">https://cacm.acm.org/magazines/2017/10/221326-a-large-scale-study-of-programming-languages-and-code-quality-in-github/</a></p>
+<p>这是一项有趣的研究。有四个人从 Github 上分析了 728 个项目，6300 万行代码，近 3 万个提交人，150 万个 commits，以及 17 种编程语言（如下图所示），然后，他们想找到编程语言对软件质量的影响。</p>
+<p>然后，他们还对编程语言做了一个分类，想找到不同类型的编程语言的 bug 问题。如下图所示：</p>
+<p>以及，他们还对这众多的开源软件做了个聚类，如下图：</p>
+<p>对 bug 的类型也做了一个聚类，如下图：</p>
+<p>其中分析的方法我不多说了。我们来看一下相关的结果。</p>
+<p>首先，他们得出来的第一个结果是，从查看 bug fix 的 commits 的个数情况来看，C、C++、Objective-C、PHP 和 Python 中有很多很多的 commits 都是和 bug fix 相关的，而 Clojure、Haskell、Ruby、Scala 在 bug fix 的 commits 的数明显要少很多。</p>
+<p>下图是各个语言出 bug 的情况。如果你看到是正数，说明高于平均水平，如果你看到是负数，则是低于平均水平。</p>
+<p>第二个结论是，函数式编程语言的 bug 明显比大多数其它语言的要好很多。有隐式类型转换的语言明显产生的 bug 数要比强类型的语言要少很多。函数式的静态类型的语言要比函数式的动态类型语言的程序出 bug 的可能性要小很多。</p>
+<p>第三，研究者想搞清是否 bug 数会和软件的领域相关。比如，业务型的，中间件型、框架、lib，或是数据库。研究表明，并没有什么相关性。下面这个图是各个语言在不同领域的 bug 率。</p>
+<p>第四，研究人员想搞清楚 bug 的类型是否会和语言有关系。的确如此，bug 的类型和语言是强相关性的。下图是各个语言在不同的 bug 类型的情况。如果你看到的是正数，说明高于平均水平，如果你看到的是负数，则是低于平均水平。</p>
+<p>也许，这份报告可以在你评估语言时有一定的借鉴作用。</p>
+<p>电子书：《C++ 软件性能优化》</p>
+<p>Optimizing Software in C++ - Agner Fog - PDF，C++ 软件性能优化，<a href="http://agner.org/optimize/optimizing_cpp.pdf" target="_blank" rel="noopener">http://agner.org/optimize/optimizing_cpp.pdf</a></p>
+<p>这本书是所有 C++ 程序员都应该要读的一本书。这本书从事无巨细地从语言层面，编译器层面，内存访问层面，多线程层面，CPU 层面……讲述了如果对软件性能的调优。实在是一本经典的电子书。</p>
+<p>Agner Fog 还写了其它几本和性能调优相关的书（你可以到这个网址下载：<a href="http://www.agner.org/optimize/" target="_blank" rel="noopener">http://www.agner.org/optimize/</a> ）</p>
+<p>Optimizing subroutines in assembly language: An optimization guide for x86 platforms<br>The microarchitecture of Intel, AMD and VIA CPUs: An optimization guide for assembly programmers and compiler makers<br>Instruction tables: Lists of instruction latencies, throughputs and micro-operation breakdowns for Intel, AMD and VIA CPUs<br>Calling conventions for different C++ compilers and operating systems<br>我今天推荐的内容比较干，需要慢慢吸收体会，最好能借鉴到实践中用用，相信会有更多的感悟和收获。你还对哪些方面的内容感兴趣，欢迎留言给我。我后面收集推荐内容的时候，会有意识地关注整理。</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><blockquote>
+<ul>
+<li><a href="">http://www.infoq.com/cn/articles/programer-knowledge?utm_source=infoq&amp;utm_medium=popular_widget&amp;utm_campaign=popular_content_list&amp;utm_content=homepage</a></li>
+</ul>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-06-21T04:59:28.974Z" itemprop="dateUpdated">2018-06-21 12:59:28</time>
+</span><br>
+
+
+        
+    </div>
+    
+    <footer>
+        <a href="https://yo42.github.io">
+            <img src="/img/yo.jpg" alt="Neo">
+            Neo
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/&title=《[转载]每个程序员都该知道的事》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/&title=《[转载]每个程序员都该知道的事》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[转载]每个程序员都该知道的事》 — Neo42&url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2018/06/21/转载-程序员技术练级攻略/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">[转载]程序员技术练级攻略</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2018/06/20/JVM性能调优监控工具/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JVM性能调优监控工具</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Neo &copy; 2019</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/&title=《[转载]每个程序员都该知道的事》 — Neo42&pic=https://yo42.github.io/img/yo.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/&title=《[转载]每个程序员都该知道的事》 — Neo42&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《[转载]每个程序员都该知道的事》 — Neo42&url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/&via=https://yo42.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://yo42.github.io/2018/06/21/转载-每个程序员都该知道的事/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.7.2"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.7.2" async></script>
+
+
+
+
+
+
+
+
+
+
+<script async>window.onload=function(){var a=document.createElement('script'),b=document.getElementsByTagName('script')[0];a.type='text/javascript',a.async=!0,a.src='/sw-register.js?v='+Date.now(),b.parentNode.insertBefore(a,b)};</script></body></html>
